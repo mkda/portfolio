@@ -19,3 +19,7 @@ Settings → Pages → Source: "Deploy from a branch", branch `main`, folder `/ 
 The site is served at https://www.dellanna.pm (GitHub redirects dellanna.pm to it). The `CNAME` file holds the domain, and the `og:image` URLs point to it. DNS: apex A/AAAA records to the GitHub Pages IPs, `www` CNAME to `mkda.github.io`. Under Settings → Pages, keep the custom domain set and tick Enforce HTTPS.
 
 GitHub Pages rebuilds on every push to `main`. If a push does not show up within a few minutes, check the Actions tab for a "pages build and deployment" run.
+
+## Search engines
+
+Every page carries `<meta name="robots" content="noindex, nofollow">` for now. Remove it from each HTML file when the site should be indexed. Don't add a robots.txt block at the same time, or crawlers won't see the change.
