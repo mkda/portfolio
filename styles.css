@@ -134,10 +134,9 @@ p{margin:0}
 .topbar-inner{display:flex;align-items:center;gap:var(--s-2);height:var(--bar-h)}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--on-surface)}
 .brand .mark{width:32px;height:32px;flex:none;display:block}
-.mark-bg{fill:var(--primary)}
-.mark-line{fill:none;stroke:var(--surface);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.85}
-.mark-dot{fill:var(--surface)}
-.mark-hub{fill:var(--surface);stroke:var(--primary);stroke-width:1.2}
+.mark-frame{fill:var(--surface);stroke:var(--primary);stroke-width:2}
+.mark-m{fill:none;stroke:var(--primary);stroke-width:3.6;stroke-linecap:round;stroke-linejoin:round}
+.mark-sq{fill:var(--secondary)}
 .brand-name{font:500 var(--title-s) var(--font-mono)}
 .brand-name span{color:var(--primary)}
 
@@ -563,3 +562,16 @@ p{margin:0}
   .note-link .note-art{grid-column:1/-1;grid-row:auto;inline-size:100%;margin-bottom:var(--s-2)}
   .note-link::after{grid-column:2;grid-row:2/span 3}
 }
+
+/* Trust equation callout */
+.trust{margin-top:var(--s-5);padding:var(--s-5);border-radius:var(--corner-l);background:var(--secondary-container);color:var(--on-secondary-container);display:grid;gap:var(--s-3)}
+@media(min-width:52.5em){.trust{grid-template-columns:auto 1fr;grid-template-areas:"h h" "eq p";column-gap:var(--s-7);align-items:center}.trust h3{grid-area:h}.trust-eq{grid-area:eq}.trust>p:last-child{grid-area:p}}
+.trust h3{font:500 var(--title-m) var(--font-sans)}
+.trust-eq{display:flex;align-items:center;gap:var(--s-3);flex-wrap:wrap;font:400 var(--body-m) var(--font-sans);justify-self:start}
+.tq-lhs{font:500 var(--title-m) var(--font-sans)}
+.tq-frac{display:inline-grid;justify-items:center}
+.trust-eq b{font-weight:500}
+.tq-top{padding:0 var(--s-2) var(--s-2);border-bottom:2px solid currentColor;text-align:center}
+.tq-bot{padding-top:var(--s-2)}
+.trust>p:last-child{font:400 var(--body-m) var(--font-sans)}
+.trust cite{font-style:italic}
