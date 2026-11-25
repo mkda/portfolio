@@ -134,8 +134,8 @@ p{margin:0}
 .topbar-inner{display:flex;align-items:center;gap:var(--s-2);height:var(--bar-h)}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--on-surface)}
 .brand .mark{width:32px;height:32px;flex:none;display:block}
-.mark-frame{fill:var(--surface);stroke:var(--primary);stroke-width:2}
-.mark-m{fill:none;stroke:var(--primary);stroke-width:3.6;stroke-linecap:round;stroke-linejoin:round}
+.mark-frame{fill:var(--surface);stroke:var(--primary);stroke-width:.8}
+.mark-m{fill:none;stroke:var(--primary);stroke-width:3.32;stroke-linecap:round;stroke-linejoin:round}
 .mark-sq{fill:var(--secondary)}
 .brand-name{font:500 var(--title-s) var(--font-mono)}
 .brand-name span{color:var(--primary)}
