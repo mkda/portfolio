@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem("pm-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Design system · dellanna.pm</title>
+<meta name="description" content="Senior technical product manager in Zurich. AI with guardrails, platforms that connect physical products to data, and growth built on evidence.">
+<meta property="og:title" content="Mikael Dell'Anna · Senior Technical Product Manager">
+<meta property="og:description" content="AI with guardrails, platforms that connect physical products to data, and growth built on evidence.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.dellanna.pm/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top" aria-label="Mikael Dell'Anna, home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" class="mark-bg"/><path class="mark-line" d="M8 23V9l8 9 8-9v14"/><circle class="mark-dot" cx="8" cy="23" r="2.2"/><circle class="mark-dot" cx="8" cy="9" r="2.2"/><circle class="mark-hub" cx="16" cy="18" r="2.8"/><circle class="mark-dot" cx="24" cy="9" r="2.2"/><circle class="mark-dot" cx="24" cy="23" r="2.2"/></svg><span class="brand-name">dellanna<span>.pm</span></span></a>
+    <nav class="tabs" aria-label="Pages"><a href="./">Home</a><a href="#tokens" aria-current="true">Design system</a></nav>
+    <button class="theme" id="theme" type="button" aria-label="Switch colour theme">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+    </button>
+  </div>
+</header>
+<main class="section" id="tokens">
+  <div class="sec-head"><p class="eyebrow"><span class="num">DS</span>dellanna.pm</p><h2>Design system</h2></div>
+  <p class="section-lede">The tokens and components every page on this site is built from. Change a token in styles.css and every page follows. Switch the theme in the top bar to check both modes.</p>
+
+  <section class="ds-block"><h2>Colour</h2><p>Semantic names, two themes. Accent is for links, numbers and the one primary action per screen.</p><div class="ds-row"><div class="ds-swatch"><i style="background:var(--page)"></i><span>--page</span></div><div class="ds-swatch"><i style="background:var(--card)"></i><span>--card</span></div><div class="ds-swatch"><i style="background:var(--raised)"></i><span>--raised</span></div><div class="ds-swatch"><i style="background:var(--ink)"></i><span>--ink</span></div><div class="ds-swatch"><i style="background:var(--ink-2)"></i><span>--ink-2</span></div><div class="ds-swatch"><i style="background:var(--ink-3)"></i><span>--ink-3</span></div><div class="ds-swatch"><i style="background:var(--line-strong)"></i><span>--line-strong</span></div><div class="ds-swatch"><i style="background:var(--accent)"></i><span>--accent</span></div><div class="ds-swatch"><i style="background:var(--accent-soft)"></i><span>--accent-soft</span></div><div class="ds-swatch"><i style="background:var(--good)"></i><span>--good</span></div><div class="ds-swatch"><i style="background:var(--good-soft)"></i><span>--good-soft</span></div></div></section>
+
+  <section class="ds-block"><h2>Type</h2><p>Geist for reading, Geist Mono for labels and numbers. Seven sizes, fluid at the top end.</p>
+    <div style="display:grid;gap:12px;margin-top:16px">
+      <div style="font-size:var(--fs-2xl);font-weight:600;letter-spacing:-.02em;line-height:1.1">--fs-2xl Page title</div>
+      <div style="font-size:var(--fs-xl);font-weight:600">--fs-xl Section title</div>
+      <div style="font-size:var(--fs-lg);font-weight:600">--fs-lg Block title</div>
+      <div style="font-size:var(--fs-md)">--fs-md Card title and ledes</div>
+      <div>--fs-base Body text for paragraphs</div>
+      <div style="font-size:var(--fs-sm);color:var(--ink-2)">--fs-sm Captions and meta</div>
+      <p class="eyebrow" style="margin:0">--fs-xs Label</p>
+    </div></section>
+
+  <section class="ds-block"><h2>Space and shape</h2><p>A 4px scale. Sections use --section-y, which grows from 48px on phones to 96px on wide screens. Radii: 8, 12, 16 and pill.</p><div style="display:grid;gap:8px;margin-top:16px"><div class="ds-space"><i style="width:var(--s-1)"></i>--s-1</div><div class="ds-space"><i style="width:var(--s-2)"></i>--s-2</div><div class="ds-space"><i style="width:var(--s-3)"></i>--s-3</div><div class="ds-space"><i style="width:var(--s-4)"></i>--s-4</div><div class="ds-space"><i style="width:var(--s-5)"></i>--s-5</div><div class="ds-space"><i style="width:var(--s-6)"></i>--s-6</div><div class="ds-space"><i style="width:var(--s-7)"></i>--s-7</div><div class="ds-space"><i style="width:var(--s-8)"></i>--s-8</div><div class="ds-space"><i style="width:var(--s-9)"></i>--s-9</div></div></section>
+
+  <section class="ds-block"><h2>Components</h2><p>Section header, buttons, stats, cards, tags, result chips and a disclosure card that collapses on phones.</p>
+    <div class="sec-head" style="margin-top:24px"><p class="eyebrow"><span class="num">01</span>Section label</p><h2>Section title</h2></div>
+    <div class="cta"><a class="btn primary" href="#tokens">Primary action</a><a class="btn" href="#tokens">Secondary</a></div>
+    <dl class="stats"><div><dt>&gt;99.9%</dt><dd>stat with a short label</dd></div><div><dt>150%</dt><dd>second stat</dd></div></dl>
+    <div class="grid three">
+      <article class="card"><span class="pill live">Live</span><h3>Card</h3><p>Body text in a card, with a result line underneath.</p><p class="result"><b>6</b> episodes · <b>6</b> languages</p></article>
+      <article class="card"><span class="pill">Tag</span><h3>Card with tag</h3><p>Tags mark status: live, experimental, in development.</p></article>
+      <details class="card fold" open><summary><h3>Disclosure card</h3></summary><p>Open on wide screens, tap to open on phones.</p></details>
+    </div>
+    <ul class="proof" style="margin-top:16px;max-width:520px"><li><b>−70%</b> result chip with a number and context</li></ul>
+  </section>
+
+  <section class="ds-block"><h2>Diagrams</h2><p>Boxes use .d-node, .d-accent for the system in focus, .d-gate for human decisions and .d-good for the outcome. Every connector starts and ends on a box. Each diagram ships a wide version and a vertical phone version.</p></section>
+</main>
+<footer class="wrap foot"><a href="./">Back to the portfolio</a></footer>
+<script>document.getElementById("theme").addEventListener("click",function(){var d=document.documentElement,n=d.dataset.theme==="dark"?"light":"dark";d.dataset.theme=n;try{localStorage.setItem("pm-theme",n)}catch(e){}});</script>
+</body>
+</html>
