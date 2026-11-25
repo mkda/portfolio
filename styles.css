@@ -56,7 +56,7 @@
   /* Secondary accent: amber marks measured results; blue stays for brand and interaction */
   --secondary-light:#a24c12;--secondary-dark:#ffb68a;
   --secondary:light-dark(var(--secondary-light),var(--secondary-dark));
-  --secondary-container-light:#fde6d6;--secondary-container-dark:#55290c;
+  --secondary-container-light:#fde6d6;--secondary-container-dark:#1f2a3a;
   --secondary-container:light-dark(var(--secondary-container-light),var(--secondary-container-dark));
   --on-secondary-container-light:#3a1700;--on-secondary-container-dark:#ffdcc6;
   --on-secondary-container:light-dark(var(--on-secondary-container-light),var(--on-secondary-container-dark));
@@ -502,7 +502,7 @@ p{margin:0}
 /* Trust equation callout */
 .trust{margin-top:var(--s-5);padding:var(--s-5);border-radius:var(--corner-l);background:var(--secondary-container);color:var(--on-secondary-container);display:grid;gap:var(--s-3)}
 @media(min-width:52.5em){.trust{grid-template-columns:auto 1fr;grid-template-areas:"h h" "eq p";column-gap:var(--s-7);align-items:center}.trust h3{grid-area:h}.trust-eq{grid-area:eq}.trust>p:last-child{grid-area:p}}
-.trust h3{font:500 var(--title-m) var(--font-sans)}
+.trust h3{font:500 var(--title-m) var(--font-sans);color:light-dark(var(--on-secondary-container-light),var(--secondary))}
 .trust-eq{display:flex;align-items:center;gap:var(--s-3);flex-wrap:wrap;font:400 var(--body-m) var(--font-sans);justify-self:start}
 .tq-lhs{font:500 var(--title-m) var(--font-sans)}
 .tq-frac{display:inline-grid;justify-items:center}
