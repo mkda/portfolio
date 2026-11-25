@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem("pm-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reusing an AI studio's playbook in enterprise automation · Mikael Dell'Anna</title>
+<meta name="description" content="Seven practices from running AI agents in production, and how they carry over to retail, telecom, customer service and back-office automation.">
+<meta property="og:title" content="Reusing an AI studio's playbook in enterprise automation">
+<meta property="og:description" content="Seven practices from running AI agents in production, and how they carry over to retail, telecom, customer service and back-office automation.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.dellanna.pm/og.png">
+<meta property="article:published_time" content="2026-11-18">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../">MD<span>.pm</span></a></div></header>
+<main class="wrap article">
+  <p class="eyebrow">Note</p>
+  <h1>Reusing an AI studio's playbook in enterprise automation</h1>
+  <p class="meta">Mikael Dell'Anna · <time datetime="2026-11-18">18 November 2026</time> · 6 min read</p>
+
+  <p>This autumn I built a small studio that makes children's cartoons with AI agents. An orchestrating agent plans the work, specialised agents draw, animate, voice, check and publish, and a worker machine runs the paid jobs. I approve the story, any new characters and the final cut. Six episodes later, in six languages, I've noticed that almost nothing I learned is specific to cartoons. It's the same playbook I'd bring to any company that wants to automate with AI.</p>
+
+  <h2>1. Machines check first</h2>
+  <p>Before any person reviews a cut, automated checks run for staging, continuity, lip-sync and joins between shots, followed by three independent reviewer agents. On one episode, the staging checks took the count from 173 issues to zero before I watched a single frame.</p>
+  <p>In your organisation, run rule and model checks on every order, ticket, scan or document, and send people only what fails. In retail RFID this is the difference between store teams checking every count and store teams handling exceptions.</p>
+
+  <h2>2. Gates only where judgment matters</h2>
+  <p>When an episode disappointed me, I reacted like many teams do and added review. One episode went to 84 versions and about $31 of extra generation with no better result, so I went back to two gates: one before any money is spent, and one before release.</p>
+  <p>A company can do the same: put approvals on decisions such as spend, customer impact and compliance, not on routine steps. In a telecom checkout that means automating ID checks and activation, and routing only the doubtful cases to a person.</p>
+
+  <h2>3. Pay per usable result</h2>
+  <p>AI services bill you for wrong outputs too. I compare models on price divided by pass rate. The same image model through a different provider cost $0.12 per usable drawing instead of $0.18, a third less for identical quality.</p>
+  <p>Measure cost per successful task for each vendor, such as a ticket resolved without handover or a document extracted without correction. List price tells you very little.</p>
+
+  <h2>4. Test on your own data</h2>
+  <p>Every model is tried on the studio's own characters before it's adopted. Two video models passed none of six test clips between them; the one now on trial passed three of three at a lower cost per clip. One defect I expected an AI edit to solve was handled better by a small script: the AI kept 4 of 15 drawings clean, the script fixed all 15 for nothing.</p>
+  <p>Build an eval set from your real tickets, products or contracts before you sign with a vendor, and keep plain code in the comparison. Demos aren't evidence.</p>
+
+  <h2>5. Every note becomes a rule</h2>
+  <p>I logged my feedback. It fell into nine categories that kept coming back, and each one became a rule or an automated check. Repeating one is now a blocker.</p>
+  <p>In your teams, turn recurring support and QA findings into checks, so quality compounds with every release instead of resetting.</p>
+
+  <h2>6. Guard the budget and the licences</h2>
+  <p>Every paid call is logged against a $100 cap per episode, and anything over about $10 comes to me first. Licences are checked too: one voice model sounded clearer than my choice, but its weights were licensed for non-commercial use only, so it never reached production.</p>
+  <p>Before scaling, set spending caps and escalation thresholds per workflow, and make legal and licence checks part of model selection, not an afterthought.</p>
+
+  <h2>7. The weakest part sets the limit</h2>
+  <p>If any component in the architecture can't take the load, the whole pipeline stops. My studio once depended on a single Mac mini, and an empty prepaid credit stopped jobs without any error. Updates are the other risk: a new model version or tool update can quietly break a flow that worked yesterday.</p>
+  <p>For any automation, load-test every step, monitor and alert on silent failures, and treat each vendor model update like a release. Revalidate the workflow and watch it in production before you call the update a success.</p>
+
+  <div class="callout"><p>None of this is new to good product management. Agents just make the feedback loop fast enough to see these lessons in weeks instead of years.</p></div>
+
+  <a class="btn back" href="../#notes">← Back to the portfolio</a>
+</main>
+<footer class="wrap foot">© 2026 Mikael Dell'Anna</footer>
+</body>
+</html>

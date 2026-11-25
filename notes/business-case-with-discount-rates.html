@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<script>try{var t=localStorage.getItem("pm-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing a business case with discount rates · Mikael Dell'Anna</title>
+<meta name="description" content="Why a product manager should speak NPV, and a simple way to build a CAPEX request finance will trust.">
+<meta property="og:title" content="Writing a business case with discount rates">
+<meta property="og:description" content="Why a product manager should speak NPV, and a simple way to build a CAPEX request finance will trust.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.dellanna.pm/og.png">
+<meta property="article:published_time" content="2025-05-20">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../">MD<span>.pm</span></a></div></header>
+<main class="wrap article">
+  <p class="eyebrow">Note</p>
+  <h1>Writing a business case with discount rates</h1>
+  <p class="meta">Mikael Dell'Anna · <time datetime="2025-05-20">20 May 2025</time> · 5 min read</p>
+
+  <p>Engineering time is an investment, and in many companies it's requested as one: a CAPEX request that finance reviews against every other use of the money. Product managers who can write that request in finance's language get their roadmap funded faster. The language is mostly one idea: money later is worth less than money now.</p>
+
+  <h2>Net present value in one paragraph</h2>
+  <p>NPV adds up the cash a project generates each year, discounted back to today, minus what it costs up front. The discount rate is the return the company expects from its investments, so ask finance for it rather than inventing one. If NPV is positive, the project earns more than the company's hurdle. If it's negative, the money is better used elsewhere, however good the feature sounds.</p>
+
+  <h2>How I build the request</h2>
+  <ul>
+    <li><b>Costs:</b> engineering assignments by role and month, vendors, hardware and licences. Separate what gets capitalised from running costs.</li>
+    <li><b>Value drivers:</b> named and checkable, for example loss prevention, faster and narrower product recalls, regulatory readiness, or support hours saved.</li>
+    <li><b>Horizon:</b> 3 to 5 years, which is long enough to show the payoff and short enough to be believable.</li>
+    <li><b>Outputs:</b> NPV, break-even year and profitability per year, so the reader sees both the size of the return and when it arrives.</li>
+  </ul>
+
+  <h2>An illustrative example</h2>
+  <p>The numbers below are made up to show the method. A platform investment costs 500K up front and returns 150K, 250K, 300K and 300K over four years. With an 8% discount rate:</p>
+  <table>
+    <thead><tr><th>Year</th><th>Cash flow</th><th>Discounted at 8%</th><th>Cumulative</th></tr></thead>
+    <tbody>
+      <tr><td>0</td><td>−500K</td><td>−500K</td><td>−500K</td></tr>
+      <tr><td>1</td><td>150K</td><td>139K</td><td>−361K</td></tr>
+      <tr><td>2</td><td>250K</td><td>214K</td><td>−147K</td></tr>
+      <tr><td>3</td><td>300K</td><td>238K</td><td>91K</td></tr>
+      <tr><td>4</td><td>300K</td><td>221K</td><td>312K</td></tr>
+    </tbody>
+  </table>
+  <p>NPV is about 312K and the project breaks even, discounted, during year three. Without discounting it would look like it breaks even a few months earlier. That gap is exactly what finance will check.</p>
+
+  <h2>Connect it to the P&amp;L</h2>
+  <p>Leadership often reads results through EBITDA. Operating savings, such as fewer manual interventions or less shrinkage, improve EBITDA directly. Capitalised engineering doesn't hit EBITDA in the year it's spent; it appears later as depreciation. Saying this in the request shows you understand how the investment will look in the numbers people report.</p>
+
+  <h2>Be honest about uncertainty</h2>
+  <p>Every business case rests on a few assumptions that matter far more than the rest, such as adoption speed or the size of the loss you prevent. Name them, show a conservative case next to the expected one, and say what you'll measure to know early which way it's going. A tornado chart is a good way to show which assumptions move the result most.</p>
+
+
+  <a class="btn back" href="../#notes">← Back to the portfolio</a>
+</main>
+<footer class="wrap foot">© 2026 Mikael Dell'Anna</footer>
+</body>
+</html>
