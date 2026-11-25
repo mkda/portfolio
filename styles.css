@@ -482,3 +482,68 @@ p{margin:0}
 .note-link::after{grid-column:3}
 .note-link .note-art{grid-column:1;grid-row:1/span 3;inline-size:96px;block-size:auto;aspect-ratio:16/9;object-fit:cover;border-radius:var(--corner-s);background:var(--surface-container-high);align-self:center}
 @media(min-width:37.5em){.note-link{grid-template-columns:160px 1fr 24px}.note-link .note-art{inline-size:160px}}
+
+/* ---------- Flow variants for compact windows (preview only; one will be kept) ----------
+   html[data-flow="2"] swipe cards · "3" lanes and hub · "4" numbered tiles. No attribute = timeline. */
+@media(max-width:52.49em){
+  html[data-flow] .rail-fig .stop,html[data-flow] .rail-fig .stop .dot,html[data-flow] .rail-fig .stop .me,html[data-flow] .rail-fig .ping,html[data-flow] .rail-fig .twin-wrap{animation:none!important}
+  html[data-flow] .rail{counter-reset:step}
+  html[data-flow] .stop{counter-increment:step}
+
+  /* 2 · Swipe cards */
+  html[data-flow="2"] .rail{display:flex;gap:var(--s-3);overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1*var(--s-4));padding:0 var(--s-4) var(--s-3);scroll-padding-inline:var(--s-4);scroll-timeline:--swipe inline}
+  html[data-flow="2"] .rail::before,html[data-flow="2"] .rail::after{display:none}
+  html[data-flow="2"] .stop{flex:0 0 76%;scroll-snap-align:start;grid-template-columns:1fr;row-gap:var(--s-3);align-content:start;padding:var(--s-4);border:1px solid var(--outline-variant);border-radius:var(--corner-l);background:var(--surface-container-low)}
+  html[data-flow="2"] .stop::before{content:counter(step,decimal-leading-zero);position:absolute;inset-inline-end:var(--s-4);inset-block-start:var(--s-4);font:500 var(--label-l) var(--font-mono);color:var(--on-surface-variant)}
+  html[data-flow="2"] .stop .dot,html[data-flow="2"] .stop .me{justify-self:start;box-shadow:none}
+  html[data-flow="2"] .stop.me{background:var(--primary-container);border-color:var(--primary)}
+  html[data-flow="2"] .rfid .stop-body{display:flex}
+  html[data-flow="2"] .rail-fig{position:relative;timeline-scope:--swipe}
+  html[data-flow="2"] .rail-fig figcaption::after{content:"Swipe sideways to follow the steps";display:block;margin-top:var(--s-1);font:500 var(--label-m) var(--font-sans);color:var(--primary)}
+  @supports (animation-timeline: scroll()){
+    html[data-flow="2"] .rail-fig .rail+*::before{content:"";display:block;block-size:3px;border-radius:3px;background:var(--primary);transform-origin:left;animation:rail-fill-x linear both;animation-timeline:--swipe;margin-bottom:var(--s-3)}
+  }
+
+  /* 3 · Lanes (pipeline: agents and me side by side) and hub (RFID: the twin on top) */
+  html[data-flow="3"] .pipe{position:relative;padding-top:calc(var(--s-5) + 32px)}
+  html[data-flow="3"] .pipe::before,html[data-flow="3"] .pipe::after{position:absolute;inset-block-start:var(--s-4);font:500 var(--label-l) var(--font-sans);padding:4px var(--s-3);border-radius:var(--corner-s)}
+  html[data-flow="3"] .pipe::before{content:"Agents";inset-inline-start:var(--s-4);background:var(--surface-container-high);color:var(--on-surface-variant)}
+  html[data-flow="3"] .pipe::after{content:"Me";inset-inline-start:calc(50% + var(--s-2));background:var(--primary);color:var(--on-primary)}
+  html[data-flow="3"] .pipe .rail{grid-template-columns:1fr 1fr;column-gap:var(--s-4);row-gap:var(--s-2)}
+  html[data-flow="3"] .pipe .rail::before{inset-inline-start:50%;inset-block:0;background:none;border-inline-start:2px dashed var(--outline-variant)}
+  html[data-flow="3"] .pipe .rail::after{display:none}
+  html[data-flow="3"] .pipe .stop{grid-column:1;grid-row:calc(var(--i) + 1);grid-template-columns:20px 1fr;column-gap:var(--s-2)}
+  html[data-flow="3"] .pipe .stop .who{display:none}
+  html[data-flow="3"] .pipe .stop .dot{inline-size:12px;block-size:12px;margin-top:7px}
+  html[data-flow="3"] .pipe .stop.me{grid-column:2;padding:var(--s-3);border-radius:var(--corner-m);background:var(--primary-container);grid-template-columns:24px 1fr}
+  html[data-flow="3"] .pipe .stop.me .me{inline-size:24px;block-size:24px;box-shadow:none;margin-top:0}
+  html[data-flow="3"] .pipe .stop.done{grid-column:1/-1}
+  html[data-flow="3"] .pipe .stop-note{font:400 var(--body-s) var(--font-sans)}
+  html[data-flow="3"] .pipe .stop.check .dot{margin-top:9px}
+  html[data-flow="3"] .rfid{display:flex;flex-direction:column}
+  html[data-flow="3"] .rfid .twin-wrap{order:-1;margin:0 0 var(--s-4)}
+  html[data-flow="3"] .rfid .twin-wrap::before{display:none}
+  html[data-flow="3"] .rfid .rail{grid-template-columns:1fr 1fr;gap:var(--s-2)}
+  html[data-flow="3"] .rfid .rail::before,html[data-flow="3"] .rfid .rail::after{display:none}
+  html[data-flow="3"] .rfid .stop{grid-template-columns:1fr;padding:var(--s-3);border:1px solid var(--outline-variant);border-radius:var(--corner-m);background:var(--surface-container-low)}
+  html[data-flow="3"] .rfid .stop:last-child{grid-column:1/-1}
+  html[data-flow="3"] .rfid .stop .dot{display:none}
+  html[data-flow="3"] .rfid .stop-body{display:flex;flex-direction:column;align-items:flex-start}
+  html[data-flow="3"] .rfid .ping{font-size:0;padding:2px var(--s-2)}
+  html[data-flow="3"] .rfid .ping::after{content:"↑ reads into the twin";font:500 var(--label-m) var(--font-sans)}
+  html[data-flow="3"] .rfid figcaption,html[data-flow="3"] .rfid .rail{order:0}
+
+  /* 4 · Numbered tiles */
+  html[data-flow="4"] .rail{grid-template-columns:1fr 1fr;gap:var(--s-2)}
+  html[data-flow="4"] .rail::before,html[data-flow="4"] .rail::after{display:none}
+  html[data-flow="4"] .stop{grid-template-columns:1fr;row-gap:var(--s-2);align-content:start;padding:var(--s-3);border-radius:var(--corner-m);background:var(--surface-container-high)}
+  html[data-flow="4"] .stop .dot,html[data-flow="4"] .stop .me{display:none}
+  html[data-flow="4"] .stop::before{content:counter(step);display:grid;place-items:center;inline-size:28px;block-size:28px;border-radius:50%;background:var(--surface);color:var(--on-surface-variant);font:500 var(--label-l) var(--font-mono)}
+  html[data-flow="4"] .stop.me{background:var(--primary-container)}
+  html[data-flow="4"] .stop.me::before{background:var(--primary);color:var(--on-primary)}
+  html[data-flow="4"] .stop.done{background:var(--tertiary-container)}
+  html[data-flow="4"] .stop-body{display:flex;flex-direction:column;align-items:flex-start}
+  html[data-flow="4"] .stop-note{font:400 var(--body-s) var(--font-sans)}
+  html[data-flow="4"] .rfid .stop:last-child{grid-column:1/-1}
+  html[data-flow="4"] .rfid .twin-wrap::before{display:none}
+}
