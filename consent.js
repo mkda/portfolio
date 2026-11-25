@@ -60,14 +60,13 @@ dlg.className = "consent";
 dlg.hidden = true;
 dlg.show = () => { dlg.hidden = false; };
 dlg.close = () => { dlg.hidden = true; };
-dlg.setAttribute("aria-labelledby", "consent-title");
+dlg.setAttribute("aria-label", "Analytics consent");
 dlg.innerHTML = `
-  <h2 id="consent-title" class="consent-title">Can I count your visit?</h2>
-  <p>With your OK, Google Analytics measures which pages are read and where visitors come from. It sets cookies and sends data to Google. Nothing loads unless you accept. <a href="${root}privacy.html">Privacy and cookies</a></p>
   <div class="consent-actions">
-    <button type="button" class="btn" value="denied">Decline</button>
     <button type="button" class="btn primary" value="granted">Accept analytics</button>
-  </div>`;
+    <button type="button" class="btn" value="denied">Decline</button>
+  </div>
+  <a class="consent-link" href="${root}privacy.html">Privacy and cookies</a>`;
 dlg.addEventListener("click", (e) => {
   const b = e.target.closest("button[value]");
   if (!b) return;
@@ -83,9 +82,15 @@ dlg.addEventListener("click", (e) => {
 });
 document.body.append(dlg);
 
+// Without a choice, the banner appears once per visit: moving to another page doesn't bring it back.
+const SEEN = "analytics-consent-shown";
 const choice = read();
 if (choice === "granted") load();
-else if (choice === null) dlg.show();
+else if (choice === null) {
+  let seen = false;
+  try { seen = sessionStorage.getItem(SEEN) === "1"; sessionStorage.setItem(SEEN, "1"); } catch (e) {}
+  if (!seen) dlg.show();
+}
 
 // Footer link "Cookie settings" reopens the banner.
 document.addEventListener("click", (e) => {
