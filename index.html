@@ -15,9 +15,7 @@
 <meta property="og:image" content="https://www.dellanna.pm/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="preload" href="fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -88,24 +86,11 @@
             <p class="chart-note">Usable cost = price ÷ pass rate. Choosing on it cut a third off every usable drawing.</p>
           </figure>
         </div>
-        <figure class="diagram">
-          <svg class="d-desk" aria-label="Pipeline: brief, human gate one, design, generate, assemble, automated checks by three agents, human gate two, release" viewBox="0 0 900 120" role="img">
-            <g class="d-node"><rect x="0" y="34" width="96" height="52" rx="10"/><text x="48" y="64">Brief</text></g>
-            <g class="d-gate"><rect x="112" y="34" width="96" height="52" rx="10"/><text x="160" y="58">Gate 1</text><text class="d-sub" x="160" y="76">human</text></g>
-            <g class="d-node"><rect x="224" y="34" width="96" height="52" rx="10"/><text x="272" y="64">Design</text></g>
-            <g class="d-node"><rect x="336" y="34" width="96" height="52" rx="10"/><text x="384" y="64">Generate</text></g>
-            <g class="d-node"><rect x="448" y="34" width="96" height="52" rx="10"/><text x="496" y="64">Assemble</text></g>
-            <g class="d-accent"><rect x="560" y="34" width="96" height="52" rx="10"/><text x="608" y="58">Checks</text><text class="d-sub" x="608" y="76">3 agents</text></g>
-            <g class="d-gate"><rect x="672" y="34" width="96" height="52" rx="10"/><text x="720" y="58">Gate 2</text><text class="d-sub" x="720" y="76">human</text></g>
-            <g class="d-good"><rect x="784" y="34" width="112" height="52" rx="10"/><text x="840" y="64">Release</text></g>
-            <g class="d-line"><path d="M96 60H112M208 60H224M320 60H336M432 60H448M544 60H560M656 60H672M768 60H784"/></g>
-            <text class="d-note" x="0" y="112">Machines check first. People decide at the gates.</text>
-          </svg>
-          <svg class="d-phone" aria-label="Pipeline: brief, human gate one, design, generate, assemble, automated checks by three agents, human gate two, release" viewBox="0 0 340 476" role="img">
-            <g class="d-node"><rect x="70" y="10" width="200" height="40" rx="10"/><text x="170" y="35">Brief</text></g><g class="d-gate"><rect x="70" y="66" width="200" height="40" rx="10"/><text x="170" y="91">Gate 1 · human</text></g><g class="d-node"><rect x="70" y="122" width="200" height="40" rx="10"/><text x="170" y="147">Design</text></g><g class="d-node"><rect x="70" y="178" width="200" height="40" rx="10"/><text x="170" y="203">Generate</text></g><g class="d-node"><rect x="70" y="234" width="200" height="40" rx="10"/><text x="170" y="259">Assemble</text></g><g class="d-accent"><rect x="70" y="290" width="200" height="40" rx="10"/><text x="170" y="315">Checks · 3 agents</text></g><g class="d-gate"><rect x="70" y="346" width="200" height="40" rx="10"/><text x="170" y="371">Gate 2 · human</text></g><g class="d-good"><rect x="70" y="402" width="200" height="40" rx="10"/><text x="170" y="427">Release</text></g>
-            <g class="d-line"><path d="M170 50V66M170 106V122M170 162V178M170 218V234M170 274V290M170 330V346M170 386V402"/></g>
-            <text class="d-note" x="70" y="468">Machines check first. People decide at the gates.</text>
-          </svg>
+        <figure class="rail-fig pipe">
+          <ol class="rail" aria-label="How an episode is made, in order">
+            <li class="stop agent" style="--i:0"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Brief</span><span class="who">Agents</span><span class="stop-note">A public-domain tale to retell</span></span></li><li class="stop me" style="--i:1"><svg class="me" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" class="mark-bg"/><path class="mark-line" d="M8 23V9l8 9 8-9v14"/><circle class="mark-dot" cx="8" cy="23" r="2.2"/><circle class="mark-dot" cx="8" cy="9" r="2.2"/><circle class="mark-hub" cx="16" cy="18" r="2.8"/><circle class="mark-dot" cx="24" cy="9" r="2.2"/><circle class="mark-dot" cx="24" cy="23" r="2.2"/></svg><span class="stop-body"><span class="stop-name">Gate 1</span><span class="who">Me</span><span class="stop-note">I approve the story and new characters, before money is spent</span></span></li><li class="stop agent" style="--i:2"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Design</span><span class="who">Agents</span><span class="stop-note">Agents write and draw</span></span></li><li class="stop agent" style="--i:3"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Generate</span><span class="who">Agents</span><span class="stop-note">Agents animate and voice</span></span></li><li class="stop agent" style="--i:4"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Assemble</span><span class="who">Agents</span><span class="stop-note">The cut, in six languages</span></span></li><li class="stop check" style="--i:5"><span class="dot trio" aria-hidden="true"><i></i><i></i><i></i></span><span class="stop-body"><span class="stop-name">Checks</span><span class="who">Agents</span><span class="stop-note">Three agents check staging, continuity and lip-sync: 173 issues to zero</span></span></li><li class="stop me" style="--i:6"><svg class="me" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" class="mark-bg"/><path class="mark-line" d="M8 23V9l8 9 8-9v14"/><circle class="mark-dot" cx="8" cy="23" r="2.2"/><circle class="mark-dot" cx="8" cy="9" r="2.2"/><circle class="mark-hub" cx="16" cy="18" r="2.8"/><circle class="mark-dot" cx="24" cy="9" r="2.2"/><circle class="mark-dot" cx="24" cy="23" r="2.2"/></svg><span class="stop-body"><span class="stop-name">Gate 2</span><span class="who">Me</span><span class="stop-note">I approve the final cut</span></span></li><li class="stop done" style="--i:7"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Release</span><span class="who">Live</span><span class="stop-note">Three livestreams a day</span></span></li>
+          </ol>
+          <figcaption>Machines check first. I decide at the two gates.</figcaption>
         </figure>
       </article>
 
@@ -130,37 +115,22 @@
             <li><b>$200K+</b> a year projected savings from the in-house serialisation MVP</li>
           </ul>
         </div>
-        <figure class="diagram">
-          <svg class="d-desk" aria-label="Diagram: factories, freight forwarders, warehouses, distributors and stores each publish RFID read events to the Digital Twin over EPC publish and subscribe. The Digital Twin feeds the event streaming platform, which syncs the ERP and drives QR-based workflows after the sale." viewBox="0 0 900 330" role="img">
-            <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="d-arrow" d="M0 0L10 5L0 10z"/></marker></defs>
-            <g class="d-node">
-              <rect x="10" y="20" width="150" height="56" rx="10"/><text x="85" y="46">Factories</text><text class="d-sub" x="85" y="64">tag &amp; serialise</text>
-              <rect x="195" y="20" width="150" height="56" rx="10"/><text x="270" y="46">Freight forwarders</text><text class="d-sub" x="270" y="64">in transit</text>
-              <rect x="380" y="20" width="150" height="56" rx="10"/><text x="455" y="46">Warehouses</text><text class="d-sub" x="455" y="64">receive &amp; ship</text>
-              <rect x="565" y="20" width="150" height="56" rx="10"/><text x="640" y="46">Distributors</text><text class="d-sub" x="640" y="64">allocate</text>
-              <rect x="750" y="20" width="140" height="56" rx="10"/><text x="820" y="46">Stores</text><text class="d-sub" x="820" y="64">count, sell, find</text>
-            </g>
-            <g class="d-accent"><rect x="10" y="130" width="880" height="56" rx="10"/><text x="450" y="156">Digital Twin</text><text class="d-sub" x="450" y="174">Electronic Product Code events · publish and subscribe · one serial per item</text></g>
-            <g class="d-accent"><rect x="300" y="236" width="300" height="56" rx="10"/><text x="450" y="262">Event streaming platform</text><text class="d-sub" x="450" y="280">40M+ scans a year</text></g>
-            <g class="d-node">
-              <rect x="10" y="236" width="240" height="56" rx="10"/><text x="130" y="262">ERP</text><text class="d-sub" x="130" y="280">financial records · inventory status</text>
-              <rect x="650" y="236" width="240" height="56" rx="10"/><text x="770" y="262">QR workflows after sale</text><text class="d-sub" x="770" y="280">item status: in sale → sold</text>
-            </g>
-            <g class="d-line">
-              <path d="M160 48H195" marker-end="url(#ah)"/><path d="M345 48H380" marker-end="url(#ah)"/><path d="M530 48H565" marker-end="url(#ah)"/><path d="M715 48H750" marker-end="url(#ah)"/>
-              <path d="M85 76V130" marker-end="url(#ah)"/><path d="M270 76V130" marker-end="url(#ah)"/><path d="M455 76V130" marker-end="url(#ah)"/><path d="M640 76V130" marker-end="url(#ah)"/><path d="M820 76V130" marker-end="url(#ah)"/>
-              <path d="M450 186V236" marker-end="url(#ah)"/>
-              <path d="M300 264H250" marker-end="url(#ah)"/><path d="M600 264H650" marker-end="url(#ah)"/>
-            </g>
-          </svg>
-          <svg class="d-phone" aria-label="Diagram: factories, freight forwarders, warehouses, distributors and stores each publish RFID read events to the Digital Twin over EPC publish and subscribe. The Digital Twin feeds the event streaming platform, which syncs the ERP and drives QR-based workflows after the sale." viewBox="0 0 360 462" role="img">
-            <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="d-arrow" d="M0 0L10 5L0 10z"/></marker></defs>
-            <g class="d-node"><rect x="10" y="10" width="150" height="44" rx="10"/><text x="85" y="30">Factories</text><text class="d-sub" x="85" y="46">tag &amp; serialise</text><rect x="10" y="66" width="150" height="44" rx="10"/><text x="85" y="86">Freight forwarders</text><text class="d-sub" x="85" y="102">in transit</text><rect x="10" y="122" width="150" height="44" rx="10"/><text x="85" y="142">Warehouses</text><text class="d-sub" x="85" y="158">receive &amp; ship</text><rect x="10" y="178" width="150" height="44" rx="10"/><text x="85" y="198">Distributors</text><text class="d-sub" x="85" y="214">allocate</text><rect x="10" y="234" width="150" height="44" rx="10"/><text x="85" y="254">Stores</text><text class="d-sub" x="85" y="270">count, sell, find</text></g>
-            <g class="d-accent"><rect x="200" y="10" width="150" height="268" rx="10"/><text x="275" y="128">Digital Twin</text><text class="d-sub" x="275" y="150">EPC events</text><text class="d-sub" x="275" y="166">publish / subscribe</text><text class="d-sub" x="275" y="182">one serial per item</text></g>
-            <g class="d-accent"><rect x="200" y="310" width="150" height="52" rx="10"/><text x="275" y="332">Event streaming</text><text class="d-sub" x="275" y="350">40M+ scans a year</text></g>
-            <g class="d-node"><rect x="10" y="400" width="165" height="52" rx="10"/><text x="92" y="422">ERP</text><text class="d-sub" x="92" y="440">finance · inventory</text><rect x="185" y="400" width="165" height="52" rx="10"/><text x="267" y="422">QR after sale</text><text class="d-sub" x="267" y="440">in sale → sold</text></g>
-            <g class="d-line"><path d="M160 32H200" marker-end="url(#ah2)"/><path d="M160 88H200" marker-end="url(#ah2)"/><path d="M85 54V66" marker-end="url(#ah2)"/><path d="M160 144H200" marker-end="url(#ah2)"/><path d="M85 110V122" marker-end="url(#ah2)"/><path d="M160 200H200" marker-end="url(#ah2)"/><path d="M85 166V178" marker-end="url(#ah2)"/><path d="M160 256H200" marker-end="url(#ah2)"/><path d="M85 222V234" marker-end="url(#ah2)"/><path d="M275 278V310" marker-end="url(#ah2)"/><path d="M225 362V381H92V400" marker-end="url(#ah2)"/><path d="M300 362V400" marker-end="url(#ah2)"/></g>
-          </svg>
+        <figure class="rail-fig rfid">
+          <ol class="rail" aria-label="One item's journey, each read point publishing to the Digital Twin">
+            <li class="stop" style="--i:0"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Factories</span><span class="stop-note">Tag and serialise each item</span><span class="ping">RFID read → Digital Twin</span></span></li><li class="stop" style="--i:1"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Freight forwarders</span><span class="stop-note">In transit</span><span class="ping">RFID read → Digital Twin</span></span></li><li class="stop" style="--i:2"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Warehouses</span><span class="stop-note">Receive and ship</span><span class="ping">RFID read → Digital Twin</span></span></li><li class="stop" style="--i:3"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Distributors</span><span class="stop-note">Allocate</span><span class="ping">RFID read → Digital Twin</span></span></li><li class="stop" style="--i:4"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Stores</span><span class="stop-note">Count, sell, find</span><span class="ping">RFID read → Digital Twin</span></span></li>
+          </ol>
+          <div class="twin-wrap" style="--i:5">
+            <div class="twin">
+              <span class="twin-pulse" aria-hidden="true"></span>
+              <p class="twin-name">Digital Twin</p>
+              <p class="twin-note">One serial per item, Electronic Product Code events, publish and subscribe</p>
+              <p class="twin-stream"><b>40M+</b> scans a year on the event streaming platform</p>
+            </div>
+            <ul class="twin-out" role="list">
+              <li><span class="out-name">ERP</span><span class="stop-note">Financial records and inventory status</span></li>
+              <li><span class="out-name">QR after the sale</span><span class="stop-note">The same serial, from in sale to sold</span></li>
+            </ul>
+          </div>
         </figure>
       </article>
 
@@ -292,7 +262,7 @@
   </section>
 </main>
 
-<footer class="wrap foot">© <span id="y">2026</span> Mikael Dell'Anna · <a href="https://www.linkedin.com/in/mikael-dellanna">LinkedIn</a></footer>
+<footer class="wrap foot"><span>© 2026 Mikael Dell'Anna</span><a href="https://www.linkedin.com/in/mikael-dellanna">LinkedIn</a><a href="privacy.html">Privacy and cookies</a><button type="button" class="linkish" data-cookie-settings>Cookie settings</button></footer>
 
 <script type="module">
 // Theme toggle: two states (system, or the opposite of system), stored only when it differs from the system.
@@ -306,7 +276,6 @@ document.getElementById("theme").addEventListener("click",()=>{
   meta.content=target===system?"light dark":target;
 });
 addEventListener("storage",e=>{if(e.key==="color-scheme")meta.content=e.newValue??"light dark"});
-document.getElementById("y").textContent=new Date().getFullYear();
 
 // Accordion starts closed on compact and medium windows.
 if(matchMedia("(max-width:52.49em)").matches)document.querySelectorAll("details.fold").forEach(d=>d.open=false);
@@ -325,5 +294,6 @@ if(CSS.supports("scroll-target-group: auto")){
 </script>
 <script src="vendor/motion-14.11.1.min.js" defer></script>
 <script type="module" src="site.js"></script>
+<script type="module" src="consent.js"></script>
 </body>
 </html>

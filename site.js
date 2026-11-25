@@ -1,5 +1,5 @@
 // Progressive enhancement: the page is complete without this file.
-import { animate as draw, svg, stagger } from "./vendor/anime-4.5.0.esm.min.js";
+import { animate as draw, stagger } from "./vendor/anime-4.5.0.esm.min.js";
 
 const M = window.Motion;
 const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -31,12 +31,6 @@ if (M && !calm) {
       onUpdate: (v) => { dt.textContent = pre + v.toFixed(places) + post; },
     });
   });
-
-  // Diagram connectors draw in the direction the data flows.
-  M.inView(".diagram", (fig) => {
-    const lines = svg.createDrawable(fig.querySelectorAll(".d-line path, .d-drop path"));
-    draw(lines, { draw: ["0 0", "0 1"], duration: 900, delay: stagger(120), ease: "inOut(2)" });
-  }, { amount: 0.4 });
 
   // Chart bars grow from zero.
   M.inView(".chart", (fig) => {

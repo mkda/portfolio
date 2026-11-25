@@ -15,9 +15,7 @@
 <meta property="og:image" content="https://www.dellanna.pm/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="preload" href="fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -55,14 +53,15 @@
     <ul class="proof" role="list" style="margin-top:16px;max-width:520px"><li><b>−70%</b> Result chip with a number and context</li></ul>
   </section>
 
-  <section class="ds-block" aria-labelledby="d-h"><h2 id="d-h">Diagrams</h2><p>Boxes use .d-node, .d-accent for the system in focus, .d-gate for human decisions and .d-good for the outcome. Every connector starts and ends on a box. Each diagram has a wide version and an upright phone version, and the visible one carries the description.</p></section>
+  <section class="ds-block" aria-labelledby="d-h"><h2 id="d-h">Flows</h2><p>Processes are drawn as a rail of steps in reading order, built as an ordered list so screen readers get the same sequence. The rail fills in as you scroll using CSS scroll-driven animations; with reduced motion, or in browsers without support, it shows complete. Steps where I decide carry my logo; steps done by agents carry a dot.</p></section>
 </main>
-<footer class="wrap foot"><a href="./">Back to the portfolio</a></footer>
+<footer class="wrap foot"><span>© 2026 Mikael Dell'Anna</span><a href="./">Back to the portfolio</a><a href="privacy.html">Privacy and cookies</a><button type="button" class="linkish" data-cookie-settings>Cookie settings</button></footer>
 <script type="module">
 const meta=document.querySelector('meta[name="color-scheme"]');
 const sysDark=()=>matchMedia("(prefers-color-scheme: dark)").matches;
 const rendered=()=>meta.content==="light dark"?(sysDark()?"dark":"light"):meta.content;
 document.getElementById("theme")?.addEventListener("click",()=>{const t=rendered()==="dark"?"light":"dark",sys=sysDark()?"dark":"light";try{t===sys?localStorage.removeItem("color-scheme"):localStorage.setItem("color-scheme",t)}catch(e){}meta.content=t===sys?"light dark":t});
 </script>
+<script type="module" src="consent.js"></script>
 </body>
 </html>

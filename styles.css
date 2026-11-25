@@ -7,6 +7,10 @@
    See design.html for every token and component in use.
    ========================================================= */
 
+/* ---------- 0. Fonts (self-hosted, SIL Open Font License, see fonts/LICENSE.txt) ---------- */
+@font-face{font-family:"Geist";src:url("fonts/geist-variable.woff2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Geist Mono";src:url("fonts/geist-mono-variable.woff2") format("woff2");font-weight:100 900;font-display:swap}
+
 /* ---------- 1. Tokens ---------- */
 :root{
   --font-sans:"Geist",ui-sans-serif,system-ui,sans-serif;
@@ -225,7 +229,7 @@ p{margin:0}
 .theme-cols .chart{margin:0;align-self:start}
 @media(min-width:37.5em){
   .theme-block{background:var(--surface-container-low);border-radius:var(--corner-m);padding:var(--s-6);box-shadow:var(--elevation-1)}
-  .theme-block .diagram,.theme-block .chart{background:var(--surface)}
+  .theme-block .chart{background:var(--surface)}
 }
 @media(min-width:52.5em){.theme-block{padding:var(--s-7)}}
 @media(max-width:37.49em){
@@ -256,21 +260,86 @@ p{margin:0}
 .bar-val{font:500 var(--body-m) var(--font-mono);text-align:right;color:var(--on-surface)}
 .chart-note{margin-top:var(--s-3);color:var(--on-surface-variant);font:400 var(--body-s) var(--font-sans)}
 
-/* Diagram (outlined card; wide SVG plus a phone SVG) */
-.diagram{margin:var(--s-5) 0 0;background:var(--surface-container-low);border:1px solid var(--outline-variant);border-radius:var(--corner-m);padding:var(--s-4)}
-.diagram svg{display:block;width:100%;height:auto;font-family:var(--font-sans)}
-.diagram .d-phone{display:none;max-width:380px;margin:0 auto}
-@media(max-width:37.49em){.diagram .d-desk{display:none}.diagram .d-phone{display:block}}
-.diagram text{font-size:14px;font-weight:500;fill:var(--on-surface);text-anchor:middle}
-.diagram .d-sub{font-size:11.5px;font-weight:400;fill:var(--on-surface-variant)}
-.diagram .d-note{font-size:12px;font-weight:400;fill:var(--on-surface-variant);text-anchor:start}
-.d-node rect{fill:var(--surface-container-high);stroke:var(--outline-variant)}
-.d-accent rect{fill:var(--primary-container);stroke:var(--primary)}
-.d-gate rect{fill:var(--surface-container-low);stroke:var(--primary);stroke-width:2;stroke-dasharray:5 4}
-.d-good rect{fill:var(--tertiary-container);stroke:var(--tertiary)}
-.d-good text{fill:var(--on-tertiary-container)}
-.d-line path{fill:none;stroke:var(--outline);stroke-width:1.5}
-.d-arrow{fill:var(--outline)}
+/* Rail: a step-by-step flow that fills in as you scroll (scroll-driven, progressive) */
+.rail-fig{margin:var(--s-5) 0 0;padding:var(--s-5) var(--s-4);border:1px solid var(--outline-variant);border-radius:var(--corner-l);background:var(--surface)}
+@media(min-width:37.5em){.rail-fig{padding:var(--s-6)}}
+.rail-fig figcaption{margin-top:var(--s-4);font:400 var(--body-m) var(--font-sans);color:var(--on-surface-variant)}
+.rail{list-style:none;margin:0;padding:0;position:relative;display:grid}
+.rail::before,.rail::after{content:"";position:absolute;inset-inline-start:15px;inset-block:20px;inline-size:2px;background:var(--outline-variant);border-radius:2px}
+.rail::after{background:var(--primary);transform-origin:top}
+.stop{display:grid;grid-template-columns:32px 1fr;column-gap:var(--s-4);align-items:start;padding-block:var(--s-2);position:relative}
+.stop .dot,.stop .me{grid-column:1;justify-self:center;position:relative;z-index:1}
+.stop .dot{inline-size:16px;block-size:16px;margin-top:6px;border-radius:50%;border:2px solid var(--primary);background:var(--primary)}
+.stop .me{inline-size:32px;block-size:32px;margin-top:-2px;border-radius:var(--corner-s);box-shadow:0 0 0 4px var(--surface)}
+.stop.check .dot{inline-size:auto;block-size:auto;border:0;background:none;display:flex;gap:3px;margin-top:9px}
+.stop.check .dot i{inline-size:8px;block-size:8px;border-radius:50%;background:var(--primary)}
+.stop.done .dot{border-color:var(--tertiary);background:var(--tertiary)}
+.stop-body{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--s-1) var(--s-2)}
+.stop-name{font:500 var(--title-m) var(--font-sans);color:var(--on-surface)}
+.who{font:500 var(--label-m) var(--font-sans);padding:2px var(--s-2);border-radius:var(--corner-s);background:var(--surface-container-high);color:var(--on-surface-variant)}
+.stop.me .who{background:var(--primary);color:var(--on-primary)}
+.stop.done .who{background:var(--tertiary-container);color:var(--on-tertiary-container)}
+.stop-note{flex-basis:100%;font:400 var(--body-m) var(--font-sans);color:var(--on-surface-variant)}
+.ping{font:500 var(--label-m) var(--font-sans);color:var(--primary);padding:2px var(--s-2);border-radius:var(--corner-s);background:var(--primary-container)}
+.ping::before{content:"";display:inline-block;inline-size:6px;block-size:6px;border-radius:50%;background:currentColor;margin-inline-end:6px;vertical-align:middle}
+
+/* Pipeline runs left to right on wide windows */
+@media(min-width:52.5em){
+  .pipe .rail{grid-template-columns:repeat(8,1fr);column-gap:var(--s-2)}
+  .pipe .rail::before,.pipe .rail::after{inset-inline:6%;inset-block:15px auto;inline-size:auto;block-size:2px}
+  .pipe .rail::after{transform-origin:left}
+  .pipe .stop{grid-template-columns:1fr;row-gap:var(--s-3);justify-items:start}
+  .pipe .stop .dot,.pipe .stop .me{justify-self:start}
+  .pipe .stop-body{flex-direction:column;align-items:flex-start}
+  .pipe .stop-note{font:400 var(--body-s) var(--font-sans)}
+}
+
+/* RFID: item journey on the left, Digital Twin on the right */
+.twin-wrap{margin-top:var(--s-4);position:relative}
+.twin{position:relative;padding:var(--s-5);border-radius:var(--corner-l);background:var(--primary-container);color:var(--on-primary-container);border:1px solid var(--primary);overflow:hidden}
+.twin-name{font:400 var(--headline-s) var(--font-sans)}
+.twin-note{font:400 var(--body-m) var(--font-sans);margin-top:var(--s-1)}
+.twin-stream{font:400 var(--body-m) var(--font-sans);margin-top:var(--s-3)}
+.twin-stream b{font:400 var(--title-l) var(--font-sans);color:var(--primary)}
+.twin-pulse{position:absolute;inset-inline-end:var(--s-5);inset-block-start:var(--s-5);inline-size:12px;block-size:12px;border-radius:50%;background:var(--primary)}
+.twin-out{list-style:none;padding:0;margin:var(--s-4) 0 0;display:grid;gap:var(--s-3);grid-template-columns:1fr 1fr;position:relative}
+.twin-out li{position:relative;padding:var(--s-3) var(--s-4);border:1px solid var(--outline-variant);border-radius:var(--corner-m);background:var(--surface-container-low)}
+.twin-out li::before{content:"";position:absolute;inset-inline-start:50%;inset-block-start:calc(-1*var(--s-4) - 1px);block-size:var(--s-4);inline-size:2px;background:var(--primary)}
+.out-name{display:block;font:500 var(--title-s) var(--font-sans);color:var(--on-surface)}
+.rfid .twin-wrap::before{content:"";position:absolute;inset-inline-start:15px;inset-block-start:calc(-1*var(--s-4));block-size:var(--s-4);inline-size:2px;background:var(--primary)}
+@media(min-width:52.5em){
+  .rfid{display:grid;grid-template-columns:1.1fr 1fr;column-gap:var(--s-7);align-items:center}
+  .rfid .twin-wrap{margin-top:0}
+  .rfid .twin-wrap::before{inset-inline-start:calc(-1*var(--s-7));inset-block-start:50%;inline-size:var(--s-7);block-size:2px}
+  .rfid .stop-body{flex-wrap:nowrap}
+  .rfid .stop-note{flex-basis:auto}
+  .rfid .ping{margin-inline-start:auto;white-space:nowrap}
+  .rfid .stop-body{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"n p" "t t";column-gap:var(--s-3)}
+  .rfid .stop-name{grid-area:n}.rfid .ping{grid-area:p;justify-self:end}.rfid .stop-note{grid-area:t}
+}
+
+/* Scroll-driven reveal. Without support, or with reduced motion, everything shows complete. */
+@supports (animation-timeline: view()){
+  @media(prefers-reduced-motion:no-preference){
+    .rail-fig{timeline-scope:--rail}
+    .rail{view-timeline:--rail block}
+    .rail::after{animation:rail-fill linear both;animation-timeline:--rail;animation-range:entry 70% cover 62%}
+    .pipe .rail::after{animation-name:rail-fill-x}
+    .stop{animation:stop-lit linear both;animation-timeline:--rail;animation-range:cover calc(20% + var(--i)*5%) cover calc(26% + var(--i)*5%)}
+    .stop .dot,.stop .me{animation:dot-pop linear both;animation-timeline:--rail;animation-range:cover calc(20% + var(--i)*5%) cover calc(26% + var(--i)*5%)}
+    .stop.check .dot i{animation:dot-pop linear both;animation-timeline:--rail;animation-range:cover calc(20% + var(--i)*5%) cover calc(26% + var(--i)*5%)}
+    .stop.check .dot{animation:none}
+    .ping{animation:ping-in linear both;animation-timeline:--rail;animation-range:cover calc(24% + var(--i)*5%) cover calc(30% + var(--i)*5%)}
+    .twin-wrap{animation:stop-lit linear both;animation-timeline:--rail;animation-range:cover 45% cover 55%}
+    .twin-pulse{animation:pulse linear both;animation-timeline:--rail;animation-range:cover 30% cover 60%}
+  }
+}
+@keyframes rail-fill{from{scale:1 0}to{scale:1 1}}
+@keyframes rail-fill-x{from{scale:0 1}to{scale:1 1}}
+@keyframes stop-lit{from{opacity:.35;translate:0 6px}to{opacity:1;translate:0 0}}
+@keyframes dot-pop{from{scale:.6;filter:grayscale(1)}to{scale:1;filter:none}}
+@keyframes ping-in{from{opacity:0;translate:-8px 0}to{opacity:1;translate:0 0}}
+@keyframes pulse{0%,20%,40%,60%,80%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--primary) 50%,transparent)}10%,30%,50%,70%,90%{box-shadow:0 0 0 10px transparent}}
 
 /* Data table (4dp corner, outline-variant, 56dp header, title-small header labels) */
 .table-wrap{margin-top:var(--s-5);overflow-x:auto;border:1px solid var(--outline-variant);border-radius:var(--corner-xs);background:var(--surface-container-low)}
@@ -316,8 +385,19 @@ p{margin:0}
 .contact{background:var(--primary-container);color:var(--on-primary-container);padding:var(--section-y) 0}
 .contact .sec-title{color:var(--on-primary-container)}
 .contact .section-lede{color:var(--on-primary-container)}
-.foot{padding:28px var(--margin);color:var(--on-surface-variant);font:400 var(--body-m) var(--font-sans)}
-.foot a{color:var(--on-surface-variant)}
+.foot{padding:28px var(--margin);color:var(--on-surface-variant);font:400 var(--body-m) var(--font-sans);display:flex;flex-wrap:wrap;gap:var(--s-2) var(--s-5);align-items:center}
+.foot a,.linkish{color:var(--on-surface-variant)}
+.linkish{background:none;border:0;padding:0;font:inherit;text-decoration:underline;cursor:pointer}
+
+/* Consent banner: non-modal dialog, equal-weight choices */
+.consent[hidden]{display:none}
+.consent{position:fixed;inset:auto var(--s-4) var(--s-4);margin:0 auto;max-inline-size:36rem;padding:var(--s-5);border:1px solid var(--outline-variant);border-radius:var(--corner-xl);background:var(--surface-container-high);color:var(--on-surface);box-shadow:var(--elevation-1);z-index:30}
+.consent-title{font:400 var(--title-l) var(--font-sans)}
+.consent p{margin-top:var(--s-2);font:400 var(--body-m) var(--font-sans);color:var(--on-surface-variant)}
+.consent-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:var(--s-2);margin-top:var(--s-4)}
+@media(prefers-reduced-motion:no-preference){
+  .consent:not([hidden]){transition:opacity .25s ease,translate .25s ease;@starting-style{opacity:0;translate:0 16px}}
+}
 
 /* ---------- 5. Pages ---------- */
 /* Article (notes/) */
