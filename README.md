@@ -14,4 +14,4 @@ Settings → Pages → Source: "Deploy from a branch", branch `main`, folder `/ 
 
 ## Custom domain
 
-The site is served at https://dellanna.pm. The `CNAME` file holds the domain, and the `og:image` URLs point to it. DNS: apex A/AAAA records to the GitHub Pages IPs, `www` CNAME to `mkda.github.io`. Under Settings → Pages, keep the custom domain set and tick Enforce HTTPS.
+The site is served at https://www.dellanna.pm (GitHub redirects dellanna.pm to it). The `CNAME` file holds the domain, and the `og:image` URLs point to it. DNS: apex A/AAAA records to the GitHub Pages IPs, `www` CNAME to `mkda.github.io`. Under Settings → Pages, keep the custom domain set and tick Enforce HTTPS.
