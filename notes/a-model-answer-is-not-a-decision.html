@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="text-scale" content="scale">
 <meta name="robots" content="noindex, nofollow">
-<title>A model answer is not a decision · Mikael Dell'Anna</title>
+<title>The model advises, the rules decide · Mikael Dell'Anna</title>
 <meta name="description" content="What building an experimental AI trading platform taught me about evidence, abstention and authority boundaries.">
-<meta property="og:title" content="A model answer is not a decision">
+<meta property="og:title" content="The model advises, the rules decide">
 <meta property="og:description" content="What building an experimental AI trading platform taught me about evidence, abstention and authority boundaries.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://www.dellanna.pm/og.png">
@@ -22,23 +22,23 @@
 <a class="skip" href="#content">Skip to content</a>
 <header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" class="mark-bg"/><path class="mark-line" d="M8 23V9l8 9 8-9v14"/><circle class="mark-dot" cx="8" cy="23" r="2.2"/><circle class="mark-dot" cx="8" cy="9" r="2.2"/><circle class="mark-hub" cx="16" cy="18" r="2.8"/><circle class="mark-dot" cx="24" cy="9" r="2.2"/><circle class="mark-dot" cx="24" cy="23" r="2.2"/></svg><span class="brand-name">dellanna<span>.pm</span></span></a></div></header>
 <main class="wrap article" id="content">
-  <h1>A model answer is not a decision</h1>
+  <h1>The model advises, the rules decide</h1>
   <p class="meta">Mikael Dell'Anna · <time datetime="2026-10-14">14 October 2026</time> · 5 min read</p>
   <figure class="art"><img src="../art/model-answer.svg" alt="" width="640" height="360" fetchpriority="high"></figure>
 
-  <p>I've been building JEV Trader, an experimental platform for autonomous crypto research and trading. The goal was never a clever model. It was a product question: can AI help with market analysis and routine decisions while permissions, risk controls, accounting and execution stay under explicit software control? It's a research platform, not a proven trading system, and that distinction is the whole point of this note.</p>
+  <p>I've been building JEV Trader, an experimental platform for autonomous crypto research and trading. The goal was a product question, more than a clever model: can AI help with market analysis and routine decisions while permissions, risk controls, accounting and execution stay under explicit software control? It's a research platform for testing that question, and the lessons below come from treating it that way.</p>
 
   <h2>1. Separate interpretation from authority</h2>
-  <p>The work is split across named components: asset discovery, ownership and wallet evidence, market behaviour, execution quality, and a final set of checks. The AI layer returns a structured direction and a confidence level. It doesn't set permissions, calculate the final position size or submit orders. Code-enforced gates decide whether any action is allowed. Models help interpret evidence; software stays responsible for actions and recovery.</p>
+  <p>The work is split across named components: asset discovery, ownership and wallet evidence, market behaviour, execution quality, and a final set of checks. The AI layer returns a structured direction and a confidence level. Permissions, final position size and order submission all stay with code. Code-enforced gates decide whether any action is allowed. Models help interpret evidence; software stays responsible for actions and recovery.</p>
 
   <h2>2. Evidence quality needs its own design</h2>
   <p>Market, derivatives, sentiment and on-chain inputs are collected with their source, timestamp and freshness, and validated before use. Research reports cite the evidence they're built on. Whether an analysis is usable depends less on the model than on whether you can say where each input came from and how old it is.</p>
 
   <h2>3. Abstention is a capability</h2>
-  <p>Invalid, missing, contradictory or low-confidence evidence is designed to end in "no decision". A system that can say "insufficient evidence" is more dependable than one that always produces a confident answer, and it's much easier to trust.</p>
+  <p>Invalid, missing, contradictory or low-confidence evidence is designed to end in a clear "wait for more evidence". A system that can say "insufficient evidence" is more dependable than one that always produces a confident answer, and it's much easier to trust.</p>
 
   <h2>4. Design the evaluation before launch</h2>
-  <p>I set up evaluation at several levels so that a promising answer or a good backtest couldn't be mistaken for readiness:</p>
+  <p>I set up evaluation at several levels so that readiness is proven step by step, beyond a promising answer or a good backtest:</p>
   <ul>
     <li>Regression and reliability tests for execution rules, risk gates, persistence, concurrency, outages and recovery.</li>
     <li>Forecast comparisons between TimesFM and a simple baseline that is labelled as a baseline, using point-in-time inputs and keeping missing data missing.</li>
@@ -46,13 +46,13 @@
     <li>Prospective observation, which gathers new evidence over time before a candidate can be considered.</li>
     <li>Acceptance checks that tie evidence to a specific model revision, rule and data boundary, and reject anything stale or mismatched.</li>
   </ul>
-  <p>These checks prove the software behaves and the research is disciplined. They don't prove the system predicts markets, and I don't claim it does.</p>
+  <p>These checks prove the software behaves and the research is disciplined. That is exactly what I claim for it, and the claim stops there.</p>
 
   <h2>5. Recovery is part of automation</h2>
   <p>Providers go down and data goes stale. The platform keeps its state in a database, retries within limits, monitors its own health and runs under a separate supervisor. When evidence is incomplete or monitoring is unhealthy, new entries are blocked while protective processes keep running. Silent fallbacks are the dangerous option.</p>
 
   <h2>6. Trust depends on legibility</h2>
-  <p>The dashboard shows system health, the state of the evidence and why a workflow is blocked, not just the latest recommendation. A conversational interface answers the same questions. People trust automation they can read.</p>
+  <p>The dashboard shows system health, the state of the evidence and why a workflow is waiting, alongside the latest recommendation. A conversational interface answers the same questions. People trust automation they can read.</p>
 
   <p>The same pattern fits any automation that takes action, such as refunds, stock transfers or account changes. Let AI interpret, let code decide what's allowed, design for abstention and recovery, and evaluate before you trust.</p>
 

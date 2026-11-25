@@ -28,20 +28,20 @@
 
   <p>For years my job in conversion work was to define the metric, instrument it, run the test and decide. In telecom that meant A/B tests across subscriptions, prepaid, internet and devices, from checkout and ID checks to activation, upgrades and renewals, with tools like Optimizely and Adobe Target, and Hotjar, Clarity and Medallia to understand why. AI products need the same discipline, with one difference: the output is probabilistic, so you have to decide in advance which mistakes are acceptable. That decision lives in the eval set.</p>
 
-  <h2>Start from the metric, not the model</h2>
+  <h2>Start from the metric</h2>
   <p>I write three things down before choosing any model:</p>
   <ul>
     <li><b>The outcome metric:</b> what success means for the user or the business.</li>
     <li><b>Leading indicators:</b> what moves first if we're on track.</li>
-    <li><b>Guardrails:</b> what must not get worse, such as cost, latency, error rate or compliance.</li>
+    <li><b>Guardrails:</b> what must stay healthy, such as cost, latency, error rate or compliance.</li>
   </ul>
   <p>For AI work I add one more: <b>cost per successful task</b>. Services charge for wrong outputs too, so price per call is misleading.</p>
 
   <h2>Build the eval set from your own data</h2>
-  <p>In my animation studio, every model is tested on the studio's own characters and scenes, never on the vendor's demo. The set is small, fixed and reused, so results stay comparable over time. Before using any data I check five things: where it comes from, how fresh it is, whether it covers the hard cases, whether it's labelled, and whether we're allowed to use it.</p>
+  <p>In my animation studio, every model is tested on the studio's own characters and scenes, the material it will actually work on. The set is small, fixed and reused, so results stay comparable over time. Before using any data I check five things: where it comes from, how fresh it is, whether it covers the hard cases, whether it's labelled, and whether we're allowed to use it.</p>
 
   <h2>Score automatically where you can</h2>
-  <p>Most of my scorers are code, not opinion:</p>
+  <p>Most of my scorers are code:</p>
   <ul>
     <li>A staging checker and a continuity checker for every shot.</li>
     <li>A join checker that counts flash frames and skips between clips.</li>
@@ -51,8 +51,8 @@
   <p>Human judgment is still needed, but it comes last and focuses on taste, story and fit.</p>
 
   <h2>Decide with thresholds</h2>
-  <p>A model is adopted only if it passes the set. Two video models passed none of six test clips between them. The one now on trial passed three of three at a lower cost per clip than the current choice. In voice, one model had about half the pronunciation errors of my pick (11% against 24%), but its licence was non-commercial only, which failed a guardrail before quality mattered.</p>
-  <p>Sometimes the best model isn't a model. For one recurring drawing defect, an AI edit kept 4 of 15 drawings clean. A small script fixed all 15 at no cost.</p>
+  <p>A model is adopted only if it passes the set. The video model now on trial passed three of three test clips at a lower cost per clip than the current choice. In voice, one model had about half the pronunciation errors of my pick (11% against 24%), but its licence was non-commercial only, which failed a guardrail before quality mattered.</p>
+  <p>Sometimes the best model is a script. For one recurring drawing defect, an AI edit kept 4 of 15 drawings clean. A small script fixed all 15 for free.</p>
 
   <h2>Roll out like an experiment</h2>
   <p>Offline evals tell you whether something can work. Production tells you whether it does. I move from offline evals to shadow mode, then a canary, then a full rollout, with ship, hold and rollback thresholds agreed in advance. After every model or vendor update, I rerun the set before calling the update done.</p>

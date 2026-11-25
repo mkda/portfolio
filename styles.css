@@ -103,7 +103,6 @@ p,li,dd,td{text-wrap:pretty}
 .skip{position:absolute;inset-inline-start:var(--s-2);inset-block-start:var(--s-2);z-index:20;padding:var(--s-2) var(--s-4);border-radius:var(--corner-full);background:var(--primary);color:var(--on-primary);font:500 var(--label-l) var(--font-sans);translate:0 -200%}
 .skip:focus-visible{translate:0 0}
 section[tabindex="-1"]:focus{outline:none}
-@media(pointer:coarse){.btn,.tabs a{min-block-size:48px}.theme{min-inline-size:48px;min-block-size:48px}}
 a{color:var(--primary)}
 h1,h2,h3,h4{margin:0;font-weight:400;letter-spacing:-.01em}
 p{margin:0}
@@ -546,4 +545,21 @@ p{margin:0}
   html[data-flow="4"] .stop-note{font:400 var(--body-s) var(--font-sans)}
   html[data-flow="4"] .rfid .stop:last-child{grid-column:1/-1}
   html[data-flow="4"] .rfid .twin-wrap::before{display:none}
+}
+
+/* Touch: 48dp targets on coarse pointers (kept last so it wins over component sizes) */
+@media(pointer:coarse){
+  .btn,.tabs a,.ptabs [role=tab]{min-block-size:48px}
+  .theme{min-inline-size:48px;min-block-size:48px}
+  .brand{min-block-size:48px}
+  .foot a,.foot .linkish,.consent-link{display:inline-flex;align-items:center;min-block-size:48px}
+  .foot{column-gap:var(--s-4)}
+}
+*{-webkit-tap-highlight-color:transparent}
+/* Writing list on phones: artwork on top, full-width text below */
+@media(max-width:37.49em){
+  .note-link{grid-template-columns:1fr 24px;row-gap:var(--s-1);padding-block:var(--s-4)}
+  .note-link>*{grid-column:1}
+  .note-link .note-art{grid-column:1/-1;grid-row:auto;inline-size:100%;margin-bottom:var(--s-2)}
+  .note-link::after{grid-column:2;grid-row:2/span 3}
 }
