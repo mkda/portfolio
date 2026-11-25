@@ -58,10 +58,14 @@
   <section id="work" tabindex="-1" class="band">
     <div class="wrap">
       <h2 class="sec-title">Three problems I'm good at</h2>
+      <div class="ptabs" role="tablist" aria-label="Problems" hidden>
+        <button type="button" role="tab" id="tab-ai" aria-controls="p-ai" aria-selected="true">AI agents</button>
+        <button type="button" role="tab" id="tab-data" aria-controls="p-data" aria-selected="false" tabindex="-1">Product data</button>
+        <button type="button" role="tab" id="tab-growth" aria-controls="p-growth" aria-selected="false" tabindex="-1">Growth</button>
+      </div>
 
-      <article class="theme-block">
+      <article class="theme-block" id="p-ai" role="tabpanel" aria-labelledby="tab-ai">
         <div class="theme-head">
-          <span class="cap-n">A</span>
           <div>
             <h3>Putting AI to work without losing control</h3>
             <p class="theme-lede">Most AI pilots fail between the demo and daily use. I design the part around the model: what it may decide, what code decides, how errors get caught, and what each good result costs.</p>
@@ -95,9 +99,8 @@
         </figure>
       </article>
 
-      <article class="theme-block">
+      <article class="theme-block" id="p-data" role="tabpanel" aria-labelledby="tab-data">
         <div class="theme-head">
-          <span class="cap-n">B</span>
           <div>
             <h3>Connecting physical products to data</h3>
             <p class="theme-lede">Hardware, partners and legacy systems all have to agree on what a single item is and where it is. I build the platform that makes them agree, and treat its APIs and events as products other teams can rely on.</p>
@@ -135,9 +138,8 @@
         </figure>
       </article>
 
-      <article class="theme-block">
+      <article class="theme-block" id="p-growth" role="tabpanel" aria-labelledby="tab-growth">
         <div class="theme-head">
-          <span class="cap-n">C</span>
           <div>
             <h3>Growth that holds up in front of finance</h3>
             <p class="theme-lede">I like growth work that can be proved twice: once in the funnel, and once in the business case that paid for it.</p>
@@ -277,6 +279,17 @@ document.getElementById("theme").addEventListener("click",()=>{
   meta.content=target===system?"light dark":target;
 });
 addEventListener("storage",e=>{if(e.key==="color-scheme")meta.content=e.newValue??"light dark"});
+
+// Problem tabs (M3 primary tabs). Without JavaScript all three panels stay visible.
+{
+  const list=document.querySelector(".ptabs"),tabs=[...list.querySelectorAll("[role=tab]")];
+  const select=(t,focus)=>{tabs.forEach(x=>{const on=x===t;x.setAttribute("aria-selected",on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute("aria-controls")).hidden=!on});if(focus)t.focus()};
+  list.hidden=false;select(tabs[0]);
+  list.addEventListener("click",e=>{const t=e.target.closest("[role=tab]");if(t)select(t)});
+  list.addEventListener("keydown",e=>{const i=tabs.indexOf(document.activeElement);if(i<0)return;
+    const n={ArrowRight:i+1,ArrowLeft:i-1,Home:0,End:tabs.length-1}[e.key];if(n===undefined)return;
+    e.preventDefault();select(tabs[(n+tabs.length)%tabs.length],true)});
+}
 
 // Accordion starts closed on compact and medium windows.
 if(matchMedia("(max-width:52.49em)").matches)document.querySelectorAll("details.fold").forEach(d=>d.open=false);
