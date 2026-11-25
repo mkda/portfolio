@@ -6,6 +6,8 @@ Static site for GitHub Pages: plain HTML and CSS, no build step, same setup as t
 - `styles.css`: light and dark themes
 - `og.png`: link preview image
 - `notes/`: short articles
+- `site.js`: optional motion (Motion for reveals and number tweens, Anime.js for diagram lines and chart bars); respects reduced-motion and the page works without it
+- `vendor/`: self-hosted Motion 14.11.1 and Anime.js 4.5.0 (MIT), so no CDN is needed
 - `.nojekyll`: serve files as they are
 
 ## Publish

@@ -168,6 +168,18 @@
     <p class="eyebrow">02 · From my studio to your automation</p>
     <h2>What running an AI studio teaches any automation initiative</h2>
     <p class="section-lede">My studio is a small but complete AI operation: agents, paid models, a budget, a schedule and an audience. Each lesson below came with a measured result, and each one carries over to retail operations, telecom, customer service and internal processes.</p>
+    <figure class="chart" aria-label="Bar chart: the same image model through two providers. Provider A costs $0.09 per image and $0.12 per usable drawing. Provider B costs $0.14 per image and $0.18 per usable drawing.">
+      <figcaption><b>Price per call hides the real cost.</b> The same image model, bought through two providers.</figcaption>
+      <div class="bars">
+        <div class="bar-group">Provider A</div>
+        <div class="bar-row"><span class="bar-label">per image</span><span class="bar-track"><span class="bar muted" style="--v:.45"></span></span><span class="bar-val">$0.09</span></div>
+        <div class="bar-row"><span class="bar-label">per usable drawing</span><span class="bar-track"><span class="bar" style="--v:.6"></span></span><span class="bar-val">$0.12</span></div>
+        <div class="bar-group">Provider B</div>
+        <div class="bar-row"><span class="bar-label">per image</span><span class="bar-track"><span class="bar muted" style="--v:.7"></span></span><span class="bar-val">$0.14</span></div>
+        <div class="bar-row"><span class="bar-label">per usable drawing</span><span class="bar-track"><span class="bar" style="--v:.9"></span></span><span class="bar-val">$0.18</span></div>
+      </div>
+      <p class="chart-note">Per usable drawing = price ÷ pass rate. Source: my studio's test log, November 2026.</p>
+    </figure>
     <div class="table-wrap">
       <table class="parallels">
         <thead><tr><th>In the studio</th><th>Measured result</th><th>In your organisation</th></tr></thead>
@@ -289,5 +301,7 @@
   document.getElementById("y").textContent=new Date().getFullYear();
 })();
 </script>
+<script src="vendor/motion-14.11.1.min.js" defer></script>
+<script type="module" src="site.js"></script>
 </body>
 </html>

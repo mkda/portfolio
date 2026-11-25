@@ -208,3 +208,19 @@ nav a:hover{color:var(--ink)}
 .article th,.article td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;color:var(--ink-2)}
 .article th{color:var(--ink);font-weight:600}
 .article .callout{background:var(--raised);border-radius:12px;padding:16px 18px;margin:20px 0}
+
+.chart{margin:28px 0 0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.chart figcaption{color:var(--ink-2)}
+.chart figcaption b{color:var(--ink)}
+.bars{display:grid;gap:8px;margin-top:16px}
+.bar-group{font-family:"Geist Mono",monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin-top:8px}
+.bar-row{display:grid;grid-template-columns:140px 1fr 56px;align-items:center;gap:12px}
+@media(max-width:520px){.bar-row{grid-template-columns:110px 1fr 48px;gap:8px}}
+.bar-label{font-size:.88rem;color:var(--ink-2)}
+.bar-track{height:14px;background:var(--raised);border-radius:4px;overflow:hidden}
+.bar{display:block;height:100%;width:calc(var(--v)*100%);background:var(--accent);border-radius:4px;transform-origin:left center}
+.bar.muted{background:var(--line-strong)}
+.bar-val{font-family:"Geist Mono",monospace;font-size:.88rem;text-align:right;color:var(--ink)}
+.chart-note{margin-top:12px;color:var(--ink-3);font-size:.82rem}
+.card,.note-link{transition:border-color .15s ease,background-color .15s ease}
+.card:hover{border-color:var(--line-strong)}
