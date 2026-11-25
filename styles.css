@@ -522,49 +522,21 @@ p{margin:0}
 .bar-val{white-space:nowrap}
 @media(max-width:37.49em){.bar-row{grid-template-columns:96px 1fr 60px}}
 
-/* Animated visuals for the three tabs */
-.viz{margin:var(--s-5) 0 0;background:var(--surface-container-low);border:1px solid var(--outline-variant);border-radius:var(--corner-m);padding:var(--s-5) var(--s-4)}
-@media(min-width:37.5em){.viz{padding:var(--s-5)}}
-.viz figcaption{color:var(--on-surface-variant);font:400 var(--body-m) var(--font-sans)}
-.viz figcaption b{color:var(--on-surface);font-weight:500}
-.viz-svg{display:block;inline-size:100%;max-inline-size:560px;block-size:auto;margin:var(--s-4) auto 0;overflow:visible}
-.viz-k{fill:var(--on-surface-variant);font:400 11px var(--font-sans);color:var(--on-surface-variant)}
-.viz-t{fill:var(--on-primary-container);font:500 16px var(--font-sans)}
-.viz-big{fill:var(--secondary);font:400 26px var(--font-sans)}
-/* AI */
-.ai-band{fill:var(--surface-container-highest)}
-.ai-dot{fill:var(--outline)}
-.ai-flow{stroke:var(--outline-variant);stroke-width:2;stroke-dasharray:3 5}
-.ai-gate{transform-box:fill-box;transform-origin:center}
-/* Data */
-.twin-box{fill:var(--primary-container);stroke:var(--primary)}
-.d-tick{fill:var(--primary);opacity:.15;transform-box:fill-box;transform-origin:center}
-.d-path{stroke:var(--outline-variant);stroke-width:3;stroke-linecap:round}
-.d-ring{fill:none;stroke:var(--primary);stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center}
-.d-core{fill:var(--outline)}
-.d-link{stroke:var(--primary);stroke-width:2;stroke-dasharray:90;stroke-dashoffset:90;opacity:0}
-.d-item{fill:var(--secondary);stroke:var(--surface-container-low);stroke-width:3}
-/* Growth */
-.g-below{fill:color-mix(in srgb,var(--outline) 8%,transparent)}
-.g-axis{stroke:var(--outline);stroke-width:1.5}
-.g-neg{fill:var(--surface-container-highest);stroke:var(--outline-variant)}
-.g-pos{fill:var(--secondary-container);stroke:var(--secondary)}
-.g-val{fill:var(--on-surface);font:500 11px var(--font-mono)}
-.g-line{fill:none;stroke:var(--on-surface-variant);stroke-width:1.5;stroke-dasharray:2 4}
-.g-be line{stroke:var(--secondary);stroke-width:2}
-.g-be rect{fill:var(--secondary)}
-.g-be text{fill:var(--surface);font:500 11px var(--font-sans)}
-/* Waffles: one square per unit */
-.waffle-pair{margin-top:var(--s-5);display:grid;gap:var(--s-2)}
-.waffle-pair>.viz-k{font:500 12px/1.4 var(--font-sans)}
-.waffle-row{display:grid;grid-template-columns:7.5rem 1fr 2.5rem;align-items:center;gap:var(--s-2)}
-.w-label{font:400 var(--body-s) var(--font-sans);color:var(--on-surface-variant)}
-.w-val{font:500 var(--body-m) var(--font-mono);text-align:end}
-.waffle{display:flex;flex-wrap:wrap;gap:3px}
-.waffle i{inline-size:8px;block-size:8px;border-radius:2px;background:var(--outline)}
-.w2 i{inline-size:16px;block-size:16px;border-radius:4px;background:var(--primary)}
-.w100{display:grid;grid-template-columns:repeat(20,1fr);gap:3px;max-inline-size:360px}
-.w100 i{inline-size:auto;aspect-ratio:1;background:var(--primary)}
-.w-sum{font:400 var(--body-m) var(--font-sans);color:var(--on-surface-variant)}
-.amber-n{color:var(--secondary);font-weight:500}
-@media(prefers-reduced-motion:reduce){.d-link{stroke-dashoffset:0;opacity:1}.d-tick{opacity:1}}
+/* Hand-drawn animated charts (viz.js): ink and marker on dotted paper */
+@font-face{font-family:"Caveat";src:url("fonts/caveat-400.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Caveat";src:url("fonts/caveat-700.woff2") format("woff2");font-weight:700;font-display:swap}
+.viz.sketch{margin:var(--s-5) 0 0;padding:var(--s-4) var(--s-3) var(--s-3);border-radius:var(--corner-m);border:1px solid #e7e1d7;color:#2b2b2b;
+  background:radial-gradient(circle,#d8d1c5 .9px,transparent 1.2px) 0 0/16px 16px,#FAF8F5;box-shadow:0 1px 2px rgb(60 40 20/.08),0 6px 18px -8px rgb(60 40 20/.18)}
+.viz.sketch figcaption{position:absolute!important;inline-size:1px;block-size:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.viz.sketch .chart-note{color:#5a554e;font:400 var(--body-s) var(--font-sans);padding-inline:var(--s-2)}
+.viz-svg{display:block;inline-size:100%;max-inline-size:560px;block-size:auto;margin:0 auto;overflow:visible}
+.hand{font-family:"Caveat","Patrick Hand","Comic Neue",cursive;transform-box:fill-box;transform-origin:left bottom}
+.marker{mix-blend-mode:multiply;opacity:.62}
+/* Boiling line: three copies of each stroke swap at 12 fps */
+.boil>g{opacity:0;animation:boil .25s step-end infinite}
+.boil>g:nth-child(2){animation-delay:-.0833s}
+.boil>g:nth-child(3){animation-delay:-.1667s}
+@keyframes boil{0%{opacity:1}33.33%{opacity:0}100%{opacity:0}}
+.viz.sketch:not(.in-view) .boil>g{animation-play-state:paused}
+.boil path{stroke-dasharray:1 1}
+@media(prefers-reduced-motion:reduce){.boil>g{animation:none;opacity:0}.boil>g:first-child{opacity:1}}

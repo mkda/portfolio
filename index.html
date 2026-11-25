@@ -16,6 +16,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/caveat-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -87,25 +88,9 @@
             <p class="chart-note">Usable cost = price ÷ pass rate. Choosing on it cut a third off every usable drawing.</p>
           </figure>
         </div>
-        <figure class="viz viz-ai" data-viz="ai">
+        <figure class="viz sketch" data-viz="ai">
           <figcaption><b>Machines check first, so people review less.</b> One episode in the studio.</figcaption>
-          <svg class="viz-svg" viewBox="0 0 360 250" role="img" aria-label="173 issues fall into automated checks for staging, continuity and lip-sync. None are left for the person at the final gate.">
-            <text class="viz-k" x="10" y="16">Issues raised while agents write, draw, animate and voice</text>
-            <g class="ai-drops"></g>
-            <rect class="ai-band" x="10" y="96" width="340" height="62" rx="12"/>
-            <text class="viz-k" x="22" y="114">Automated checks · staging · continuity · lip-sync</text>
-            <g class="ai-caught"></g>
-            <text class="viz-big ai-count" x="338" y="150" text-anchor="end">173</text>
-            <path class="ai-flow" d="M180 162v34"/>
-            <svg class="ai-gate" x="160" y="200" width="40" height="40" viewBox="0 0 32 32"><path class="mark-m" d="M3.68 22.66V15.49a6.16 6.16 0 0 1 12.32 0V22.66M16.00 15.49a6.16 6.16 0 0 1 12.32 0V15.49"/><rect x="25.16" y="18.83" width="6.32" height="6.32" rx="1.49" class="mark-sq"/></svg>
-            <text class="viz-k" x="206" y="214">Left for a person to fix</text>
-            <text class="viz-big" x="206" y="238">0</text>
-          </svg>
-          <div class="waffle-pair">
-            <p class="viz-k">Review rounds for one episode, same final quality</p>
-            <div class="waffle-row"><span class="w-label">Heavier review loop</span><span class="waffle w84" aria-hidden="true"></span><span class="w-val">84</span></div>
-            <div class="waffle-row"><span class="w-label">Two human gates</span><span class="waffle w2" aria-hidden="true"></span><span class="w-val">2</span></div>
-          </div>
+          <svg class="viz-svg" viewBox="0 0 360 330" role="img" aria-label="A hand-drawn chart. Automated checks caught 173 issues and left 0 for a person to fix. A heavier review loop took 84 rounds; two human gates took 2, with the same final quality."></svg>
         </figure>
       </article>
 
@@ -131,23 +116,9 @@
             <li><b>$200K+</b> a year projected savings from the first version of in-house serialisation</li>
           </ul>
         </div>
-        <figure class="viz viz-data" data-viz="data">
+        <figure class="viz sketch" data-viz="data">
           <figcaption><b>Every read lands in one record.</b> More than 40 million items a year, each read many times along the way.</figcaption>
-          <svg class="viz-svg" viewBox="0 0 360 230" role="img" aria-label="An item moves through the supply chain, a distribution warehouse, a store and a customer's QR scan. Each read sends an event to the same Digital Twin record, which the ERP also reads.">
-            <rect class="twin-box" x="10" y="10" width="340" height="58" rx="14"/>
-            <text class="viz-t" x="26" y="36">Digital Twin</text>
-            <text class="viz-k" x="26" y="54">One record per item · the ERP reads it too</text>
-            <g class="twin-ticks"></g>
-            <g class="d-links"></g>
-            <path class="d-path" d="M30 170H330"/>
-            <g class="d-stations"></g>
-            <circle class="d-item" r="9" cx="30" cy="170"/>
-          </svg>
-          <div class="waffle-pair">
-            <p class="viz-k">Manual interventions, before and after live events</p>
-            <div class="waffle w100" aria-hidden="true"></div>
-            <p class="w-sum"><b class="amber-n">−70%</b> manual work · <b class="amber-n">&gt;99.9%</b> of items traceable across 100+ stores</p>
-          </div>
+          <svg class="viz-svg" viewBox="0 0 360 340" role="img" aria-label="A hand-drawn diagram. An item is read in the supply chain, at the warehouse, in the store and by the customer through a QR code. Every read goes into the same Digital Twin record, which the ERP reads too. Manual interventions fell from 100 to 30, and more than 99.9% of items are traceable across 100+ stores."></svg>
         </figure>
       </article>
 
@@ -170,15 +141,9 @@
             <li><b>130</b> stores covered by a 3-year RFID business case</li>
           </ul>
         </div>
-        <figure class="viz viz-growth" data-viz="growth">
+        <figure class="viz sketch" data-viz="growth">
           <figcaption><b>A business case shows when the money comes back.</b> Illustrative investment, discounted at 8%.</figcaption>
-          <svg class="viz-svg" viewBox="0 0 360 240" role="img" aria-label="Cumulative value in today's money: minus 500K in year 0, minus 361K in year 1, minus 147K in year 2, plus 91K in year 3 where it breaks even, plus 312K in year 4.">
-            <rect class="g-below" x="10" y="120" width="340" height="112" rx="0"/>
-                        <line class="g-axis" x1="10" x2="350" y1="120" y2="120"/>
-            <g class="g-bars"></g>
-            <path class="g-line" d=""/>
-            <g class="g-be"><line x1="0" x2="0" y1="22" y2="120"/><rect x="-132" y="10" width="126" height="24" rx="12"/><text x="-69" y="27" text-anchor="middle">Break-even, year 3</text></g>
-          </svg>
+          <svg class="viz-svg" viewBox="0 0 360 300" role="img" aria-label="A hand-drawn chart of cumulative value in today's money: minus 500K in year 0, minus 361K in year 1, minus 147K in year 2, plus 91K in year 3 where it breaks even, and plus 312K in year 4."></svg>
           <p class="chart-note">The same method backed a three-year RFID case for 130 stores. Example numbers from the note on discount rates.</p>
         </figure>
       </article>
