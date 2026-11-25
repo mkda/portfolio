@@ -61,7 +61,7 @@
         <div class="cap-head"><span class="cap-n">01</span><h3>Measure what matters, then test it</h3></div>
         <div class="cap-body">
           <div>
-            <p>I start with the outcome metric, then the leading indicators and guardrails around it, and write them into a tracking plan before anything ships. Dashboards come after the questions, not before. For AI features the same discipline becomes evals: a fixed test set from your own data, automated scorers, a pass threshold, and cost per successful result instead of cost per call.</p>
+            <p>I start with the outcome metric, then the leading indicators and guardrails around it, and write them into a tracking plan before anything ships. Dashboards come after the questions, not before. For AI features the same discipline becomes evals: a fixed test set from your own data, automated scorers, a pass threshold, and cost per successful result instead of cost per call. Where hindsight can fool you, I use point-in-time data, sealed holdouts and prospective observation before anything counts as ready.</p>
             <ul class="tags"><li>KPI trees &amp; tracking plans</li><li>Looker</li><li>A/B testing</li><li>Optimizely · Adobe Target</li><li>Hotjar · Clarity · Medallia</li><li>Eval sets &amp; scorers</li><li>Cost per usable result</li></ul>
           </div>
           <ul class="proof">
@@ -137,8 +137,8 @@
         <div class="cap-head"><span class="cap-n">05</span><h3>Put AI to work, with guardrails</h3></div>
         <div class="cap-body">
           <div>
-            <p>AI output is probabilistic, so the product question is which errors are acceptable and how the system catches the rest. I design agent workflows with an orchestrator and specialised agents, automated checks before any human, approval gates only where judgment is needed, spending caps, and a rule that every update is revalidated and monitored before it counts as done. I choose models by testing them on our own data, and check their licences before they reach production.</p>
-            <ul class="tags"><li>Agent orchestration</li><li>Human-in-the-loop gates</li><li>LLMs &amp; prompting</li><li>LoRA fine-tuning</li><li>RAG</li><li>Time-series forecasting</li><li>Claude Code</li></ul>
+            <p>AI output is probabilistic, so the product question is which errors are acceptable and how the system catches the rest. I design agent workflows with an orchestrator and specialised agents, automated checks before any human, approval gates only where judgment is needed, spending caps, and a rule that every update is revalidated and monitored before it counts as done. I choose models by testing them on our own data, and check their licences before they reach production. Model output informs a decision but never acts alone: structured outputs, evidence with source and freshness, and abstention when the evidence isn't good enough.</p>
+            <ul class="tags"><li>Agent orchestration</li><li>Human-in-the-loop gates</li><li>LLMs &amp; prompting</li><li>LoRA fine-tuning</li><li>RAG</li><li>Structured outputs</li><li>Abstention</li><li>Time-series forecasting</li><li>Claude Code</li></ul>
           </div>
           <ul class="proof">
             <li><b>6</b> episodes in <b>6</b> languages produced by agents, with people deciding only at two gates</li>
@@ -197,10 +197,10 @@
           <p class="result"><b>6</b> episodes in <b>6</b> languages · <b>~18</b> Shorts · <b>3</b> livestreams a day</p>
         </article>
         <article class="card">
-          <span class="pill">Prototype</span>
-          <h3>Multi-agent market research and risk</h3>
-          <p>A Python system with separate research, validation and risk agents, using exchange data and TimesFM time-series forecasts. Trading is off by default and runs only after validation and risk checks pass.</p>
-          <p class="result">Guardrails first: no action without two independent checks</p>
+          <span class="pill">Experimental</span>
+          <h3>JEV Trader: AI research and trading platform</h3>
+          <p>Brings market, derivatives, sentiment and on-chain signals, cited research and TimesFM forecasts into one traceable workflow. Five components split the work, from asset discovery to final checks. AI interprets the evidence; deterministic software owns permissions, position sizing, accounting and orders.</p>
+          <p class="result">Abstains when evidence is missing, stale, contradictory or low-confidence. Evaluated with point-in-time data, sealed holdouts and prospective observation.</p>
         </article>
         <article class="card">
           <span class="pill">Pre-release</span>
@@ -225,6 +225,11 @@
         <span class="pill">November 2026 · 6 min read</span>
         <h3>Evals for product managers</h3>
         <p>If your product uses AI, the eval set is part of the spec. How I build one, score it and decide what ships.</p>
+      </a>
+      <a class="note-link" href="notes/a-model-answer-is-not-a-decision.html">
+        <span class="pill">October 2026 · 5 min read</span>
+        <h3>A model answer is not a decision</h3>
+        <p>What building an experimental AI trading platform taught me about evidence, abstention and authority boundaries.</p>
       </a>
       <a class="note-link" href="notes/platform-pm-lessons-from-rfid.html">
         <span class="pill">April 2026 · 6 min read</span>
