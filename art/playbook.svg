@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t"><title id="t">Frames from an animation studio become business documents, checked by a machine first</title><style>.l{fill:none;stroke:#8597a1;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.f{fill:#8597a1;fill-opacity:.16;stroke:#8597a1;stroke-width:3;stroke-linejoin:round}.t{fill:#8597a1}.d{stroke-dasharray:2 9}.b{fill:#3b78e7}.bl{fill:none;stroke:#3b78e7;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.w{fill:none;stroke:#fff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+<rect class="f" x="40" y="70" width="230" height="150" rx="8"/>
+<path class="l" d="M40 98h230M40 192h230"/><path class="l d" d="M56 84h200M56 206h200"/>
+<rect class="l" x="60" y="112" width="58" height="66" rx="4"/><rect class="l" x="126" y="112" width="58" height="66" rx="4"/><rect class="l" x="192" y="112" width="58" height="66" rx="4"/>
+<path class="l" d="M68 170l16-20 12 12 8-8 10 16M134 170l16-20 12 12 8-8 10 16M200 170l16-20 12 12 8-8 10 16"/>
+<path class="l d" d="M290 150h60"/><path class="l" d="M340 140l12 10-12 10"/>
+<rect class="f" x="380" y="70" width="140" height="180" rx="10"/><rect class="f" x="400" y="90" width="140" height="180" rx="10"/><rect class="f" x="420" y="110" width="140" height="180" rx="10"/>
+<path class="l" d="M444 146h92M444 170h92M444 194h60M444 218h80"/>
+<circle class="bl" cx="500" cy="190" r="46"/><path class="bl" d="M533 223l40 40" stroke-width="10"/><circle fill="#3b78e7" fill-opacity=".14" cx="500" cy="190" r="44"/>
+</svg>

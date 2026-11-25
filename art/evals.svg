@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t"><title id="t">A fixed set of test cases scored automatically, and a threshold that decides what ships</title><style>.l{fill:none;stroke:#8597a1;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.f{fill:#8597a1;fill-opacity:.16;stroke:#8597a1;stroke-width:3;stroke-linejoin:round}.t{fill:#8597a1}.d{stroke-dasharray:2 9}.b{fill:#3b78e7}.bl{fill:none;stroke:#3b78e7;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.w{fill:none;stroke:#fff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+<g><rect class="f" x="40" y="60" width="64" height="64" rx="10"/><rect class="f" x="116" y="60" width="64" height="64" rx="10"/><rect class="f" x="192" y="60" width="64" height="64" rx="10"/>
+<rect class="f" x="40" y="136" width="64" height="64" rx="10"/><rect class="f" x="116" y="136" width="64" height="64" rx="10"/><rect class="f" x="192" y="136" width="64" height="64" rx="10"/>
+<rect class="f" x="40" y="212" width="64" height="64" rx="10"/><rect class="f" x="116" y="212" width="64" height="64" rx="10"/><rect class="f" x="192" y="212" width="64" height="64" rx="10"/></g>
+<path class="l" d="M58 92l10 10 18-20M134 92l10 10 18-20M214 82l20 20M234 82l-20 20M58 168l10 10 18-20M138 158l20 20M158 158l-20 20M210 168l10 10 18-20M58 244l10 10 18-20M134 244l10 10 18-20M210 244l10 10 18-20"/>
+<path class="l d" d="M270 170h40"/>
+<path class="l" d="M330 300h270"/>
+<rect class="f" x="340" y="270" width="26" height="30"/><rect class="f" x="372" y="244" width="26" height="56"/><rect class="f" x="404" y="210" width="26" height="90"/><rect class="f" x="436" y="160" width="26" height="140"/><rect class="f" x="468" y="120" width="26" height="180"/><rect class="f" x="500" y="96" width="26" height="204"/><rect class="f" x="532" y="130" width="26" height="170"/><rect class="f" x="564" y="190" width="26" height="110"/>
+<path class="bl" d="M484 60v250"/><rect class="b" x="466" y="40" width="36" height="28" rx="8"/>
+</svg>

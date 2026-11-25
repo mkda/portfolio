@@ -454,7 +454,7 @@ p{margin:0}
 .ds-map td{color:var(--on-surface-variant)}
 @media(max-width:52.49em){
   .table-wrap:has(.ds-map){overflow-x:auto}
-  .topbar:not(:has(.menu)) .brand-name{display:none}
+  .topbar:has(.tabs):not(:has(.menu)) .brand-name{display:none}
   .topbar:not(:has(.menu)) .tabs a{padding:0 var(--s-3)}
 }
 
@@ -472,3 +472,13 @@ p{margin:0}
 @media(min-width:37.5em){.ptabs:not([hidden]) ~ .theme-block{margin-top:var(--s-5);padding-top:var(--s-6)}}
 @media(min-width:52.5em){.ptabs:not([hidden]) ~ .theme-block{padding-top:var(--s-7)}}
 .theme-block[hidden]{display:none}
+
+/* Article artwork: line drawings in neutral grey, one element in brand blue */
+.art{margin:var(--s-5) 0 var(--s-6);border-radius:var(--corner-l);background:var(--surface-container);border:1px solid var(--outline-variant);overflow:hidden}
+.art img{display:block;inline-size:100%;block-size:auto}
+/* Writing list with a leading image (M3 list item, three lines) */
+.note-link{grid-template-columns:96px 1fr 24px}
+.note-link>*{grid-column:2}
+.note-link::after{grid-column:3}
+.note-link .note-art{grid-column:1;grid-row:1/span 3;inline-size:96px;block-size:auto;aspect-ratio:16/9;object-fit:cover;border-radius:var(--corner-s);background:var(--surface-container-high);align-self:center}
+@media(min-width:37.5em){.note-link{grid-template-columns:160px 1fr 24px}.note-link .note-art{inline-size:160px}}

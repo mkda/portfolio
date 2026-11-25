@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t"><title id="t">One tagged item travels from factory to store and is read at every stop</title><style>.l{fill:none;stroke:#8597a1;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.f{fill:#8597a1;fill-opacity:.16;stroke:#8597a1;stroke-width:3;stroke-linejoin:round}.t{fill:#8597a1}.d{stroke-dasharray:2 9}.b{fill:#3b78e7}.bl{fill:none;stroke:#3b78e7;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.w{fill:none;stroke:#fff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+<path class="l d" d="M70 250H580"/>
+<path class="f" d="M50 250v-70l30 20v-20l30 20v-20l30 20v50z"/>
+<rect class="f" x="190" y="210" width="70" height="40" rx="6"/><path class="f" d="M260 222h26l14 16v12h-40z"/><circle class="l" cx="208" cy="256" r="8"/><circle class="l" cx="278" cy="256" r="8"/>
+<path class="f" d="M350 250v-56l40-24 40 24v56z"/><path class="l" d="M372 250v-30h36v30"/>
+<path class="f" d="M500 250v-60h80v60z"/><path class="l" d="M494 190h92l-8-20h-76z"/>
+<path class="l" d="M110 160c14-14 14-34 0-48M128 172c24-24 24-58 0-82M280 160c14-14 14-34 0-48M410 150c14-14 14-34 0-48M540 160c14-14 14-34 0-48"/>
+<path class="b" d="M290 60h70l20 22v56h-90z"/><circle cx="312" cy="80" r="7" fill="#fff"/><path class="w" d="M308 110h50M308 124h34"/>
+<path class="bl" d="M392 76c12-12 12-30 0-42M408 88c22-22 22-56 0-76"/>
+</svg>

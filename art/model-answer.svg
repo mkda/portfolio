@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t"><title id="t">Many model answers flow toward one gate; only the gate makes the decision</title><style>.l{fill:none;stroke:#8597a1;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.f{fill:#8597a1;fill-opacity:.16;stroke:#8597a1;stroke-width:3;stroke-linejoin:round}.t{fill:#8597a1}.d{stroke-dasharray:2 9}.b{fill:#3b78e7}.bl{fill:none;stroke:#3b78e7;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.w{fill:none;stroke:#fff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
+<rect class="f" x="40" y="60" width="110" height="52" rx="16"/><path class="l" d="M64 80h62M64 94h40"/>
+<rect class="f" x="70" y="150" width="120" height="52" rx="16"/><path class="l" d="M94 170h72M94 184h46"/>
+<rect class="f" x="30" y="240" width="104" height="52" rx="16"/><path class="l" d="M54 260h56M54 274h30"/>
+<rect class="f" x="190" y="76" width="70" height="44" rx="14"/><text x="216" y="106" font-family="sans-serif" font-size="24" class="t">?</text>
+<path class="l d" d="M150 86c60 0 90 60 150 88M190 176h110M134 266c70 0 110-60 166-84"/>
+<path class="l" d="M300 120v130M380 120v130M290 120h100"/><path class="l" d="M300 250h-14M380 250h14"/>
+<path class="l d" d="M380 180h90"/>
+<rect class="b" x="470" y="140" width="80" height="80" rx="18"/><path class="w" d="M490 181l15 15 27-30"/>
+</svg>
