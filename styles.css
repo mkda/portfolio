@@ -83,8 +83,7 @@
 
 /* ---------- 2. Base ---------- */
 *{box-sizing:border-box}
-html{scroll-padding-top:calc(var(--bar-h) + 56px)}
-@media(min-width:52.5em){html{scroll-padding-top:calc(var(--bar-h) + 16px)}}
+html{scroll-padding-top:calc(var(--bar-h) + 16px)}
 body{margin:0;background:var(--surface);color:var(--on-surface);font:400 var(--body-l) var(--font-sans);font-size-adjust:from-font;-webkit-font-smoothing:antialiased;overflow-wrap:break-word}
 @media(prefers-reduced-motion:no-preference){
   html{scroll-behavior:smooth}
@@ -150,13 +149,29 @@ p{margin:0}
 @media(prefers-color-scheme:dark){:root:not(:has(> head > meta[name="color-scheme"][content="light"])) .theme .to-dark{display:none}:root:not(:has(> head > meta[name="color-scheme"][content="light"])) .theme .to-light{display:inline}}
 :root:has(> head > meta[name="color-scheme"][content="dark"]) .theme .to-dark{display:none}
 :root:has(> head > meta[name="color-scheme"][content="dark"]) .theme .to-light{display:inline}
+/* Menu icon button: shown only on compact and medium windows */
+.menu{display:none}
+.menu svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.menu .bar{transform-origin:12px 12px;transition:transform .2s ease,opacity .2s ease}
+.menu[aria-expanded="true"] .b1{transform:translateY(5px) rotate(45deg)}
+.menu[aria-expanded="true"] .b2{opacity:0}
+.menu[aria-expanded="true"] .b3{transform:translateY(-5px) rotate(-45deg)}
+@media(prefers-reduced-motion:reduce){.menu .bar{transition:none}}
 @media(max-width:52.49em){
-  .topbar-inner{flex-wrap:wrap;height:auto;padding-top:var(--s-3);row-gap:var(--s-2)}
-  .topbar .theme{margin-left:auto}
-  .tabs{order:3;flex-basis:100%;margin:0 calc(-1*var(--margin));padding:0 var(--margin);overflow-x:auto;scroll-padding-inline:var(--margin);border-top:1px solid var(--outline-variant)}
-  .tabs a{padding:0 var(--s-3)}
-  .tabs{order:3}
+  .topbar{position:sticky}
+  .topbar-inner{position:relative}
+  .topbar .theme:not(.menu){margin-left:auto}
+  .menu{display:grid}
+  /* The section list drops down under the bar as a menu (56dp rows) */
+  .topbar:has(.menu) .tabs{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;padding:var(--s-2) 0;background:var(--surface-container);border-bottom:1px solid var(--outline-variant);box-shadow:var(--elevation-2,0 4px 12px rgb(0 0 0/.15))}
+  .topbar.menu-open .tabs{display:flex}
+  .topbar:has(.menu) .tabs a{min-height:56px;padding:0 var(--margin);font:400 var(--body-l) var(--font-sans);color:var(--on-surface)}
+  .topbar:has(.menu) .tabs a::after{top:12px;bottom:12px;right:auto;width:3px;height:auto;border-radius:0 3px 3px 0;transform:scaleY(0)}
+  .tabs a:is(:target-current,.target-current)::after{transform:scaleY(1)}
+  .tabs a:is(:target-current,.target-current){background:color-mix(in srgb,var(--primary) 8%,transparent)}
+  .tabs a:hover{background:color-mix(in srgb,var(--on-surface) 8%,transparent)}
 }
+
 
 /* Section heading (h2). No eyebrows: the heading carries the section name. */
 .sec-title{font:400 var(--headline-s) var(--font-sans);margin-bottom:var(--s-2)}
@@ -430,3 +445,8 @@ p{margin:0}
 .ds-map th,.ds-map td{text-align:left;padding:var(--s-3) var(--s-4);border-bottom:1px solid var(--outline-variant);vertical-align:top}
 .ds-map th{font:500 var(--title-s) var(--font-sans)}
 .ds-map td{color:var(--on-surface-variant)}
+@media(max-width:52.49em){
+  .table-wrap:has(.ds-map){overflow-x:auto}
+  .topbar:not(:has(.menu)) .brand-name{display:none}
+  .topbar:not(:has(.menu)) .tabs a{padding:0 var(--s-3)}
+}

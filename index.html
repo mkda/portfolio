@@ -23,7 +23,7 @@
 <header class="topbar">
   <div class="wrap topbar-inner">
     <a class="brand" href="#top"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" class="mark-bg"/><path class="mark-line" d="M8 23V9l8 9 8-9v14"/><circle class="mark-dot" cx="8" cy="23" r="2.2"/><circle class="mark-dot" cx="8" cy="9" r="2.2"/><circle class="mark-hub" cx="16" cy="18" r="2.8"/><circle class="mark-dot" cx="24" cy="9" r="2.2"/><circle class="mark-dot" cx="24" cy="23" r="2.2"/></svg><span class="brand-name">dellanna<span>.pm</span></span></a>
-    <nav class="tabs" aria-label="Sections">
+    <nav class="tabs" id="sections" aria-label="Sections">
       <a href="#work">What I do</a>
       <a href="#lead">How I lead</a>
       <a href="#builds">Builds</a>
@@ -34,6 +34,7 @@
       <span class="to-dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg><span class="visually-hidden">Switch to dark theme</span></span>
       <span class="to-light"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5 1 3h-2zm0 20-1-3h2zM2 12l3-1v2zm20 0-3 1v-2zM4.9 4.9l2.8 1.4-1.4 1.4zm14.2 14.2-2.8-1.4 1.4-1.4zM4.9 19.1l1.4-2.8 1.4 1.4zM19.1 4.9l-1.4 2.8-1.4-1.4z"/></svg><span class="visually-hidden">Switch to light theme</span></span>
     </button>
+    <button class="theme menu" id="menu" type="button" aria-expanded="false" aria-controls="sections"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="bar b1" d="M4 7h16"/><path class="bar b2" d="M4 12h16"/><path class="bar b3" d="M4 17h16"/></svg><span class="visually-hidden">Menu</span></button>
   </div>
 </header>
 
@@ -283,7 +284,16 @@ if(matchMedia("(max-width:52.49em)").matches)document.querySelectorAll("details.
 // Scrollspy: native :target-current where supported, IntersectionObserver otherwise; aria-current mirrors it.
 const links=[...document.querySelectorAll(".tabs a")];
 const mark=a=>links.forEach(l=>{l.classList.toggle("target-current",l===a);l.setAttribute("aria-current",l===a?"true":"false")});
-const reveal=a=>{if(a&&innerWidth<840)a.parentNode.scrollTo({left:a.offsetLeft-16,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})};
+const reveal=()=>{};
+
+// Mobile menu: the hamburger opens the section list; a link, Escape or a tap outside closes it.
+const menu=document.getElementById("menu"),bar=document.querySelector(".topbar");
+const setMenu=open=>{menu.setAttribute("aria-expanded",String(open));bar.classList.toggle("menu-open",open)};
+menu.addEventListener("click",()=>setMenu(menu.getAttribute("aria-expanded")!=="true"));
+links.forEach(l=>l.addEventListener("click",()=>setMenu(false)));
+addEventListener("keydown",e=>{if(e.key==="Escape"&&bar.classList.contains("menu-open")){setMenu(false);menu.focus()}});
+document.addEventListener("click",e=>{if(!bar.contains(e.target))setMenu(false)});
+matchMedia("(min-width:52.5em)").addEventListener("change",e=>{if(e.matches)setMenu(false)});
 if(CSS.supports("scroll-target-group: auto")){
   const sync=()=>{const a=document.querySelector(".tabs a:target-current");links.forEach(l=>l.setAttribute("aria-current",l===a?"true":"false"));reveal(a)};
   sync();addEventListener("scrollend",sync);
