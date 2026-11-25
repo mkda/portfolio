@@ -541,3 +541,9 @@ p{margin:0}
 .hand.strong{letter-spacing:.02em}
 .pen path{stroke-dasharray:1 1;stroke-linecap:round;stroke-linejoin:round}
 .pen.soft path{stroke-dasharray:none}
+
+/* Pen charts placed beside text, the trust equation, and single-column tab bodies */
+.theme-cols .viz.side{margin:0;align-self:start}
+@media(min-width:52.5em){.theme-cols.single{grid-template-columns:minmax(0,46rem)}}
+.trust .viz.trust-eq{margin:0;padding:var(--s-3);justify-self:stretch;inline-size:100%;max-inline-size:420px}
+.trust .viz.trust-eq .viz-svg{max-inline-size:400px}

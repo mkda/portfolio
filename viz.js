@@ -136,6 +136,9 @@ const charts = {
     k.arrow([[262, 356], [220, 374], [140, 368]], 5600, 420);
     k.text("−70%", 306, 371, 6050, 24, "middle", 700, CORAL);
     k.ellipse(306, 364, 64, 34, 6200, 360, { stroke: CORAL });
+    k.line(14, 392, 346, 392, 6500, 500, { stroke: SLATE, strokeWidth: 1 });
+    k.text("$200K+ a year", 14, 418, 6900, 22, "start", 700, TEAL);
+    k.text("projected savings from the first in-house serialisation", 14, 440, 7050, 14, "start", 400, SLATE);
     return k;
   },
 
@@ -161,6 +164,64 @@ const charts = {
     k.arrow([[bx - 96, 74], [bx - 40, 86], [bx - 10, 128]], 4400, 420);
     k.text("break-even, year 3", bx - 100, 66, 4800, 18, "middle", 700);
     k.underline2(pts[4][0] - 24, pts[4][0] + 24, pts[4][1] - 4, 5200);
+    return k;
+  },
+
+  cost(svg) {
+    const k = new Sketch(svg, 51);
+    k.text("Cost per usable result", 14, 28, 0, 22, "start", 700);
+    k.underline2(14, 206, 36, 250);
+    const x0 = 150, sc = 164 / .18;
+    k.line(x0, 70, x0, 230, 400, 450, { stroke: SLATE });
+    let t = 600;
+    [["Provider A", 62, [["per image", .09, SLATE], ["per usable drawing", .12, BLUE]]],
+     ["Provider B", 150, [["per image", .14, SLATE], ["per usable drawing", .18, CORAL]]]].forEach(([name, y, rows]) => {
+      k.text(name, 14, y, t, 16, "start", 700);
+      rows.forEach(([lab, val, c], i) => {
+        const yy = y + 10 + i * 34, w = val * sc;
+        k.text(lab, x0 - 8, yy + 16, t + 100, 16, "end", 400, SLATE);
+        if (c !== SLATE) k.fill(x0, yy, w, 22, c, t + 500);
+        k.box(x0, yy, w, 22, t + 200, 450, { stroke: c === SLATE ? SLATE : c });
+        k.text("$" + val.toFixed(2), x0 + w + 6, yy + 17, t + 600, 18, "start", 700);
+        t += 380;
+      });
+    });
+    const ax = x0 + .12 * sc + 22;
+    k.ellipse(ax, 117, 52, 26, t + 200, 380);
+    k.text("A costs a third less", 14, 254, t + 500, 18, "start", 700, BLUE);
+    k.text("per usable drawing. Usable cost = price ÷ pass rate", 14, 276, t + 700, 15, "start", 400, SLATE);
+    return k;
+  },
+
+  sales(svg) {
+    const k = new Sketch(svg, 61);
+    k.text("Online sales, year on year", 14, 28, 0, 22, "start", 700);
+    k.underline2(14, 236, 36, 250);
+    const base = 206;
+    k.line(24, base, 336, base, 400, 500, { stroke: SLATE });
+    k.box(60, base - 52, 64, 52, 800, 420, { stroke: SLATE });
+    k.text("2021", 92, base + 22, 900, 16, "middle");
+    k.fill(156, base - 130, 64, 130, TEAL, 1500); k.box(156, base - 130, 64, 130, 1200, 600, { stroke: TEAL });
+    k.text("2022", 188, base + 22, 1300, 16, "middle");
+    k.text("+150%", 188, base - 142, 1900, 22, "middle", 700, TEAL);
+    k.ellipse(188, base - 149, 76, 32, 2100, 380, { stroke: TEAL });
+    k.arrow([[280, base - 8], [284, base - 64], [300, base - 120]], 2500, 600, TEAL, 1.8);
+    k.text("2023", 280, base + 22, 2500, 16, "middle");
+    k.text("growth again", 300, base - 134, 3000, 16, "middle", 700);
+    return k;
+  },
+
+  trust(svg) {
+    const k = new Sketch(svg, 71);
+    k.text("Trust", 14, 96, 0, 28, "start", 700);
+    k.underline2(14, 78, 104, 300);
+    k.text("=", 96, 96, 500, 28, "middle", 700, SLATE);
+    k.text("Credibility", 212, 34, 800, 23, "middle", 700, BLUE);
+    k.text("+ Reliability", 212, 60, 1100, 23, "middle", 700, TEAL);
+    k.text("+ Intimacy", 212, 86, 1400, 23, "middle", 700, LAVENDER);
+    k.line(118, 102, 306, 102, 1700, 600);
+    k.text("Self-orientation", 212, 130, 2300, 23, "middle", 700, CORAL);
+    k.text("the smaller, the more trust", 212, 158, 2700, 17, "middle", 400, SLATE);
     return k;
   },
 };
