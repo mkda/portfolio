@@ -87,17 +87,25 @@
             <p class="chart-note">Usable cost = price ÷ pass rate. Choosing on it cut a third off every usable drawing.</p>
           </figure>
         </div>
-        <figure class="chart wide">
+        <figure class="viz viz-ai" data-viz="ai">
           <figcaption><b>Machines check first, so people review less.</b> One episode in the studio.</figcaption>
-          <div class="bars">
-            <div class="bar-group">Issues in one episode</div>
-            <div class="bar-row"><span class="bar-label">caught by automated checks</span><span class="bar-track"><span class="bar" style="--v:1"></span></span><span class="bar-val">173</span></div>
-            <div class="bar-row"><span class="bar-label">left for a person to find</span><span class="bar-track"><span class="bar" style="--v:0"></span></span><span class="bar-val">0</span></div>
-            <div class="bar-group">Review rounds for one episode, same final quality</div>
-            <div class="bar-row"><span class="bar-label">heavier review loop</span><span class="bar-track"><span class="bar muted" style="--v:1"></span></span><span class="bar-val">84</span></div>
-            <div class="bar-row"><span class="bar-label">two human gates</span><span class="bar-track"><span class="bar" style="--v:.024"></span></span><span class="bar-val">2</span></div>
+          <svg class="viz-svg" viewBox="0 0 360 250" role="img" aria-label="173 issues fall into automated checks for staging, continuity and lip-sync. None are left for the person at the final gate.">
+            <text class="viz-k" x="10" y="16">Issues raised while agents write, draw, animate and voice</text>
+            <g class="ai-drops"></g>
+            <rect class="ai-band" x="10" y="96" width="340" height="62" rx="12"/>
+            <text class="viz-k" x="22" y="114">Automated checks · staging · continuity · lip-sync</text>
+            <g class="ai-caught"></g>
+            <text class="viz-big ai-count" x="338" y="150" text-anchor="end">173</text>
+            <path class="ai-flow" d="M180 162v34"/>
+            <svg class="ai-gate" x="160" y="200" width="40" height="40" viewBox="0 0 32 32"><rect x=".4" y=".4" width="31.2" height="31.2" rx="7.55" class="mark-frame"/><path class="mark-m" d="M7.77 20.45V15.66a4.11 4.11 0 0 1 8.23 0V20.45M16.00 15.66a4.11 4.11 0 0 1 8.23 0V15.66"/><rect x="22.12" y="17.89" width="4.22" height="4.22" rx="1.00" class="mark-sq"/></svg>
+            <text class="viz-k" x="206" y="214">Left for a person to fix</text>
+            <text class="viz-big" x="206" y="238">0</text>
+          </svg>
+          <div class="waffle-pair">
+            <p class="viz-k">Review rounds for one episode, same final quality</p>
+            <div class="waffle-row"><span class="w-label">Heavier review loop</span><span class="waffle w84" aria-hidden="true"></span><span class="w-val">84</span></div>
+            <div class="waffle-row"><span class="w-label">Two human gates</span><span class="waffle w2" aria-hidden="true"></span><span class="w-val">2</span></div>
           </div>
-          <p class="chart-note">Agents write, draw, animate and voice. Checks for staging, continuity and lip-sync run next. A person approves the story before any spend, and the final cut before release.</p>
         </figure>
       </article>
 
@@ -123,16 +131,23 @@
             <li><b>$200K+</b> a year projected savings from the first version of in-house serialisation</li>
           </ul>
         </div>
-        <figure class="chart wide">
-          <figcaption><b>Once scans became events, people stopped chasing them.</b> Global RFID rollout, factory to store.</figcaption>
-          <div class="bars">
-            <div class="bar-group">Manual interventions, indexed</div>
-            <div class="bar-row"><span class="bar-label">before, reports on request</span><span class="bar-track"><span class="bar muted" style="--v:1"></span></span><span class="bar-val">100</span></div>
-            <div class="bar-row"><span class="bar-label">after, live events</span><span class="bar-track"><span class="bar" style="--v:.3"></span></span><span class="bar-val">30</span></div>
-            <div class="bar-group">Items traceable, factory to store</div>
-            <div class="bar-row"><span class="bar-label">across 100+ stores</span><span class="bar-track"><span class="bar" style="--v:.999"></span></span><span class="bar-val">&gt;99.9%</span></div>
+        <figure class="viz viz-data" data-viz="data">
+          <figcaption><b>Every read lands in one record.</b> More than 40 million items a year, each read many times along the way.</figcaption>
+          <svg class="viz-svg" viewBox="0 0 360 230" role="img" aria-label="An item moves through the supply chain, a distribution warehouse, a store and a customer's QR scan. Each read sends an event to the same Digital Twin record, which the ERP also reads.">
+            <rect class="twin-box" x="10" y="10" width="340" height="58" rx="14"/>
+            <text class="viz-t" x="26" y="36">Digital Twin</text>
+            <text class="viz-k" x="26" y="54">One record per item · the ERP reads it too</text>
+            <g class="twin-ticks"></g>
+            <g class="d-links"></g>
+            <path class="d-path" d="M30 170H330"/>
+            <g class="d-stations"></g>
+            <circle class="d-item" r="9" cx="30" cy="170"/>
+          </svg>
+          <div class="waffle-pair">
+            <p class="viz-k">Manual interventions, before and after live events</p>
+            <div class="waffle w100" aria-hidden="true"></div>
+            <p class="w-sum"><b class="amber-n">−70%</b> manual work · <b class="amber-n">&gt;99.9%</b> of items traceable across 100+ stores</p>
           </div>
-          <p class="chart-note">More than 40 million items a year, each read many times along the way: in the supply chain, at distribution warehouses, in stores, and by customers scanning its QR code. Every read lands in the same Digital Twin record, which the ERP reads too.</p>
         </figure>
       </article>
 
@@ -155,16 +170,15 @@
             <li><b>130</b> stores covered by a 3-year RFID business case</li>
           </ul>
         </div>
-        <figure class="chart wide">
+        <figure class="viz viz-growth" data-viz="growth">
           <figcaption><b>A business case shows when the money comes back.</b> Illustrative investment, discounted at 8%.</figcaption>
-          <div class="bars">
-            <div class="bar-group">Cumulative value in today's money</div>
-            <div class="bar-row div"><span class="bar-label">year 0</span><span class="bar-track"><span class="bar neg" style="--v:1"></span></span><span class="bar-val">−500K</span></div>
-            <div class="bar-row div"><span class="bar-label">year 1</span><span class="bar-track"><span class="bar neg" style="--v:.72"></span></span><span class="bar-val">−361K</span></div>
-            <div class="bar-row div"><span class="bar-label">year 2</span><span class="bar-track"><span class="bar neg" style="--v:.29"></span></span><span class="bar-val">−147K</span></div>
-            <div class="bar-row div"><span class="bar-label">year 3, break-even</span><span class="bar-track"><span class="bar" style="--v:.18"></span></span><span class="bar-val">+91K</span></div>
-            <div class="bar-row div"><span class="bar-label">year 4</span><span class="bar-track"><span class="bar" style="--v:.62"></span></span><span class="bar-val">+312K</span></div>
-          </div>
+          <svg class="viz-svg" viewBox="0 0 360 240" role="img" aria-label="Cumulative value in today's money: minus 500K in year 0, minus 361K in year 1, minus 147K in year 2, plus 91K in year 3 where it breaks even, plus 312K in year 4.">
+            <rect class="g-below" x="10" y="120" width="340" height="112" rx="0"/>
+                        <line class="g-axis" x1="10" x2="350" y1="120" y2="120"/>
+            <g class="g-bars"></g>
+            <path class="g-line" d=""/>
+            <g class="g-be"><line x1="0" x2="0" y1="22" y2="120"/><rect x="-132" y="10" width="126" height="24" rx="12"/><text x="-69" y="27" text-anchor="middle">Break-even, year 3</text></g>
+          </svg>
           <p class="chart-note">The same method backed a three-year RFID case for 130 stores. Example numbers from the note on discount rates.</p>
         </figure>
       </article>
@@ -337,6 +351,7 @@ if(CSS.supports("scroll-target-group: auto")){
 </script>
 <script src="vendor/motion-14.11.1.min.js" defer></script>
 <script type="module" src="site.js"></script>
+<script type="module" src="viz.js"></script>
 <script type="module" src="consent.js"></script>
 </body>
 </html>
