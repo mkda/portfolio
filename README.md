@@ -4,7 +4,7 @@ Static site for GitHub Pages: plain HTML and CSS, no build step, same setup as t
 
 - `index.html`: all content
 - `styles.css`: light and dark themes
-- `littleleap.jpg`, `og.png`: images (link preview card is `og.png`)
+- `og.png`: link preview image
 - `.nojekyll`: serve files as they are
 
 ## Publish

@@ -137,8 +137,6 @@ nav a:hover{color:var(--ink)}
 [data-theme="dark"] .d-drop path{stroke:#ff9a85}[data-theme="dark"] .d-drop text{fill:#ff9a85}
 
 .feature{display:grid;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:28px}
-@media(min-width:860px){.feature{grid-template-columns:1.1fr 1fr}}
-.feature img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:16/9}
 .feature-body{padding:24px;display:flex;flex-direction:column;gap:12px}
 .feature-body h3{font-size:1.35rem}
 .feature-body p{color:var(--ink-2)}
@@ -150,3 +148,4 @@ nav a:hover{color:var(--ink)}
 .tags.wide{margin-top:32px}
 .tags.wide li{background:var(--card);border:1px solid var(--line)}
 .fine{margin-top:20px;color:var(--ink-3);font-size:.9rem}
+.lessons b{color:var(--ink)}
