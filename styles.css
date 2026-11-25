@@ -150,14 +150,14 @@ p{margin:0}
 .tabs a:is(:target-current,.target-current)::after{transform:scaleX(1)}
 /* Standard icon button (40dp target, 24dp icon, full corner) */
 .theme{flex:none;min-inline-size:40px;min-block-size:40px;border:0;border-radius:var(--corner-full);background:none;color:var(--on-surface-variant);display:grid;place-items:center;cursor:pointer}
-.theme svg{inline-size:24px;block-size:24px;fill:currentColor}
+.theme svg{inline-size:24px;block-size:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .theme .to-light{display:none}
 @media(prefers-color-scheme:dark){:root:not(:has(> head > meta[name="color-scheme"][content="light"])) .theme .to-dark{display:none}:root:not(:has(> head > meta[name="color-scheme"][content="light"])) .theme .to-light{display:inline}}
 :root:has(> head > meta[name="color-scheme"][content="dark"]) .theme .to-dark{display:none}
 :root:has(> head > meta[name="color-scheme"][content="dark"]) .theme .to-light{display:inline}
 /* Menu icon button: shown only on compact and medium windows */
 .menu{display:none}
-.menu svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.menu svg{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
 .menu .bar{transform-origin:12px 12px;transition:transform .2s ease,opacity .2s ease}
 .menu[aria-expanded="true"] .b1{transform:translateY(5px) rotate(45deg)}
 .menu[aria-expanded="true"] .b2{opacity:0}
@@ -473,13 +473,13 @@ p{margin:0}
 .theme-block[hidden]{display:none}
 
 /* Article artwork: line drawings in neutral grey, one element in brand blue */
-.art{margin:var(--s-5) 0 var(--s-6);border-radius:var(--corner-l);background:var(--surface-container);border:1px solid var(--outline-variant);overflow:hidden}
-.art img{display:block;inline-size:100%;block-size:auto}
+.art{margin:var(--s-5) 0 var(--s-6);border-radius:var(--corner-l);background:var(--vz-surface);border:1px solid var(--vz-edge);overflow:hidden}
+.art svg{display:block;inline-size:100%;block-size:auto}
 /* Writing list with a leading image (M3 list item, three lines) */
 .note-link{grid-template-columns:96px 1fr 24px}
 .note-link>*{grid-column:2}
 .note-link::after{grid-column:3}
-.note-link .note-art{grid-column:1;grid-row:1/span 3;inline-size:96px;block-size:auto;aspect-ratio:16/9;object-fit:cover;border-radius:var(--corner-s);background:var(--surface-container-high);align-self:center}
+.note-link .note-art{grid-column:1;grid-row:1/span 3;inline-size:96px;block-size:auto;aspect-ratio:16/9;object-fit:cover;border-radius:var(--corner-s);background:var(--vz-surface);border:1px solid var(--vz-edge);align-self:center}
 @media(min-width:37.5em){.note-link{grid-template-columns:160px 1fr 24px}.note-link .note-art{inline-size:160px}}
 
 /* Touch: 48dp targets on coarse pointers (kept last so it wins over component sizes) */
@@ -522,14 +522,22 @@ p{margin:0}
 .bar-val{white-space:nowrap}
 @media(max-width:37.49em){.bar-row{grid-template-columns:96px 1fr 60px}}
 
-/* Animated technical diagrams (viz.js): monoline pen on deep navy */
+/* Animated technical diagrams and article art (viz.js): monoline pen.
+   The drawing surface is the opposite of the page: deep navy on light, pale slate on dark. */
 @font-face{font-family:"Architects Daughter";src:url("fonts/architects-daughter-400.woff2") format("woff2");font-weight:400;font-display:swap}
-.viz.sketch{margin:var(--s-5) 0 0;padding:var(--s-4) var(--s-3) var(--s-3);border-radius:var(--corner-l);color:#F1F5F9;background:linear-gradient(160deg,#121A26,#192435);border:1px solid #243247}
+:root{
+  --vz-bg1:light-dark(#121A26,#F4F7FB);--vz-bg2:light-dark(#192435,#E8EEF6);--vz-edge:light-dark(#243247,#D3DCE8);
+  --vz-ink:light-dark(#F1F5F9,#121A26);--vz-slate:light-dark(#8E9BAE,#5A6678);
+  --vz-blue:light-dark(#8AB4F8,#1D5BC6);--vz-coral:light-dark(#F2A68D,#C0512C);--vz-mint:light-dark(#6EE7B7,#0B8458);--vz-lav:light-dark(#C4B5FD,#6A4BD3);
+  --vz-blue-soft:light-dark(rgb(138 180 248/.5),rgb(29 91 198/.22));--vz-coral-soft:light-dark(rgb(242 166 141/.5),rgb(192 81 44/.22));
+  --vz-mint-soft:light-dark(rgb(110 231 183/.45),rgb(11 132 88/.22));--vz-lav-soft:light-dark(rgb(196 181 253/.45),rgb(106 75 211/.22));
+  --vz-surface:linear-gradient(160deg,var(--vz-bg1),var(--vz-bg2));
+}
+.viz.sketch{margin:var(--s-5) 0 0;padding:var(--s-4) var(--s-3) var(--s-3);border-radius:var(--corner-l);color:var(--vz-ink);background:var(--vz-surface);border:1px solid var(--vz-edge)}
 .viz.sketch figcaption{position:absolute!important;inline-size:1px;block-size:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.viz.sketch .chart-note{color:#8E9BAE;font:400 var(--body-s) var(--font-sans);padding-inline:var(--s-2)}
+.viz.sketch .chart-note{color:var(--vz-slate);font:400 var(--body-s) var(--font-sans);padding-inline:var(--s-2)}
 .viz-svg{display:block;inline-size:100%;max-inline-size:560px;block-size:auto;margin:0 auto;overflow:visible}
 .hand{font-family:"Architects Daughter","Patrick Hand",system-ui,sans-serif;letter-spacing:.01em}
 .hand.strong{letter-spacing:.02em}
-.pen path{stroke-dasharray:1 1}
-.pen.soft{opacity:.55}
+.pen path{stroke-dasharray:1 1;stroke-linecap:round;stroke-linejoin:round}
 .pen.soft path{stroke-dasharray:none}
