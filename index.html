@@ -87,11 +87,17 @@
             <p class="chart-note">Usable cost = price ÷ pass rate. Choosing on it cut a third off every usable drawing.</p>
           </figure>
         </div>
-        <figure class="rail-fig pipe">
-          <ol class="rail" aria-label="How an episode is made, in order">
-            <li class="stop agent" style="--i:0"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Brief</span><span class="who">Agents</span><span class="stop-note">A public-domain tale to retell</span></span></li><li class="stop me" style="--i:1"><svg class="me" viewBox="0 0 32 32" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="8.5" class="mark-frame"/><path class="mark-m" d="M8.5 23.5V13.8a3.75 3.75 0 0 1 7.5 0v9.7M16 13.8a3.75 3.75 0 0 1 7.5 0v4.7"/><rect x="21.3" y="21.3" width="4.4" height="4.4" rx=".8" class="mark-sq"/></svg><span class="stop-body"><span class="stop-name">Gate 1</span><span class="who">Me</span><span class="stop-note">Story and new characters approved before money is spent</span></span></li><li class="stop agent" style="--i:2"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Design</span><span class="who">Agents</span><span class="stop-note">Agents write and draw</span></span></li><li class="stop agent" style="--i:3"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Generate</span><span class="who">Agents</span><span class="stop-note">Agents animate and voice</span></span></li><li class="stop agent" style="--i:4"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Assemble</span><span class="who">Agents</span><span class="stop-note">The cut, in six languages</span></span></li><li class="stop check" style="--i:5"><span class="dot trio" aria-hidden="true"><i></i><i></i><i></i></span><span class="stop-body"><span class="stop-name">Checks</span><span class="who">Agents</span><span class="stop-note">Three agents check staging, continuity and lip-sync: 173 issues to zero</span></span></li><li class="stop me" style="--i:6"><svg class="me" viewBox="0 0 32 32" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="8.5" class="mark-frame"/><path class="mark-m" d="M8.5 23.5V13.8a3.75 3.75 0 0 1 7.5 0v9.7M16 13.8a3.75 3.75 0 0 1 7.5 0v4.7"/><rect x="21.3" y="21.3" width="4.4" height="4.4" rx=".8" class="mark-sq"/></svg><span class="stop-body"><span class="stop-name">Gate 2</span><span class="who">Me</span><span class="stop-note">Final cut approved for release</span></span></li><li class="stop done" style="--i:7"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Release</span><span class="who">Live</span><span class="stop-note">Three livestreams a day</span></span></li>
-          </ol>
-          <figcaption>Machines check first. A person decides at two gates.</figcaption>
+        <figure class="chart wide">
+          <figcaption><b>Machines check first, so people review less.</b> One episode in the studio.</figcaption>
+          <div class="bars">
+            <div class="bar-group">Issues in one episode</div>
+            <div class="bar-row"><span class="bar-label">caught by automated checks</span><span class="bar-track"><span class="bar" style="--v:1"></span></span><span class="bar-val">173</span></div>
+            <div class="bar-row"><span class="bar-label">left for a person to find</span><span class="bar-track"><span class="bar" style="--v:0"></span></span><span class="bar-val">0</span></div>
+            <div class="bar-group">Review rounds for one episode, same final quality</div>
+            <div class="bar-row"><span class="bar-label">heavier review loop</span><span class="bar-track"><span class="bar muted" style="--v:1"></span></span><span class="bar-val">84</span></div>
+            <div class="bar-row"><span class="bar-label">two human gates</span><span class="bar-track"><span class="bar" style="--v:.024"></span></span><span class="bar-val">2</span></div>
+          </div>
+          <p class="chart-note">Agents write, draw, animate and voice. Checks for staging, continuity and lip-sync run next. A person approves the story before any spend, and the final cut before release.</p>
         </figure>
       </article>
 
@@ -117,22 +123,16 @@
             <li><b>$200K+</b> a year projected savings from the first version of in-house serialisation</li>
           </ul>
         </div>
-        <figure class="rail-fig rfid">
-          <ol class="rail" aria-label="One item's journey, each read point publishing to the Digital Twin">
-            <li class="stop" style="--i:0"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Factories</span><span class="stop-note">Tag and serialise each item</span><span class="ping">RFID read → Digital Twin</span></span></li><li class="stop" style="--i:1"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Freight forwarders</span><span class="stop-note">In transit</span><span class="ping">RFID read → Digital Twin</span></span></li><li class="stop" style="--i:2"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Warehouses</span><span class="stop-note">Receive and ship</span><span class="ping">RFID read → Digital Twin</span></span></li><li class="stop" style="--i:3"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Distributors</span><span class="stop-note">Allocate</span><span class="ping">RFID read → Digital Twin</span></span></li><li class="stop" style="--i:4"><span class="dot" aria-hidden="true"></span><span class="stop-body"><span class="stop-name">Stores</span><span class="stop-note">Count, sell, find</span><span class="ping">RFID read → Digital Twin</span></span></li>
-          </ol>
-          <div class="twin-wrap" style="--i:5">
-            <div class="twin">
-              <span class="twin-pulse" aria-hidden="true"></span>
-              <p class="twin-name">Digital Twin</p>
-              <p class="twin-note">One serial per item, Electronic Product Code events, publish and subscribe</p>
-              <p class="twin-stream"><b>40M+</b> scans a year on the event streaming platform</p>
-            </div>
-            <ul class="twin-out" role="list">
-              <li><span class="out-name">ERP</span><span class="stop-note">Financial records and inventory status</span></li>
-              <li><span class="out-name">QR after the sale</span><span class="stop-note">The same serial, from in sale to sold</span></li>
-            </ul>
+        <figure class="chart wide">
+          <figcaption><b>Once scans became events, people stopped chasing them.</b> Global RFID rollout, factory to store.</figcaption>
+          <div class="bars">
+            <div class="bar-group">Manual interventions, indexed</div>
+            <div class="bar-row"><span class="bar-label">before, reports on request</span><span class="bar-track"><span class="bar muted" style="--v:1"></span></span><span class="bar-val">100</span></div>
+            <div class="bar-row"><span class="bar-label">after, live events</span><span class="bar-track"><span class="bar" style="--v:.3"></span></span><span class="bar-val">30</span></div>
+            <div class="bar-group">Items traceable, factory to store</div>
+            <div class="bar-row"><span class="bar-label">across 100+ stores</span><span class="bar-track"><span class="bar" style="--v:.999"></span></span><span class="bar-val">&gt;99.9%</span></div>
           </div>
+          <p class="chart-note">Every read point, from factory to store, publishes to the Digital Twin: more than 40 million scans a year. The ERP and the QR code after the sale read the same serial.</p>
         </figure>
       </article>
 
@@ -155,6 +155,18 @@
             <li><b>130</b> stores covered by a 3-year RFID business case</li>
           </ul>
         </div>
+        <figure class="chart wide">
+          <figcaption><b>A business case shows when the money comes back.</b> Illustrative investment, discounted at 8%.</figcaption>
+          <div class="bars">
+            <div class="bar-group">Cumulative value in today's money</div>
+            <div class="bar-row div"><span class="bar-label">year 0</span><span class="bar-track"><span class="bar neg" style="--v:1"></span></span><span class="bar-val">−500K</span></div>
+            <div class="bar-row div"><span class="bar-label">year 1</span><span class="bar-track"><span class="bar neg" style="--v:.72"></span></span><span class="bar-val">−361K</span></div>
+            <div class="bar-row div"><span class="bar-label">year 2</span><span class="bar-track"><span class="bar neg" style="--v:.29"></span></span><span class="bar-val">−147K</span></div>
+            <div class="bar-row div"><span class="bar-label">year 3, break-even</span><span class="bar-track"><span class="bar" style="--v:.18"></span></span><span class="bar-val">+91K</span></div>
+            <div class="bar-row div"><span class="bar-label">year 4</span><span class="bar-track"><span class="bar" style="--v:.62"></span></span><span class="bar-val">+312K</span></div>
+          </div>
+          <p class="chart-note">The same method backed a three-year RFID case for 130 stores. Example numbers from the note on discount rates.</p>
+        </figure>
       </article>
     </div>
   </section>
