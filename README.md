@@ -5,6 +5,8 @@ Static site for GitHub Pages: plain HTML and CSS, no build step, same setup as t
 - `index.html`: all content
 - `styles.css`: light and dark themes
 - `og.png`: link preview image
+- `cv.pdf`: anonymised CV linked from the contact section
+- `notes/`: short articles
 - `.nojekyll`: serve files as they are
 
 ## Publish

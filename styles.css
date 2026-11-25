@@ -149,3 +149,20 @@ nav a:hover{color:var(--ink)}
 .tags.wide li{background:var(--card);border:1px solid var(--line)}
 .fine{margin-top:20px;color:var(--ink-3);font-size:.9rem}
 .lessons b{color:var(--ink)}
+
+.quote-wrap{padding-bottom:72px}
+.quote{margin:0;padding:28px;border-radius:14px;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent)}
+.quote blockquote{margin:0;display:grid;gap:12px}
+.quote p{font-size:clamp(1.05rem,2vw,1.25rem);line-height:1.5;letter-spacing:-.01em}
+.quote figcaption{margin-top:16px;color:var(--ink-3);font-size:.9rem}
+.note-link{display:flex;flex-direction:column;gap:10px;margin-top:24px;padding:24px;border-radius:14px;background:var(--card);border:1px solid var(--line);text-decoration:none;color:var(--ink);max-width:760px}
+.note-link:hover{border-color:var(--accent)}
+.note-link p{color:var(--ink-2)}
+.note-link .more{color:var(--accent);font-weight:500}
+.article{max-width:720px;padding-top:56px;padding-bottom:72px}
+.article h1{font-size:clamp(1.8rem,4.5vw,2.6rem);margin:8px 0 16px}
+.article h2{font-size:1.3rem;margin:36px 0 10px}
+.article p,.article li{color:var(--ink-2);font-size:1.06rem;line-height:1.7}
+.article p+p{margin-top:14px}
+.article ul{padding-left:20px}
+.back{display:inline-block;margin-top:40px}
