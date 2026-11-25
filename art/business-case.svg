@@ -1,11 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t"><title id="t">Cash flows over five years, each discounted, with the break-even point marked</title><style>.l{fill:none;stroke:#8597a1;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.f{fill:#8597a1;fill-opacity:.16;stroke:#8597a1;stroke-width:3;stroke-linejoin:round}.t{fill:#8597a1}.d{stroke-dasharray:2 9}.b{fill:#3b78e7}.bl{fill:none;stroke:#3b78e7;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}.w{fill:none;stroke:#fff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}</style>
-<path class="l" d="M60 200h540"/>
-<rect class="f" x="80" y="200" width="56" height="110"/>
-<rect class="l d" x="170" y="80" width="56" height="120"/><rect class="f" x="170" y="104" width="56" height="96"/>
-<rect class="l d" x="260" y="80" width="56" height="120"/><rect class="f" x="260" y="122" width="56" height="78"/>
-<rect class="l d" x="350" y="80" width="56" height="120"/><rect class="f" x="350" y="138" width="56" height="62"/>
-<rect class="l d" x="440" y="80" width="56" height="120"/><rect class="f" x="440" y="152" width="56" height="48"/>
-<rect class="l d" x="530" y="80" width="56" height="120"/><rect class="f" x="530" y="162" width="56" height="38"/>
-<path class="l" d="M108 300L198 250 288 214 378 186 468 160 558 140"/>
-<circle class="b" cx="333" cy="200" r="16"/><path class="bl" d="M333 200v-56"/><circle class="b" cx="333" cy="140" r="6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t"><title id="t">Coin stacks grow year by year after an early dip; a blue flag marks break-even</title><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBF5EC"/><stop offset="1" stop-color="#F2DCCB"/></linearGradient><radialGradient id="glow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#8FB3FF" stop-opacity=".75"/><stop offset="1" stop-color="#8FB3FF" stop-opacity="0"/></radialGradient><linearGradient id="blue" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4C86EE"/><stop offset="1" stop-color="#2A63C4"/></linearGradient><filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#7A4E2E" flood-opacity=".18"/></filter></defs><rect width="640" height="360" fill="url(#bg)"/>
+<circle cx="110" cy="80" r="90" fill="#F6CDB0" opacity=".5"/><circle cx="560" cy="300" r="130" fill="#E7EADB" opacity=".8"/>
+<rect x="40" y="250" width="560" height="4" rx="2" fill="#D7B395"/>
+<g filter="url(#sh)">
+<path d="M70 254h70v52a35 10 0 0 1-70 0z" fill="#E9D6C6"/><ellipse cx="105" cy="254" rx="35" ry="10" fill="#D2B49B"/>
+</g>
+<g filter="url(#sh)" id="stacks">
+<g transform="translate(170 0)"><rect x="0" y="214" width="66" height="36" fill="#E8B07F"/><ellipse cx="33" cy="250" rx="33" ry="9" fill="#D99A66"/><ellipse cx="33" cy="214" rx="33" ry="9" fill="#F3C99E"/><path d="M0 226h66M0 238h66" stroke="#D99A66" stroke-width="2"/></g>
+<g transform="translate(262 0)"><rect x="0" y="182" width="66" height="68" fill="#E8B07F"/><ellipse cx="33" cy="250" rx="33" ry="9" fill="#D99A66"/><ellipse cx="33" cy="182" rx="33" ry="9" fill="#F3C99E"/><path d="M0 194h66M0 206h66M0 218h66M0 230h66" stroke="#D99A66" stroke-width="2"/></g>
+<g transform="translate(354 0)"><rect x="0" y="152" width="66" height="98" fill="#E8B07F"/><ellipse cx="33" cy="250" rx="33" ry="9" fill="#D99A66"/><ellipse cx="33" cy="152" rx="33" ry="9" fill="#F3C99E"/><path d="M0 164h66M0 176h66M0 188h66M0 200h66M0 212h66M0 224h66" stroke="#D99A66" stroke-width="2"/></g>
+<g transform="translate(446 0)"><rect x="0" y="122" width="66" height="128" fill="#E8B07F"/><ellipse cx="33" cy="250" rx="33" ry="9" fill="#D99A66"/><ellipse cx="33" cy="122" rx="33" ry="9" fill="#F3C99E"/><path d="M0 134h66M0 146h66M0 158h66M0 170h66M0 182h66M0 194h66M0 206h66M0 218h66" stroke="#D99A66" stroke-width="2"/></g>
+</g>
+<path d="M105 300C170 260 230 226 290 190S420 130 520 100" fill="none" stroke="#8A6A55" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+<circle cx="387" cy="120" r="70" fill="url(#glow)"/>
+<path d="M387 152V70" stroke="#2A4F8F" stroke-width="5" stroke-linecap="round"/><path d="M389 72h48l-12 16 12 16h-48z" fill="url(#blue)"/>
 </svg>
