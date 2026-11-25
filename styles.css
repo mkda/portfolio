@@ -166,3 +166,45 @@ nav a:hover{color:var(--ink)}
 .article p+p{margin-top:14px}
 .article ul{padding-left:20px}
 .back{display:inline-block;margin-top:40px}
+
+.cap{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;margin-top:20px}
+@media(min-width:720px){.cap{padding:32px}}
+.cap-head{display:flex;align-items:baseline;gap:14px}
+.cap-n{font-family:"Geist Mono",monospace;color:var(--accent);font-size:.9rem}
+.cap-head h3{font-size:clamp(1.2rem,2.4vw,1.45rem)}
+.cap-body{display:grid;gap:24px;margin-top:16px}
+@media(min-width:820px){.cap-body{grid-template-columns:1.5fr 1fr;gap:40px}}
+.cap-body p{color:var(--ink-2)}
+.cap-body .tags{margin-top:16px}
+.proof{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;align-self:start}
+.proof li{background:var(--raised);border-radius:10px;padding:12px 14px;color:var(--ink-2);line-height:1.45;font-size:.95rem}
+.proof b{display:block;font-size:1.2rem;color:var(--accent);letter-spacing:-.02em}
+.cap .diagram{background:var(--page)}
+
+.table-wrap{margin-top:28px;overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.parallels{width:100%;border-collapse:collapse;min-width:720px}
+.parallels th{text-align:left;font-family:"Geist Mono",monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);font-weight:500;padding:14px 16px;border-bottom:1px solid var(--line-strong)}
+.parallels td{vertical-align:top;padding:14px 16px;border-bottom:1px solid var(--line);color:var(--ink-2);font-size:.95rem;line-height:1.5}
+.parallels tr:last-child td{border-bottom:0}
+.parallels td b{color:var(--ink)}
+.parallels td:nth-child(2){color:var(--accent);font-weight:500;width:22%}
+@media(max-width:719px){
+  .table-wrap{border:0;background:none;overflow:visible}
+  .parallels{min-width:0}
+  .parallels thead{display:none}
+  .parallels,.parallels tbody,.parallels tr,.parallels td{display:block;width:auto!important}
+  .parallels tr{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;padding:6px 0}
+  .parallels td{border:0;padding:8px 16px}
+  .parallels td::before{display:block;font-family:"Geist Mono",monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin-bottom:2px}
+  .parallels td:nth-child(1)::before{content:"In the studio"}
+  .parallels td:nth-child(2)::before{content:"Measured result"}
+  .parallels td:nth-child(3)::before{content:"In your organisation"}
+}
+.notes{display:grid;gap:16px;margin-top:24px}
+@media(min-width:820px){.notes{grid-template-columns:1fr 1fr}}
+.notes .note-link{margin-top:0;max-width:none}
+.article .meta{color:var(--ink-3);font-size:.9rem;margin-bottom:8px}
+.article table{border-collapse:collapse;width:100%;margin:16px 0;font-size:.95rem}
+.article th,.article td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;color:var(--ink-2)}
+.article th{color:var(--ink);font-weight:600}
+.article .callout{background:var(--raised);border-radius:12px;padding:16px 18px;margin:20px 0}

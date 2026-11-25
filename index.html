@@ -5,9 +5,9 @@
 <script>try{var t=localStorage.getItem("pm-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mikael Dell'Anna · Product Manager</title>
-<meta name="description" content="Technical product manager for data-heavy, physical-digital products, who ships with AI agents. Zurich.">
+<meta name="description" content="Technical product manager for data-heavy, physical-digital products, who ships with AI agents. How I work, what I build, and notes. Zurich.">
 <meta property="og:title" content="Mikael Dell'Anna · Technical Product Manager">
-<meta property="og:description" content="Data-heavy, physical-digital products, shipped with AI agents. Case studies, AI builds and contact.">
+<meta property="og:description" content="Data-heavy, physical-digital products, shipped with AI agents. How I work, my AI builds and notes.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://dellanna.pm/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -22,10 +22,10 @@
   <div class="wrap topbar-inner">
     <a class="brand" href="#top">MD<span>.pm</span></a>
     <nav aria-label="Sections">
-      <a href="#work">Case studies</a>
-      <a href="#builds">AI builds</a>
+      <a href="#how">How I work</a>
+      <a href="#automation">AI automation</a>
+      <a href="#builds">Builds</a>
       <a href="#notes">Notes</a>
-      <a href="#approach">Approach</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="theme" id="theme" type="button" aria-label="Switch colour theme">
@@ -38,9 +38,9 @@
   <section class="hero wrap">
     <p class="eyebrow">Mikael Dell'Anna · Zurich</p>
     <h1>I make physical products talk to software, and I ship with AI agents.</h1>
-    <p class="lede">Technical product manager for data-heavy, physical-digital products. Most recently I took RFID tracking from the factory to 100+ stores. Before that I rebuilt a high-volume eShop while it kept selling. On my own time I run an AI animation studio with agents and human approval gates.</p>
+    <p class="lede">Technical product manager for data-heavy, physical-digital products. I work from evidence to a funded decision, then lead engineers and vendors through delivery. On my own time I run an AI animation studio with agents, automated checks and human approval gates, and I bring what it teaches me to every automation initiative.</p>
     <div class="cta">
-      <a class="btn primary" href="#work">Read the case studies</a>
+      <a class="btn primary" href="#how">See how I work</a>
       <a class="btn" href="#contact">Get in touch</a>
     </div>
     <dl class="stats">
@@ -51,221 +51,213 @@
     </dl>
   </section>
 
-  <section id="work" class="band">
+  <section id="how" class="band">
     <div class="wrap">
-      <p class="eyebrow">01 · Case study</p>
-      <span class="pill">Physical-digital · Retail data · 2024–2026</span>
-      <h2 class="case-title">Following every shoe from the factory to the shelf</h2>
-      <p class="ctx">Global performance sportswear brand · 100+ own stores · 5 developers, 3 vendors, CHF 250K+ yearly budget</p>
+      <p class="eyebrow">01 · How I work</p>
+      <h2>Five capabilities, and where I've used them</h2>
+      <p class="section-lede">Company names are left out on purpose. The methods and the results are real.</p>
 
-      <figure class="diagram" aria-label="Diagram: RFID data flows from factory to distribution to stores into an event platform that feeds ERP, retail systems and the Digital Twin">
-        <svg viewBox="0 0 900 210" role="img">
-          <g class="d-node"><rect x="10" y="30" width="150" height="56" rx="10"/><text x="85" y="56">Factory</text><text class="d-sub" x="85" y="74">tag &amp; serialise</text></g>
-          <g class="d-node"><rect x="200" y="30" width="150" height="56" rx="10"/><text x="275" y="56">Distribution</text><text class="d-sub" x="275" y="74">ship &amp; receive</text></g>
-          <g class="d-node"><rect x="390" y="30" width="150" height="56" rx="10"/><text x="465" y="56">100+ stores</text><text class="d-sub" x="465" y="74">count, sell, find</text></g>
-          <g class="d-accent"><rect x="200" y="132" width="340" height="56" rx="10"/><text x="370" y="158">Event platform</text><text class="d-sub" x="370" y="176">40M+ scans a year as events</text></g>
-          <g class="d-node"><rect x="600" y="10" width="140" height="48" rx="10"/><text x="670" y="39">ERP</text></g>
-          <g class="d-node"><rect x="600" y="76" width="140" height="48" rx="10"/><text x="670" y="105">Retail &amp; omnichannel</text></g>
-          <g class="d-node"><rect x="600" y="142" width="140" height="48" rx="10"/><text x="670" y="171">Digital Twin</text></g>
-          <g class="d-good"><rect x="770" y="76" width="120" height="48" rx="10"/><text x="830" y="105">&gt;99.9% traced</text></g>
-          <g class="d-line">
-            <path d="M160 58H200M350 58H390"/>
-            <path d="M85 86V160H200M275 86V132M465 86V132"/>
-            <path d="M540 160H570V34H600M570 100H600M570 166H600M740 100H770"/>
-          </g>
-        </svg>
-      </figure>
-
-      <div class="story">
-        <div>
-          <h4>The problem as I framed it</h4>
-          <p>The tags were already on the products. The value wasn't. Data stopped at the warehouse door, so stores couldn't see what arrived, what sold or what went missing, and every exception became a manual ticket. This wasn't a hardware problem. The scans had to become trusted, real-time data that other systems could act on.</p>
-          <h4>Options and the call I made</h4>
-          <p>We needed serial numbers for every item. Buying a licensed serialisation tool was the safe choice. Instead I proposed a lean in-house serial-number MVP on top of the Digital Twin platform that already connected product, ERP and retail systems. It kept the data in one place and cost less to run, with <b>$200K+ a year</b> in projected savings.</p>
-          <h4>Making the case</h4>
-          <p>Scaling to 130 stores needed more than a pilot that worked. I built the 3-year business case and ROI model around three sources of value: loss prevention, faster and narrower product recalls, and readiness for the EU Digital Product Passport.</p>
-          <h4>What was hard</h4>
-          <p>Exceptions. As more stores went live, edge cases from 100+ locations kept arriving as manual work. We turned scans into event-driven data and set up a global support framework, which cut manual interventions by 70%.</p>
-          <h4>What I'd do differently</h4>
-          <p>Design the support model with the first pilot stores, not after the rollout had started. Operations scales differently from technology.</p>
+      <article class="cap">
+        <div class="cap-head"><span class="cap-n">01</span><h3>Measure what matters, then test it</h3></div>
+        <div class="cap-body">
+          <div>
+            <p>I start with the outcome metric, then the leading indicators and guardrails around it, and write them into a tracking plan before anything ships. Dashboards come after the questions, not before. For AI features the same discipline becomes evals: a fixed test set from your own data, automated scorers, a pass threshold, and cost per successful result instead of cost per call.</p>
+            <ul class="tags"><li>KPI trees &amp; tracking plans</li><li>Looker</li><li>A/B testing</li><li>Optimizely · Adobe Target</li><li>Hotjar · Clarity · Medallia</li><li>Eval sets &amp; scorers</li><li>Cost per usable result</li></ul>
+          </div>
+          <ul class="proof">
+            <li><b>150%</b> year-on-year online sales growth, with A/B tests running across subscriptions, prepaid, internet, devices, checkout, ID checks, activation, upgrades and renewals</li>
+            <li><b>173 → 0</b> staging issues caught by automated checks before human review, in my AI studio</li>
+            <li><b>−33%</b> cost per usable drawing ($0.12 vs $0.18) by comparing AI providers on price divided by pass rate</li>
+          </ul>
         </div>
-        <ul class="results">
-          <li><b>&gt;99.9%</b> item traceability</li>
-          <li><b>−70%</b> manual interventions across 100+ locations</li>
-          <li><b>500+</b> FTE days a year saved by the support framework (projected)</li>
-          <li><b>$200K+</b> a year saved by the in-house MVP (projected)</li>
-          <li><b>130</b> stores covered by the 3-year business case</li>
-        </ul>
+      </article>
+
+      <article class="cap">
+        <div class="cap-head"><span class="cap-n">02</span><h3>Make the case in money, then prioritise against capacity</h3></div>
+        <div class="cap-body">
+          <div>
+            <p>A roadmap item earns its place through a business case. I build NPV-based CAPEX requests over a 3 to 5-year horizon, with break-even and profitability by year, and I name the value drivers finance can check. Once funded, I prioritise with WSJF or RICE against the engineering capacity we actually have, and use Pareto analysis of support tickets and stakeholder interviews to find the few fixes that matter most.</p>
+            <ul class="tags"><li>NPV &amp; discount rates</li><li>Break-even &amp; payback</li><li>ROI models</li><li>CAPEX requests</li><li>WSJF · RICE</li><li>Pareto analysis</li></ul>
+          </div>
+          <ul class="proof">
+            <li><b>130</b> stores covered by a 3-year business case across loss prevention, recalls and Digital Product Passport compliance</li>
+            <li><b>$200K+</b> a year in projected savings from a self-managed serialisation MVP</li>
+            <li><b>WSJF</b> used to balance supply-chain tracking against retail features on a shared Digital Twin platform</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="cap">
+        <div class="cap-head"><span class="cap-n">03</span><h3>Find the real need, then write it down so teams can build it</h3></div>
+        <div class="cap-body">
+          <div>
+            <p>Interviews and observation almost always change the picture, because they surface latent needs nobody wrote down. I then use techniques like SCAMPER to meet those needs in the leanest way, and capture the result in a BRD for the business and a PRD for the team, with story mapping and dependency mapping so several initiatives can move together.</p>
+            <ul class="tags"><li>Interviews &amp; observation</li><li>Jobs to be done</li><li>SCAMPER</li><li>BRD · PRD</li><li>User story mapping</li><li>Dependency mapping</li></ul>
+          </div>
+          <ul class="proof">
+            <li><b>Data model rebuilt</b> after observing how stores really managed inventory and locations, before the retail RFID integration went further</li>
+            <li><b>7 initiatives</b> specified with BRDs and PRDs: serialisation, retail RFID dashboard, warehouse scan-point APIs, GLN supply-chain automation, event-driven EPC architecture, vendor decommissioning, product authentication</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="cap">
+        <div class="cap-head"><span class="cap-n">04</span><h3>Build platforms other teams can rely on</h3></div>
+        <div class="cap-body">
+          <div>
+            <p>A platform has many customers: supply chain, retail, logistics partners and the systems behind them. I manage APIs and events as products, protect reliability, and say no when a request would bend the platform out of shape. Bringing capabilities in-house from vendors is part of that, when it lowers cost and gives us control over the data.</p>
+            <ul class="tags"><li>APIs &amp; integrations</li><li>Event-driven architecture</li><li>EPC · GLN standards</li><li>RFID · Digital Twin</li><li>Microservices</li><li>Vendor insourcing</li></ul>
+          </div>
+          <ul class="proof">
+            <li><b>&gt;99.9%</b> item traceability from factory to 100+ stores</li>
+            <li><b>40M+</b> scans a year turned into event-driven omnichannel data, <b>−70%</b> manual interventions</li>
+            <li><b>~12 months</b> to move a high-volume sales portal and order flow to microservices with ~20 engineers, while it kept selling</li>
+          </ul>
+        </div>
+        <figure class="diagram" aria-label="Diagram: RFID data flows from factory to distribution to stores into an event platform that feeds ERP, retail systems and the Digital Twin">
+          <svg viewBox="0 0 900 210" role="img">
+            <g class="d-node"><rect x="10" y="30" width="150" height="56" rx="10"/><text x="85" y="56">Factory</text><text class="d-sub" x="85" y="74">tag &amp; serialise</text></g>
+            <g class="d-node"><rect x="200" y="30" width="150" height="56" rx="10"/><text x="275" y="56">Distribution</text><text class="d-sub" x="275" y="74">ship &amp; receive</text></g>
+            <g class="d-node"><rect x="390" y="30" width="150" height="56" rx="10"/><text x="465" y="56">100+ stores</text><text class="d-sub" x="465" y="74">count, sell, find</text></g>
+            <g class="d-accent"><rect x="200" y="132" width="340" height="56" rx="10"/><text x="370" y="158">Event platform</text><text class="d-sub" x="370" y="176">40M+ scans a year as events</text></g>
+            <g class="d-node"><rect x="600" y="10" width="140" height="48" rx="10"/><text x="670" y="39">ERP</text></g>
+            <g class="d-node"><rect x="600" y="76" width="140" height="48" rx="10"/><text x="670" y="105">Retail &amp; omnichannel</text></g>
+            <g class="d-node"><rect x="600" y="142" width="140" height="48" rx="10"/><text x="670" y="171">Digital Twin</text></g>
+            <g class="d-good"><rect x="770" y="76" width="120" height="48" rx="10"/><text x="830" y="105">&gt;99.9% traced</text></g>
+            <g class="d-line">
+              <path d="M160 58H200M350 58H390"/>
+              <path d="M85 86V160H200M275 86V132M465 86V132"/>
+              <path d="M540 160H570V34H600M570 100H600M570 166H600M740 100H770"/>
+            </g>
+          </svg>
+        </figure>
+      </article>
+
+      <article class="cap">
+        <div class="cap-head"><span class="cap-n">05</span><h3>Put AI to work, with guardrails</h3></div>
+        <div class="cap-body">
+          <div>
+            <p>AI output is probabilistic, so the product question is which errors are acceptable and how the system catches the rest. I design agent workflows with an orchestrator and specialised agents, automated checks before any human, approval gates only where judgment is needed, spending caps, and a rule that every update is revalidated and monitored before it counts as done. I choose models by testing them on our own data, and check their licences before they reach production.</p>
+            <ul class="tags"><li>Agent orchestration</li><li>Human-in-the-loop gates</li><li>LLMs &amp; prompting</li><li>LoRA fine-tuning</li><li>RAG</li><li>Time-series forecasting</li><li>Claude Code</li></ul>
+          </div>
+          <ul class="proof">
+            <li><b>6</b> episodes in <b>6</b> languages produced by agents, with people deciding only at two gates</li>
+            <li><b>$100</b> cap per episode, and any call over ~$10 needs my approval first</li>
+            <li><b>20 of 24</b> test drawings on model from character LoRAs I trained for ~$15, as insurance against a closed model changing</li>
+          </ul>
+        </div>
+        <figure class="diagram" aria-label="Pipeline: pick a tale, human gate one, design, animate, voice and score, automated checks, human gate two, premiere">
+          <svg viewBox="0 0 900 120" role="img">
+            <g class="d-node"><rect x="0" y="34" width="96" height="52" rx="10"/><text x="48" y="64">Brief</text></g>
+            <g class="d-gate"><rect x="112" y="34" width="96" height="52" rx="10"/><text x="160" y="58">Gate 1</text><text class="d-sub" x="160" y="76">human</text></g>
+            <g class="d-node"><rect x="224" y="34" width="96" height="52" rx="10"/><text x="272" y="64">Design</text></g>
+            <g class="d-node"><rect x="336" y="34" width="96" height="52" rx="10"/><text x="384" y="64">Generate</text></g>
+            <g class="d-node"><rect x="448" y="34" width="96" height="52" rx="10"/><text x="496" y="64">Assemble</text></g>
+            <g class="d-accent"><rect x="560" y="34" width="96" height="52" rx="10"/><text x="608" y="58">Checks</text><text class="d-sub" x="608" y="76">3 agents</text></g>
+            <g class="d-gate"><rect x="672" y="34" width="96" height="52" rx="10"/><text x="720" y="58">Gate 2</text><text class="d-sub" x="720" y="76">human</text></g>
+            <g class="d-good"><rect x="784" y="34" width="112" height="52" rx="10"/><text x="840" y="64">Release</text></g>
+            <g class="d-line"><path d="M96 60H112M208 60H224M320 60H336M432 60H448M544 60H560M656 60H672M768 60H784"/></g>
+            <text class="d-note" x="0" y="112">Machines check first. People decide at the gates.</text>
+          </svg>
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <section id="automation" class="wrap section">
+    <p class="eyebrow">02 · From my studio to your automation</p>
+    <h2>What running an AI studio teaches any automation initiative</h2>
+    <p class="section-lede">My studio is a small but complete AI operation: agents, paid models, a budget, a schedule and an audience. Each lesson below came with a measured result, and each one carries over to retail operations, telecom, customer service and internal processes.</p>
+    <div class="table-wrap">
+      <table class="parallels">
+        <thead><tr><th>In the studio</th><th>Measured result</th><th>In your organisation</th></tr></thead>
+        <tbody>
+          <tr><td><b>Machines check first.</b> Automated staging, continuity and lip-sync checks run before anyone reviews a cut.</td><td>173 issues to zero before human review</td><td>Run rule and model checks on every order, ticket or document, so people only review what fails. Store teams handle exceptions, not every scan.</td></tr>
+          <tr><td><b>Gates only where judgment matters.</b> Two human approvals: before money is spent, and before release.</td><td>A heavier review loop ran to 84 versions with no better result, and was rolled back</td><td>Put approvals on decisions (spend, customer impact, compliance), not on routine steps. Fewer gates, decided faster.</td></tr>
+          <tr><td><b>Pay per usable result.</b> Models are compared on price divided by pass rate.</td><td>A third cheaper per usable drawing, same quality</td><td>Measure cost per successful task for each AI vendor, such as an ID check that passed or a ticket resolved without a human handover.</td></tr>
+          <tr><td><b>Test on your own data.</b> Every model is tried on the studio's own characters before adoption.</td><td>Two models passed 0 of 6 test clips; the one on trial passed 3 of 3 for less</td><td>Build an eval set from your real tickets, products or contracts before signing with a vendor. Demos aren't evidence.</td></tr>
+          <tr><td><b>Every note becomes a rule.</b> Repeated feedback fell into nine categories, and each became a check.</td><td>Repeating a known issue is now a blocker</td><td>Turn recurring support and QA findings into automated checks, so quality improves with every release instead of resetting.</td></tr>
+          <tr><td><b>Budget guards.</b> Every paid call is logged against a per-episode cap.</td><td>$100 cap per episode; spend over ~$10 needs approval</td><td>Set spending caps and escalation thresholds per workflow before scaling usage.</td></tr>
+          <tr><td><b>The weakest part sets the limit.</b> If one component can't take the load, the whole pipeline stops, and updates can break working flows.</td><td>Every model or tool update is revalidated and monitored before it's declared done</td><td>Load-test each step, add monitoring and alerts, and treat vendor model updates like releases with regression tests.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="builds" class="band">
+    <div class="wrap">
+      <p class="eyebrow">03 · Builds · 2026</p>
+      <h2>Products I build and run myself</h2>
+      <p class="section-lede">Here I'm the PM, the architect and the operator.</p>
+      <div class="grid three">
+        <article class="card">
+          <span class="pill live">Live</span>
+          <h3>LittleLeap Studios: an AI-run animation studio</h3>
+          <p>Children's cartoons retold from public-domain tales. Agents built with Claude, Gemini and Seedance write, draw, animate, voice, check and publish each episode. I approve the story, any new characters and the final cut.</p>
+          <p class="result"><b>6</b> episodes in <b>6</b> languages · <b>~18</b> Shorts · <b>3</b> livestreams a day</p>
+        </article>
+        <article class="card">
+          <span class="pill">Prototype</span>
+          <h3>Multi-agent market research and risk</h3>
+          <p>A Python system with separate research, validation and risk agents, using exchange data and TimesFM time-series forecasts. Trading is off by default and runs only after validation and risk checks pass.</p>
+          <p class="result">Guardrails first: no action without two independent checks</p>
+        </article>
+        <article class="card">
+          <span class="pill">Pre-release</span>
+          <h3>iOS physics puzzle game</h3>
+          <p>Taken from concept to pre-release in SwiftUI and SpriteKit, with a custom level-design tool to build and tune the levels.</p>
+          <p class="result">A custom level editor made all <b>48</b> levels possible</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="wrap section">
-    <p class="eyebrow">02 · Case study</p>
-    <span class="pill">E-commerce · Platform · 2021–2024</span>
-    <h2 class="case-title">Rebuilding a high-volume sales channel while it kept selling</h2>
-    <p class="ctx">Swiss telecom operator · nationwide eShop and sales portal · ~20 engineers</p>
-
-    <figure class="diagram" aria-label="Illustration: a conversion funnel where each drop-off found in analytics is removed step by step">
-      <svg viewBox="0 0 900 190" role="img">
-        <g class="d-funnel">
-          <rect x="10" y="20" width="200" height="44" rx="8"/><text x="110" y="47">Product page</text>
-          <rect x="230" y="20" width="200" height="44" rx="8"/><text x="330" y="47">Configure &amp; plan</text>
-          <rect x="450" y="20" width="200" height="44" rx="8"/><text x="550" y="47">Checks &amp; details</text>
-          <rect x="670" y="20" width="220" height="44" rx="8"/><text x="780" y="47">Order placed</text>
-        </g>
-        <g class="d-drop"><path d="M330 64V96M550 64V96"/><text x="330" y="116">drop-off found</text><text x="550" y="116">drop-off found</text></g>
-        <g class="d-good"><rect x="230" y="134" width="420" height="44" rx="8"/><text x="440" y="161">Steps removed one at a time, each change measured</text></g>
-        <text class="d-note" x="10" y="180">Illustration, not real data</text>
-      </svg>
-    </figure>
-
-    <div class="story">
-      <div>
-        <h4>The problem as I framed it</h4>
-        <p>Three things had to happen at once: a new product portfolio, a new brand and a new platform. The monolith behind the sales portal and order flow slowed every release. The real risk was losing sales during the change, not the technology itself.</p>
-        <h4>Options and the call I made</h4>
-        <p>A big-bang rewrite would have frozen the channel for months. We moved the sales portal and order flow to microservices step by step over about 12 months, so the shop kept trading and every release could still ship.</p>
-        <h4>How we found the growth</h4>
-        <p>After launching the new portfolio and the rebranded eShop, I used funnel analytics to find where customers left. We removed those drop-offs one by one and measured each change, instead of shipping one large redesign.</p>
-        <h4>What I'd do differently</h4>
-        <p>Instrument the funnel before the migration starts. Our clean baseline came late, which made the early wins harder to prove.</p>
-      </div>
-      <ul class="results">
-        <li><b>150%</b> year-on-year online sales growth in 2022</li>
-        <li><b>Continued</b> strong growth in 2023</li>
-        <li><b>~12 months</b> to migrate the portal and order flow, with no sales freeze</li>
-      </ul>
+  <section id="notes" class="wrap section">
+    <p class="eyebrow">04 · Notes</p>
+    <h2>Writing</h2>
+    <div class="notes">
+      <a class="note-link" href="notes/reusing-an-ai-studio-playbook.html">
+        <span class="pill">November 2026 · 6 min read</span>
+        <h3>Reusing an AI studio's playbook in enterprise automation</h3>
+        <p>Seven practices from running agents in production, and how they carry over to retail, telecom and back-office work.</p>
+      </a>
+      <a class="note-link" href="notes/evals-for-product-managers.html">
+        <span class="pill">November 2026 · 6 min read</span>
+        <h3>Evals for product managers</h3>
+        <p>If your product uses AI, the eval set is part of the spec. How I build one, score it and decide what ships.</p>
+      </a>
+      <a class="note-link" href="notes/platform-pm-lessons-from-rfid.html">
+        <span class="pill">April 2026 · 6 min read</span>
+        <h3>Platform PM lessons from RFID</h3>
+        <p>What tagging every item from factory to store taught me about platforms with many internal customers.</p>
+      </a>
+      <a class="note-link" href="notes/business-case-with-discount-rates.html">
+        <span class="pill">May 2025 · 5 min read</span>
+        <h3>Writing a business case with discount rates</h3>
+        <p>Why a product manager should speak NPV, and a simple way to build a CAPEX request finance will trust.</p>
+      </a>
     </div>
   </section>
 
   <section class="band">
     <div class="wrap">
-      <p class="eyebrow">03 · More work</p>
-      <h2>Earlier products, in short</h2>
-      <div class="grid three">
-        <article class="card">
-          <span class="pill">Payments · FinTech</span>
-          <h3>Self-service fundraising</h3>
-          <p>Owned a self-service fundraising product for non-profits, integrating payment gateways. Launched QR-code donations through Switzerland's leading mobile payment app.</p>
-          <p class="result"><b>+30%</b> fundraising revenue in six months</p>
-        </article>
-        <article class="card">
-          <span class="pill">Digital health · B2B SaaS</span>
-          <h3>White-label health platform</h3>
-          <p>Owned the white-label administration product of a mobile-first health engagement platform, and reframed its strategy during an Agile transformation.</p>
-          <p class="result"><b>+25%</b> user satisfaction after launch</p>
-        </article>
-        <article class="card">
-          <span class="pill">Marketplace · 5 EU markets</span>
-          <h3>Content tools at marketplace scale</h3>
-          <p>Ran the CMS and content automation behind marketing pages in Germany, the UK, France, Italy and Spain, then led the web team that used them.</p>
-          <p class="result"><b>−70%</b> time to market · <b>+15%</b> conversion · <b>300+</b> campaigns a year</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="builds" class="wrap section">
-    <p class="eyebrow">04 · AI builds · 2026</p>
-    <h2>Products I build and run myself</h2>
-    <p class="section-lede">Here I'm the PM, the architect and the operator, so I can show everything.</p>
-
-    <article class="feature">
-      <div class="feature-body">
-        <span class="pill live">Live</span>
-        <h3>LittleLeap Studios: an AI-run animation studio</h3>
-        <p>Children's cartoons retold from public-domain tales. Agents built with Claude, Gemini and Seedance write, draw, animate, voice, check and publish each episode. A person approves the story, any new characters and the final cut.</p>
-        <ul class="facts">
-          <li><b>6</b> episodes, each in <b>6</b> audio languages</li>
-          <li><b>~18</b> Shorts and <b>3</b> scheduled livestreams a day</li>
-          <li>Two web games and an iOS app in review, built from the same characters</li>
-        </ul>
-      </div>
-    </article>
-
-    <figure class="diagram" aria-label="Pipeline: pick a tale, human gate one, design, animate, voice and score, automated checks, human gate two, premiere">
-      <svg viewBox="0 0 900 120" role="img">
-        <g class="d-node"><rect x="0" y="34" width="96" height="52" rx="10"/><text x="48" y="64">Pick tale</text></g>
-        <g class="d-gate"><rect x="112" y="34" width="96" height="52" rx="10"/><text x="160" y="58">Gate 1</text><text class="d-sub" x="160" y="76">human</text></g>
-        <g class="d-node"><rect x="224" y="34" width="96" height="52" rx="10"/><text x="272" y="64">Design</text></g>
-        <g class="d-node"><rect x="336" y="34" width="96" height="52" rx="10"/><text x="384" y="64">Animate</text></g>
-        <g class="d-node"><rect x="448" y="34" width="96" height="52" rx="10"/><text x="496" y="64">Voice, score</text></g>
-        <g class="d-accent"><rect x="560" y="34" width="96" height="52" rx="10"/><text x="608" y="58">Checks</text><text class="d-sub" x="608" y="76">3 agents</text></g>
-        <g class="d-gate"><rect x="672" y="34" width="96" height="52" rx="10"/><text x="720" y="58">Gate 2</text><text class="d-sub" x="720" y="76">human</text></g>
-        <g class="d-good"><rect x="784" y="34" width="112" height="52" rx="10"/><text x="840" y="64">Premiere</text></g>
-        <g class="d-line"><path d="M96 60H112M208 60H224M320 60H336M432 60H448M544 60H560M656 60H672M768 60H784"/></g>
-        <text class="d-note" x="0" y="112">Machines check first. People decide at the gates.</text>
-      </svg>
-    </figure>
-
-    <div class="grid three lessons">
-      <div><h4>Machines check first</h4><p>Automated staging and continuity checks took one episode from <b>173 issues to zero</b> before any human review. A heavier human review loop, by contrast, ran to 84 versions with no better result, so I rolled it back.</p></div>
-      <div><h4>Pay per usable result</h4><p>Comparing image providers on price divided by pass rate, not price per call, cut the cost of each usable drawing by <b>a third</b> ($0.12 vs $0.18) with the same model and quality.</p></div>
-      <div><h4>Test on your own content</h4><p>Every model is tested on the studio's own characters before it's adopted. Two video models passed <b>0 of 6</b> test clips between them; the one now on trial passed <b>3 of 3</b> at a lower cost per clip than the current one.</p></div>
-    </div>
-
-    <div class="grid two compact">
-      <article class="card">
-        <span class="pill">Prototype</span>
-        <h3>Multi-agent market research and risk</h3>
-        <p>Python system with separate research, validation and risk agents, using exchange data and a time-series forecasting model. Execution is off by default and runs only after validation and risk checks pass.</p>
-        <p class="result">Guardrails first: trading stays switched off until validation and risk agents both pass.</p>
-      </article>
-      <article class="card">
-        <span class="pill">Pre-release</span>
-        <h3>iOS physics puzzle game</h3>
-        <p>48 levels in SwiftUI and SpriteKit, taken from concept to pre-release, with a custom level-design tool to build and tune them.</p>
-        <p class="result">A custom level editor made it possible to build and tune all <b>48</b> levels.</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="notes" class="wrap section">
-    <p class="eyebrow">Notes</p>
-    <h2>Writing</h2>
-    <a class="note-link" href="notes/machines-check-first.html">
-      <span class="pill">Essay · 4 min read</span>
-      <h3>Machines check first: what running an AI studio taught me about review gates</h3>
-      <p>Why a heavier review loop gave me 84 versions and no better episode, and how automated checks took another from 173 issues to zero.</p>
-      <span class="more">Read the note →</span>
-    </a>
-  </section>
-
-  <section id="approach" class="band">
-    <div class="wrap">
-      <p class="eyebrow">05 · Approach and toolkit</p>
-      <h2>How I work</h2>
-      <ol class="principles">
-        <li><h3>Evidence first</h3><p>Research, funnels and operations data before opinions.</p></li>
-        <li><h3>Make the case in money</h3><p>Every bet gets a business case, and a point where we stop.</p></li>
-        <li><h3>Speak engineering</h3><p>A developer for 10+ years: APIs, events and microservices are home ground.</p></li>
-        <li><h3>Ship small, check early</h3><p>MVPs, automated checks and clear approval gates.</p></li>
-        <li><h3>Lead across lines</h3><p>Engineers, vendors, stores and finance, with budgets managed openly.</p></li>
+      <p class="eyebrow">05 · Path</p>
+      <h2>From the front end to product leadership</h2>
+      <ol class="timeline">
+        <li><span>2024–2026</span><div><b>Senior Product Manager, Technology</b><p>Global performance sportswear brand</p></div></li>
+        <li><span>2021–2024</span><div><b>Product Owner</b><p>Swiss telecom operator</p></div></li>
+        <li><span>2020–2021</span><div><b>Product Manager</b><p>Fundraising and payments SaaS</p></div></li>
+        <li><span>2019–2020</span><div><b>Senior Technical Product Manager</b><p>Digital health SaaS</p></div></li>
+        <li><span>2007–2019</span><div><b>Product Manager, then Web Development Lead</b><p>Global e-commerce marketplace</p></div></li>
+        <li><span>2004–2008</span><div><b>Senior Web Developer</b><p>Online marketplaces in Milan and Berlin</p></div></li>
       </ol>
-      <ul class="tags wide">
-        <li>Strategy &amp; roadmaps</li><li>Discovery &amp; experiments</li><li>Business cases &amp; ROI</li><li>APIs &amp; integrations</li><li>B2B SaaS</li><li>E-commerce &amp; conversion</li><li>Payments</li><li>RFID &amp; Digital Twin</li><li>Agentic workflows</li><li>Coding agents</li><li>Agile &amp; SAFe</li><li>UX research</li><li>Vendor &amp; budget management</li>
-      </ul>
+      <p class="fine">SAFe® 5 PO/PM · Certified ScrumMaster · Claude, Claude Code, Claude Platform 101 and agentic collaboration courses · Italian and Swedish (native), English (professional), German (B2)</p>
     </div>
-  </section>
-
-  <section class="wrap section">
-    <p class="eyebrow">06 · Path</p>
-    <h2>From the front end to product leadership</h2>
-    <ol class="timeline">
-      <li><span>2024–2026</span><div><b>Senior Product Manager, Technology</b><p>Global performance sportswear brand</p></div></li>
-      <li><span>2021–2024</span><div><b>Product Owner</b><p>Swiss telecom operator</p></div></li>
-      <li><span>2020–2021</span><div><b>Product Manager</b><p>Fundraising and payments SaaS</p></div></li>
-      <li><span>2019–2020</span><div><b>Senior Technical Product Manager</b><p>Digital health SaaS</p></div></li>
-      <li><span>2007–2019</span><div><b>Product Manager, then Web Development Lead</b><p>Global e-commerce marketplace</p></div></li>
-      <li><span>2004–2008</span><div><b>Senior Web Developer</b><p>Online marketplaces in Milan and Berlin</p></div></li>
-    </ol>
-    <p class="fine">SAFe® 5 PO/PM · Certified ScrumMaster · Claude Code and agentic AI courses · Italian and Swedish (native), English (professional), German (B2)</p>
   </section>
 
   <section id="contact" class="contact">
     <div class="wrap">
-      <p class="eyebrow">07 · Contact</p>
+      <p class="eyebrow">06 · Contact</p>
       <h2>Let's talk about your product</h2>
       <p class="section-lede">I'm based in Zurich and work in English, German, Italian and Swedish. If you're building something where hardware, data or AI meet the customer, I'd like to hear about it.</p>
       <div class="cta">
