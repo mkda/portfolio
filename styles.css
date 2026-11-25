@@ -522,21 +522,14 @@ p{margin:0}
 .bar-val{white-space:nowrap}
 @media(max-width:37.49em){.bar-row{grid-template-columns:96px 1fr 60px}}
 
-/* Hand-drawn animated charts (viz.js): ink and marker on dotted paper */
-@font-face{font-family:"Caveat";src:url("fonts/caveat-400.woff2") format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Caveat";src:url("fonts/caveat-700.woff2") format("woff2");font-weight:700;font-display:swap}
-.viz.sketch{margin:var(--s-5) 0 0;padding:var(--s-4) var(--s-3) var(--s-3);border-radius:var(--corner-m);border:1px solid #e7e1d7;color:#2b2b2b;
-  background:radial-gradient(circle,#d8d1c5 .9px,transparent 1.2px) 0 0/16px 16px,#FAF8F5;box-shadow:0 1px 2px rgb(60 40 20/.08),0 6px 18px -8px rgb(60 40 20/.18)}
+/* Animated technical diagrams (viz.js): monoline pen on deep navy */
+@font-face{font-family:"Architects Daughter";src:url("fonts/architects-daughter-400.woff2") format("woff2");font-weight:400;font-display:swap}
+.viz.sketch{margin:var(--s-5) 0 0;padding:var(--s-4) var(--s-3) var(--s-3);border-radius:var(--corner-l);color:#F1F5F9;background:linear-gradient(160deg,#121A26,#192435);border:1px solid #243247}
 .viz.sketch figcaption{position:absolute!important;inline-size:1px;block-size:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.viz.sketch .chart-note{color:#5a554e;font:400 var(--body-s) var(--font-sans);padding-inline:var(--s-2)}
+.viz.sketch .chart-note{color:#8E9BAE;font:400 var(--body-s) var(--font-sans);padding-inline:var(--s-2)}
 .viz-svg{display:block;inline-size:100%;max-inline-size:560px;block-size:auto;margin:0 auto;overflow:visible}
-.hand{font-family:"Caveat","Patrick Hand","Comic Neue",cursive;transform-box:fill-box;transform-origin:left bottom}
-.marker{mix-blend-mode:multiply;opacity:.62}
-/* Boiling line: three copies of each stroke swap at 12 fps */
-.boil>g{opacity:0;animation:boil .25s step-end infinite}
-.boil>g:nth-child(2){animation-delay:-.0833s}
-.boil>g:nth-child(3){animation-delay:-.1667s}
-@keyframes boil{0%{opacity:1}33.33%{opacity:0}100%{opacity:0}}
-.viz.sketch:not(.in-view) .boil>g{animation-play-state:paused}
-.boil path{stroke-dasharray:1 1}
-@media(prefers-reduced-motion:reduce){.boil>g{animation:none;opacity:0}.boil>g:first-child{opacity:1}}
+.hand{font-family:"Architects Daughter","Patrick Hand",system-ui,sans-serif;letter-spacing:.01em}
+.hand.strong{letter-spacing:.02em}
+.pen path{stroke-dasharray:1 1}
+.pen.soft{opacity:.55}
+.pen.soft path{stroke-dasharray:none}
