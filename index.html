@@ -1,11 +1,13 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("pm-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="color-scheme" content="light dark">
+<script>try{var c=localStorage.getItem("color-scheme");if(c)document.querySelector('meta[name="color-scheme"]').content=c}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="text-scale" content="scale">
 <meta name="robots" content="noindex, nofollow">
-<title>Mikael Dell'Anna · Product Manager</title>
+<title>Mikael Dell'Anna · Senior Technical Product Manager</title>
 <meta name="description" content="Senior technical product manager in Zurich. AI with guardrails, platforms that connect physical products to data, and growth built on evidence.">
 <meta property="og:title" content="Mikael Dell'Anna · Senior Technical Product Manager">
 <meta property="og:description" content="AI with guardrails, platforms that connect physical products to data, and growth built on evidence.">
@@ -19,9 +21,10 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip" href="#content">Skip to content</a>
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <a class="brand" href="#top" aria-label="Mikael Dell'Anna, home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" class="mark-bg"/><path class="mark-line" d="M8 23V9l8 9 8-9v14"/><circle class="mark-dot" cx="8" cy="23" r="2.2"/><circle class="mark-dot" cx="8" cy="9" r="2.2"/><circle class="mark-hub" cx="16" cy="18" r="2.8"/><circle class="mark-dot" cx="24" cy="9" r="2.2"/><circle class="mark-dot" cx="24" cy="23" r="2.2"/></svg><span class="brand-name">dellanna<span>.pm</span></span></a>
+    <a class="brand" href="#top"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" class="mark-bg"/><path class="mark-line" d="M8 23V9l8 9 8-9v14"/><circle class="mark-dot" cx="8" cy="23" r="2.2"/><circle class="mark-dot" cx="8" cy="9" r="2.2"/><circle class="mark-hub" cx="16" cy="18" r="2.8"/><circle class="mark-dot" cx="24" cy="9" r="2.2"/><circle class="mark-dot" cx="24" cy="23" r="2.2"/></svg><span class="brand-name">dellanna<span>.pm</span></span></a>
     <nav class="tabs" aria-label="Sections">
       <a href="#work">What I do</a>
       <a href="#lead">How I lead</a>
@@ -29,16 +32,17 @@
       <a href="#notes">Notes</a>
       <a href="#contact">Contact</a>
     </nav>
-    <button class="theme" id="theme" type="button" aria-label="Switch colour theme">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+    <button class="theme" id="theme" type="button">
+      <span class="to-dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg><span class="visually-hidden">Switch to dark theme</span></span>
+      <span class="to-light"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5 1 3h-2zm0 20-1-3h2zM2 12l3-1v2zm20 0-3 1v-2zM4.9 4.9l2.8 1.4-1.4 1.4zm14.2 14.2-2.8-1.4 1.4-1.4zM4.9 19.1l1.4-2.8 1.4 1.4zM19.1 4.9l-1.4 2.8-1.4-1.4z"/></svg><span class="visually-hidden">Switch to light theme</span></span>
     </button>
   </div>
 </header>
 
-<main id="top">
-  <section class="hero wrap">
-    <p class="eyebrow">Senior Technical Product Manager · AI, platforms and data products · Zurich</p>
+<main id="content" tabindex="-1">
+  <section class="hero wrap" id="top">
     <h1>I make complex systems work as one product, and I ship with AI agents.</h1>
+    <p class="role">Senior Technical Product Manager · AI, platforms and data products · Zurich</p>
     <p class="lede">I turn evidence into a funded decision, then lead engineers and vendors until it works in production. Lately that means putting AI to work with the guardrails a business needs.</p>
     <div class="cta">
       <a class="btn primary" href="#work">See what I do</a>
@@ -52,9 +56,9 @@
     </dl>
   </section>
 
-  <section id="work" class="band">
+  <section id="work" tabindex="-1" class="band">
     <div class="wrap">
-      <div class="sec-head"><p class="eyebrow"><span class="num">01</span>What I do</p><h2>Three problems I'm good at</h2></div>
+      <h2 class="sec-title">Three problems I'm good at</h2>
 
       <article class="theme-block">
         <div class="theme-head">
@@ -71,7 +75,7 @@
             <h4>Where I've done it</h4>
             <p>I built and run an animation studio where agents write, draw, animate, voice and publish children's episodes in six languages, with two human approval gates. Separately, I built an experimental decision-support platform that abstains on weak evidence and keeps orders, sizing and accounting under code control.</p>
           </div>
-          <figure class="chart" aria-label="Bar chart: the same image model through two providers. Provider A costs $0.09 per image and $0.12 per usable drawing. Provider B costs $0.14 per image and $0.18 per usable drawing.">
+          <figure class="chart">
             <figcaption><b>Price per call hides the real cost.</b> Same image model, two providers.</figcaption>
             <div class="bars">
               <div class="bar-group">Provider A</div>
@@ -84,8 +88,8 @@
             <p class="chart-note">Usable cost = price ÷ pass rate. Choosing on it cut a third off every usable drawing.</p>
           </figure>
         </div>
-        <figure class="diagram" aria-label="Pipeline: brief, human gate one, design, generate, assemble, automated checks by three agents, human gate two, release">
-          <svg class="d-desk" viewBox="0 0 900 120" role="img">
+        <figure class="diagram">
+          <svg class="d-desk" aria-label="Pipeline: brief, human gate one, design, generate, assemble, automated checks by three agents, human gate two, release" viewBox="0 0 900 120" role="img">
             <g class="d-node"><rect x="0" y="34" width="96" height="52" rx="10"/><text x="48" y="64">Brief</text></g>
             <g class="d-gate"><rect x="112" y="34" width="96" height="52" rx="10"/><text x="160" y="58">Gate 1</text><text class="d-sub" x="160" y="76">human</text></g>
             <g class="d-node"><rect x="224" y="34" width="96" height="52" rx="10"/><text x="272" y="64">Design</text></g>
@@ -97,7 +101,7 @@
             <g class="d-line"><path d="M96 60H112M208 60H224M320 60H336M432 60H448M544 60H560M656 60H672M768 60H784"/></g>
             <text class="d-note" x="0" y="112">Machines check first. People decide at the gates.</text>
           </svg>
-          <svg class="d-phone" viewBox="0 0 340 476" role="img">
+          <svg class="d-phone" aria-label="Pipeline: brief, human gate one, design, generate, assemble, automated checks by three agents, human gate two, release" viewBox="0 0 340 476" role="img">
             <g class="d-node"><rect x="70" y="10" width="200" height="40" rx="10"/><text x="170" y="35">Brief</text></g><g class="d-gate"><rect x="70" y="66" width="200" height="40" rx="10"/><text x="170" y="91">Gate 1 · human</text></g><g class="d-node"><rect x="70" y="122" width="200" height="40" rx="10"/><text x="170" y="147">Design</text></g><g class="d-node"><rect x="70" y="178" width="200" height="40" rx="10"/><text x="170" y="203">Generate</text></g><g class="d-node"><rect x="70" y="234" width="200" height="40" rx="10"/><text x="170" y="259">Assemble</text></g><g class="d-accent"><rect x="70" y="290" width="200" height="40" rx="10"/><text x="170" y="315">Checks · 3 agents</text></g><g class="d-gate"><rect x="70" y="346" width="200" height="40" rx="10"/><text x="170" y="371">Gate 2 · human</text></g><g class="d-good"><rect x="70" y="402" width="200" height="40" rx="10"/><text x="170" y="427">Release</text></g>
             <g class="d-line"><path d="M170 50V66M170 106V122M170 162V178M170 218V234M170 274V290M170 330V346M170 386V402"/></g>
             <text class="d-note" x="70" y="468">Machines check first. People decide at the gates.</text>
@@ -126,8 +130,8 @@
             <li><b>$200K+</b> a year projected savings from the in-house serialisation MVP</li>
           </ul>
         </div>
-        <figure class="diagram" aria-label="Diagram: factories, freight forwarders, warehouses, distributors and stores each publish RFID read events to the Digital Twin over EPC publish and subscribe. The Digital Twin feeds the event streaming platform, which syncs the ERP and drives QR-based workflows after the sale.">
-          <svg class="d-desk" viewBox="0 0 900 330" role="img">
+        <figure class="diagram">
+          <svg class="d-desk" aria-label="Diagram: factories, freight forwarders, warehouses, distributors and stores each publish RFID read events to the Digital Twin over EPC publish and subscribe. The Digital Twin feeds the event streaming platform, which syncs the ERP and drives QR-based workflows after the sale." viewBox="0 0 900 330" role="img">
             <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="d-arrow" d="M0 0L10 5L0 10z"/></marker></defs>
             <g class="d-node">
               <rect x="10" y="20" width="150" height="56" rx="10"/><text x="85" y="46">Factories</text><text class="d-sub" x="85" y="64">tag &amp; serialise</text>
@@ -149,7 +153,7 @@
               <path d="M300 264H250" marker-end="url(#ah)"/><path d="M600 264H650" marker-end="url(#ah)"/>
             </g>
           </svg>
-          <svg class="d-phone" viewBox="0 0 360 462" role="img">
+          <svg class="d-phone" aria-label="Diagram: factories, freight forwarders, warehouses, distributors and stores each publish RFID read events to the Digital Twin over EPC publish and subscribe. The Digital Twin feeds the event streaming platform, which syncs the ERP and drives QR-based workflows after the sale." viewBox="0 0 360 462" role="img">
             <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="d-arrow" d="M0 0L10 5L0 10z"/></marker></defs>
             <g class="d-node"><rect x="10" y="10" width="150" height="44" rx="10"/><text x="85" y="30">Factories</text><text class="d-sub" x="85" y="46">tag &amp; serialise</text><rect x="10" y="66" width="150" height="44" rx="10"/><text x="85" y="86">Freight forwarders</text><text class="d-sub" x="85" y="102">in transit</text><rect x="10" y="122" width="150" height="44" rx="10"/><text x="85" y="142">Warehouses</text><text class="d-sub" x="85" y="158">receive &amp; ship</text><rect x="10" y="178" width="150" height="44" rx="10"/><text x="85" y="198">Distributors</text><text class="d-sub" x="85" y="214">allocate</text><rect x="10" y="234" width="150" height="44" rx="10"/><text x="85" y="254">Stores</text><text class="d-sub" x="85" y="270">count, sell, find</text></g>
             <g class="d-accent"><rect x="200" y="10" width="150" height="268" rx="10"/><text x="275" y="128">Digital Twin</text><text class="d-sub" x="275" y="150">EPC events</text><text class="d-sub" x="275" y="166">publish / subscribe</text><text class="d-sub" x="275" y="182">one serial per item</text></g>
@@ -184,37 +188,38 @@
     </div>
   </section>
 
-  <section id="lead" class="wrap section">
-    <div class="sec-head"><p class="eyebrow"><span class="num">02</span>How I lead</p><h2>Teams, vendors and trade-offs</h2></div>
+  <section id="lead" tabindex="-1" class="wrap section" aria-labelledby="lead-h">
+    <h2 class="sec-title" id="lead-h">Teams, vendors and trade-offs</h2>
     <div class="grid four lead-grid">
-      <details class="card fold" open><summary><h3>Teams and budgets</h3></summary><p>I've led about 20 engineers through a year-long move to microservices, run a workstream with 5 developers, 3 vendors and a CHF 250K+ budget, and managed a web team of 4 that shipped 300+ campaigns a year.</p></details>
-      <details class="card fold" open><summary><h3>Saying no, visibly</h3></summary><p>When supply chain and retail both needed the same platform, I scored their requests with WSJF against the engineering we actually had. The scores didn't decide for us. They made the trade-off visible, so no became a shared conclusion.</p></details>
-      <details class="card fold" open><summary><h3>Watching, not just asking</h3></summary><p>Interviews told us how stores handled inventory. Observation showed how they really did it, including virtual locations, and led us to rebuild the data model before rollout rather than after.</p></details>
-      <details class="card fold" open><summary><h3>Writing it down</h3></summary><p>BRDs for the business, PRDs for the team, story mapping to keep journeys in view, and one dependency map across seven connected initiatives so they didn't block each other.</p></details>
+      <details class="card fold" open><summary>Teams and budgets</summary><p>I've led about 20 engineers through a year-long move to microservices, run a workstream with 5 developers, 3 vendors and a CHF 250K+ budget, and managed a web team of 4 that shipped 300+ campaigns a year.</p></details>
+      <details class="card fold" open><summary>Saying no, visibly</summary><p>When supply chain and retail both needed the same platform, I scored their requests with WSJF against the engineering we actually had. The scores didn't decide for us. They made the trade-off visible, so no became a shared conclusion.</p></details>
+      <details class="card fold" open><summary>Watching, not just asking</summary><p>Interviews told us how stores handled inventory. Observation showed how they really did it, including virtual locations, and led us to rebuild the data model before rollout rather than after.</p></details>
+      <details class="card fold" open><summary>Writing it down</summary><p>BRDs for the business, PRDs for the team, story mapping to keep journeys in view, and one dependency map across seven connected initiatives so they didn't block each other.</p></details>
     </div>
   </section>
 
-  <section id="automation" class="band">
+  <section id="automation" tabindex="-1" class="band">
     <div class="wrap">
-      <div class="sec-head"><p class="eyebrow"><span class="num">03</span>From my studio to your automation</p><h2>What running AI in production taught me</h2></div>
+      <h2 class="sec-title">What running AI in production taught me</h2>
       <p class="section-lede">Each lesson came with a measured result in my studio, and each one applies to retail operations, telecom, customer service and internal processes.</p>
       <div class="table-wrap">
         <table class="parallels">
-          <thead><tr><th>Lesson</th><th>Result in the studio</th><th>In your organisation</th></tr></thead>
+          <caption class="visually-hidden">Five lessons from the studio, the measured result of each, and how it applies in an organisation</caption>
+          <thead><tr><th scope="col">Lesson</th><th scope="col">Result in the studio</th><th scope="col">In your organisation</th></tr></thead>
           <tbody>
-            <tr><td><b>Machines check first.</b> Automated staging, continuity and lip-sync checks run before anyone reviews a cut.</td><td>173 issues to zero before human review</td><td>Check every order, ticket or document automatically, so people only handle what fails.</td></tr>
-            <tr><td><b>Gates only where judgment matters.</b> Two approvals: before money is spent, and before release.</td><td>A heavier review loop ran to 84 versions with no better result, so it was rolled back</td><td>Approve decisions such as spend, customer impact and compliance, not routine steps.</td></tr>
-            <tr><td><b>Pay per usable result.</b> Compare price divided by pass rate.</td><td>A third cheaper per usable drawing, same quality</td><td>Measure cost per successful task for each AI vendor, not list price.</td></tr>
-            <tr><td><b>Test on your own data.</b> No model is adopted on a vendor demo.</td><td>Two models passed 0 of 6 test clips; the one on trial passed 3 of 3 for less</td><td>Build an eval set from your real cases before you sign a contract.</td></tr>
-            <tr><td><b>The weakest part sets the limit.</b> One component that can't take the load stops everything.</td><td>Two silent failure points found: a single worker machine and empty prepaid credit</td><td>Load-test each step, alert on silent failures, and revalidate after every model update.</td></tr>
+            <tr><th scope="row">Machines check first. <span class="sub">Automated staging, continuity and lip-sync checks run before anyone reviews a cut.</span></th><td>173 issues to zero before human review</td><td>Check every order, ticket or document automatically, so people only handle what fails.</td></tr>
+            <tr><th scope="row">Gates only where judgment matters. <span class="sub">Two approvals: before money is spent, and before release.</span></th><td>A heavier review loop ran to 84 versions with no better result, so it was rolled back</td><td>Approve decisions such as spend, customer impact and compliance, not routine steps.</td></tr>
+            <tr><th scope="row">Pay per usable result. <span class="sub">Compare price divided by pass rate.</span></th><td>A third cheaper per usable drawing, same quality</td><td>Measure cost per successful task for each AI vendor, not list price.</td></tr>
+            <tr><th scope="row">Test on your own data. <span class="sub">No model is adopted on a vendor demo.</span></th><td>Two models passed 0 of 6 test clips; the one on trial passed 3 of 3 for less</td><td>Build an eval set from your real cases before you sign a contract.</td></tr>
+            <tr><th scope="row">The weakest part sets the limit. <span class="sub">One component that can't take the load stops everything.</span></th><td>Two silent failure points found: a single worker machine and empty prepaid credit</td><td>Load-test each step, alert on silent failures, and revalidate after every model update.</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-  <section id="builds" class="wrap section">
-    <div class="sec-head"><p class="eyebrow"><span class="num">04</span>Builds · 2026</p><h2>Products I build and run myself</h2></div>
+  <section id="builds" tabindex="-1" class="wrap section">
+    <h2 class="sec-title">Products I build and run myself</h2>
     <div class="grid three">
       <article class="card">
         <span class="pill live">Live</span>
@@ -237,48 +242,48 @@
     </div>
   </section>
 
-  <section id="notes" class="band">
+  <section id="notes" tabindex="-1" class="band">
     <div class="wrap">
-      <div class="sec-head"><p class="eyebrow"><span class="num">05</span>Notes</p><h2>Writing</h2></div>
-      <div class="notes">
-        <a class="note-link" href="notes/reusing-an-ai-studio-playbook.html">
-          <span class="pill">November 2026 · 6 min read</span>
+      <h2 class="sec-title">Writing</h2>
+      <ul class="notes" role="list">
+        <li><a class="note-link" href="notes/reusing-an-ai-studio-playbook.html">
           <h3>Reusing an AI studio's playbook in enterprise automation</h3>
+          <span class="meta">November 2026 · 6 min read</span>
           <p>The longer version of the table above, with examples from retail, telecom and back-office work.</p>
-        </a>
-        <a class="note-link" href="notes/evals-for-product-managers.html">
-          <span class="pill">November 2026 · 6 min read</span>
+        </a></li>
+        <li><a class="note-link" href="notes/evals-for-product-managers.html">
           <h3>Evals for product managers</h3>
+          <span class="meta">November 2026 · 6 min read</span>
           <p>If your product uses AI, the eval set is part of the spec. How I build one, score it and decide what ships.</p>
-        </a>
-        <a class="note-link" href="notes/a-model-answer-is-not-a-decision.html">
-          <span class="pill">October 2026 · 5 min read</span>
+        </a></li>
+        <li><a class="note-link" href="notes/a-model-answer-is-not-a-decision.html">
           <h3>A model answer is not a decision</h3>
+          <span class="meta">October 2026 · 5 min read</span>
           <p>Evidence, abstention and authority boundaries, from building an experimental AI decision platform.</p>
-        </a>
-        <a class="note-link" href="notes/platform-pm-lessons-from-rfid.html">
-          <span class="pill">April 2026 · 6 min read</span>
+        </a></li>
+        <li><a class="note-link" href="notes/platform-pm-lessons-from-rfid.html">
           <h3>Platform PM lessons from RFID</h3>
+          <span class="meta">April 2026 · 6 min read</span>
           <p>What tagging every item from factory to store taught me about platforms with many internal customers.</p>
-        </a>
-        <a class="note-link" href="notes/business-case-with-discount-rates.html">
-          <span class="pill">May 2025 · 5 min read</span>
+        </a></li>
+        <li><a class="note-link" href="notes/business-case-with-discount-rates.html">
           <h3>Writing a business case with discount rates</h3>
+          <span class="meta">May 2025 · 5 min read</span>
           <p>Why a product manager should speak NPV, and how to build a CAPEX request finance will trust.</p>
-        </a>
-      </div>
+        </a></li>
+      </ul>
     </div>
   </section>
 
   <section class="wrap section path">
-    <div class="sec-head"><p class="eyebrow"><span class="num">06</span>Path</p></div>
+    <h2 class="sec-title">Path</h2>
     <p class="path-line">Twenty years from front-end developer to product leader, across a global e-commerce marketplace, digital health and payments SaaS, a Swiss telecom operator and a global sportswear brand.</p>
     <p class="fine">SAFe® 5 PO/PM · Certified ScrumMaster · Claude, Claude Code, Claude Platform 101 and agentic collaboration courses · Italian and Swedish (native), English (professional), German (B2)</p>
   </section>
 
-  <section id="contact" class="contact">
+  <section id="contact" tabindex="-1" class="contact">
     <div class="wrap">
-      <div class="sec-head"><p class="eyebrow"><span class="num">07</span>Contact</p><h2>Let's talk about your product</h2></div>
+      <h2 class="sec-title">Let's talk about your product</h2>
       <p class="section-lede">I'm based in Zurich and work in English, German, Italian and Swedish. If you're building something where hardware, data or AI meet the customer, I'd like to hear about it.</p>
       <div class="cta">
         <a class="btn primary" href="mailto:mikael@dellanna.pm?subject=Hello%20Mikael">mikael@dellanna.pm</a>
@@ -289,18 +294,34 @@
 
 <footer class="wrap foot">© <span id="y">2026</span> Mikael Dell'Anna · <a href="https://www.linkedin.com/in/mikael-dellanna">LinkedIn</a></footer>
 
-<script>
-(function(){
-  document.getElementById("theme").addEventListener("click",function(){
-    var d=document.documentElement,n=d.dataset.theme==="dark"?"light":"dark";
-    d.dataset.theme=n;try{localStorage.setItem("pm-theme",n)}catch(e){}
-  });
-  document.getElementById("y").textContent=new Date().getFullYear();
-  if(matchMedia("(max-width:719px)").matches){document.querySelectorAll("details.fold").forEach(function(d){d.removeAttribute("open")})}
-  var tabs=[].slice.call(document.querySelectorAll(".tabs a"));
-  if("IntersectionObserver" in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){tabs.forEach(function(a){a.setAttribute("aria-current",a.getAttribute("href")==="#"+e.target.id?"true":"false")});var c=document.querySelector('.tabs a[aria-current="true"]');if(c&&c.scrollIntoView&&innerWidth<720){c.parentNode.scrollTo({left:c.offsetLeft-16,behavior:"smooth"})}}})},{rootMargin:"-40% 0px -55% 0px"});
-  tabs.forEach(function(a){var t=document.querySelector(a.getAttribute("href"));if(t)io.observe(t)})}
-})();
+<script type="module">
+// Theme toggle: two states (system, or the opposite of system), stored only when it differs from the system.
+const meta=document.querySelector('meta[name="color-scheme"]');
+const sysDark=()=>matchMedia("(prefers-color-scheme: dark)").matches;
+const rendered=()=>meta.content==="light dark"?(sysDark()?"dark":"light"):meta.content;
+document.getElementById("theme").addEventListener("click",()=>{
+  const target=rendered()==="dark"?"light":"dark";
+  const system=sysDark()?"dark":"light";
+  try{ if(target===system) localStorage.removeItem("color-scheme"); else localStorage.setItem("color-scheme",target);}catch(e){}
+  meta.content=target===system?"light dark":target;
+});
+addEventListener("storage",e=>{if(e.key==="color-scheme")meta.content=e.newValue??"light dark"});
+document.getElementById("y").textContent=new Date().getFullYear();
+
+// Accordion starts closed on compact and medium windows.
+if(matchMedia("(max-width:52.49em)").matches)document.querySelectorAll("details.fold").forEach(d=>d.open=false);
+
+// Scrollspy: native :target-current where supported, IntersectionObserver otherwise; aria-current mirrors it.
+const links=[...document.querySelectorAll(".tabs a")];
+const mark=a=>links.forEach(l=>{l.classList.toggle("target-current",l===a);l.setAttribute("aria-current",l===a?"true":"false")});
+const reveal=a=>{if(a&&innerWidth<840)a.parentNode.scrollTo({left:a.offsetLeft-16,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})};
+if(CSS.supports("scroll-target-group: auto")){
+  const sync=()=>{const a=document.querySelector(".tabs a:target-current");links.forEach(l=>l.setAttribute("aria-current",l===a?"true":"false"));reveal(a)};
+  sync();addEventListener("scrollend",sync);
+}else if("IntersectionObserver" in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const a=links.find(l=>l.hash==="#"+e.target.id);mark(a);reveal(a)}}),{rootMargin:"-50% 0px -50% 0px"});
+  links.forEach(l=>{const t=document.querySelector(l.hash);if(t)io.observe(t)});
+}
 </script>
 <script src="vendor/motion-14.11.1.min.js" defer></script>
 <script type="module" src="site.js"></script>

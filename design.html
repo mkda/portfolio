@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("pm-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="color-scheme" content="light dark">
+<script>try{var c=localStorage.getItem("color-scheme");if(c)document.querySelector('meta[name="color-scheme"]').content=c}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="text-scale" content="scale">
 <meta name="robots" content="noindex, nofollow">
 <title>Design system · dellanna.pm</title>
 <meta name="description" content="Senior technical product manager in Zurich. AI with guardrails, platforms that connect physical products to data, and growth built on evidence.">
@@ -19,49 +21,48 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<a class="skip" href="#content">Skip to content</a>
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <a class="brand" href="#top" aria-label="Mikael Dell'Anna, home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" class="mark-bg"/><path class="mark-line" d="M8 23V9l8 9 8-9v14"/><circle class="mark-dot" cx="8" cy="23" r="2.2"/><circle class="mark-dot" cx="8" cy="9" r="2.2"/><circle class="mark-hub" cx="16" cy="18" r="2.8"/><circle class="mark-dot" cx="24" cy="9" r="2.2"/><circle class="mark-dot" cx="24" cy="23" r="2.2"/></svg><span class="brand-name">dellanna<span>.pm</span></span></a>
-    <nav class="tabs" aria-label="Pages"><a href="./">Home</a><a href="#tokens" aria-current="true">Design system</a></nav>
-    <button class="theme" id="theme" type="button" aria-label="Switch colour theme">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg>
+    <a class="brand" href="#top"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" class="mark-bg"/><path class="mark-line" d="M8 23V9l8 9 8-9v14"/><circle class="mark-dot" cx="8" cy="23" r="2.2"/><circle class="mark-dot" cx="8" cy="9" r="2.2"/><circle class="mark-hub" cx="16" cy="18" r="2.8"/><circle class="mark-dot" cx="24" cy="9" r="2.2"/><circle class="mark-dot" cx="24" cy="23" r="2.2"/></svg><span class="brand-name">dellanna<span>.pm</span></span></a>
+    <nav class="tabs" aria-label="Pages"><a href="./">Home</a><a href="#content" class="target-current" aria-current="page">Design system</a></nav>
+    <button class="theme" id="theme" type="button">
+      <span class="to-dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg><span class="visually-hidden">Switch to dark theme</span></span>
+      <span class="to-light"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5 1 3h-2zm0 20-1-3h2zM2 12l3-1v2zm20 0-3 1v-2zM4.9 4.9l2.8 1.4-1.4 1.4zm14.2 14.2-2.8-1.4 1.4-1.4zM4.9 19.1l1.4-2.8 1.4 1.4zM19.1 4.9l-1.4 2.8-1.4-1.4z"/></svg><span class="visually-hidden">Switch to light theme</span></span>
     </button>
   </div>
 </header>
-<main class="section" id="tokens">
-  <div class="sec-head"><p class="eyebrow"><span class="num">DS</span>dellanna.pm</p><h2>Design system</h2></div>
-  <p class="section-lede">The tokens and components every page on this site is built from. Change a token in styles.css and every page follows. Switch the theme in the top bar to check both modes.</p>
+<main class="section ds-page" id="content">
+  <h1 class="sec-title">Design system</h1>
+  <p class="section-lede">The tokens and components this site is built from. They follow Google's Material Design 3 values (type scale, shape scale, state layers and component sizes) with the site's own fonts and colours, and Chrome's modern web guidance for accessibility and CSS. Change a token in styles.css and every page follows.</p>
 
-  <section class="ds-block"><h2>Colour</h2><p>Semantic names, two themes. Accent is for links, numbers and the one primary action per screen.</p><div class="ds-row"><div class="ds-swatch"><i style="background:var(--page)"></i><span>--page</span></div><div class="ds-swatch"><i style="background:var(--card)"></i><span>--card</span></div><div class="ds-swatch"><i style="background:var(--raised)"></i><span>--raised</span></div><div class="ds-swatch"><i style="background:var(--ink)"></i><span>--ink</span></div><div class="ds-swatch"><i style="background:var(--ink-2)"></i><span>--ink-2</span></div><div class="ds-swatch"><i style="background:var(--ink-3)"></i><span>--ink-3</span></div><div class="ds-swatch"><i style="background:var(--line-strong)"></i><span>--line-strong</span></div><div class="ds-swatch"><i style="background:var(--accent)"></i><span>--accent</span></div><div class="ds-swatch"><i style="background:var(--accent-soft)"></i><span>--accent-soft</span></div><div class="ds-swatch"><i style="background:var(--good)"></i><span>--good</span></div><div class="ds-swatch"><i style="background:var(--good-soft)"></i><span>--good-soft</span></div></div></section>
+  <section class="ds-block" aria-labelledby="c-h"><h2 id="c-h">Colour roles</h2><p>Material 3 role names. Each role holds a light and a dark value, combined with light-dark(), so the page follows the system theme unless the switch pins one.</p><ul class="ds-row" role="list" style="list-style:none;padding:0"><li class="ds-swatch"><i style="background:var(--primary)"></i><span>primary</span></li><li class="ds-swatch"><i style="background:var(--on-primary)"></i><span>on-primary</span></li><li class="ds-swatch"><i style="background:var(--primary-container)"></i><span>primary-container</span></li><li class="ds-swatch"><i style="background:var(--on-primary-container)"></i><span>on-primary-container</span></li><li class="ds-swatch"><i style="background:var(--tertiary)"></i><span>tertiary</span></li><li class="ds-swatch"><i style="background:var(--tertiary-container)"></i><span>tertiary-container</span></li><li class="ds-swatch"><i style="background:var(--surface)"></i><span>surface</span></li><li class="ds-swatch"><i style="background:var(--surface-container-low)"></i><span>surface-container-low</span></li><li class="ds-swatch"><i style="background:var(--surface-container)"></i><span>surface-container</span></li><li class="ds-swatch"><i style="background:var(--surface-container-high)"></i><span>surface-container-high</span></li><li class="ds-swatch"><i style="background:var(--surface-container-highest)"></i><span>surface-container-highest</span></li><li class="ds-swatch"><i style="background:var(--on-surface)"></i><span>on-surface</span></li><li class="ds-swatch"><i style="background:var(--on-surface-variant)"></i><span>on-surface-variant</span></li><li class="ds-swatch"><i style="background:var(--outline)"></i><span>outline</span></li><li class="ds-swatch"><i style="background:var(--outline-variant)"></i><span>outline-variant</span></li></ul></section>
 
-  <section class="ds-block"><h2>Type</h2><p>Geist for reading, Geist Mono for labels and numbers. Seven sizes, fluid at the top end.</p>
-    <div style="display:grid;gap:12px;margin-top:16px">
-      <div style="font-size:var(--fs-2xl);font-weight:600;letter-spacing:-.02em;line-height:1.1">--fs-2xl Page title</div>
-      <div style="font-size:var(--fs-xl);font-weight:600">--fs-xl Section title</div>
-      <div style="font-size:var(--fs-lg);font-weight:600">--fs-lg Block title</div>
-      <div style="font-size:var(--fs-md)">--fs-md Card title and ledes</div>
-      <div>--fs-base Body text for paragraphs</div>
-      <div style="font-size:var(--fs-sm);color:var(--ink-2)">--fs-sm Captions and meta</div>
-      <p class="eyebrow" style="margin:0">--fs-xs Label</p>
-    </div></section>
+  <section class="ds-block" aria-labelledby="t-h"><h2 id="t-h">Type scale</h2><p>Material 3 sizes in rem with unitless line heights, so text follows browser and system text size. Headings balance their lines; paragraphs avoid single-word last lines.</p>
+    <div class="table-wrap"><table class="ds-map"><caption class="visually-hidden">Type roles, their tokens and where they are used</caption><thead><tr><th scope="col">Role</th><th scope="col">Token</th><th scope="col">Used for</th></tr></thead><tbody><tr><th scope="row" style="font:400 var(--display-m) var(--font-sans)">Display medium</th><td><code>--display-m</code></td><td>Hero headline from 600px</td></tr><tr><th scope="row" style="font:400 var(--display-s) var(--font-sans)">Display small</th><td><code>--display-s</code></td><td>Hero headline on phones, article titles</td></tr><tr><th scope="row" style="font:400 var(--headline-m) var(--font-sans)">Headline medium</th><td><code>--headline-m</code></td><td>Section headings (h2) from 600px</td></tr><tr><th scope="row" style="font:400 var(--headline-s) var(--font-sans)">Headline small</th><td><code>--headline-s</code></td><td>Section headings on phones, block headings (h3)</td></tr><tr><th scope="row" style="font:400 var(--title-l) var(--font-sans)">Title large</th><td><code>--title-l</code></td><td>Card titles, hero lede</td></tr><tr><th scope="row" style="font:400 var(--title-m) var(--font-sans)">Title medium</th><td><code>--title-m</code></td><td>Accordion labels, role line</td></tr><tr><th scope="row" style="font:400 var(--title-s) var(--font-sans)">Title small</th><td><code>--title-s</code></td><td>Tabs, table headers</td></tr><tr><th scope="row" style="font:400 var(--body-l) var(--font-sans)">Body large</th><td><code>--body-l</code></td><td>Running text</td></tr><tr><th scope="row" style="font:400 var(--body-m) var(--font-sans)">Body medium</th><td><code>--body-m</code></td><td>Card text, captions</td></tr><tr><th scope="row" style="font:400 var(--body-s) var(--font-sans)">Body small</th><td><code>--body-s</code></td><td>Dates, chart notes</td></tr><tr><th scope="row" style="font:400 var(--label-l) var(--font-sans)">Label large</th><td><code>--label-l</code></td><td>Buttons, chips</td></tr></tbody></table></div></section>
 
-  <section class="ds-block"><h2>Space and shape</h2><p>A 4px scale. Sections use --section-y, which grows from 48px on phones to 96px on wide screens. Radii: 8, 12, 16 and pill.</p><div style="display:grid;gap:8px;margin-top:16px"><div class="ds-space"><i style="width:var(--s-1)"></i>--s-1</div><div class="ds-space"><i style="width:var(--s-2)"></i>--s-2</div><div class="ds-space"><i style="width:var(--s-3)"></i>--s-3</div><div class="ds-space"><i style="width:var(--s-4)"></i>--s-4</div><div class="ds-space"><i style="width:var(--s-5)"></i>--s-5</div><div class="ds-space"><i style="width:var(--s-6)"></i>--s-6</div><div class="ds-space"><i style="width:var(--s-7)"></i>--s-7</div><div class="ds-space"><i style="width:var(--s-8)"></i>--s-8</div><div class="ds-space"><i style="width:var(--s-9)"></i>--s-9</div></div></section>
+  <section class="ds-block" aria-labelledby="s-h"><h2 id="s-h">Space and shape</h2><p>A 4dp spacing grid. Corners: 4 (table), 8 (chips), 12 (cards), 16, 28 and full (buttons). Layout follows the Material window classes: compact under 600px, medium to 840px, expanded above, written in em so they respect text scaling.</p><ul class="ds-row" role="list" style="list-style:none;padding:0;display:grid;gap:8px"><li class="ds-space"><i style="width:var(--s-1)"></i>--s-1</li><li class="ds-space"><i style="width:var(--s-2)"></i>--s-2</li><li class="ds-space"><i style="width:var(--s-3)"></i>--s-3</li><li class="ds-space"><i style="width:var(--s-4)"></i>--s-4</li><li class="ds-space"><i style="width:var(--s-5)"></i>--s-5</li><li class="ds-space"><i style="width:var(--s-6)"></i>--s-6</li><li class="ds-space"><i style="width:var(--s-7)"></i>--s-7</li><li class="ds-space"><i style="width:var(--s-8)"></i>--s-8</li><li class="ds-space"><i style="width:var(--s-9)"></i>--s-9</li></ul></section>
 
-  <section class="ds-block"><h2>Components</h2><p>Section header, buttons, stats, cards, tags, result chips and a disclosure card that collapses on phones.</p>
-    <div class="sec-head" style="margin-top:24px"><p class="eyebrow"><span class="num">01</span>Section label</p><h2>Section title</h2></div>
-    <div class="cta"><a class="btn primary" href="#tokens">Primary action</a><a class="btn" href="#tokens">Secondary</a></div>
-    <dl class="stats"><div><dt>&gt;99.9%</dt><dd>stat with a short label</dd></div><div><dt>150%</dt><dd>second stat</dd></div></dl>
+  <section class="ds-block" aria-labelledby="m-h"><h2 id="m-h">Components and their Material 3 counterparts</h2>
+    <div class="table-wrap"><table class="ds-map"><caption class="visually-hidden">Site components mapped to Material 3 components</caption><thead><tr><th scope="col">On this site</th><th scope="col">Material 3</th><th scope="col">Spec applied</th></tr></thead><tbody><tr><th scope="row">Top bar</th><td>Small top app bar</td><td>64dp, surface colour, divider</td></tr><tr><th scope="row">Section tabs</th><td>Secondary tabs</td><td>48dp, title-small label, 2dp indicator, scrollable on phones; native scrollspy with a fallback</td></tr><tr><th scope="row">Theme switch</th><td>Standard icon button</td><td>40dp (48dp on touch), 24dp icon, full corner, state layer</td></tr><tr><th scope="row">Buttons</th><td>Filled and outlined buttons</td><td>40dp minimum, full corner, label-large, 24dp side padding</td></tr><tr><th scope="row">Stats</th><td>Filled cards</td><td>12dp corner, highest surface container</td></tr><tr><th scope="row">Cards</th><td>Outlined cards</td><td>12dp corner, outline-variant border, 16 to 24dp padding</td></tr><tr><th scope="row">Problem blocks</th><td>Elevated cards</td><td>Level 1 elevation from 600px, flat with dividers on phones</td></tr><tr><th scope="row">Status tags</th><td>Suggestion chips</td><td>32dp minimum, 8dp corner, label-large</td></tr><tr><th scope="row">Result chips</th><td>Filled tonal cards</td><td>Primary container colour</td></tr><tr><th scope="row">How I lead</th><td>Lists with expandable items</td><td>Native details and summary, 56dp rows, chevron before the label, no headings inside summary</td></tr><tr><th scope="row">Lessons</th><td>Data table</td><td>4dp corner, 56dp header, row headers, stacked cards on phones</td></tr><tr><th scope="row">Writing</th><td>Three-line list</td><td>Title, date, supporting text, trailing chevron, 88dp rows</td></tr></tbody></table></div>
+    <div class="cta"><a class="btn primary" href="#content">Filled button</a><a class="btn" href="#content">Outlined button</a></div>
+    <dl class="stats"><div><dt>&gt;99.9%</dt><dd>Filled card stat</dd></div><div><dt>150%</dt><dd>Second stat</dd></div></dl>
     <div class="grid three">
-      <article class="card"><span class="pill live">Live</span><h3>Card</h3><p>Body text in a card, with a result line underneath.</p><p class="result"><b>6</b> episodes · <b>6</b> languages</p></article>
-      <article class="card"><span class="pill">Tag</span><h3>Card with tag</h3><p>Tags mark status: live, experimental, in development.</p></article>
-      <details class="card fold" open><summary><h3>Disclosure card</h3></summary><p>Open on wide screens, tap to open on phones.</p></details>
+      <article class="card"><span class="pill live">Live</span><h3>Outlined card</h3><p>Body text in a card, with a result line underneath.</p><p class="result"><b>6</b> episodes · <b>6</b> languages</p></article>
+      <article class="card"><span class="pill">Experimental</span><h3>Card with chip</h3><p>Chips mark status: live, experimental, in development.</p></article>
+      <details class="card fold" open><summary>Expandable item</summary><p>Open on wide screens, tap to open on phones.</p></details>
     </div>
-    <ul class="proof" style="margin-top:16px;max-width:520px"><li><b>−70%</b> result chip with a number and context</li></ul>
+    <ul class="proof" role="list" style="margin-top:16px;max-width:520px"><li><b>−70%</b> Result chip with a number and context</li></ul>
   </section>
 
-  <section class="ds-block"><h2>Diagrams</h2><p>Boxes use .d-node, .d-accent for the system in focus, .d-gate for human decisions and .d-good for the outcome. Every connector starts and ends on a box. Each diagram ships a wide version and a vertical phone version.</p></section>
+  <section class="ds-block" aria-labelledby="d-h"><h2 id="d-h">Diagrams</h2><p>Boxes use .d-node, .d-accent for the system in focus, .d-gate for human decisions and .d-good for the outcome. Every connector starts and ends on a box. Each diagram has a wide version and an upright phone version, and the visible one carries the description.</p></section>
 </main>
 <footer class="wrap foot"><a href="./">Back to the portfolio</a></footer>
-<script>document.getElementById("theme").addEventListener("click",function(){var d=document.documentElement,n=d.dataset.theme==="dark"?"light":"dark";d.dataset.theme=n;try{localStorage.setItem("pm-theme",n)}catch(e){}});</script>
+<script type="module">
+const meta=document.querySelector('meta[name="color-scheme"]');
+const sysDark=()=>matchMedia("(prefers-color-scheme: dark)").matches;
+const rendered=()=>meta.content==="light dark"?(sysDark()?"dark":"light"):meta.content;
+document.getElementById("theme")?.addEventListener("click",()=>{const t=rendered()==="dark"?"light":"dark",sys=sysDark()?"dark":"light";try{t===sys?localStorage.removeItem("color-scheme"):localStorage.setItem("color-scheme",t)}catch(e){}meta.content=t===sys?"light dark":t});
+</script>
 </body>
 </html>
