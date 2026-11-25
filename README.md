@@ -4,6 +4,7 @@ Static site for GitHub Pages: plain HTML and CSS, no build step, same setup as t
 
 - `index.html`: all content
 - `styles.css`: light and dark themes
+- `littleleap.jpg`, `og.png`: images (link preview card is `og.png`)
 - `.nojekyll`: serve files as they are
 
 ## Publish
@@ -12,4 +13,4 @@ Settings → Pages → Source: "Deploy from a branch", branch `main`, folder `/ 
 
 ## Custom domain (later)
 
-Not set up yet. When ready: add a `CNAME` file containing `dellanna.pm`, set the domain under Settings → Pages, and point DNS (apex A/AAAA records to the GitHub Pages IPs, `www` CNAME to `mkda.github.io`).
+Not set up yet. When the domain goes live, also change the `og:image` URL in `index.html` to the new domain. When ready: add a `CNAME` file containing `dellanna.pm`, set the domain under Settings → Pages, and point DNS (apex A/AAAA records to the GitHub Pages IPs, `www` CNAME to `mkda.github.io`).
