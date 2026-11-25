@@ -8,7 +8,7 @@ if (M && !calm) {
   const ease = [0.2, 0, 0, 1];
 
   // Sections settle in once, a few pixels, as they enter the viewport.
-  const reveal = ".cap, .grid .card, .note-link, .table-wrap, .chart, .timeline li";
+  const reveal = ".theme-block, .grid .card, .note-link, .table-wrap";
   document.querySelectorAll(reveal).forEach((el) => {
     if (el.getBoundingClientRect().top > innerHeight) {
       el.style.opacity = "0";
