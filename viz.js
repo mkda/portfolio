@@ -94,9 +94,10 @@ const charts = {
     const k = new Sketch(svg, 41);
     k.text("Every read, one record", 14, 28, 0, 24, "start", 700);
     k.underline2(14, 230, 36, 250);
-    k.fill(28, 52, 304, 62, BLUE, 600, 700); k.box(28, 52, 304, 62, 450, 500);
-    k.text("Digital Twin", 180, 82, 1000, 22, "middle", 700);
-    k.text("one record per item · the ERP reads it", 180, 104, 1150, 14, "middle");
+    k.fill(20, 48, 320, 78, BLUE, 600, 700); k.box(20, 48, 320, 78, 450, 500);
+    k.text("Digital Twin", 180, 74, 1000, 22, "middle", 700);
+    k.text("one record per item instance, tracked globally", 180, 98, 1150, 14, "middle");
+    k.text("and synchronized with ERP financial records", 180, 116, 1250, 14, "middle");
     k.line(20, 214, 340, 214, 1200, 600, { stroke: SLATE });
     const st = [["supply chain", 45], ["warehouse", 135], ["store", 225], ["customer QR", 315]];
     st.forEach(([name, x], i) => {
@@ -104,17 +105,18 @@ const charts = {
       k.ellipse(x, 214, 30, 30, t, 300);
       k.fill(x - 9, 205, 18, 18, BLUE, t + 150, 200);
       k.text(name, x, 244, t + 200, 15, "middle");
-      k.arrow([[x, 196], [x + (180 - x) * .15, 160], [x + (180 - x) * .55, 120]], t + 300, 330, BLUE);
+      k.arrow([[x, 196], [x + (180 - x) * .15, 160], [x + (180 - x) * .55, 134]], t + 300, 330, BLUE);
     });
-    k.text("> 99.9% of items traceable", 180, 274, 4300, 18, "middle", 700, BLUE);
-    k.text("manual work, before and after", 14, 302, 4600, 16);
-    k.fill(70, 312, 200, 16, CORAL, 4800, 500); k.box(70, 312, 200, 16, 4700, 400);
-    k.text("before", 64, 325, 4700, 14, "end");
-    k.fill(70, 336, 60, 16, TEAL, 5300, 300); k.box(70, 336, 60, 16, 5200, 250);
-    k.text("after", 64, 349, 5200, 14, "end");
-    k.arrow([[262, 334], [220, 352], [140, 346]], 5600, 420);
-    k.text("−70%", 306, 349, 6050, 24, "middle", 700, CORAL);
-    k.ellipse(306, 342, 64, 34, 6200, 360, { stroke: CORAL });
+    k.text("RFID and QR work across all points", 180, 268, 4150, 15, "middle", 400, SLATE);
+    k.text("> 99.9% of items traceable", 180, 296, 4300, 18, "middle", 700, BLUE);
+    k.text("manual work, before and after", 14, 324, 4600, 16);
+    k.fill(70, 334, 200, 16, CORAL, 4800, 500); k.box(70, 334, 200, 16, 4700, 400);
+    k.text("before", 64, 347, 4700, 14, "end");
+    k.fill(70, 358, 60, 16, TEAL, 5300, 300); k.box(70, 358, 60, 16, 5200, 250);
+    k.text("after", 64, 371, 5200, 14, "end");
+    k.arrow([[262, 356], [220, 374], [140, 368]], 5600, 420);
+    k.text("−70%", 306, 371, 6050, 24, "middle", 700, CORAL);
+    k.ellipse(306, 364, 64, 34, 6200, 360, { stroke: CORAL });
     return k;
   },
 
