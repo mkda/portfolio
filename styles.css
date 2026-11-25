@@ -135,10 +135,11 @@ p{margin:0}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--on-surface)}
 .brand .mark{width:32px;height:32px;flex:none;display:block}
 .mark-frame{fill:var(--surface);stroke:var(--primary);stroke-width:.8}
-.mark-m{fill:none;stroke:var(--primary);stroke-width:3.32;stroke-linecap:round;stroke-linejoin:round}
+.mark-m{fill:none;stroke:var(--primary);stroke-width:4.97;stroke-linecap:round;stroke-linejoin:round}
 .mark-sq{fill:var(--secondary)}
 .brand-name{font:500 var(--title-s) var(--font-mono)}
 .brand-name span{color:var(--primary)}
+.brand-name b{color:var(--secondary);font-weight:inherit}
 
 /* Secondary tabs (48dp, title-small, 2dp indicator) */
 .tabs{display:flex;margin-left:auto;align-self:stretch;align-items:stretch}
