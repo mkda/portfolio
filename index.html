@@ -23,7 +23,7 @@
 <a class="skip" href="#content">Skip to content</a>
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <a class="brand" href="#top" aria-label="Mikael Dell&#39;Anna, dellanna.pm home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path class="mark-m" d="M3.68 22.66V15.49a6.16 6.16 0 0 1 12.32 0V22.66M16.00 15.49a6.16 6.16 0 0 1 12.32 0V15.49"/><rect x="25.16" y="18.83" width="6.32" height="6.32" rx="1.49" class="mark-sq"/></svg><span class="brand-name" aria-hidden="true">dellanna<span><b>.</b>pm</span></span></a>
+    <a class="brand" href="#top" aria-label="Mikael Dell&#39;Anna, dellanna.pm home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path class="mark-m" d="M4 24V13.5a2.5 2.5 0 0 1 2.5-2.5h7a2.5 2.5 0 0 1 2.5 2.5V24M16 13.5a2.5 2.5 0 0 1 2.5-2.5h7a2.5 2.5 0 0 1 2.5 2.5v3.3"/><circle cx="28" cy="22.6" r="2.1" class="mark-dot"/></svg><span class="brand-name" aria-hidden="true">dellanna<span><b>.</b>pm</span></span></a>
     <nav class="tabs" id="sections" aria-label="Sections">
       <a href="#work">Work</a>
       <a href="#lead">Leadership</a>
@@ -41,13 +41,19 @@
 
 <main id="content" tabindex="-1">
   <section class="hero wrap" id="top">
-    <h1>Complex systems, working as one product. Shipped with AI agents.</h1>
-    <p class="role">Senior Technical Product Manager · AI, platforms and data products · Zurich</p>
-    <p class="lede">From radio tags on shop shelves to a studio staffed by AI agents, the common thread is turning many moving parts into one product that people trust and finance is glad to fund.</p>
-    <div class="cta">
-      <a class="btn primary" href="#work">See the work</a>
-      <a class="btn" href="#contact">Get in touch</a>
+    <div class="hero-text">
+      <h1>Complex systems, working as one product. Shipped with AI agents.</h1>
+      <p class="role">Mikael Dell&#39;Anna · Senior Technical Product Manager · AI, platforms and data products · Zurich</p>
+      <p class="lede">From radio tags on shop shelves to an automated animation studio, the common thread is turning many moving parts into one product that people trust and finance is glad to fund.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">See the work</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
     </div>
+    <figure class="hero-photo">
+      <svg class="hero-halo sketch" data-viz="halo" viewBox="0 0 400 400" aria-hidden="true"></svg>
+      <img src="img/portrait-420.webp" srcset="img/portrait-420.webp 420w, img/portrait-840.webp 840w" sizes="(min-width: 52.5em) 380px, 70vw" width="420" height="518" alt="Mikael Dell'Anna" fetchpriority="high">
+    </figure>
   </section>
 
   <section id="work" tabindex="-1" class="band">
@@ -75,7 +81,11 @@
             <h4>The approach</h4>
             <p>Models interpret; software holds the permissions. Automated checks run before any person looks, and people decide at a few gates where judgment matters. Every model is tested on the company's own data, and when evidence is weak the system waits for more.</p>
             <h4>Proof in production</h4>
-            <p>At a global sportswear brand: a RAG system (retrieval-augmented generation, where the model answers from approved sources) built on validated Looker reports for customs document review, with quality gates that flag incorrect documents. Next to it, an image recognition tool that reads authenticity QR codes from photos sent in by customs offices, at any angle and quality, to help stop counterfeits.</p>
+            <p>At a global sportswear brand:</p>
+            <ul class="proof-list">
+              <li><b>Customs document review.</b> A RAG system (retrieval-augmented generation: the model answers only from approved sources) built on validated Looker reports, with quality gates that flag incorrect documents.</li>
+              <li><b>Counterfeit checks.</b> Image recognition that reads authenticity QR codes from photos sent in by customs offices, at any angle and quality.</li>
+            </ul>
             <h4>Independent builds</h4>
             <p>An animation studio where agents write, draw, animate, voice and publish children's episodes in six languages, with child-safety checks on every script, video and livestream and two human approval gates. Alongside it, an experimental decision-support platform for market data that holds back on weak evidence and keeps orders, sizing and accounting under code control.</p>
             <h4>Where it fits in a company</h4>
@@ -97,7 +107,7 @@
         </div>
         <figure class="viz sketch" data-viz="data">
           <figcaption><b>Every read lands in one record.</b> More than 40 million items a year, each read many times along the way.</figcaption>
-          <svg class="viz-svg" viewBox="0 0 360 452" role="img" aria-label="A diagram. RFID and QR codes read each item in the supply chain, at the warehouse, in the store and by the customer. Every read goes into one Digital Twin record per item instance, tracked globally and synchronized with ERP (enterprise resource planning) financial records. Manual interventions fell by 70%, more than 99.9% of items are traceable across 100+ stores, and the first in-house serialisation projects $200K+ a year in savings."></svg>
+          <svg class="viz-svg" viewBox="0 0 360 452" role="img" aria-label="A diagram. RFID and QR codes read each item in the supply chain, at the warehouse, in the store and by the customer. Every read goes into one Digital Twin record per item instance, tracked globally and synchronised with ERP (enterprise resource planning) financial records. Manual interventions fell by 70%, more than 99.9% of items are traceable across 100+ stores, and the first in-house serialisation projects $200K+ a year in savings."></svg>
         </figure>
         <div class="theme-cols single">
           <div>
@@ -160,7 +170,7 @@
   <section id="automation" tabindex="-1" class="band">
     <div class="wrap">
       <h2 class="sec-title">What running AI in production taught me</h2>
-      <p class="section-lede">Five lessons from running AI agents in production, and how each carries over to retail operations, telecom, customer service and internal processes. The measured results are in the AI agents tab and the playbook note.</p>
+      <p class="section-lede">Five lessons from running AI agents in production, and how each carries over to retail operations, telecom, customer service and internal processes. Each lesson is backed by measured results: see <a href="#p-ai">AI agents</a> under Work and the <a href="notes/reusing-an-ai-studio-playbook.html">studio playbook note</a>.</p>
       <div class="table-wrap">
         <table class="parallels">
           <caption class="visually-hidden">Five lessons from the studio and how each applies in an organisation</caption>
@@ -170,7 +180,7 @@
             <tr><th scope="row"><svg class="lesson-art sketch" data-viz="l-gate" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"></svg><span class="lesson-text">Gates only where judgment matters. <span class="sub">Two approvals: before money is spent, and before release.</span></span></th><td>Keep approvals for decisions on spend, customer impact and compliance, and let routine steps flow.</td></tr>
             <tr><th scope="row"><svg class="lesson-art sketch" data-viz="l-cost" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"></svg><span class="lesson-text">Pay per usable result. <span class="sub">Compare price divided by pass rate.</span></span></th><td>Compare AI vendors on cost per successful task.</td></tr>
             <tr><th scope="row"><svg class="lesson-art sketch" data-viz="l-data" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"></svg><span class="lesson-text">Test on your own data. <span class="sub">Every model earns its place on our own clips.</span></span></th><td>Build an eval set from your real cases before you sign a contract.</td></tr>
-            <tr><th scope="row"><svg class="lesson-art sketch" data-viz="l-chain" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"></svg><span class="lesson-text">The weakest part sets the limit. <span class="sub">The pipeline runs as fast as its slowest component.</span></span></th><td>Load-test each step, alert on every stop, and revalidate after each model update.</td></tr>
+            <tr><th scope="row"><svg class="lesson-art sketch" data-viz="l-chain" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"></svg><span class="lesson-text">The weakest part sets the limit. <span class="sub">Testing exposed two limits: a single worker machine and prepaid credit running dry.</span></span></th><td>Load-test each step, alert on every stop, and revalidate after each model update.</td></tr>
           </tbody>
         </table>
       </div>
@@ -200,7 +210,7 @@
         <span class="pill">In development</span>
         <h3>Mobile games</h3>
         <p>Swipe Contest, a one-gesture skill game for iPhone and iPad with nine modes, replay ghosts and a deterministic scoring engine in C. Before it, a 48-level physics puzzle game built with a custom level editor.</p>
-        <p class="result">Headset versions stay concepts until user tests back them</p>
+        <p class="result"><b>9</b> game modes · <b>48</b> puzzle levels · a custom level editor</p>
       </article>
     </div>
   </section>
@@ -213,7 +223,7 @@
           <svg class="note-art sketch" data-viz="playbook" viewBox="0 0 640 360" width="640" height="360" aria-hidden="true"></svg>
           <h3>Reusing an AI studio's playbook in enterprise automation</h3>
           <span class="meta">August 2026 · 6 min read</span>
-          <p>The longer version of the table above, with examples from retail, telecom and back-office work.</p>
+          <p>The longer version of the lessons table, with examples from retail, telecom and back-office work.</p>
         </a></li>
         <li><a class="note-link" href="notes/evals-for-product-managers.html">
           <svg class="note-art sketch" data-viz="evals" viewBox="0 0 640 360" width="640" height="360" aria-hidden="true"></svg>
@@ -246,6 +256,9 @@
   <section class="wrap section path">
     <h2 class="sec-title">Path</h2>
     <p class="path-line">From front-end developer to product leader, across a global e-commerce marketplace, digital health and payments SaaS, a Swiss telecom operator and a global sportswear brand.</p>
+    <figure class="viz sketch timeline" data-viz="path">
+      <svg class="viz-svg" viewBox="0 0 440 468" role="img" aria-label="Career timeline. 2004: Front-end developer, e-commerce marketplace, Milan and Berlin; 2007: Product manager, e-commerce marketplace; 2009: Web development manager, team of 4, 300+ campaigns a year; 2014: Product manager, content management and tools; 2017: Global web development lead, landing-page automation; 2019: Senior technical product manager, digital health SaaS; 2020: Product manager, payments SaaS; 2021: Product owner, Swiss telecom operator; 2024: Senior product manager, technology, global sportswear brand; 2026: Independent AI products, studio, decision support, games."></svg>
+    </figure>
     <p class="fine">SAFe® 5 Product Owner and Product Manager (Scaled Agile Framework) · Certified ScrumMaster · Claude, Claude Code, Claude Platform 101 and agentic collaboration courses · Italian and Swedish (native), English (professional), German (B2)</p>
   </section>
 
@@ -260,7 +273,7 @@
   </section>
 </main>
 
-<footer class="wrap foot"><span>© 2026 Mikael Dell'Anna</span><a href="https://www.linkedin.com/in/mikael-dellanna">LinkedIn</a><a href="privacy.html">Privacy and cookies</a><button type="button" class="linkish" data-cookie-settings>Cookie settings</button></footer>
+<footer class="wrap foot"><span>© 2026 Mikael Dell'Anna</span><a href="privacy.html">Privacy and cookies</a><button type="button" class="linkish" data-cookie-settings>Cookie settings</button></footer>
 
 <script type="module">
 // Theme toggle: two states (system, or the opposite of system), stored only when it differs from the system.
