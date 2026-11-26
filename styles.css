@@ -688,3 +688,6 @@ p{margin:0}
 @media print{.topbar,.consent,.cta,.ptabs,.marquee-track[aria-hidden],.foot button{display:none!important}
   .marquee{animation:none;inline-size:auto}.theme-block[hidden]{display:block!important}
   body{background:#fff;color:#000}.band,.results-band,.logo-band{background:none}a{color:inherit}}
+
+.how-grid>.card:nth-child(1){background:var(--tint-1)}.how-grid>.card:nth-child(2){background:var(--tint-2)}.how-grid>.card:nth-child(3){background:var(--tint-3)}
+.how-grid h3{font:500 var(--title-l) var(--font-sans);color:var(--on-surface);margin:0 0 var(--s-2)}
