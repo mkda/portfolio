@@ -729,3 +729,5 @@ p{margin:0}
 .logo-row .lg-dacadoo img{block-size:28px}
 .logo-row .lg-ebay img{block-size:32px}
 .logo-row .lg-mobilede img{block-size:19px}
+.logo-row .lg-sunrise img{block-size:30px}
+@media(min-width:40em){.logo-row{justify-content:space-between;gap:24px 32px}}
