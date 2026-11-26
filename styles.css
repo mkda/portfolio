@@ -674,3 +674,17 @@ p{margin:0}
 .employers h3{margin:0;font:500 var(--label-l) var(--font-sans);color:var(--on-surface-variant)}
 .employers ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:var(--s-3) var(--s-6)}
 .employers li{font:600 var(--title-l) var(--font-sans);letter-spacing:-.01em;color:var(--on-surface-variant);opacity:.75}
+
+/* v19: logo band with marquee, case dates, print */
+.logo-band{background:var(--surface-container-high);padding:var(--s-6) 0;overflow:hidden}
+.logo-h{margin:0 0 var(--s-4);font:500 var(--title-m) var(--font-sans);color:var(--on-surface)}
+.marquee{display:flex;inline-size:max-content;animation:marquee 32s linear infinite}
+.marquee:hover{animation-play-state:paused}
+.marquee-track{list-style:none;margin:0;padding:0 var(--s-8) 0 0;display:flex;gap:var(--s-8);align-items:center}
+.marquee-track li{font:600 var(--headline-s) var(--font-sans);letter-spacing:-.01em;color:var(--on-surface-variant);opacity:.8;white-space:nowrap}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee{animation:none;inline-size:auto;padding-inline:var(--margin)}.marquee-track{flex-wrap:wrap;gap:var(--s-3) var(--s-6)}.marquee-track[aria-hidden]{display:none}}
+.case-when{margin:var(--s-1) 0 0;font:500 var(--label-l) var(--font-sans);color:var(--on-surface-variant)}
+@media print{.topbar,.consent,.cta,.ptabs,.marquee-track[aria-hidden],.foot button{display:none!important}
+  .marquee{animation:none;inline-size:auto}.theme-block[hidden]{display:block!important}
+  body{background:#fff;color:#000}.band,.results-band,.logo-band{background:none}a{color:inherit}}
