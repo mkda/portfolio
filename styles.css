@@ -572,3 +572,10 @@ p{margin:0}
 .card.build-blue{background:color-mix(in srgb,var(--vz-blue) 14%,var(--surface-container-low))}
 .card.build-lav{background:color-mix(in srgb,var(--vz-lav) 14%,var(--surface-container-low))}
 .card.build-mint{background:color-mix(in srgb,var(--vz-mint) 14%,var(--surface-container-low))}
+/* One tint per box, cycling blue, lavender, mint, coral: the same language as the build cards */
+:root{--tint-1:color-mix(in srgb,var(--vz-blue) 14%,var(--surface-container-low));--tint-2:color-mix(in srgb,var(--vz-lav) 14%,var(--surface-container-low));--tint-3:color-mix(in srgb,var(--vz-mint) 14%,var(--surface-container-low));--tint-4:color-mix(in srgb,var(--vz-coral) 12%,var(--surface-container-low))}
+.lead-grid>.card:nth-child(4n+1),.notes>li:nth-child(4n+1)>.note-link,.parallels tbody tr:nth-child(4n+1){background:var(--tint-1)}
+.lead-grid>.card:nth-child(4n+2),.notes>li:nth-child(4n+2)>.note-link,.parallels tbody tr:nth-child(4n+2){background:var(--tint-2)}
+.lead-grid>.card:nth-child(4n+3),.notes>li:nth-child(4n+3)>.note-link,.parallels tbody tr:nth-child(4n+3){background:var(--tint-3)}
+.lead-grid>.card:nth-child(4n+4),.notes>li:nth-child(4n+4)>.note-link,.parallels tbody tr:nth-child(4n+4){background:var(--tint-4)}
+.notes>li+li{border-top:1px solid var(--outline-variant)}
