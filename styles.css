@@ -601,3 +601,8 @@ p{margin:0}
 .hero{overflow-x:clip}
 
 @media(min-width:52.5em){.hero-photo{justify-self:end}}
+
+/* Portrait: smaller, blue duotone so it sits back in the theme */
+.hero-photo{inline-size:min(52vw,200px)}
+.hero-photo img{filter:url(#duo);opacity:.92}
+@media(min-width:52.5em){.hero{grid-template-columns:minmax(0,1fr) 260px}.hero-photo{inline-size:240px}}
