@@ -385,10 +385,8 @@ const charts = {
 
   halo(svg) {
     const k = new Sketch(svg, 111, 1.4);
-    k.fillCircle(228, 190, 300, BLUE, 300, 800);
-    k.shape(s => k.g.circle(228, 190, 300, k.ink({ ...s, stroke: BLUE })), 0, 1200);
-    k.shape(s => k.g.arc(228, 190, 340, 340, -2.6, -1.2, false, k.ink({ ...s, stroke: SLATE, strokeWidth: 1.2 })), 900, 700);
-    k.shape(s => k.g.circle(346, 70, 10, k.ink({ ...s, stroke: CORAL })), 1500, 300);
+    k.fillCircle(200, 160, 300, BLUE, 300, 800);
+    k.shape(s => k.g.circle(200, 160, 300, k.ink({ ...s, stroke: BLUE })), 0, 1200);
     return k;
   },
 

@@ -135,8 +135,8 @@ p{margin:0}
 .brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--on-surface)}
 .brand .mark{width:32px;height:32px;flex:none;display:block}
 .mark-frame{fill:var(--surface);stroke:var(--primary);stroke-width:.8}
-.mark-m{fill:none;stroke:var(--primary);stroke-width:3.2;stroke-linecap:butt;stroke-linejoin:miter}
-.mark-sq{fill:var(--secondary)}
+.mark-m{fill:none;stroke:var(--primary);stroke-width:3.2;stroke-linecap:butt;stroke-linejoin:round}
+.mark-dot{fill:none;stroke:light-dark(#C0512C,#F2A68D);stroke-width:1.9}
 .brand-name{font:500 var(--title-s) var(--font-mono)}
 .brand-name span{color:var(--primary)}
 .brand-name b{color:var(--secondary);font-weight:inherit}
@@ -585,8 +585,8 @@ p{margin:0}
 /* Hero portrait: cut-out photo on a pen halo, fading into the next section */
 .hero{display:grid;gap:var(--s-5);padding-bottom:0}
 .hero-text{padding-bottom:var(--s-5)}
-.hero-photo{position:relative;margin:0;justify-self:end;inline-size:min(72vw,300px);align-self:end}
-.hero-photo img{position:relative;display:block;inline-size:100%;block-size:auto;-webkit-mask-image:linear-gradient(to bottom,#000 62%,transparent 98%);mask-image:linear-gradient(to bottom,#000 62%,transparent 98%)}
+.hero-photo{position:relative;margin:0;justify-self:center;inline-size:min(72vw,300px);align-self:end}
+.hero-photo img{position:relative;display:block;inline-size:100%;block-size:auto;-webkit-mask-image:linear-gradient(to bottom,#000 50%,transparent 86%);mask-image:linear-gradient(to bottom,#000 50%,transparent 86%)}
 .hero-halo{position:absolute;inset:4% -8% auto -8%;inline-size:116%;block-size:auto;aspect-ratio:1}
 @media(min-width:52.5em){
   .hero{grid-template-columns:minmax(0,1fr) 360px;align-items:end;column-gap:var(--s-7)}
@@ -599,3 +599,5 @@ p{margin:0}
 .proof-list{margin:var(--s-2) 0 0;padding-left:1.1em;display:grid;gap:var(--s-2);color:var(--on-surface-variant)}
 .proof-list b{color:var(--on-surface);font-weight:500}
 .hero{overflow-x:clip}
+
+@media(min-width:52.5em){.hero-photo{justify-self:end}}
