@@ -286,6 +286,61 @@ const charts = {
     });
     return k;
   },
+
+  grow(svg) {
+    const k = new Sketch(svg, 89, 1.3);
+    k.line(20, 104, 300, 104, 0, 500, { stroke: SLATE });
+    const steps = [[40, 90], [110, 76], [180, 62], [250, 48]];
+    steps.forEach(([x, y], i) => {
+      k.fill(x, y, 50, 104 - y, i === 3 ? BLUE : TEAL, 500 + i * 250, 300);
+      k.box(x, y, 50, 104 - y, 400 + i * 250, 300, { stroke: i === 3 ? BLUE : TEAL });
+    });
+    [[65, 0], [135, 1], [205, 2], [275, 3]].forEach(([x, i]) => {
+      const y = steps[i][1];
+      k.shape(s => k.g.circle(x, y - 22, 10, k.ink(s)), 1600 + i * 120, 200);
+      k.curve([[x - 8, y - 2], [x - 6, y - 14], [x + 6, y - 14], [x + 8, y - 2]], 1700 + i * 120, 200);
+    });
+    k.arrow([[30, 46], [70, 26], [140, 16]], 2300, 500, SLATE, 1.2);
+    return k;
+  },
+
+  "l-check"(svg) {
+    const k = new Sketch(svg, 91);
+    k.shape(s => k.g.circle(28, 28, 32, k.ink({ ...s, stroke: SLATE })), 0, 400);
+    k.line(40, 40, 54, 54, 300, 250, { stroke: SLATE, strokeWidth: 2.4 });
+    k.path([[20, 28], [26, 34], [37, 21]], 500, 300, { stroke: TEAL, strokeWidth: 2 });
+    return k;
+  },
+  "l-gate"(svg) {
+    const k = new Sketch(svg, 93);
+    k.line(18, 14, 18, 54, 0, 300); k.line(46, 14, 46, 54, 100, 300);
+    k.line(12, 26, 52, 26, 400, 300, { stroke: BLUE, strokeWidth: 2.2 });
+    k.arrow([[6, 44], [32, 42], [58, 44]], 700, 400, TEAL, 1.6);
+    return k;
+  },
+  "l-cost"(svg) {
+    const k = new Sketch(svg, 95);
+    k.fillCircle(32, 32, 44, BLUE, 400); k.shape(s => k.g.circle(32, 32, 44, k.ink({ ...s, stroke: BLUE })), 0, 450);
+    k.line(20, 32, 44, 32, 500, 250);
+    k.fillCircle(32, 23, 5, INK, 750); k.fillCircle(32, 41, 5, INK, 800);
+    return k;
+  },
+  "l-data"(svg) {
+    const k = new Sketch(svg, 97);
+    k.fillPoly([[14, 18], [50, 18], [50, 48], [14, 48]], BLUE, 600);
+    k.ellipse(32, 18, 36, 12, 0, 350);
+    k.line(14, 18, 14, 48, 200, 250, { stroke: BLUE }); k.line(50, 18, 50, 48, 200, 250, { stroke: BLUE });
+    k.curve([[14, 48], [22, 54], [42, 54], [50, 48]], 400, 250, { stroke: BLUE });
+    k.curve([[14, 33], [22, 39], [42, 39], [50, 33]], 550, 250, { stroke: BLUE, strokeWidth: 1.1 });
+    return k;
+  },
+  "l-chain"(svg) {
+    const k = new Sketch(svg, 99);
+    k.shape(s => k.g.ellipse(16, 32, 24, 14, k.ink(s)), 0, 300);
+    k.shape(s => k.g.ellipse(32, 32, 22, 12, k.ink({ ...s, stroke: CORAL, strokeWidth: 1 })), 250, 300);
+    k.shape(s => k.g.ellipse(48, 32, 24, 14, k.ink(s)), 500, 300);
+    return k;
+  },
 };
 
 // Article artwork: the same pen, no words. One periwinkle element carries the idea.

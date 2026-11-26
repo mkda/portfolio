@@ -132,16 +132,12 @@ p{margin:0}
 /* Small top app bar (64dp) */
 .topbar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--outline-variant)}
 .topbar-inner{display:flex;align-items:center;gap:var(--s-2);height:var(--bar-h)}
-.brand{display:inline-flex;flex-wrap:wrap;align-items:baseline;align-content:center;gap:.4em;text-decoration:none;color:var(--on-surface)}
-.brand .mark{width:25px;height:25px;display:inline-block;vertical-align:-7.3px;overflow:visible}
-.wordmark{white-space:nowrap;line-height:1}
-.wm-rest{font:800 20px/1 var(--font-sans);color:var(--primary);letter-spacing:-.01em;margin-left:3px}
-.wm-i{position:relative;display:inline-block}
-.wm-i::after{content:"";position:absolute;left:50%;top:.02em;inline-size:.2em;block-size:.2em;border-radius:.05em;background:var(--secondary);transform:translateX(-50%)}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--on-surface)}
+.brand .mark{width:32px;height:32px;flex:none;display:block}
 .mark-frame{fill:var(--surface);stroke:var(--primary);stroke-width:.8}
 .mark-m{fill:none;stroke:var(--primary);stroke-width:4.97;stroke-linecap:round;stroke-linejoin:round}
 .mark-sq{fill:var(--secondary)}
-.brand-name{font:500 var(--title-s) var(--font-mono);color:var(--on-surface-variant)}
+.brand-name{font:500 var(--title-s) var(--font-mono)}
 .brand-name span{color:var(--primary)}
 .brand-name b{color:var(--secondary);font-weight:inherit}
 
@@ -384,7 +380,6 @@ p{margin:0}
   .parallels tbody tr:hover{background:var(--surface-container-low)}
   .parallels tr{counter-increment:l;background:var(--surface-container-low);border:1px solid var(--outline-variant);border-radius:var(--corner-m);margin-bottom:var(--s-2);padding:var(--s-4)}
   .parallels td,.parallels tbody th{border:0;padding:0}
-  .parallels tbody th::before{content:"Lesson " counter(l);display:block;font:500 var(--label-m) var(--font-sans);color:var(--on-surface-variant);margin-bottom:var(--s-1)}
   .parallels tbody th{font:500 var(--title-m) var(--font-sans)}
   .parallels td{margin-top:var(--s-2)}.parallels td::before{content:"Applied: ";font-weight:500;color:var(--on-surface)}
 }
@@ -552,3 +547,22 @@ p{margin:0}
 .card-art{display:block;inline-size:100%;block-size:auto;aspect-ratio:8/3;margin:var(--s-3) 0;border-radius:var(--corner-m);background:var(--vz-surface);border:1px solid var(--vz-edge)}
 @media(max-width:52.49em){.lead-grid .card-art{margin:0 var(--s-4) var(--s-3) calc(var(--s-4) + 24px + var(--s-3));inline-size:calc(100% - 2 * var(--s-4) - 24px - var(--s-3))}}
 .card-art{min-inline-size:0;max-inline-size:100%}
+
+/* Lessons table: inverted header, tinted rows and a pen icon per lesson */
+.parallels{border-collapse:separate;border-spacing:0;border:1px solid var(--outline-variant);border-radius:var(--corner-l);overflow:hidden}
+.parallels thead th{background:var(--vz-surface);color:var(--vz-ink);border-bottom:0;font:500 var(--title-m) var(--font-sans)}
+.parallels tbody tr:nth-child(odd){background:var(--surface-container-low)}
+.parallels tbody tr:nth-child(even){background:var(--surface)}
+.parallels tbody th{width:44%}
+.parallels tbody th{color:var(--primary)}
+.parallels tbody th .lesson-art{float:left;margin:0 var(--s-3) var(--s-2) 0}
+.parallels tbody th .lesson-text{overflow:hidden}
+.parallels td{font:400 var(--body-l) var(--font-sans);color:var(--on-surface)}
+.lesson-art{flex:none;inline-size:52px;block-size:52px;border-radius:var(--corner-m);background:var(--vz-surface);border:1px solid var(--vz-edge)}
+.lesson-text{display:block}
+@media(max-width:52.49em){
+  .parallels{border:0;border-radius:0;overflow:visible}
+  .parallels tbody tr:nth-child(even){background:var(--surface-container-low)}
+  .parallels tr{border-inline-start:4px solid var(--primary)}
+}
+@media(min-width:52.5em){.lead-grid{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}}
