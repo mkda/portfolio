@@ -605,3 +605,22 @@ p{margin:0}
 .hero{overflow-x:clip}
 
 @media(min-width:52.5em){.hero-photo{justify-self:end}}
+
+/* Hero: selected results panel replaces the large portrait */
+.hero-results{align-self:center;margin:0 0 var(--s-6);padding:var(--s-5);border:1px solid var(--outline-variant);border-radius:var(--corner-xl);background:var(--tint-1)}
+.hr-head{display:flex;align-items:center;gap:var(--s-3);margin-bottom:var(--s-3)}
+.hr-photo{inline-size:56px;block-size:56px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:var(--surface-container-high);border:2px solid var(--vz-blue)}
+.hero-results h2{margin:0;font:500 var(--title-m) var(--font-sans);color:var(--on-surface)}
+.hero-results ul{list-style:none;margin:0;padding:0;display:grid;gap:var(--s-3)}
+.hero-results li{font:400 var(--body-m) var(--font-sans);color:var(--on-surface);padding-top:var(--s-3);border-top:1px solid var(--outline-variant)}
+.hero-results li b{display:block;font:400 var(--headline-s) var(--font-sans);color:var(--primary);letter-spacing:-.01em}
+.hero-results li span{display:block;font:400 var(--body-s) var(--font-sans);color:var(--on-surface-variant);margin-top:2px}
+@media(min-width:52.5em){.hero{grid-template-columns:minmax(0,1fr) 340px;align-items:center}.hero-results{margin:0}}
+
+/* Case summary: problem, role, result */
+.case-sum{display:grid;gap:var(--s-3);margin:var(--s-4) 0 var(--s-5);padding:0}
+.case-sum div{padding:var(--s-3) var(--s-4);border-radius:var(--corner-m);background:var(--surface-container-low);border:1px solid var(--outline-variant)}
+.case-sum div:last-child{background:var(--tint-1)}
+.case-sum dt{font:500 var(--label-l) var(--font-sans);color:var(--primary);margin-bottom:2px}
+.case-sum dd{margin:0;font:400 var(--body-m) var(--font-sans);color:var(--on-surface)}
+@media(min-width:52.5em){.case-sum{grid-template-columns:repeat(3,1fr)}}
