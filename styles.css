@@ -136,7 +136,7 @@ p{margin:0}
 .brand .mark{width:32px;height:32px;flex:none;display:block}
 .mark-frame{fill:var(--surface);stroke:var(--primary);stroke-width:.8}
 .mark-m{fill:none;stroke:var(--primary);stroke-width:3.2;stroke-linecap:butt;stroke-linejoin:round}
-.mark-dot{fill:none;stroke:light-dark(#C0512C,#F2A68D);stroke-width:1.9}
+.mark-dot{fill:light-dark(#C0512C,#F2A68D)}
 .brand-name{font:500 var(--title-s) var(--font-mono)}
 .brand-name span{color:var(--primary)}
 .brand-name b{color:var(--secondary);font-weight:inherit}
@@ -624,3 +624,8 @@ p{margin:0}
 .case-sum dt{font:500 var(--label-l) var(--font-sans);color:var(--primary);margin-bottom:2px}
 .case-sum dd{margin:0;font:400 var(--body-m) var(--font-sans);color:var(--on-surface)}
 @media(min-width:52.5em){.case-sum{grid-template-columns:repeat(3,1fr)}}
+
+/* Results panel without the box; photo on the right */
+.hero-results{padding:0;border:0;border-radius:0;background:none}
+.hr-head{justify-content:space-between}
+.hr-photo{order:2}
