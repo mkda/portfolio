@@ -766,3 +766,6 @@ p{margin:0}
 .case-sum dd{font:400 var(--body-l) var(--font-sans)}
 .path-line{font:400 var(--body-l) var(--font-sans);color:var(--on-surface-variant)}
 .path-line{margin-top:var(--s-2);max-width:42rem}
+.logo-row .lg-sunrise img{block-size:36px}
+.logo-row .lg-mobilede img{block-size:18px}
+@media(min-width:40em){.logo-line{gap:48px}}
