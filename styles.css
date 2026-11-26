@@ -646,3 +646,6 @@ p{margin:0}
 .hero-results{background:var(--tint-1);box-shadow:0 0 0 100vmax var(--tint-1);clip-path:inset(0 -100vmax);padding:var(--s-6) 0;margin-bottom:0}
 @media(min-width:52.5em){.hero-results{margin-bottom:0}}
 .case-sum div{border:0;border-radius:0}
+
+/* v12: flat containers, no outlines or rounded corners */
+.card,.lead-grid,.theme-block,.chart,.rail-fig,.twin-out li,.table-wrap,.parallels,.parallels tr,.notes,.trust,.case-sum div,.hero-results{border:0!important;border-radius:0!important;box-shadow:none!important}
