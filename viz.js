@@ -224,6 +224,68 @@ const charts = {
     k.text("the smaller, the more trust", 212, 158, 2700, 17, "middle", 400, SLATE);
     return k;
   },
+
+  teams(svg) {
+    const k = new Sketch(svg, 81, 1.3);
+    k.box(24, 22, 56, 76, 0, 500, { stroke: SLATE });
+    [40, 56, 72].forEach((y, i) => k.line(34, y, 70, y, 300 + i * 80, 200, { stroke: SLATE }));
+    k.arrow([[88, 60], [104, 60], [120, 60]], 600, 300, SLATE, 1.4);
+    let t = 850;
+    for (let r = 0; r < 2; r++) for (let c = 0; c < 3; c++) {
+      const x = 130 + c * 30, y = 30 + r * 34;
+      k.fill(x, y, 22, 22, BLUE, t + 150, 300); k.box(x, y, 22, 22, t, 250, { stroke: BLUE }); t += 90;
+    }
+    [[244, 0], [272, 1], [300, 2]].forEach(([x, i]) => {
+      k.shape(s => k.g.circle(x, 44, 14, k.ink(s)), 1500 + i * 150, 250);
+      k.curve([[x - 11, 78], [x - 9, 58], [x + 9, 58], [x + 11, 78]], 1600 + i * 150, 300);
+    });
+    k.line(232, 92, 312, 92, 2100, 400, { stroke: TEAL });
+    return k;
+  },
+
+  tradeoffs(svg) {
+    const k = new Sketch(svg, 83, 1.3);
+    k.poly([[160, 66], [146, 96], [174, 96]], 0, 400, { stroke: SLATE });
+    k.line(130, 100, 190, 100, 200, 300, { stroke: SLATE });
+    k.line(70, 54, 250, 78, 500, 500);
+    k.shape(s => k.g.circle(160, 66, 8, k.ink({ ...s, stroke: TEAL })), 900, 200);
+    k.line(70, 54, 70, 84, 1000, 200, { stroke: SLATE }); k.line(250, 78, 250, 108, 1000, 200, { stroke: SLATE });
+    k.line(44, 84, 96, 84, 1150, 250); k.line(224, 108, 276, 108, 1150, 250);
+    [[52, 14], [64, 22], [76, 10]].forEach(([x, h], i) => { k.fill(x, 82 - h, 8, h, CORAL, 1500 + i * 100, 250); k.box(x, 82 - h, 8, h, 1400 + i * 100, 200, { stroke: CORAL }); });
+    [[232, 22], [244, 28], [256, 18]].forEach(([x, h], i) => { k.fill(x, 106 - h, 8, h, BLUE, 1850 + i * 100, 250); k.box(x, 106 - h, 8, h, 1750 + i * 100, 200, { stroke: BLUE }); });
+    return k;
+  },
+
+  observe(svg) {
+    const k = new Sketch(svg, 85, 1.3);
+    k.curve([[20, 60], [50, 30], [90, 30], [120, 60]], 0, 450);
+    k.curve([[20, 60], [50, 90], [90, 90], [120, 60]], 150, 450);
+    k.fillCircle(70, 60, 30, BLUE, 600); k.shape(s => k.g.circle(70, 60, 30, k.ink({ ...s, stroke: BLUE })), 500, 300);
+    k.shape(s => k.g.circle(70, 60, 8, k.ink({ ...s, stroke: BLUE })), 750, 150);
+    [150, 210, 270].forEach((x, i) => k.box(x, 48, 30, 24, 1000 + i * 200, 250));
+    k.line(180, 60, 210, 60, 1150, 150, { stroke: SLATE }); k.line(240, 60, 270, 60, 1350, 150, { stroke: SLATE });
+    k.curve([[195, 60], [200, 98], [240, 104], [262, 74]], 1800, 600, { stroke: CORAL });
+    k.shape(s => k.g.circle(222, 101, 8, k.ink({ ...s, stroke: CORAL })), 2350, 200);
+    return k;
+  },
+
+  docs(svg) {
+    const k = new Sketch(svg, 87, 1.3);
+    k.box(30, 18, 50, 66, 0, 350, { stroke: SLATE }); k.box(22, 26, 50, 66, 150, 350, { stroke: SLATE });
+    k.box(14, 34, 50, 66, 300, 400);
+    [50, 62, 74, 86].forEach((y, i) => k.line(22, y, 56 - (i % 2) * 10, y, 600 + i * 70, 150, { stroke: SLATE }));
+    let t = 900;
+    [0, 1, 2].forEach(c => [0, 1, 2].slice(0, 3 - (c === 1 ? 1 : 0)).forEach(r => {
+      k.box(100 + c * 30, 22 + r * 26, 22, 18, t, 180, { stroke: r === 0 ? TEAL : INK }); t += 60;
+    }));
+    const N = [[226, 34], [266, 22], [300, 52], [250, 92], [292, 98]];
+    [[0, 1], [1, 2], [0, 3], [3, 4], [2, 4]].forEach(([a, b], i) => k.line(N[a][0], N[a][1], N[b][0], N[b][1], 1500 + i * 120, 250, { stroke: SLATE }));
+    N.forEach(([x, y], i) => {
+      if (i === 2) k.fillCircle(x, y, 16, BLUE, 2200);
+      k.shape(s => k.g.circle(x, y, 16, k.ink({ ...s, stroke: i === 2 ? BLUE : INK })), 2000 + i * 60, 200);
+    });
+    return k;
+  },
 };
 
 // Article artwork: the same pen, no words. One periwinkle element carries the idea.
