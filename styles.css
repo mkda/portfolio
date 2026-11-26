@@ -706,3 +706,13 @@ p{margin:0}
 :root:has(> head > meta[name="color-scheme"][content="dark"]) .lg-dark{display:block!important}
 :root:has(> head > meta[name="color-scheme"][content="dark"]) .lg-light{display:none!important}
 @media(prefers-reduced-motion:reduce){.marquee{max-width:var(--maxw);margin-inline:auto}.marquee-track{gap:var(--s-5) var(--s-8)}}
+/* v22: static logo row, sizes matched to a 24 to 40px reference */
+.logo-row{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:22px 40px}
+.logo-row .lg{display:flex;align-items:center}
+.logo-row .lg img{display:block;inline-size:auto}
+.logo-row .lg-on .lg-mask{block-size:36px}
+.logo-row .lg-sunrise img{block-size:38px}
+.logo-row .lg-raisenow img{block-size:24px}
+.logo-row .lg-dacadoo img{block-size:28px}
+.logo-row .lg-ebay img{block-size:30px}
+.logo-row .lg-text{font:600 22px/1 var(--font-sans);letter-spacing:-.01em;color:var(--on-surface-variant)}
