@@ -740,3 +740,29 @@ p{margin:0}
 @media(min-width:40em){.logo-line{gap:28px}.logo-h{max-inline-size:6em}.logo-row{justify-content:space-between;gap:20px 24px}}
 @media(min-width:40em) and (max-width:64em){.logo-row{zoom:.9}}
 .logo-row .lg-sunrise img{block-size:28px}
+/* v26: typography consistency pass
+   Scale used: h2 section titles headline-m; every h3 title (cards, cases) title-l 400;
+   list-style h3 and small section labels title-m 500; body copy body-l (16px);
+   meta lines body-m (14px); tiny captions body-s. */
+.theme-head h3,.how-grid h3,.card h3{font:400 var(--title-l) var(--font-sans)}
+.lead-grid .card h3,.note-link h3,.trust h3{font:500 var(--title-m) var(--font-sans)}
+.card p,.lead-grid .card p{font:400 var(--body-l) var(--font-sans)}
+.card p.result{font:400 var(--body-m) var(--font-sans)}
+.hero-results li{font:400 var(--body-l) var(--font-sans)}
+.hero-results li span{font:400 var(--body-m) var(--font-sans)}
+.parallels tbody th{font:500 var(--title-m) var(--font-sans)}
+.chart figcaption b,figcaption b{font-weight:500}
+/* logo strip: label on one line, same style as "Selected results" */
+.logo-h{font:500 var(--title-m) var(--font-sans);color:var(--on-surface);white-space:nowrap}
+@media(min-width:40em){.logo-h{max-inline-size:none}}
+/* logo heights: blend of equal ink area and equal height, so no mark dominates */
+.logo-row .lg-on .lg-mask{block-size:44px}
+.logo-row .lg-sunrise img{block-size:33px}
+.logo-row .lg-raisenow img{block-size:26px}
+.logo-row .lg-dacadoo img{block-size:29px}
+.logo-row .lg-ebay img{block-size:32px}
+.logo-row .lg-mobilede img{block-size:20px}
+@media(min-width:40em) and (max-width:64em){.logo-row{zoom:.85}}
+.case-sum dd{font:400 var(--body-l) var(--font-sans)}
+.path-line{font:400 var(--body-l) var(--font-sans);color:var(--on-surface-variant)}
+.path-line{margin-top:var(--s-2);max-width:42rem}
