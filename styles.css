@@ -665,3 +665,119 @@ p{margin:0}
   -webkit-mask-composite:source-in,source-over;
   mask-composite:intersect,add;
 }
+
+/* v18: motto line, certification chips */
+.motto{font:500 var(--title-l) var(--font-sans);color:var(--primary);margin:0 0 var(--s-3)}
+.certs{list-style:none;padding:0;margin:var(--s-4) 0 0;display:flex;flex-wrap:wrap;gap:var(--s-2)}
+.certs li{font:500 var(--label-l) var(--font-sans);color:var(--on-surface-variant);padding:6px 12px;border:1px solid var(--outline-variant);border-radius:var(--corner-s)}
+.employers{margin-top:var(--s-6);display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--s-3) var(--s-6)}
+.employers h3{margin:0;font:500 var(--label-l) var(--font-sans);color:var(--on-surface-variant)}
+.employers ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:var(--s-3) var(--s-6)}
+.employers li{font:600 var(--title-l) var(--font-sans);letter-spacing:-.01em;color:var(--on-surface-variant);opacity:.75}
+
+/* v19: logo band with marquee, case dates, print */
+.logo-band{background:var(--surface-container-high);padding:var(--s-6) 0;overflow:hidden}
+.logo-h{margin:0 0 var(--s-4);font:500 var(--title-m) var(--font-sans);color:var(--on-surface)}
+.marquee{display:flex;inline-size:max-content;animation:marquee 32s linear infinite}
+.marquee:hover{animation-play-state:paused}
+.marquee-track{list-style:none;margin:0;padding:0 var(--s-8) 0 0;display:flex;gap:var(--s-8);align-items:center}
+.marquee-track li{font:600 var(--headline-s) var(--font-sans);letter-spacing:-.01em;color:var(--on-surface-variant);opacity:.8;white-space:nowrap}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee{animation:none;inline-size:auto;padding-inline:var(--margin)}.marquee-track{flex-wrap:wrap;gap:var(--s-3) var(--s-6)}.marquee-track[aria-hidden]{display:none}}
+.case-when{margin:var(--s-1) 0 0;font:500 var(--label-l) var(--font-sans);color:var(--on-surface-variant)}
+@media print{.topbar,.consent,.cta,.ptabs,.marquee-track[aria-hidden],.foot button{display:none!important}
+  .marquee{animation:none;inline-size:auto}.theme-block[hidden]{display:block!important}
+  body{background:#fff;color:#000}.band,.results-band,.logo-band{background:none}a{color:inherit}}
+
+.how-grid>.card:nth-child(1){background:var(--tint-1)}.how-grid>.card:nth-child(2){background:var(--tint-2)}.how-grid>.card:nth-child(3){background:var(--tint-3)}
+.how-grid h3{font:500 var(--title-l) var(--font-sans);color:var(--on-surface);margin:0 0 var(--s-2)}
+/* v21: real employer logos in the Worked at strip */
+.marquee-track{gap:var(--s-9,56px);padding-inline-end:var(--s-9,56px)}
+.marquee-track .lg{display:flex;align-items:center;opacity:1}
+.marquee-track .lg img{display:block;inline-size:auto}
+.lg-on .lg-mask{display:block;block-size:44px;aspect-ratio:41/80;background:var(--on-surface);-webkit-mask:url(img/logos/on.png) center/contain no-repeat;mask:url(img/logos/on.png) center/contain no-repeat}
+.lg-sunrise img{block-size:46px}
+.lg-raisenow img{block-size:30px}
+.lg-dacadoo img{block-size:36px}
+.lg-ebay img{block-size:36px}
+.marquee-track .lg-text{font:600 var(--headline-s) var(--font-sans)}
+.lg-dark{display:none!important}
+@media(prefers-color-scheme:dark){:root:not(:has(> head > meta[name="color-scheme"][content="light"])) .lg-dark{display:block!important}:root:not(:has(> head > meta[name="color-scheme"][content="light"])) .lg-light{display:none!important}}
+:root:has(> head > meta[name="color-scheme"][content="dark"]) .lg-dark{display:block!important}
+:root:has(> head > meta[name="color-scheme"][content="dark"]) .lg-light{display:none!important}
+@media(prefers-reduced-motion:reduce){.marquee{max-width:var(--maxw);margin-inline:auto}.marquee-track{gap:var(--s-5) var(--s-8)}}
+/* v22: static logo row, sizes matched to a 24 to 40px reference */
+.logo-row{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:22px 40px}
+.logo-row .lg{display:flex;align-items:center}
+.logo-row .lg img{display:block;inline-size:auto}
+.logo-row .lg-on .lg-mask{block-size:36px}
+.logo-row .lg-sunrise img{block-size:38px}
+.logo-row .lg-raisenow img{block-size:24px}
+.logo-row .lg-dacadoo img{block-size:28px}
+.logo-row .lg-ebay img{block-size:30px}
+.logo-row .lg-text{font:600 22px/1 var(--font-sans);letter-spacing:-.01em;color:var(--on-surface-variant)}
+.logo-row .lg-mobilede img{block-size:22px}
+/* v23: logos centred on an even grid */
+.logo-h{text-align:center}
+.logo-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:24px 36px}
+@media(min-width:40em){.logo-row{gap:24px 56px}}
+/* v24: heading left; logo heights balanced by optical weight (shape and ink density) */
+.logo-h{text-align:start}
+.logo-row .lg-on .lg-mask{block-size:44px}
+.logo-row .lg-sunrise img{block-size:44px}
+.logo-row .lg-raisenow img{block-size:25px}
+.logo-row .lg-dacadoo img{block-size:28px}
+.logo-row .lg-ebay img{block-size:32px}
+.logo-row .lg-mobilede img{block-size:19px}
+.logo-row .lg-sunrise img{block-size:30px}
+@media(min-width:40em){.logo-row{justify-content:space-between;gap:24px 32px}}
+/* v25: label sits on the same line as the logos */
+.logo-line{display:flex;flex-direction:column;gap:var(--s-4)}
+.logo-h{margin:0;font:500 var(--title-s,14px/20px) var(--font-sans);color:var(--on-surface-variant)}
+.logo-row{flex:1}
+.logo-row .lg-sunrise img{block-size:26px}
+@media(min-width:40em){.logo-line{flex-direction:row;align-items:center;gap:var(--s-8,48px)}.logo-h{flex:0 0 auto;max-inline-size:7.5em}}
+@media(min-width:40em){.logo-line{gap:28px}.logo-h{max-inline-size:6em}.logo-row{justify-content:space-between;gap:20px 24px}}
+@media(min-width:40em) and (max-width:64em){.logo-row{zoom:.9}}
+.logo-row .lg-sunrise img{block-size:28px}
+/* v26: typography consistency pass
+   Scale used: h2 section titles headline-m; every h3 title (cards, cases) title-l 400;
+   list-style h3 and small section labels title-m 500; body copy body-l (16px);
+   meta lines body-m (14px); tiny captions body-s. */
+.theme-head h3,.how-grid h3,.card h3{font:400 var(--title-l) var(--font-sans)}
+.lead-grid .card h3,.note-link h3,.trust h3{font:500 var(--title-m) var(--font-sans)}
+.card p,.lead-grid .card p{font:400 var(--body-l) var(--font-sans)}
+.card p.result{font:400 var(--body-m) var(--font-sans)}
+.hero-results li{font:400 var(--body-l) var(--font-sans)}
+.hero-results li span{font:400 var(--body-m) var(--font-sans)}
+.parallels tbody th{font:500 var(--title-m) var(--font-sans)}
+.chart figcaption b,figcaption b{font-weight:500}
+/* logo strip: label on one line, same style as "Selected results" */
+.logo-h{font:500 var(--title-m) var(--font-sans);color:var(--on-surface);white-space:nowrap}
+@media(min-width:40em){.logo-h{max-inline-size:none}}
+/* logo heights: blend of equal ink area and equal height, so no mark dominates */
+.logo-row .lg-on .lg-mask{block-size:44px}
+.logo-row .lg-sunrise img{block-size:33px}
+.logo-row .lg-raisenow img{block-size:26px}
+.logo-row .lg-dacadoo img{block-size:29px}
+.logo-row .lg-ebay img{block-size:32px}
+.logo-row .lg-mobilede img{block-size:20px}
+@media(min-width:40em) and (max-width:64em){.logo-row{zoom:.85}}
+.case-sum dd{font:400 var(--body-l) var(--font-sans)}
+.path-line{font:400 var(--body-l) var(--font-sans);color:var(--on-surface-variant)}
+.path-line{margin-top:var(--s-2);max-width:42rem}
+.logo-row .lg-sunrise img{block-size:36px}
+.logo-row .lg-mobilede img{block-size:18px}
+@media(min-width:40em){.logo-line{gap:48px}}
+.logo-row .lg-on .lg-mask{block-size:48px}
+.logo-row .lg-dacadoo img{block-size:32px}
+.logo-h{font-weight:700}
+/* v27: section spacing consistency
+   Main sections: 48 / 64 / 96 px top and bottom (phone / tablet / desktop).
+   Compact bands (results, logos): equal top and bottom, 40 / 48 px. */
+.notes{margin-block-end:0}
+.parallels tr:last-child{margin-bottom:0}
+.hero-results{padding:40px 0!important}
+.logo-band{padding:40px 0}
+@media(min-width:37.5em){.hero-results{padding:48px 0!important}.logo-band{padding:48px 0}}
+.hero-results h2{font-weight:700}

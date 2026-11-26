@@ -391,19 +391,21 @@ const charts = {
 
   path(svg) {
     const k = new Sketch(svg, 121);
-    const rows = [["2004", "Front-end developer", "e-commerce marketplace, Milan and Berlin"], ["2007", "Product manager", "e-commerce marketplace"], ["2009", "Web development manager", "team of 4, 300+ campaigns a year"], ["2014", "Product manager", "content management and tools"], ["2017", "Global web development lead", "landing-page automation"], ["2019", "Senior technical product manager", "digital health SaaS"], ["2020", "Product manager", "payments SaaS"], ["2021", "Product owner", "Swiss telecom operator"], ["2024", "Senior product manager, technology", "global sportswear brand"], ["2026", "Independent AI products", "studio, decision support, games"]];
-    const top = 26, step = 44, lx = 70;
+    const rows = [["2004", "Front-end developer", "eBay.it and mobile.de, Milan and Berlin", "2 marketplaces, global exchange programme"], ["2007", "Product manager", "eBay.it, Milan", "+1.5% revenue in peak sales periods"], ["2009", "Web development manager", "eBay, team of 4", "300+ campaigns a year, 99.4% quality"], ["2014", "Product manager", "eBay, content management and tools", "+10% organic search traffic, 5 markets"], ["2017", "Global web development lead", "eBay, landing-page automation", "70% faster to market, +15% conversion"], ["2019", "Senior technical product manager", "dacadoo, digital health SaaS", "+25% user satisfaction"], ["2020", "Product manager", "RaiseNow, fundraising-automation fintech", "+30% fundraising revenue in 6 months"], ["2021", "Product owner", "Sunrise, Swiss telecom operator", "~20 engineers, +150% online sales"], ["2024", "Senior product manager, technology", "On, global sportswear brand", "100+ stores, 40M+ scans a year"], ["2026", "Independent AI products", "studio, decision support, games", "6 languages, 3 livestreams a day"]];
+    const top = 26, step = 66, lx = 70;
     k.line(lx, top - 6, lx, top + step * (rows.length - 1) + 6, 0, 1400, { stroke: SLATE });
-    rows.forEach(([y, role, ctx], i) => {
+    rows.forEach(([y, role, ctx, scope], i) => {
       const cy = top + i * step, t = 300 + i * 160, last = i === rows.length - 1;
       if (last) k.fillCircle(lx, cy, 14, BLUE, t + 150);
       k.shape(s => k.g.circle(lx, cy, 14, k.ink({ ...s, stroke: last ? BLUE : INK })), t, 220);
       k.text(y, 14, cy + 6, t, 18, "start", 700, BLUE);
       k.text(role, 88, cy + 4, t + 80, 18, "start", 700);
       k.text(ctx, 88, cy + 22, t + 140, 17, "start", 400, SLATE);
+      k.text(scope, 88, cy + 41, t + 200, 17, "start", 700, BLUE);
     });
     return k;
   },
+
 };
 
 // Article artwork: the same pen, no words. One periwinkle element carries the idea.
