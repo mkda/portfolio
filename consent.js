@@ -62,11 +62,11 @@ dlg.show = () => { dlg.hidden = false; };
 dlg.close = () => { dlg.hidden = true; };
 dlg.setAttribute("aria-label", "Analytics consent");
 dlg.innerHTML = `
+  <p class="consent-text">With your consent, I use Google Analytics to count visits and see which pages people read. Advertising features stay off, and you can change your choice any time. <a href="${root}privacy.html">Privacy and cookies</a></p>
   <div class="consent-actions">
     <button type="button" class="btn primary" value="granted">Accept analytics</button>
     <button type="button" class="btn" value="denied">Decline</button>
-  </div>
-  <a class="consent-link" href="${root}privacy.html">Privacy and cookies</a>`;
+  </div>`;
 dlg.addEventListener("click", (e) => {
   const b = e.target.closest("button[value]");
   if (!b) return;
