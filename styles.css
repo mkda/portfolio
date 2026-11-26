@@ -34,7 +34,7 @@
 
   /* M3 window classes: compact <600, medium 600-839, expanded >=840 */
   --margin:16px;--section-y:var(--s-7);
-  --bar-h:64px;--rule:#FFFFFF;--maxw:1080px;
+  --bar-h:64px;--rule:rgb(208 213 219/.7);--maxw:1080px;
 }
 @media(min-width:37.5em){:root{--margin:24px;--section-y:var(--s-8)}}
 @media(min-width:52.5em){:root{--section-y:var(--s-9)}}
@@ -656,3 +656,12 @@ p{margin:0}
 .hero-results{margin:0!important;padding:var(--s-6) 0 var(--s-7);background:none!important;box-shadow:none!important;clip-path:none!important}
 .hero-results h2{margin:0 0 var(--s-4)}
 .hero-halo{inset:-2% -18% auto -18%;inline-size:136%}
+.note-link{border-bottom:0}
+/* Portrait: previous fade, plus the lower body clipped to the halo circle */
+.hero-photo{container-type:inline-size}
+.hero-photo img{
+  -webkit-mask-image:linear-gradient(to bottom,#000 50%,transparent 86%),radial-gradient(circle 51cqi at 50% 51.9cqi,#000 99.5%,transparent 100%),linear-gradient(#000 51.9cqi,transparent 51.9cqi);
+  mask-image:linear-gradient(to bottom,#000 50%,transparent 86%),radial-gradient(circle 51cqi at 50% 51.9cqi,#000 99.5%,transparent 100%),linear-gradient(#000 51.9cqi,transparent 51.9cqi);
+  -webkit-mask-composite:source-in,source-over;
+  mask-composite:intersect,add;
+}
