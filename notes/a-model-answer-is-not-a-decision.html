@@ -20,13 +20,13 @@
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
-<header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path class="mark-m" d="M3.68 22.66V15.49a6.16 6.16 0 0 1 12.32 0V22.66M16.00 15.49a6.16 6.16 0 0 1 12.32 0V15.49"/><rect x="25.16" y="18.83" width="6.32" height="6.32" rx="1.49" class="mark-sq"/></svg><span class="brand-name">dellanna<span><b>.</b>pm</span></span></a></div></header>
+<header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../" aria-label="Mikael Dell\'Anna, home"><span class="wordmark" aria-hidden="true"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path class="mark-m" d="M3.68 22.66V15.49a6.16 6.16 0 0 1 12.32 0V22.66M16.00 15.49a6.16 6.16 0 0 1 12.32 0V15.49"/><rect x="25.16" y="18.83" width="6.32" height="6.32" rx="1.49" class="mark-sq"/></svg><span class="wm-rest"><span class="wm-i">ı</span>kael</span></span><span class="brand-name" aria-hidden="true">dellanna<span><b>.</b>pm</span></span></a></div></header>
 <main class="wrap article" id="content">
   <h1>The model advises, the rules decide</h1>
   <p class="meta">Mikael Dell'Anna · <time datetime="2026-07-14">14 July 2026</time> · 5 min read</p>
   <figure class="art"><svg class="sketch" data-viz="model-answer" viewBox="0 0 640 360" width="640" height="360" aria-hidden="true"></svg></figure>
 
-  <p>I've been building JEV Trader, an experimental platform for autonomous crypto research and trading. The goal was a product question, more than a clever model: can AI help with market analysis and routine decisions while permissions, risk controls, accounting and execution stay under explicit software control? It's a research platform for testing that question, and the lessons below come from treating it that way.</p>
+  <p>I've been building JEV Trader, an experimental platform for market research and decision support, tested on digital-asset (crypto) markets. The goal was a product question, more than a clever model: can AI help with market analysis and routine decisions while permissions, risk controls, accounting and execution stay under explicit software control? It's a research platform for testing that question, and the lessons below come from treating it that way.</p>
 
   <h2>1. Separate interpretation from authority</h2>
   <p>The work is split across named components: asset discovery, ownership and wallet evidence, market behaviour, execution quality, and a final set of checks. The AI layer returns a structured direction and a confidence level. Permissions, final position size and order submission all stay with code. Code-enforced gates decide whether any action is allowed. Models help interpret evidence; software stays responsible for actions and recovery.</p>

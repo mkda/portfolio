@@ -132,12 +132,16 @@ p{margin:0}
 /* Small top app bar (64dp) */
 .topbar{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--surface) 92%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--outline-variant)}
 .topbar-inner{display:flex;align-items:center;gap:var(--s-2);height:var(--bar-h)}
-.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--on-surface)}
-.brand .mark{width:32px;height:32px;flex:none;display:block}
+.brand{display:inline-flex;flex-wrap:wrap;align-items:baseline;align-content:center;gap:.4em;text-decoration:none;color:var(--on-surface)}
+.brand .mark{width:25px;height:25px;display:inline-block;vertical-align:-7.3px;overflow:visible}
+.wordmark{white-space:nowrap;line-height:1}
+.wm-rest{font:800 20px/1 var(--font-sans);color:var(--primary);letter-spacing:-.01em;margin-left:3px}
+.wm-i{position:relative;display:inline-block}
+.wm-i::after{content:"";position:absolute;left:50%;top:.02em;inline-size:.2em;block-size:.2em;border-radius:.05em;background:var(--secondary);transform:translateX(-50%)}
 .mark-frame{fill:var(--surface);stroke:var(--primary);stroke-width:.8}
 .mark-m{fill:none;stroke:var(--primary);stroke-width:4.97;stroke-linecap:round;stroke-linejoin:round}
 .mark-sq{fill:var(--secondary)}
-.brand-name{font:500 var(--title-s) var(--font-mono)}
+.brand-name{font:500 var(--title-s) var(--font-mono);color:var(--on-surface-variant)}
 .brand-name span{color:var(--primary)}
 .brand-name b{color:var(--secondary);font-weight:inherit}
 
@@ -364,7 +368,7 @@ p{margin:0}
 
 /* Data table (4dp corner, outline-variant, 56dp header, title-small header labels) */
 .table-wrap{margin-top:var(--s-5);overflow-x:auto;border:1px solid var(--outline-variant);border-radius:var(--corner-xs);background:var(--surface-container-low)}
-.parallels{width:100%;border-collapse:collapse;min-width:720px}
+.parallels{width:100%;border-collapse:collapse;min-width:560px}
 .parallels thead th{text-align:left;min-block-size:56px;block-size:56px;padding:0 var(--s-4);font:500 var(--title-s) var(--font-sans);color:var(--on-surface);border-bottom:1px solid var(--outline-variant)}
 .parallels td{vertical-align:top;padding:var(--s-4);border-bottom:1px solid var(--outline-variant);color:var(--on-surface-variant);font:400 var(--body-m) var(--font-sans)}
 .parallels tr:last-child td{border-bottom:0}
@@ -372,7 +376,6 @@ p{margin:0}
 .parallels tbody th{text-align:left;vertical-align:top;padding:var(--s-4);border-bottom:1px solid var(--outline-variant);font:500 var(--title-s) var(--font-sans);color:var(--on-surface);width:26%}
 .parallels tr:last-child th{border-bottom:0}
 .parallels .sub{display:block;font:400 var(--body-m) var(--font-sans);color:var(--on-surface-variant);margin-top:var(--s-1)}
-.parallels td:nth-child(2){color:var(--primary);font-weight:500;width:22%}
 @media(max-width:52.49em){
   .table-wrap{border:0;background:none;overflow:visible;border-radius:0}
   .parallels{min-width:0;counter-reset:l}
@@ -383,8 +386,7 @@ p{margin:0}
   .parallels td,.parallels tbody th{border:0;padding:0}
   .parallels tbody th::before{content:"Lesson " counter(l);display:block;font:500 var(--label-m) var(--font-sans);color:var(--on-surface-variant);margin-bottom:var(--s-1)}
   .parallels tbody th{font:500 var(--title-m) var(--font-sans)}
-  .parallels td:nth-child(2){margin:var(--s-3) 0;padding:var(--s-2) var(--s-3);background:var(--primary-container);color:var(--on-primary-container);border-radius:var(--corner-s)}
-  .parallels td:nth-child(3)::before{content:"Applied: ";font-weight:500;color:var(--on-surface)}
+  .parallels td{margin-top:var(--s-2)}.parallels td::before{content:"Applied: ";font-weight:500;color:var(--on-surface)}
 }
 
 /* List (three-line items: overline, headline, supporting text; 16dp sides; trailing icon) */
