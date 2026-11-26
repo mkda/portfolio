@@ -717,3 +717,7 @@ p{margin:0}
 .logo-row .lg-ebay img{block-size:30px}
 .logo-row .lg-text{font:600 22px/1 var(--font-sans);letter-spacing:-.01em;color:var(--on-surface-variant)}
 .logo-row .lg-mobilede img{block-size:22px}
+/* v23: logos centred on an even grid */
+.logo-h{text-align:center}
+.logo-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:24px 36px}
+@media(min-width:40em){.logo-row{gap:24px 56px}}
