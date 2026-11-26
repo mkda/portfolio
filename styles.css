@@ -657,3 +657,4 @@ p{margin:0}
 .hero-results h2{margin:0 0 var(--s-4)}
 .hero-halo{inset:-2% -18% auto -18%;inline-size:136%}
 .note-link{border-bottom:0}
+.hero-photo img{-webkit-mask-image:linear-gradient(to bottom,#000 40%,transparent 74%);mask-image:linear-gradient(to bottom,#000 40%,transparent 74%)}
