@@ -629,3 +629,5 @@ p{margin:0}
 .hero-results{padding:0;border:0;border-radius:0;background:none}
 .hr-head{justify-content:space-between}
 .hr-photo{order:2}
+.hero-results li{border-top:0;padding-top:0}
+.hero-results ul{gap:var(--s-4)}
