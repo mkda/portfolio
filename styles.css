@@ -691,3 +691,18 @@ p{margin:0}
 
 .how-grid>.card:nth-child(1){background:var(--tint-1)}.how-grid>.card:nth-child(2){background:var(--tint-2)}.how-grid>.card:nth-child(3){background:var(--tint-3)}
 .how-grid h3{font:500 var(--title-l) var(--font-sans);color:var(--on-surface);margin:0 0 var(--s-2)}
+/* v21: real employer logos in the Worked at strip */
+.marquee-track{gap:var(--s-9,56px);padding-inline-end:var(--s-9,56px)}
+.marquee-track .lg{display:flex;align-items:center;opacity:1}
+.marquee-track .lg img{display:block;inline-size:auto}
+.lg-on .lg-mask{display:block;block-size:44px;aspect-ratio:41/80;background:var(--on-surface);-webkit-mask:url(img/logos/on.png) center/contain no-repeat;mask:url(img/logos/on.png) center/contain no-repeat}
+.lg-sunrise img{block-size:46px}
+.lg-raisenow img{block-size:30px}
+.lg-dacadoo img{block-size:36px}
+.lg-ebay img{block-size:36px}
+.marquee-track .lg-text{font:600 var(--headline-s) var(--font-sans)}
+.lg-dark{display:none!important}
+@media(prefers-color-scheme:dark){:root:not(:has(> head > meta[name="color-scheme"][content="light"])) .lg-dark{display:block!important}:root:not(:has(> head > meta[name="color-scheme"][content="light"])) .lg-light{display:none!important}}
+:root:has(> head > meta[name="color-scheme"][content="dark"]) .lg-dark{display:block!important}
+:root:has(> head > meta[name="color-scheme"][content="dark"]) .lg-light{display:none!important}
+@media(prefers-reduced-motion:reduce){.marquee{max-width:var(--maxw);margin-inline:auto}.marquee-track{gap:var(--s-5) var(--s-8)}}
