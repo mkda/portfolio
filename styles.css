@@ -34,7 +34,7 @@
 
   /* M3 window classes: compact <600, medium 600-839, expanded >=840 */
   --margin:16px;--section-y:var(--s-7);
-  --bar-h:64px;--rule:rgb(255 255 255/.4);--maxw:1080px;
+  --bar-h:64px;--rule:rgb(208 213 219/.7);--maxw:1080px;
 }
 @media(min-width:37.5em){:root{--margin:24px;--section-y:var(--s-8)}}
 @media(min-width:52.5em){:root{--section-y:var(--s-9)}}
