@@ -269,6 +269,53 @@ const charts = {
     return k;
   },
 
+  // How I work: business case first. Cumulative cash dips below zero, crosses at break-even, NPV marked.
+  bizcase(svg) {
+    const k = new Sketch(svg, 91, 1.3);
+    k.line(24, 64, 300, 64, 0, 450, { stroke: SLATE });
+    k.line(24, 16, 24, 108, 100, 350, { stroke: SLATE });
+    [[44, 8], [76, 10], [108, 6]].forEach(([x, h], i) => { k.fill(x, 64, 18, 22 + h, CORAL, 650 + i * 120, 260); k.box(x, 64, 18, 22 + h, 550 + i * 120, 220, { stroke: CORAL }); });
+    [[150, 14], [178, 24], [206, 34], [234, 42]].forEach(([x, h], i) => { k.fill(x, 64 - h, 18, h, TEAL, 1150 + i * 110, 260); k.box(x, 64 - h, 18, h, 1050 + i * 110, 220, { stroke: TEAL }); });
+    k.curve([[34, 72], [70, 92], [112, 100], [146, 66], [190, 40], [244, 16]], 1700, 800, { stroke: BLUE, strokeWidth: 1.8 });
+    k.shape(s => k.g.circle(142, 64, 12, k.ink({ ...s, stroke: BLUE })), 2350, 220);
+    k.text("break-even", 152, 86, 2450, 15, "start", 400, BLUE);
+    k.text("NPV +", 304, 28, 2600, 16, "end", 700, TEAL);
+    return k;
+  },
+
+  // How I work: watch the real work. A planned path, a person stepping off it, and the data model gaining a field.
+  watchwork(svg) {
+    const k = new Sketch(svg, 93, 1.3);
+    [26, 86, 146].forEach((x, i) => k.box(x, 26, 40, 26, i * 180, 260, { stroke: SLATE }));
+    k.line(66, 39, 86, 39, 200, 150, { stroke: SLATE }); k.line(126, 39, 146, 39, 380, 150, { stroke: SLATE });
+    k.curve([[106, 52], [102, 82], [134, 98], [166, 52]], 800, 600, { stroke: CORAL });
+    k.shape(s => k.g.circle(120, 92, 10, k.ink({ ...s, stroke: CORAL })), 1350, 200);
+    k.ellipse(58, 92, 46, 22, 1500, 380, { stroke: BLUE });
+    k.fillCircle(58, 92, 12, BLUE, 1800); k.shape(s => k.g.circle(58, 92, 12, k.ink({ ...s, stroke: BLUE })), 1750, 200);
+    k.arrow([[192, 66], [212, 66], [228, 66]], 2000, 300, SLATE, 1.4);
+    k.box(236, 22, 64, 80, 2250, 380);
+    [40, 56, 72].forEach((y, i) => k.line(246, y, 290, y, 2500 + i * 90, 200, { stroke: SLATE }));
+    k.fill(244, 82, 48, 12, TEAL, 2900, 300); k.line(246, 88, 290, 88, 2850, 260, { stroke: TEAL, strokeWidth: 1.8 });
+    return k;
+  },
+
+  // How I work: guardrails in code. The model suggests; rules check; a person approves at one gate.
+  guardrails(svg) {
+    const k = new Sketch(svg, 95, 1.3);
+    k.curve([[30, 70], [24, 50], [44, 38], [58, 44], [70, 30], [94, 36], [100, 52], [114, 58], [108, 76], [30, 76], [30, 70]], 0, 700, { stroke: LAVENDER });
+    k.text("AI", 68, 64, 500, 18, "middle", 700, LAVENDER);
+    k.arrow([[120, 60], [134, 60], [148, 60]], 750, 300, SLATE, 1.4);
+    k.box(154, 34, 52, 52, 1050, 380, { stroke: BLUE });
+    k.fill(154, 34, 52, 52, BLUE, 1300, 300);
+    k.box(170, 58, 20, 16, 1450, 220, { stroke: BLUE });
+    k.curve([[173, 58], [173, 48], [187, 48], [187, 58]], 1600, 220, { stroke: BLUE });
+    k.arrow([[212, 60], [226, 60], [240, 60]], 1850, 300, SLATE, 1.4);
+    k.shape(s => k.g.circle(266, 42, 14, k.ink(s)), 2150, 250);
+    k.curve([[255, 78], [257, 60], [275, 60], [277, 78]], 2300, 300);
+    k.path([[290, 46], [296, 52], [306, 38]], 2650, 260, { stroke: TEAL, strokeWidth: 2 });
+    return k;
+  },
+
   docs(svg) {
     const k = new Sketch(svg, 87, 1.3);
     k.box(30, 18, 50, 66, 0, 350, { stroke: SLATE }); k.box(22, 26, 50, 66, 150, 350, { stroke: SLATE });
