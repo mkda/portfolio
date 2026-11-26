@@ -657,4 +657,11 @@ p{margin:0}
 .hero-results h2{margin:0 0 var(--s-4)}
 .hero-halo{inset:-2% -18% auto -18%;inline-size:136%}
 .note-link{border-bottom:0}
-.hero-photo img{-webkit-mask-image:linear-gradient(to bottom,#000 40%,transparent 74%);mask-image:linear-gradient(to bottom,#000 40%,transparent 74%)}
+/* Portrait: previous fade, plus the lower body clipped to the halo circle */
+.hero-photo{container-type:inline-size}
+.hero-photo img{
+  -webkit-mask-image:linear-gradient(to bottom,#000 50%,transparent 86%),radial-gradient(circle 51cqi at 50% 51.9cqi,#000 99.5%,transparent 100%),linear-gradient(#000 51.9cqi,transparent 51.9cqi);
+  mask-image:linear-gradient(to bottom,#000 50%,transparent 86%),radial-gradient(circle 51cqi at 50% 51.9cqi,#000 99.5%,transparent 100%),linear-gradient(#000 51.9cqi,transparent 51.9cqi);
+  -webkit-mask-composite:source-in,source-over;
+  mask-composite:intersect,add;
+}
