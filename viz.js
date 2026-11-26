@@ -341,6 +341,47 @@ const charts = {
     k.shape(s => k.g.ellipse(48, 32, 24, 14, k.ink(s)), 500, 300);
     return k;
   },
+
+  "b-studio"(svg) {
+    const k = new Sketch(svg, 101, 1.3);
+    k.fill(24, 40, 150, 84, BLUE, 600); k.box(24, 40, 150, 84, 0, 500, { stroke: BLUE });
+    k.poly([[24, 40], [174, 40], [168, 20], [30, 20]], 300, 400);
+    [44, 74, 104, 134].forEach((x, i) => k.line(x, 20, x + 12, 40, 500 + i * 80, 150));
+    k.poly([[86, 64], [86, 102], [118, 83]], 900, 400, { stroke: INK });
+    [[214, 34, "EN"], [262, 60, "IT"], [214, 92, "DE"]].forEach(([x, y], i) => {
+      k.poly([[x, y], [x + 48, y], [x + 48, y + 26], [x + 14, y + 26], [x + 6, y + 36], [x + 8, y + 26], [x, y + 26]], 1300 + i * 220, 350, { stroke: i === 1 ? TEAL : SLATE });
+      k.line(x + 10, y + 13, x + 38, y + 13, 1500 + i * 220, 200, { stroke: SLATE });
+    });
+    return k;
+  },
+  "b-market"(svg) {
+    const k = new Sketch(svg, 103, 1.3);
+    k.line(24, 120, 296, 120, 0, 450, { stroke: SLATE }); k.line(24, 120, 24, 16, 100, 400, { stroke: SLATE });
+    const c = [[50, 100, 82, 74, 108], [80, 86, 70, 60, 94], [110, 72, 88, 64, 96], [140, 84, 62, 54, 90], [170, 66, 48, 40, 74]];
+    c.forEach(([x, o, cl, hi, lo], i) => {
+      const up = cl < o, col = up ? TEAL : CORAL;
+      k.line(x, hi, x, lo, 500 + i * 150, 200, { stroke: col });
+      k.fill(x - 7, Math.min(o, cl), 14, Math.abs(o - cl), col, 650 + i * 150, 200);
+      k.box(x - 7, Math.min(o, cl), 14, Math.abs(o - cl), 550 + i * 150, 200, { stroke: col });
+    });
+    k.curve([[190, 50], [210, 40], [228, 36]], 1400, 300, { stroke: SLATE });
+    // shield: code holds the gate
+    const S = [[252, 26], [284, 36], [282, 72], [252, 96], [222, 72], [220, 36]];
+    k.fillPoly(S, BLUE, 1900); k.poly(S, 1600, 500, { stroke: BLUE });
+    k.path([[238, 60], [249, 71], [268, 48]], 2200, 300, { stroke: INK });
+    return k;
+  },
+  "b-games"(svg) {
+    const k = new Sketch(svg, 105, 1.3);
+    k.box(40, 14, 70, 116, 0, 500);
+    k.line(66, 22, 84, 22, 300, 150, { stroke: SLATE });
+    k.fillCircle(75, 66, 22, BLUE, 700); k.shape(s => k.g.circle(75, 66, 22, k.ink({ ...s, stroke: BLUE })), 500, 300);
+    k.arrow([[120, 96], [170, 70], [222, 52]], 900, 500, TEAL, 1.8);
+    k.shape(s => k.g.circle(240, 46, 26, k.ink({ ...s, stroke: SLATE })), 1300, 300);
+    k.shape(s => k.g.circle(270, 96, 18, k.ink({ ...s, stroke: CORAL })), 1500, 250);
+    k.line(254, 116, 292, 116, 1700, 250, { stroke: SLATE }); k.line(262, 124, 284, 124, 1800, 200, { stroke: SLATE });
+    return k;
+  },
 };
 
 // Article artwork: the same pen, no words. One periwinkle element carries the idea.

@@ -567,3 +567,8 @@ p{margin:0}
 }
 @media(min-width:52.5em){.lead-grid{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}}
 @media(max-width:52.49em){.ptabs{position:sticky;top:calc(var(--bar-h) + 1px);z-index:5;background:var(--surface-container);overflow-y:hidden}}
+/* Build cards: pen illustration and a gently tinted background each */
+.build-art{display:block;inline-size:100%;block-size:auto;aspect-ratio:16/7;border-radius:var(--corner-m);background:var(--vz-surface);border:1px solid var(--vz-edge);margin-bottom:var(--s-2)}
+.card.build-blue{background:color-mix(in srgb,var(--vz-blue) 14%,var(--surface-container-low))}
+.card.build-lav{background:color-mix(in srgb,var(--vz-lav) 14%,var(--surface-container-low))}
+.card.build-mint{background:color-mix(in srgb,var(--vz-mint) 14%,var(--surface-container-low))}
