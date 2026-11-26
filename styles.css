@@ -34,7 +34,7 @@
 
   /* M3 window classes: compact <600, medium 600-839, expanded >=840 */
   --margin:16px;--section-y:var(--s-7);
-  --bar-h:64px;--rule:#FFFFFF;--maxw:1080px;
+  --bar-h:64px;--rule:rgb(255 255 255/.4);--maxw:1080px;
 }
 @media(min-width:37.5em){:root{--margin:24px;--section-y:var(--s-8)}}
 @media(min-width:52.5em){:root{--section-y:var(--s-9)}}
@@ -656,3 +656,4 @@ p{margin:0}
 .hero-results{margin:0!important;padding:var(--s-6) 0 var(--s-7);background:none!important;box-shadow:none!important;clip-path:none!important}
 .hero-results h2{margin:0 0 var(--s-4)}
 .hero-halo{inset:-2% -18% auto -18%;inline-size:136%}
+.note-link{border-bottom:0}
