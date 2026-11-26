@@ -772,3 +772,11 @@ p{margin:0}
 .logo-row .lg-on .lg-mask{block-size:48px}
 .logo-row .lg-dacadoo img{block-size:32px}
 .logo-h{font-weight:700}
+/* v27: section spacing consistency
+   Main sections: 48 / 64 / 96 px top and bottom (phone / tablet / desktop).
+   Compact bands (results, logos): equal top and bottom, 40 / 48 px. */
+.notes{margin-block-end:0}
+.parallels tr:last-child{margin-bottom:0}
+.hero-results{padding:40px 0!important}
+.logo-band{padding:40px 0}
+@media(min-width:37.5em){.hero-results{padding:48px 0!important}.logo-band{padding:48px 0}}
