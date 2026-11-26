@@ -116,7 +116,7 @@ const charts = {
     k.fill(20, 48, 320, 78, BLUE, 600, 700); k.box(20, 48, 320, 78, 450, 500);
     k.text("Digital Twin", 180, 74, 1000, 22, "middle", 700);
     k.text("one record per item instance, tracked globally", 180, 98, 1150, 14, "middle");
-    k.text("and synchronized with ERP financial records", 180, 116, 1250, 14, "middle");
+    k.text("and synchronised with ERP financial records", 180, 116, 1250, 14, "middle");
     k.line(20, 214, 340, 214, 1200, 600, { stroke: SLATE });
     const st = [["supply chain", 45], ["warehouse", 135], ["store", 225], ["customer QR", 315]];
     st.forEach(([name, x], i) => {
@@ -171,25 +171,25 @@ const charts = {
     const k = new Sketch(svg, 51);
     k.text("Cost per usable result", 14, 28, 0, 22, "start", 700);
     k.underline2(14, 206, 36, 250);
-    const x0 = 150, sc = 164 / .18;
+    const x0 = 150, sc = 146 / .18;
     k.line(x0, 70, x0, 230, 400, 450, { stroke: SLATE });
     let t = 600;
     [["Provider A", 62, [["per image", .09, SLATE], ["per usable drawing", .12, BLUE]]],
      ["Provider B", 150, [["per image", .14, SLATE], ["per usable drawing", .18, CORAL]]]].forEach(([name, y, rows]) => {
-      k.text(name, 14, y, t, 16, "start", 700);
+      k.text(name, 14, y, t, 19, "start", 700);
       rows.forEach(([lab, val, c], i) => {
         const yy = y + 10 + i * 34, w = val * sc;
-        k.text(lab, x0 - 8, yy + 16, t + 100, 16, "end", 400, SLATE);
+        k.text(lab, x0 - 8, yy + 16, t + 100, 19, "end", 400, SLATE);
         if (c !== SLATE) k.fill(x0, yy, w, 22, c, t + 500);
         k.box(x0, yy, w, 22, t + 200, 450, { stroke: c === SLATE ? SLATE : c });
-        k.text("$" + val.toFixed(2), x0 + w + 6, yy + 17, t + 600, 18, "start", 700);
+        k.text("$" + val.toFixed(2), x0 + w + 6, yy + 17, t + 600, 20, "start", 700);
         t += 380;
       });
     });
-    const ax = x0 + .12 * sc + 22;
-    k.ellipse(ax, 117, 52, 26, t + 200, 380);
-    k.text("A costs a third less", 14, 254, t + 500, 18, "start", 700, BLUE);
-    k.text("per usable drawing. Usable cost = price ÷ pass rate", 14, 276, t + 700, 15, "start", 400, SLATE);
+    const ax = x0 + .12 * sc + 26;
+    k.ellipse(ax, 117, 60, 28, t + 200, 380);
+    k.text("A costs a third less", 14, 254, t + 500, 22, "start", 700, BLUE);
+    k.text("per usable drawing (price ÷ pass rate)", 14, 278, t + 700, 18, "start", 400, SLATE);
     return k;
   },
 
@@ -380,6 +380,31 @@ const charts = {
     k.shape(s => k.g.circle(240, 46, 26, k.ink({ ...s, stroke: SLATE })), 1300, 300);
     k.shape(s => k.g.circle(270, 96, 18, k.ink({ ...s, stroke: CORAL })), 1500, 250);
     k.line(254, 116, 292, 116, 1700, 250, { stroke: SLATE }); k.line(262, 124, 284, 124, 1800, 200, { stroke: SLATE });
+    return k;
+  },
+
+  halo(svg) {
+    const k = new Sketch(svg, 111, 1.4);
+    k.fillCircle(228, 190, 300, BLUE, 300, 800);
+    k.shape(s => k.g.circle(228, 190, 300, k.ink({ ...s, stroke: BLUE })), 0, 1200);
+    k.shape(s => k.g.arc(228, 190, 340, 340, -2.6, -1.2, false, k.ink({ ...s, stroke: SLATE, strokeWidth: 1.2 })), 900, 700);
+    k.shape(s => k.g.circle(346, 70, 10, k.ink({ ...s, stroke: CORAL })), 1500, 300);
+    return k;
+  },
+
+  path(svg) {
+    const k = new Sketch(svg, 121);
+    const rows = [["2004", "Front-end developer", "e-commerce marketplace, Milan and Berlin"], ["2007", "Product manager", "e-commerce marketplace"], ["2009", "Web development manager", "team of 4, 300+ campaigns a year"], ["2014", "Product manager", "content management and tools"], ["2017", "Global web development lead", "landing-page automation"], ["2019", "Senior technical product manager", "digital health SaaS"], ["2020", "Product manager", "payments SaaS"], ["2021", "Product owner", "Swiss telecom operator"], ["2024", "Senior product manager, technology", "global sportswear brand"], ["2026", "Independent AI products", "studio, decision support, games"]];
+    const top = 26, step = 44, lx = 70;
+    k.line(lx, top - 6, lx, top + step * (rows.length - 1) + 6, 0, 1400, { stroke: SLATE });
+    rows.forEach(([y, role, ctx], i) => {
+      const cy = top + i * step, t = 300 + i * 160, last = i === rows.length - 1;
+      if (last) k.fillCircle(lx, cy, 14, BLUE, t + 150);
+      k.shape(s => k.g.circle(lx, cy, 14, k.ink({ ...s, stroke: last ? BLUE : INK })), t, 220);
+      k.text(y, 14, cy + 6, t, 18, "start", 700, BLUE);
+      k.text(role, 88, cy + 4, t + 80, 18, "start", 700);
+      k.text(ctx, 88, cy + 22, t + 140, 17, "start", 400, SLATE);
+    });
     return k;
   },
 };
