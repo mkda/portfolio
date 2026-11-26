@@ -566,3 +566,4 @@ p{margin:0}
   .parallels tr{border-inline-start:4px solid var(--primary)}
 }
 @media(min-width:52.5em){.lead-grid{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}}
+@media(max-width:52.49em){.ptabs{position:sticky;top:calc(var(--bar-h) + 1px);z-index:5;background:var(--surface-container);overflow-y:hidden}}

@@ -277,10 +277,15 @@ addEventListener("storage",e=>{if(e.key==="color-scheme")meta.content=e.newValue
   const list=document.querySelector(".ptabs"),tabs=[...list.querySelectorAll("[role=tab]")];
   const select=(t,focus)=>{tabs.forEach(x=>{const on=x===t;x.setAttribute("aria-selected",on);x.tabIndex=on?0:-1;document.getElementById(x.getAttribute("aria-controls")).hidden=!on});if(focus)t.focus()};
   list.hidden=false;select(tabs[0]);
-  list.addEventListener("click",e=>{const t=e.target.closest("[role=tab]");if(t)select(t)});
+  // On mobile the tab bar sticks under the top bar; switching tabs returns to the start of the new panel.
+  const toPanelStart=t=>{const p=document.getElementById(t.getAttribute("aria-controls")),bar=document.querySelector(".topbar").offsetHeight;
+    if(list.getBoundingClientRect().top>bar+2)return;
+    const y=p.getBoundingClientRect().top+scrollY-bar-list.offsetHeight;
+    scrollTo({top:y,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})};
+  list.addEventListener("click",e=>{const t=e.target.closest("[role=tab]");if(t){select(t);toPanelStart(t)}});
   list.addEventListener("keydown",e=>{const i=tabs.indexOf(document.activeElement);if(i<0)return;
     const n={ArrowRight:i+1,ArrowLeft:i-1,Home:0,End:tabs.length-1}[e.key];if(n===undefined)return;
-    e.preventDefault();select(tabs[(n+tabs.length)%tabs.length],true)});
+    e.preventDefault();const t=tabs[(n+tabs.length)%tabs.length];select(t,true);toPanelStart(t)});
 }
 
 // Accordion starts closed on compact and medium windows.
