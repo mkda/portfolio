@@ -631,3 +631,11 @@ p{margin:0}
 .hr-photo{order:2}
 .hero-results li{border-top:0;padding-top:0}
 .hero-results ul{gap:var(--s-4)}
+
+/* v10: photo back on the right (smaller, softer halo); results as a row below */
+.hero-photo{inline-size:min(56vw,220px)}
+.hero-halo{opacity:.45}
+.hero-results{grid-column:1/-1;margin:calc(-1 * var(--s-5)) 0 var(--s-6)}
+.hero-results h2{margin-bottom:var(--s-3)}
+@media(min-width:37.5em){.hero-results ul{grid-template-columns:repeat(3,1fr);gap:var(--s-5)}}
+@media(min-width:52.5em){.hero{grid-template-columns:minmax(0,1fr) 260px;align-items:end}.hero-photo{inline-size:260px}.hero-results{margin:var(--s-6) 0 var(--s-7)}}
