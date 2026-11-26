@@ -37,3 +37,15 @@ if (M && !calm) {
     draw(fig.querySelectorAll(".bar"), { scaleX: [0, 1], duration: 700, delay: stagger(90), ease: "out(3)" });
   }, { amount: 0.4 });
 }
+
+// Copy the email address in the hero.
+document.querySelectorAll(".copy-btn").forEach((btn) => {
+  const status = btn.querySelector(".copy-status");
+  btn.addEventListener("click", async () => {
+    const text = btn.dataset.copy;
+    try { await navigator.clipboard.writeText(text); }
+    catch { const t = document.createElement("textarea"); t.value = text; document.body.append(t); t.select(); document.execCommand("copy"); t.remove(); }
+    btn.classList.add("copied"); status.textContent = "Copied";
+    clearTimeout(btn._t); btn._t = setTimeout(() => { btn.classList.remove("copied"); status.textContent = ""; }, 2000);
+  });
+});
