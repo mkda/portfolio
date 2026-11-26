@@ -731,3 +731,12 @@ p{margin:0}
 .logo-row .lg-mobilede img{block-size:19px}
 .logo-row .lg-sunrise img{block-size:30px}
 @media(min-width:40em){.logo-row{justify-content:space-between;gap:24px 32px}}
+/* v25: label sits on the same line as the logos */
+.logo-line{display:flex;flex-direction:column;gap:var(--s-4)}
+.logo-h{margin:0;font:500 var(--title-s,14px/20px) var(--font-sans);color:var(--on-surface-variant)}
+.logo-row{flex:1}
+.logo-row .lg-sunrise img{block-size:26px}
+@media(min-width:40em){.logo-line{flex-direction:row;align-items:center;gap:var(--s-8,48px)}.logo-h{flex:0 0 auto;max-inline-size:7.5em}}
+@media(min-width:40em){.logo-line{gap:28px}.logo-h{max-inline-size:6em}.logo-row{justify-content:space-between;gap:20px 24px}}
+@media(min-width:40em) and (max-width:64em){.logo-row{zoom:.9}}
+.logo-row .lg-sunrise img{block-size:28px}
