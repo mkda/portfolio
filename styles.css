@@ -639,3 +639,10 @@ p{margin:0}
 .hero-results h2{margin-bottom:var(--s-3)}
 @media(min-width:37.5em){.hero-results ul{grid-template-columns:repeat(3,1fr);gap:var(--s-5)}}
 @media(min-width:52.5em){.hero{grid-template-columns:minmax(0,1fr) 260px;align-items:end}.hero-photo{inline-size:260px}.hero-results{margin:var(--s-6) 0 var(--s-7)}}
+
+/* v11 */
+.hero-halo{opacity:.3}
+@media(min-width:52.5em){.hero-photo{align-self:center;margin-top:calc(-1 * var(--s-6))}}
+.hero-results{background:var(--tint-1);box-shadow:0 0 0 100vmax var(--tint-1);clip-path:inset(0 -100vmax);padding:var(--s-6) 0;margin-bottom:0}
+@media(min-width:52.5em){.hero-results{margin-bottom:0}}
+.case-sum div{border:0;border-radius:0}
