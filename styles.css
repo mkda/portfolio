@@ -782,3 +782,18 @@ p{margin:0}
 @media(min-width:37.5em){.hero-results{padding:48px 0!important}.logo-band{padding:48px 0}}
 .hero-results h2{font-weight:700}
 .logo-row .lg-raisenow img{translate:0 -2px}
+/* v28: email with copy button in the hero (replaces "Get in touch") */
+.email-copy{display:inline-flex;align-items:center;min-block-size:40px;border:1px solid var(--outline);border-radius:var(--corner-full);padding-inline-start:var(--s-5);gap:var(--s-1)}
+.email-copy a{font:500 var(--label-l) var(--font-sans);color:var(--primary);text-decoration:none;letter-spacing:.006em}
+.email-copy a:hover{text-decoration:underline}
+.copy-btn{position:relative;display:inline-grid;place-items:center;inline-size:40px;block-size:40px;margin-inline-end:0;border:0;border-radius:var(--corner-full);background:transparent;color:var(--primary);cursor:pointer}
+.copy-btn:hover{background:color-mix(in srgb,var(--primary) 8%,transparent)}
+.copy-btn:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+.copy-status{position:absolute;inset-block-end:calc(100% + 6px);inset-inline-end:0;padding:2px 8px;border-radius:var(--corner-xs,4px);background:var(--inverse-surface,#2e3133);color:var(--inverse-on-surface,#eff1f3);font:500 var(--label-m) var(--font-sans);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s}
+.copy-btn.copied .copy-status{opacity:1}
+@media print{.email-copy{display:none}}
+/* Portrait: no bottom fade; lower body still clipped to the halo circle */
+.hero-photo img{
+  -webkit-mask-image:radial-gradient(circle 51cqi at 50% 51.9cqi,#000 99.5%,transparent 100%),linear-gradient(#000 51.9cqi,transparent 51.9cqi);
+  mask-image:radial-gradient(circle 51cqi at 50% 51.9cqi,#000 99.5%,transparent 100%),linear-gradient(#000 51.9cqi,transparent 51.9cqi);
+  -webkit-mask-composite:source-over;mask-composite:add}
