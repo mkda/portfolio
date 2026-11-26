@@ -721,3 +721,11 @@ p{margin:0}
 .logo-h{text-align:center}
 .logo-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:24px 36px}
 @media(min-width:40em){.logo-row{gap:24px 56px}}
+/* v24: heading left; logo heights balanced by optical weight (shape and ink density) */
+.logo-h{text-align:start}
+.logo-row .lg-on .lg-mask{block-size:44px}
+.logo-row .lg-sunrise img{block-size:44px}
+.logo-row .lg-raisenow img{block-size:25px}
+.logo-row .lg-dacadoo img{block-size:28px}
+.logo-row .lg-ebay img{block-size:32px}
+.logo-row .lg-mobilede img{block-size:19px}
