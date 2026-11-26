@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("pm-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="color-scheme" content="light dark">
+<script>try{var c=localStorage.getItem("color-scheme");if(c)document.querySelector('meta[name="color-scheme"]').content=c}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="text-scale" content="scale">
 <meta name="robots" content="noindex, nofollow">
 <title>Platform PM lessons from RFID · Mikael Dell'Anna</title>
 <meta name="description" content="What tagging every item from factory to store taught me about platforms with many internal customers.">
@@ -13,39 +15,42 @@
 <meta property="og:image" content="https://www.dellanna.pm/og.png">
 <meta property="article:published_time" content="2026-04-15">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="preload" href="../fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-<header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../" aria-label="Mikael Dell'Anna, home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" class="mark-bg"/><path class="mark-line" d="M8 23V9l8 9 8-9v14"/><circle class="mark-dot" cx="8" cy="23" r="2.2"/><circle class="mark-dot" cx="8" cy="9" r="2.2"/><circle class="mark-hub" cx="16" cy="18" r="2.8"/><circle class="mark-dot" cx="24" cy="9" r="2.2"/><circle class="mark-dot" cx="24" cy="23" r="2.2"/></svg><span class="brand-name">dellanna<span>.pm</span></span></a></div></header>
-<main class="wrap article">
-  <p class="eyebrow">Note</p>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../" aria-label="Mikael Dell&#39;Anna, dellanna.pm home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path class="mark-m" d="M3.68 22.66V15.49a6.16 6.16 0 0 1 12.32 0V22.66M16.00 15.49a6.16 6.16 0 0 1 12.32 0V15.49"/><rect x="25.16" y="18.83" width="6.32" height="6.32" rx="1.49" class="mark-sq"/></svg><span class="brand-name" aria-hidden="true">dellanna<span><b>.</b>pm</span></span></a></div></header>
+<main class="wrap article" id="content">
   <h1>Platform PM lessons from RFID</h1>
   <p class="meta">Mikael Dell'Anna · <time datetime="2026-04-15">15 April 2026</time> · 6 min read</p>
+  <figure class="art"><svg class="sketch" data-viz="rfid" viewBox="0 0 640 360" width="640" height="360" aria-hidden="true"></svg></figure>
 
-  <p>For the past two years I've led the RFID technology workstream at a global sportswear brand: tagged products moving from the factory, through distribution, to more than 100 stores, feeding a Digital Twin platform that links product, ERP and retail systems. It's hardware, data and software at once, and a platform in the full sense: many teams depend on it, and none of them sees all of it. These are the lessons I'd pass on.</p>
+  <p>For the past two years I've led the RFID technology workstream at a global sportswear brand: tagged products moving from the factory, through distribution, to more than 100 stores, feeding a Digital Twin platform that links product, ERP and retail systems. It's hardware, data and software at once, and a platform in the full sense: many teams depend on it, and each sees its own part. These are the lessons I'd pass on.</p>
 
   <h2>1. A platform has many customers, and they compete</h2>
-  <p>Supply chain wanted shipment and receiving visibility. Retail wanted counts, search and replenishment. Logistics partners needed scan points that just worked. Every request was reasonable, and capacity was fixed. I used WSJF, and RICE where it fitted better, to compare supply-chain tracking features with retail features against the engineering we had budgeted and our progress on the roadmap. The scores didn't make the decision, but they made the trade-off visible, so saying no became a shared conclusion rather than a personal one.</p>
+  <p>Supply chain wanted shipment and receiving visibility. Retail wanted counts, search and replenishment. Logistics partners needed scan points that just worked. Every request was reasonable, and capacity was fixed. I used WSJF (weighted shortest job first: the cost of waiting divided by job size), and RICE (reach, impact, confidence, effort) where it fitted better, to compare supply-chain tracking features with retail features against the engineering we had budgeted and our progress on the roadmap. The scores opened the conversation and made the trade-off visible, so the priority became a shared conclusion.</p>
 
   <h2>2. Standards are product decisions</h2>
-  <p>Modelling the Digital Twin on Electronic Product Code events, and integrating Global Location Numbers across the supply chain, looked like technical details. In practice they decided how fast new partners and use cases could join. An event-driven architecture turned more than 40 million scans a year into data other systems could subscribe to, instead of reports someone had to request.</p>
+  <p>Modelling the Digital Twin on Electronic Product Code events, and integrating Global Location Numbers (GLN, the standard IDs for sites and docks) across the supply chain, looked like technical details. In practice they decided how fast new partners and use cases could join. More than 40 million items a year pass through it, each scanned many times: in the supply chain, at distribution warehouses, in stores, and by customers through a QR code. An event-driven architecture turns every one of those reads into live data other systems can subscribe to.</p>
 
   <h2>3. Observe before you model</h2>
   <p>Interviews told us how stores managed inventory. Watching them showed us how stores really did it, including how they used virtual locations. That observation meant rebuilding the data model for the retail RFID integration. It was painful, but far cheaper than discovering it after rollout.</p>
 
   <h2>4. Exceptions are the product</h2>
-  <p>A traceability rate above 99.9% sounds finished. But the remaining fraction, multiplied across 100+ locations, generated most of the work. We sorted support tickets with a Pareto analysis and combined them with stakeholder interviews to find the few features that kept engagement and usability right. Together with event-driven data and a global support framework, that cut manual interventions by 70%, with 500+ FTE days a year in projected savings.</p>
+  <p>A traceability rate above 99.9% sounds finished. But the remaining fraction, multiplied across 100+ locations, generated most of the work. We sorted support tickets with a Pareto analysis and combined them with stakeholder interviews to find the few features that kept engagement and usability right. Together with event-driven data and a global support framework, that cut manual interventions by 70%, with 500+ full-time-equivalent days a year in projected savings.</p>
 
   <h2>5. Insource what you need to control</h2>
   <p>Some capabilities sat with vendors. Where the data was core to the platform, we moved capabilities in-house and decommissioned vendor setups. Self-managed serialisation was one of them: its MVP alone was projected to save more than $200K a year, and the bigger gain was owning the data model.</p>
 
   <h2>6. Write it down, and map the dependencies</h2>
-  <p>I wrote BRDs and PRDs for seven connected initiatives: self-managed serialisation, a retail RFID dashboard, warehouse scan-point API automation, GLN supply-chain automation, the event-driven EPC architecture, vendor decommissioning, and product authentication. Story mapping sessions kept teams focused on user journeys. A shared dependency map kept seven initiatives from blocking each other.</p>
+  <p>I wrote business and product requirement documents for seven connected initiatives: self-managed serialisation, a retail RFID dashboard, warehouse scan-point API automation, GLN supply-chain automation, the event-driven EPC architecture, vendor decommissioning, and product authentication. Story mapping sessions kept teams focused on user journeys. A shared dependency map kept seven initiatives from blocking each other.</p>
 
 
   <a class="btn back" href="../#notes">← Back to the portfolio</a>
 </main>
-<footer class="wrap foot">© 2026 Mikael Dell'Anna</footer>
+<footer class="wrap foot"><span>© 2026 Mikael Dell'Anna</span><a href="../privacy.html">Privacy and cookies</a><button type="button" class="linkish" data-cookie-settings>Cookie settings</button></footer>
+<script type="module" src="../viz.js"></script>
+<script type="module" src="../consent.js"></script>
 </body>
 </html>

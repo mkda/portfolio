@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<script>try{var t=localStorage.getItem("pm-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
+<meta name="color-scheme" content="light dark">
+<script>try{var c=localStorage.getItem("color-scheme");if(c)document.querySelector('meta[name="color-scheme"]').content=c}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="text-scale" content="scale">
 <meta name="robots" content="noindex, nofollow">
 <title>Evals for product managers · Mikael Dell'Anna</title>
 <meta name="description" content="If your product uses AI, the eval set is part of the spec. How I build one, score it and decide what ships.">
@@ -11,34 +13,35 @@
 <meta property="og:description" content="If your product uses AI, the eval set is part of the spec. How I build one, score it and decide what ships.">
 <meta property="og:type" content="article">
 <meta property="og:image" content="https://www.dellanna.pm/og.png">
-<meta property="article:published_time" content="2026-11-10">
+<meta property="article:published_time" content="2026-08-04">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="preload" href="../fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-<header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../" aria-label="Mikael Dell'Anna, home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" class="mark-bg"/><path class="mark-line" d="M8 23V9l8 9 8-9v14"/><circle class="mark-dot" cx="8" cy="23" r="2.2"/><circle class="mark-dot" cx="8" cy="9" r="2.2"/><circle class="mark-hub" cx="16" cy="18" r="2.8"/><circle class="mark-dot" cx="24" cy="9" r="2.2"/><circle class="mark-dot" cx="24" cy="23" r="2.2"/></svg><span class="brand-name">dellanna<span>.pm</span></span></a></div></header>
-<main class="wrap article">
-  <p class="eyebrow">Note</p>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../" aria-label="Mikael Dell&#39;Anna, dellanna.pm home"><svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><path class="mark-m" d="M3.68 22.66V15.49a6.16 6.16 0 0 1 12.32 0V22.66M16.00 15.49a6.16 6.16 0 0 1 12.32 0V15.49"/><rect x="25.16" y="18.83" width="6.32" height="6.32" rx="1.49" class="mark-sq"/></svg><span class="brand-name" aria-hidden="true">dellanna<span><b>.</b>pm</span></span></a></div></header>
+<main class="wrap article" id="content">
   <h1>Evals for product managers</h1>
-  <p class="meta">Mikael Dell'Anna · <time datetime="2026-11-10">10 November 2026</time> · 6 min read</p>
+  <p class="meta">Mikael Dell'Anna · <time datetime="2026-08-04">4 August 2026</time> · 6 min read</p>
+  <figure class="art"><svg class="sketch" data-viz="evals" viewBox="0 0 640 360" width="640" height="360" aria-hidden="true"></svg></figure>
 
-  <p>For years my job in conversion work was to define the metric, instrument it, run the test and decide. In telecom that meant A/B tests across subscriptions, prepaid, internet and devices, from checkout and ID checks to activation, upgrades and renewals, with tools like Optimizely and Adobe Target, and Hotjar, Clarity and Medallia to understand why. AI products need the same discipline, with one difference: the output is probabilistic, so you have to decide in advance which mistakes are acceptable. That decision lives in the eval set.</p>
+  <p>For years my job in conversion work was to define the metric, instrument it, run the test and decide. In telecom that meant A/B tests (two versions shown to real customers, compared on one metric) across subscriptions, prepaid, internet and devices, from checkout and ID checks to activation, upgrades and renewals, with tools like Optimizely and Adobe Target, and Hotjar, Clarity and Medallia to understand why. AI products need the same discipline, with one difference: the output is probabilistic, so you have to decide in advance which mistakes are acceptable. That decision lives in the eval set.</p>
 
-  <h2>Start from the metric, not the model</h2>
+  <h2>Start from the metric</h2>
   <p>I write three things down before choosing any model:</p>
   <ul>
     <li><b>The outcome metric:</b> what success means for the user or the business.</li>
     <li><b>Leading indicators:</b> what moves first if we're on track.</li>
-    <li><b>Guardrails:</b> what must not get worse, such as cost, latency, error rate or compliance.</li>
+    <li><b>Guardrails:</b> what must stay healthy, such as cost, latency, error rate or compliance.</li>
   </ul>
   <p>For AI work I add one more: <b>cost per successful task</b>. Services charge for wrong outputs too, so price per call is misleading.</p>
 
   <h2>Build the eval set from your own data</h2>
-  <p>In my animation studio, every model is tested on the studio's own characters and scenes, never on the vendor's demo. The set is small, fixed and reused, so results stay comparable over time. Before using any data I check five things: where it comes from, how fresh it is, whether it covers the hard cases, whether it's labelled, and whether we're allowed to use it.</p>
+  <p>In my animation studio, every model is tested on the studio's own characters and scenes, the material it will actually work on. The set is small, fixed and reused, so results stay comparable over time. Before using any data I check five things: where it comes from, how fresh it is, whether it covers the hard cases, whether it's labelled, and whether we're allowed to use it.</p>
 
   <h2>Score automatically where you can</h2>
-  <p>Most of my scorers are code, not opinion:</p>
+  <p>Most of my scorers are code:</p>
   <ul>
     <li>A staging checker and a continuity checker for every shot.</li>
     <li>A join checker that counts flash frames and skips between clips.</li>
@@ -48,8 +51,8 @@
   <p>Human judgment is still needed, but it comes last and focuses on taste, story and fit.</p>
 
   <h2>Decide with thresholds</h2>
-  <p>A model is adopted only if it passes the set. Two video models passed none of six test clips between them. The one now on trial passed three of three at a lower cost per clip than the current choice. In voice, one model had about half the pronunciation errors of my pick (11% against 24%), but its licence was non-commercial only, which failed a guardrail before quality mattered.</p>
-  <p>Sometimes the best model isn't a model. For one recurring drawing defect, an AI edit kept 4 of 15 drawings clean. A small script fixed all 15 at no cost.</p>
+  <p>A model is adopted only if it passes the set. The video model now on trial passed three of three test clips at a lower cost per clip than the current choice. In voice, one model had about half the pronunciation errors of my pick (11% against 24%), but its licence was non-commercial only, which failed a guardrail before quality mattered.</p>
+  <p>Sometimes the best model is a script. For one recurring drawing defect, an AI edit kept 4 of 15 drawings clean. A small script fixed all 15 for free.</p>
 
   <h2>Roll out like an experiment</h2>
   <p>Offline evals tell you whether something can work. Production tells you whether it does. I move from offline evals to shadow mode, then a canary, then a full rollout, with ship, hold and rollback thresholds agreed in advance. After every model or vendor update, I rerun the set before calling the update done.</p>
@@ -57,6 +60,8 @@
 
   <a class="btn back" href="../#notes">← Back to the portfolio</a>
 </main>
-<footer class="wrap foot">© 2026 Mikael Dell'Anna</footer>
+<footer class="wrap foot"><span>© 2026 Mikael Dell'Anna</span><a href="../privacy.html">Privacy and cookies</a><button type="button" class="linkish" data-cookie-settings>Cookie settings</button></footer>
+<script type="module" src="../viz.js"></script>
+<script type="module" src="../consent.js"></script>
 </body>
 </html>
