@@ -650,12 +650,9 @@ p{margin:0}
 /* v12: flat containers, no outlines or rounded corners */
 .card,.lead-grid,.theme-block,.chart,.rail-fig,.twin-out li,.table-wrap,.parallels,.parallels tr,.notes,.trust,.case-sum div{border:0!important;border-radius:0!important;box-shadow:none!important}
 
-/* v13: results band sits flush under the hero; portrait cropped to its halo */
+/* v14: results band is its own full-width strip; portrait keeps fade, halo enlarged to hold it */
 .hero{padding-bottom:0}
-.hero-text{padding-bottom:var(--s-6)}
-.hero-results{margin:0!important;padding:var(--s-6) 0 var(--s-7)}
+.results-band{background:var(--tint-1)}
+.hero-results{margin:0!important;padding:var(--s-6) 0 var(--s-7);background:none!important;box-shadow:none!important;clip-path:none!important}
 .hero-results h2{margin:0 0 var(--s-4)}
-.hero-halo{display:none}
-.hero-photo{align-self:center;margin:0 0 var(--s-6);inline-size:min(56vw,220px)}
-.hero-photo img{aspect-ratio:1;block-size:auto;object-fit:cover;object-position:50% 0;border-radius:50%;background:color-mix(in srgb,var(--vz-blue) 30%,transparent);-webkit-mask-image:none;mask-image:none}
-@media(min-width:52.5em){.hero-photo{inline-size:260px;margin:0 0 var(--s-6)}}
+.hero-halo{inset:-2% -18% auto -18%;inline-size:136%}
