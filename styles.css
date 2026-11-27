@@ -905,6 +905,7 @@ summary{font-weight:700!important}
 @media (max-width:600px){.article table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
 .hero-results li b{font-weight:700}
 /* Hero buttons: same height */
-.cta .btn,.cta .email-copy{box-sizing:border-box;block-size:48px;min-block-size:48px}
-.cta .copy-btn{block-size:40px;min-block-size:0;margin-inline-end:3px}
+.cta .btn,.cta .email-copy{box-sizing:border-box;block-size:40px;min-block-size:40px}
+.cta .copy-btn{block-size:32px;inline-size:36px;min-block-size:0;margin-inline-end:3px}
+.cta .copy-btn::after{content:"";position:absolute;inset:-4px}
 .cta{align-items:center}.cta .btn{margin-block:0}
