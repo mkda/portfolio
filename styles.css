@@ -904,3 +904,7 @@ summary{font-weight:700!important}
 .foot a,.foot .linkish{display:inline-flex;align-items:center;min-block-size:44px}
 @media (max-width:600px){.article table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
 .hero-results li b{font-weight:700}
+/* Hero buttons: same height */
+.cta .btn,.cta .email-copy{box-sizing:border-box;block-size:48px;min-block-size:48px}
+.cta .copy-btn{block-size:40px;min-block-size:0;margin-inline-end:3px}
+.cta{align-items:center}.cta .btn{margin-block:0}
