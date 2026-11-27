@@ -137,8 +137,8 @@ const charts = {
     k.text("−70%", 306, 371, 6050, 24, "middle", 700, CORAL);
     k.ellipse(306, 364, 64, 34, 6200, 360, { stroke: CORAL });
     k.line(14, 392, 346, 392, 6500, 500, { stroke: SLATE, strokeWidth: 1 });
-    k.text("$200K+ a year", 14, 418, 6900, 22, "start", 700, TEAL);
-    k.text("projected savings from the first in-house serialisation", 14, 440, 7050, 14, "start", 400, SLATE);
+    k.text("$5M+ a year", 14, 418, 6900, 22, "start", 700, TEAL);
+    k.text("planned savings across the business cases", 14, 440, 7050, 14, "start", 400, SLATE);
     return k;
   },
 
@@ -438,11 +438,11 @@ const charts = {
 
   path(svg) {
     const k = new Sketch(svg, 121);
-    const rows = [["2004", "Front-end developer", "eBay.it and mobile.de, Milan and Berlin", "2 marketplaces, global exchange programme"], ["2007", "Product manager", "eBay.it, Milan", "+1.5% revenue in peak sales periods"], ["2009", "Web development manager", "eBay, team of 4", "300+ campaigns a year, 99.4% quality"], ["2014", "Product manager", "eBay, content management and tools", "+10% organic search traffic, 5 markets"], ["2017", "Global web development lead", "eBay, landing-page automation", "70% faster to market, +15% conversion"], ["2019", "Senior technical product manager", "dacadoo, digital health SaaS", "+25% user satisfaction"], ["2020", "Product manager", "RaiseNow, fundraising-automation fintech", "+30% fundraising revenue in 6 months"], ["2021", "Product owner", "Sunrise, Swiss telecom operator", "~20 engineers, +150% online sales"], ["2024", "Senior product manager, technology", "On, global sportswear brand", "100+ stores, 40M+ scans a year"], ["2026", "Independent AI products", "studio, decision support, games", "6 languages, 3 livestreams a day"]];
+    const rows = [["2004", "Front-end developer", "eBay.it and mobile.de, Milan and Berlin", "2 marketplaces, global exchange programme"], ["2007", "Product manager", "eBay.it, Milan", "+1.5% revenue in peak sales periods"], ["2009", "Web development manager", "eBay, team of 4", "300+ campaigns a year, 99.4% quality"], ["2014", "Product manager", "eBay, content management and tools", "+10% organic search traffic, 5 markets"], ["2017", "Global web development lead", "eBay, landing-page automation", "70% faster to market, +15% conversion"], ["2019", "Senior technical product manager", "dacadoo, digital health SaaS", "+25% user satisfaction"], ["2020", "Product manager", "RaiseNow, fundraising-automation fintech", "+30% fundraising revenue in 6 months"], ["2021", "Product owner", "Sunrise, Swiss telecom operator", "~20 engineers, +150% online sales"], ["2024", "Senior product manager, technology", "On, global sportswear brand", "100+ stores, 40M+ items a year"], ["2026", "Independent AI products", "studio, decision support, games", "6 languages, 3 livestreams a day"]].reverse();
     const top = 26, step = 66, lx = 70;
     k.line(lx, top - 6, lx, top + step * (rows.length - 1) + 6, 0, 1400, { stroke: SLATE });
     rows.forEach(([y, role, ctx, scope], i) => {
-      const cy = top + i * step, t = 300 + i * 160, last = i === rows.length - 1;
+      const cy = top + i * step, t = 300 + i * 160, last = i === 0; // latest first
       if (last) k.fillCircle(lx, cy, 14, BLUE, t + 150);
       k.shape(s => k.g.circle(lx, cy, 14, k.ink({ ...s, stroke: last ? BLUE : INK })), t, 220);
       k.text(y, 14, cy + 6, t, 18, "start", 700, BLUE);
@@ -566,17 +566,25 @@ Object.assign(charts, {
   },
 });
 
+// Drawings play one after another: when several come into view together, each
+// starts just before the one before it finishes, so only one thing moves at a time.
+let chain = Promise.resolve();
+const lengthOf = sk => Math.max(0, ...sk.queue.map(q => q.at + q.dur));
 document.querySelectorAll(".sketch[data-viz]").forEach(fig => {
   const svg = fig.matches("svg") ? fig : fig.querySelector("svg");
-  let sketch = null, played = false;
+  let sketch = null, queued = false;
   const build = () => { svg.replaceChildren(); sketch = charts[fig.dataset.viz](svg); };
-  const play = () => { build(); if (!reduce) sketch.play(); played = true; };
-  build(); // drawn and static until it comes into view
+  build(); // the finished drawing stays visible until its animation's turn
+  if (reduce) return;
   const io = new IntersectionObserver(es => es.forEach(e => {
     fig.classList.toggle("in-view", e.isIntersecting);
-    if (e.isIntersecting && !played) play();
+    if (!e.isIntersecting || queued) return;
+    queued = true; io.disconnect();
+    chain = chain.then(() => {
+      build(); sketch.play();
+      // the next drawing starts just before this one finishes
+      return new Promise(r => setTimeout(r, Math.max(0, lengthOf(sketch) - 350)));
+    });
   }), { threshold: .3 });
   io.observe(fig);
-  const panel = fig.closest("[role=tabpanel]");
-  if (panel) new MutationObserver(() => { if (!panel.hidden && played) play(); }).observe(panel, { attributes: true, attributeFilter: ["hidden"] });
 });

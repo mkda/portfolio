@@ -2,7 +2,10 @@
 
 Static site for GitHub Pages: plain HTML and CSS, no build step, same setup as the LittleLeap page.
 
-- `index.html`: all content
+- `index.html`: homepage (hero, results, case cards, how I work)
+- `work/`: one page per case (product data, growth, AI)
+- `builds.html`, `writing.html`, `about.html`: the other pages
+- `shell.js`: theme toggle, mobile menu and accordions, shared by every page
 - `styles.css`: light and dark themes
 - `og.png`: link preview image
 - `notes/`: short articles

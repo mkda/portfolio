@@ -20,7 +20,22 @@
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
-<header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../" aria-label="Mikael Dell&#39;Anna, dellanna.pm home"><span class="brand-name" aria-hidden="true">dellanna<span><b>.</b>pm</span></span></a></div></header>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html" aria-label="Mikael Dell&#39;Anna, dellanna.pm home"><span class="brand-name" aria-hidden="true">dellanna<span><b>.</b>pm</span></span></a>
+    <nav class="tabs" id="sections" aria-label="Pages">
+      <a href="../index.html#work">Case studies</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../about.html">About</a>
+      <a href="../articles.html" aria-current="page">Articles</a>
+    </nav>
+    <button class="theme" id="theme" type="button">
+      <span class="to-dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg><span class="visually-hidden">Switch to dark theme</span></span>
+      <span class="to-light"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><span class="visually-hidden">Switch to light theme</span></span>
+    </button>
+    <button class="theme menu" id="menu" type="button" aria-expanded="false" aria-controls="sections"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="bar b1" d="M4 7h16"/><path class="bar b2" d="M4 12h16"/><path class="bar b3" d="M4 17h16"/></svg><span class="visually-hidden">Menu</span></button>
+  </div>
+</header>
 <main class="wrap article" id="content">
   <h1>Writing a business case with discount rates</h1>
   <p class="meta">Mikael Dell'Anna · <time datetime="2025-05-20">20 May 2025</time> · 5 min read</p>
@@ -29,7 +44,7 @@
   <p>Engineering time is an investment, and in many companies it's requested as one: a capital expenditure (CAPEX) request that finance reviews against every other use of the money. Product managers who can write that request in finance's language get their roadmap funded faster. The language is mostly one idea: money later is worth less than money now.</p>
 
   <h2>Net present value in one paragraph</h2>
-  <p>NPV adds up the cash a project generates each year, discounted back to today, minus what it costs up front. The discount rate is the return the company expects from its investments, so ask finance for it rather than inventing one. If NPV is positive, the project earns more than the company's hurdle. If it's negative, the money is better used elsewhere, however good the feature sounds.</p>
+  <p>NPV (net present value) adds up the cash a project generates each year, discounted back to today, minus what it costs up front. The discount rate is the return the company expects from its investments, so ask finance for it rather than inventing one. If NPV is positive, the project earns more than the company's hurdle. If it's negative, the money is better used elsewhere, however good the feature sounds.</p>
 
   <h2>How I build the request</h2>
   <ul>
@@ -53,17 +68,18 @@
   </table>
   <p>NPV is about 312K and the project breaks even, discounted, during year three. Without discounting it would look like it breaks even a few months earlier. That gap is exactly what finance will check.</p>
 
-  <h2>Connect it to the P&amp;L</h2>
+  <h2>Connect it to the P&amp;L (profit and loss statement)</h2>
   <p>Leadership often reads results through EBITDA (earnings before interest, taxes, depreciation and amortisation). Operating savings, such as fewer manual interventions or less shrinkage, improve EBITDA directly. Capitalised engineering doesn't hit EBITDA in the year it's spent; it appears later as depreciation. Saying this in the request shows you understand how the investment will look in the numbers people report.</p>
 
   <h2>Be honest about uncertainty</h2>
   <p>Every business case rests on a few assumptions that matter far more than the rest, such as adoption speed or the size of the loss you prevent. Name them, show a conservative case next to the expected one, and say what you'll measure to know early which way it's going. A tornado chart is a good way to show which assumptions move the result most.</p>
 
 
-  <a class="btn back" href="../#notes">← Back to the portfolio</a>
+  <a class="btn back" href="../articles.html">← All articles</a>
 </main>
 <footer class="wrap foot"><span>© 2026 Mikael Dell'Anna</span><a href="../privacy.html">Privacy and cookies</a><button type="button" class="linkish" data-cookie-settings>Cookie settings</button></footer>
 <script type="module" src="../viz.js"></script>
+<script type="module" src="../shell.js"></script>
 <script type="module" src="../consent.js"></script>
 </body>
 </html>

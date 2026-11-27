@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<script>try{var c=localStorage.getItem("color-scheme");if(c)document.querySelector('meta[name="color-scheme"]').content=c}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="text-scale" content="scale">
+<meta name="robots" content="noindex, nofollow">
+<title>Putting AI to work, with control built in · Mikael Dell'Anna</title>
+<meta name="description" content="AI in daily use at On and in independent builds: models interpret, software holds the permissions, people decide at a few gates.">
+<meta property="og:title" content="Putting AI to work, with control built in · Mikael Dell'Anna">
+<meta property="og:description" content="AI in daily use at On and in independent builds: models interpret, software holds the permissions, people decide at a few gates.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.dellanna.pm/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/architects-daughter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html" aria-label="Mikael Dell&#39;Anna, dellanna.pm home"><span class="brand-name" aria-hidden="true">dellanna<span><b>.</b>pm</span></span></a>
+    <nav class="tabs" id="sections" aria-label="Pages">
+      <a href="../index.html#work" aria-current="page">Case studies</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../about.html">About</a>
+      <a href="../articles.html">Articles</a>
+    </nav>
+    <button class="theme" id="theme" type="button">
+      <span class="to-dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg><span class="visually-hidden">Switch to dark theme</span></span>
+      <span class="to-light"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><span class="visually-hidden">Switch to light theme</span></span>
+    </button>
+    <button class="theme menu" id="menu" type="button" aria-expanded="false" aria-controls="sections"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="bar b1" d="M4 7h16"/><path class="bar b2" d="M4 12h16"/><path class="bar b3" d="M4 17h16"/></svg><span class="visually-hidden">Menu</span></button>
+  </div>
+</header>
+
+<main id="content" tabindex="-1" class="case-page">
+  <article>
+    <div class="wrap page-head">
+      <p class="crumb"><a href="../index.html#work">All case studies</a></p>
+      <h1>Putting AI to work, with control built in</h1>
+      <p class="case-when">2024 to today · On and independent builds</p>
+      <p class="theme-lede">Most AI pilots stall between the demo and daily use. The answer sits around the model: what it may decide, what code decides, how errors get caught, and what each good result costs.</p>
+      <dl class="case-sum">
+        <div><dt>Problem</dt><dd>Customs documents at On had to be checked against approved sources, and counterfeit checks depended on QR photos taken at any angle and quality.</dd></div>
+        <div><dt>Role</dt><dd>At On, delivered a RAG (retrieval-augmented generation) system for customs document review and worked on counterfeit QR image recognition. Also designs and runs independent AI products end to end.</dd></div>
+        <div><dt>Result</dt><dd>Quality gates that flag incorrect customs documents. In the studio, automated checks caught <b>173</b> issues on one episode before a person reviewed it.</dd></div>
+      </dl>
+      <figure class="viz sketch" data-viz="ai">
+        <figcaption><b>Machines check first, so people review less.</b> One episode in the studio.</figcaption>
+        <svg class="viz-svg" viewBox="0 0 360 330" role="img" aria-label="A hand-drawn chart. Automated checks caught 173 issues and left 0 for a person to fix. A heavier review loop took 84 rounds; two human gates took 2, with the same final quality."></svg>
+      </figure>
+    </div>
+    <section class="case-sec">
+      <div class="wrap">
+        <h2>How it works</h2>
+        <div class="prose">
+          <p>Models interpret; software holds the permissions. Automated checks run before any person looks, and people decide at a few gates where judgment matters. Every model is tested on the company's own data, and when evidence is weak the system waits for more.</p>
+          <h3>In production at On</h3>
+          <ul class="proof-list">
+            <li><b>Customs document review.</b> A RAG system, where the model answers only from approved sources, built on validated Looker reports, with quality gates that flag incorrect documents.</li>
+            <li><b>Counterfeit checks.</b> Image recognition that reads authenticity QR codes from photos sent in by customs offices, at any angle and quality.</li>
+          </ul>
+          <p>In independent projects, the same approach runs an AI animation studio and a decision-support prototype. Both are on the <a href="../projects.html">Projects</a> page.</p>
+        </div>
+      </div>
+    </section>
+    <section class="band case-sec">
+      <div class="wrap">
+        <h2>Lessons from running AI in production</h2>
+        <p class="section-lede">Three lessons from the studio, and how each carries over to retail operations, telecom, customer service and internal processes. The <a href="../notes/reusing-an-ai-studio-playbook.html">studio playbook article</a> has all seven, with the measured results behind them.</p>
+        <div class="theme-cols">
+          <div class="table-wrap">
+            <table class="parallels">
+              <caption class="visually-hidden">Three lessons from the studio and how each applies in an organisation</caption>
+              <thead><tr><th scope="col">Lesson</th><th scope="col">Applying it elsewhere</th></tr></thead>
+              <tbody>
+                <tr><th scope="row"><svg class="lesson-art sketch" data-viz="l-check" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"></svg><span class="lesson-text">Machines check first. <span class="sub">Automated staging, continuity and lip-sync checks run before anyone reviews a cut.</span></span></th><td>Check every order, ticket or document automatically, so people focus on the exceptions.</td></tr>
+                <tr><th scope="row"><svg class="lesson-art sketch" data-viz="l-gate" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"></svg><span class="lesson-text">Gates only where judgment matters. <span class="sub">Two approvals: before money is spent, and before release.</span></span></th><td>Keep approvals for decisions on spend, customer impact and compliance, and let routine steps flow.</td></tr>
+                <tr><th scope="row"><svg class="lesson-art sketch" data-viz="l-cost" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true"></svg><span class="lesson-text">Pay per usable result. <span class="sub">Compare price divided by pass rate.</span></span></th><td>Compare AI vendors on cost per successful task.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="viz sketch side" data-viz="cost">
+            <figcaption><b>Cost per usable result shows the real price.</b> Same image model, two providers.</figcaption>
+            <svg class="viz-svg" viewBox="0 0 360 290" role="img" aria-label="Same image model, two providers. Provider A: 9 cents per image, 12 cents per usable drawing. Provider B: 14 cents per image, 18 cents per usable drawing. Usable cost is price divided by pass rate. Choosing on it cut a third off every usable drawing."></svg>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="case-sec">
+      <div class="wrap">
+        <h2>What carries over</h2>
+        <div class="prose"><p>Any work where people handle many similar cases that mix rules and judgement: support replies, document and compliance checks, trade exceptions, invoices. Agents draft, rules check, and people approve the cases that need judgement.</p></div>
+      </div>
+    </section>
+
+    <section class="wrap section related" aria-labelledby="related-h">
+      <h2 id="related-h">Related articles</h2>
+      <ul class="notes" role="list">
+        <li><a class="note-link" href="../notes/reusing-an-ai-studio-playbook.html">
+          <svg class="note-art sketch" data-viz="playbook" viewBox="0 0 640 360" width="640" height="360" aria-hidden="true"></svg>
+          <h3>Reusing an AI studio's playbook in enterprise automation</h3>
+          <span class="meta">August 2026 · 6 min read</span>
+          <p>Seven lessons from an AI animation studio, with examples from retail, telecom and back-office work.</p>
+        </a></li>
+        <li><a class="note-link" href="../notes/evals-for-product-managers.html">
+          <svg class="note-art sketch" data-viz="evals" viewBox="0 0 640 360" width="640" height="360" aria-hidden="true"></svg>
+          <h3>Evals for product managers</h3>
+          <span class="meta">August 2026 · 6 min read</span>
+          <p>If your product uses AI, the eval set is part of the spec. How to build one, score it and decide what ships.</p>
+        </a></li>
+        <li><a class="note-link" href="../notes/a-model-answer-is-not-a-decision.html">
+          <svg class="note-art sketch" data-viz="model-answer" viewBox="0 0 640 360" width="640" height="360" aria-hidden="true"></svg>
+          <h3>The model advises, the rules decide</h3>
+          <span class="meta">July 2026 · 5 min read</span>
+          <p>Evidence, abstention and authority boundaries, from building an experimental AI decision platform.</p>
+        </a></li>
+      </ul>
+    </section>
+    <nav class="wrap next-case" aria-label="Next">
+      <a class="next-link" href="../index.html#work"><span>That was the last case</span><b>Back to all case studies</b></a>
+      <a class="next-link" href="../projects.html"><span>Also worth a look</span><b>Projects</b></a>
+    </nav>
+  </article>
+
+  <section id="contact" tabindex="-1" class="contact">
+    <div class="wrap">
+      <h2 class="sec-title">Let's talk about your product</h2>
+      <p class="section-lede">Based in Zurich. Building something where hardware, data or AI meet the customer? I'm looking forward to hearing what you are working on.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:mikael@dellanna.pm?subject=Hello%20Mikael">mikael@dellanna.pm</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot"><span>© 2026 Mikael Dell'Anna · Updated November 2026</span><a href="../privacy.html">Privacy and cookies</a><button type="button" class="linkish" data-cookie-settings>Cookie settings</button></footer>
+
+<script type="module" src="../shell.js"></script>
+<script src="../vendor/motion-14.11.1.min.js" defer></script>
+<script type="module" src="../site.js"></script>
+<script type="module" src="../viz.js"></script>
+<script type="module" src="../consent.js"></script>
+</body>
+</html>

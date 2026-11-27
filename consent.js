@@ -1,7 +1,7 @@
 // Analytics with consent. Google Analytics 4 loads only after a visitor accepts.
 // Consent Mode v2 defaults are set to denied before anything else runs.
 // To switch analytics on, put the GA4 Measurement ID below (it starts with "G-").
-const GA_ID = "G-XXXXXXXXXX";
+const GA_ID = "G-7SEV6TDDB1";
 const KEY = "analytics-consent";
 const MAX_AGE = 1000 * 60 * 60 * 24 * 365; // ask again after a year
 
