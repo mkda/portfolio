@@ -137,8 +137,8 @@ const charts = {
     k.text("−70%", 306, 371, 6050, 24, "middle", 700, CORAL);
     k.ellipse(306, 364, 64, 34, 6200, 360, { stroke: CORAL });
     k.line(14, 392, 346, 392, 6500, 500, { stroke: SLATE, strokeWidth: 1 });
-    k.text("$200K+ every year", 14, 418, 6900, 22, "start", 700, TEAL);
-    k.text("factory savings from in-house serialisation", 14, 440, 7050, 14, "start", 400, SLATE);
+    k.text("$5M+ a year", 14, 418, 6900, 22, "start", 700, TEAL);
+    k.text("planned savings across the business cases", 14, 440, 7050, 14, "start", 400, SLATE);
     return k;
   },
 
