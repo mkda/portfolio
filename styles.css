@@ -899,3 +899,7 @@ summary{font-weight:700!important}
 .case-card .result b,.case-sum dd b{color:inherit;font-weight:700}
 /* Numbers in text: default colour, bold (the brand dot keeps its colour) */
 .result b,.stats dt,.proof b{color:inherit!important;font-weight:700}
+/* Pre-publish fixes: tap targets and narrow tables */
+.brand{min-block-size:48px}
+.foot a,.foot .linkish{display:inline-flex;align-items:center;min-block-size:44px}
+@media (max-width:600px){.article table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
