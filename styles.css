@@ -895,3 +895,5 @@ summary{font-weight:700!important}
 .viz.timeline .viz-svg{max-inline-size:600px}
 .section.path+.section{padding-top:0}
 .how-grid>.card:nth-child(4){background:var(--tint-4)}
+/* Numbers in case study results: default text colour, bold */
+.case-card .result b,.case-sum dd b{color:inherit;font-weight:700}
