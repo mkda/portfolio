@@ -887,3 +887,9 @@ summary{font-weight:700!important}
 .case-sec+.related{padding-top:0}
 .decision p{font:400 var(--body-l) var(--font-sans)}
 .page-head+.section{padding-top:0}
+/* Images on single pages span the layout width; the drawing stays centred inside */
+.page-head .viz.sketch,.viz.timeline,.case-sec .viz.sketch{max-inline-size:none}
+.case-sec .theme-cols{grid-template-columns:minmax(0,1fr)!important}
+.case-sec .theme-cols>div:first-child{max-width:46rem}
+.case-sec .table-wrap{max-width:none!important}
+.viz.timeline .viz-svg{max-inline-size:600px}
