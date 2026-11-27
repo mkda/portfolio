@@ -48,11 +48,11 @@
       <dl class="case-sum">
         <div><dt>Problem</dt><dd>Stores, warehouses, vendors and the ERP (the company's finance and inventory system) each held their own view of an item.</dd></div>
         <div><dt>Role</dt><dd>At On, the Zurich-based global sportswear brand, led the RFID technology workstream from factory shipment to 100+ stores, with 5 developers, 3 vendors and a CHF 250K+ yearly budget. Also led the Digital Twin platform.</dd></div>
-        <div><dt>Result</dt><dd><b>&gt;99.9%</b> item traceability, up from manual barcode reads. <b>40M+</b> yearly scans turned into events, with <b>70%</b> fewer manual interventions across <b>100+</b> locations. An in-house serial-number service with projected savings of <b>$200K+</b> a year.</dd></div>
+        <div><dt>Result</dt><dd><b>&gt;99.9%</b> item traceability, up from manual barcode reads. <b>40M+</b> yearly scans turned into events, with <b>70%</b> fewer manual interventions across <b>100+</b> locations. Bringing serialisation in-house saves <b>$200K+</b> in vendor fees every year. In stores, weekly stock counts drop from <b>20 hours to 2</b>.</dd></div>
       </dl>
       <figure class="viz sketch" data-viz="data">
         <figcaption><b>Every read lands in one record.</b> Each item is read many times between factory and customer.</figcaption>
-        <svg class="viz-svg" viewBox="0 0 360 452" role="img" aria-label="A diagram. RFID and QR codes read each item in the supply chain, at the warehouse, in the store and by the customer. Every read goes into one Digital Twin record per item instance, tracked globally and synchronised with ERP (enterprise resource planning) financial records. Manual interventions fell by 70%, more than 99.9% of items are traceable across 100+ stores, and the first in-house serialisation projects $200K+ a year in savings."></svg>
+        <svg class="viz-svg" viewBox="0 0 360 452" role="img" aria-label="A diagram. RFID and QR codes read each item in the supply chain, at the warehouse, in the store and by the customer. Every read goes into one Digital Twin record per item instance, tracked globally and synchronised with ERP (enterprise resource planning) financial records. Manual interventions fell by 70%, more than 99.9% of items are traceable across 100+ stores, and in-house serialisation saves $200K+ in vendor fees every year."></svg>
       </figure>
     </div>
     <section class="case-sec">
@@ -62,6 +62,20 @@
           <p>Each item gets a unique serial, encoded in its RFID (radio-frequency identification) tag. Every enabled read point, from factory to store, can trace it one by one or in bulk, and the Digital Twin, a live digital record of every item, keeps the ERP in sync. A QR code paired with the same serial carries the item past the sale, into digital workflows such as its status changing from in stock to sold.</p>
           <p>Before, items were tracked by manual barcode reads. Scan events now take over the manual steps in stock counts, in stock moves to virtual locations that track financial value (damaged, sellable and non-sellable goods, visual merchandising), in inbound and outbound shipments, and in the sync with the ERP.</p>
           <p>Underneath sits an event-driven architecture built on the Electronic Product Code standard, with warehouse scan-point APIs (the interfaces other software calls), supply-chain location standards, an in-house serialisation service, and vendor capabilities brought in-house.</p>
+        </div>
+      </div>
+    </section>
+    <section class="case-sec">
+      <div class="wrap">
+        <h2>The business cases behind it</h2>
+        <div class="prose">
+          <p>Each use case had its own business case, so the platform was funded on value the business could check. Three examples:</p>
+          <ul>
+            <li><b>Store operations.</b> A weekly stock count falls from 20 hours to 2, and receiving a 1,000-item delivery from 30 minutes to 1. That frees about 900 staff hours a year in every store, across a network planned to grow from 30 to 130 stores.</li>
+            <li><b>Returns and warranties.</b> The serial number in the QR code identifies the exact item, so warranty cases are handled 69% faster.</li>
+            <li><b>Vendor costs.</b> Bringing serialisation in-house saves $200K+ in vendor fees, and the saving repeats every year.</li>
+          </ul>
+          <p>Loss prevention in stores, transport and factories had business cases too. By the third year, the yearly savings across all cases were planned to outweigh the yearly running costs.</p>
         </div>
       </div>
     </section>
