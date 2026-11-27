@@ -437,7 +437,7 @@ p{margin:0}
 .article th,.article td{border-bottom:1px solid var(--rule);padding:var(--s-3) var(--s-4);text-align:left;color:var(--on-surface-variant)}
 .article th{color:var(--on-surface);font:500 var(--title-s) var(--font-sans)}
 .article .callout{background:var(--surface-container-high);border-radius:var(--corner-m);padding:var(--s-4) var(--s-5);margin:20px 0}
-.back{display:inline-block;margin-top:40px}
+.back{display:inline-flex;margin-top:40px}
 
 /* Design page */
 .ds-page .sec-title{font:400 var(--display-s) var(--font-sans)}
