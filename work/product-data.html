@@ -47,12 +47,12 @@
       <p class="theme-lede">Hardware, partners and legacy systems all have to agree on what a single item is and where it is. The platform that makes them agree is a product too: its APIs and its events are services other teams rely on.</p>
       <dl class="case-sum">
         <div><dt>Problem</dt><dd>Stores, warehouses, vendors and the ERP (the company's finance and inventory system) each held their own view of an item.</dd></div>
-        <div><dt>Role</dt><dd>At On, the Zurich-based global sportswear brand, led the RFID technology workstream from factory shipment to 100+ stores, with 5 developers, 3 vendors and a CHF 250K+ yearly budget. Also led the Digital Twin platform.</dd></div>
-        <div><dt>Result</dt><dd><b>&gt;99.9%</b> item traceability, up from manual barcode reads. <b>40M+</b> yearly scans turned into events, with <b>70%</b> fewer manual interventions across <b>100+</b> locations. Bringing serialisation in-house saves <b>$200K+</b> in vendor fees every year. In stores, weekly stock counts drop from <b>20 hours to 2</b>.</dd></div>
+        <div><dt>Role</dt><dd>At On, the Zurich-based global sportswear brand, led the RFID technology workstream from factory shipment to 100+ stores, with 5 developers, 3 vendors and a CHF 250K+ yearly budget for vendors and engineering. Also led the Digital Twin platform.</dd></div>
+        <div><dt>Result</dt><dd><b>&gt;99.9%</b> item traceability, up from manual barcode reads. <b>40M+</b> yearly scans turned into events, with <b>70%</b> fewer manual interventions across <b>100+</b> stores. In-house serialisation saves <b>$200K+</b> a year in the factories, from vendor fees and lower shrinkage. In stores, weekly stock counts drop from <b>20 hours to 2</b>.</dd></div>
       </dl>
       <figure class="viz sketch" data-viz="data">
         <figcaption><b>Every read lands in one record.</b> Each item is read many times between factory and customer.</figcaption>
-        <svg class="viz-svg" viewBox="0 0 360 452" role="img" aria-label="A diagram. RFID and QR codes read each item in the supply chain, at the warehouse, in the store and by the customer. Every read goes into one Digital Twin record per item instance, tracked globally and synchronised with ERP (enterprise resource planning) financial records. Manual interventions fell by 70%, more than 99.9% of items are traceable across 100+ stores, and in-house serialisation saves $200K+ in vendor fees every year."></svg>
+        <svg class="viz-svg" viewBox="0 0 360 452" role="img" aria-label="A diagram. RFID and QR codes read each item in the supply chain, at the warehouse, in the store and by the customer. Every read goes into one Digital Twin record per item instance, tracked globally and synchronised with ERP (enterprise resource planning) financial records. Manual interventions fell by 70%, more than 99.9% of items are traceable across 100+ stores, and in-house serialisation saves $200K+ a year in the factories."></svg>
       </figure>
     </div>
     <section class="case-sec">
@@ -71,9 +71,9 @@
         <div class="prose">
           <p>Each use case had its own business case, so the platform was funded on value the business could check. Three examples:</p>
           <ul>
-            <li><b>Store operations.</b> A weekly stock count falls from 20 hours to 2, and receiving a 1,000-item delivery from 30 minutes to 1. That frees about 900 staff hours a year in every store, across a network planned to grow from 30 to 130 stores.</li>
-            <li><b>Returns and warranties.</b> The serial number in the QR code identifies the exact item, so warranty cases are handled 69% faster.</li>
-            <li><b>Vendor costs.</b> Bringing serialisation in-house saves $200K+ in vendor fees, and the saving repeats every year.</li>
+            <li><b>Store operations.</b> A weekly stock count falls from 20 hours to 2, and receiving a 1,000-item delivery from 30 minutes to 1. That frees about 900 staff hours a year in every store, across an RFID rollout planned from 30 stores to 130.</li>
+            <li><b>Returns and warranties.</b> The serial number in the QR code identifies the exact item, so warranty cases that carry it are handled up to 69% faster.</li>
+            <li><b>Factory costs.</b> Bringing serialisation in-house saves $200K+ a year in vendor fees and lower inventory shrinkage, and the saving repeats every year.</li>
           </ul>
           <p>Loss prevention in stores, transport and factories had business cases too. By the third year, the yearly savings across all cases were planned to outweigh the yearly running costs.</p>
         </div>
@@ -85,7 +85,7 @@
         <div class="grid three decisions">
           <div class="decision"><h3>Standards are product decisions</h3><p>Modelling the Digital Twin on Electronic Product Code events and adopting Global Location Numbers (GLN, the standard IDs for sites and docks) looked like technical details. In practice they set how fast new partners and use cases could join.</p></div>
           <div class="decision"><h3>Observe before you model</h3><p>Interviews described how stores managed inventory. Watching them showed how they really did it, including their use of virtual locations. The retail data model was rebuilt before rollout, while the change was still cheap.</p></div>
-          <div class="decision"><h3>Exceptions are the product</h3><p>Above 99.9% traceability, the remaining fraction still made most of the work across 100+ locations. A Pareto analysis of support tickets picked the few features that mattered, and that cut manual interventions by 70%.</p></div>
+          <div class="decision"><h3>Exceptions are the product</h3><p>Above 99.9% traceability, the remaining fraction still made most of the work across 100+ stores. A Pareto analysis of support tickets picked the few features that mattered, and that cut manual interventions by 70%.</p></div>
         </div>
       </div>
     </section>
