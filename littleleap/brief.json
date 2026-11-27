@@ -162,15 +162,6 @@
         ]
       },
       {
-        "id": "decide", "title": "Decisions",
-        "items": [
-          { "name": "Kie.ai top-up", "text": "Credit nearly empty; needed for EP07", "urgent": true },
-          { "name": "Wan 3.0 for in-betweens", "text": "Passed every test at lower cost" },
-          { "name": "LittleLeap News", "text": "Own channel or stop" },
-          { "name": "Shorts", "text": "Paused; cut highlights from episodes instead?" }
-        ]
-      },
-      {
         "id": "shop", "title": "Shop",
         "status": "Planned, not started. Five decisions open: platform, domain, gift rules, prices and book format.",
         "phases": [

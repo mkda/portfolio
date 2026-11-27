@@ -218,17 +218,6 @@
         ]
       },
       {
-        "id": "decide", "title": "Decisions",
-        "items": [
-          { "name": "Top up Kie.ai, $30–50", "text": "About $0.73 left; EP07’s paid drawings and in-betweens stop at zero", "urgent": true },
-          { "name": "Wan 3.0 for in-betweens", "text": "Passed 3 of 3 tests at $0.32 a clip, against ~$0.50 for Seedance fast" },
-          { "name": "Kie or OpenRouter for drawings", "text": "Same model and quality; Kie is cheaper per usable image, but slower" },
-          { "name": "LittleLeap News", "text": "Own channel or stop: ~160 editions, ~15 views in total" },
-          { "name": "Shorts", "text": "Paused since 9 Nov; cut 2–3 from each episode instead?" },
-          { "name": "Smaller checks", "text": "Snail face fixes, Quiver for props only, removing old Unlisted cuts" }
-        ]
-      },
-      {
         "id": "plan", "title": "Planning",
         "groups": [
           { "name": "Content", "items": ["Story backlog past EP07", "Pose libraries and voices for the new cast", "More compilations for TV viewing", "Japanese, Hindi and Arabic"] },
@@ -238,7 +227,7 @@
       },
       {
         "id": "shop", "title": "Shop",
-        "status": "Planned on 21 Nov, not started. Waiting on five of my decisions (platform, domain, gift rules, prices, book format), GitHub push access and a Payhip account.",
+        "status": "Planned on 21 Nov, not started. Waiting on five of my decisions (platform, domain, gift rules, prices, book format) and a Payhip account.",
         "phases": [
           { "weeks": "Week 1", "name": "Showcase site", "text": "Watch, Listen, Play, Shop and Parents pages; the episode list updates itself at every publish" },
           { "weeks": "Weeks 1–2", "name": "Digital colouring prints", "text": "PDF packs per episode and a whole-cast pack on Payhip; a free sample collects parent emails" },
@@ -304,15 +293,6 @@
       { "days": "Days 1–14", "name": "Discover", "items": ["Study the Italian comedy creators that win on each platform", "Write hooks and pilot scripts for the three formats", "Decide the language: Italian first or not"], "gate": "Two formats worth piloting" },
       { "days": "Days 15–45", "name": "Pilot", "items": ["Post 3–4 vertical cuts a week per format on TikTok and Reels", "Change one thing at a time", "Track shares, saves and 3-second hold"], "gate": "One format clearly ahead" },
       { "days": "Days 46–90", "name": "Build and scale", "items": ["Automate the winning format in the cloud", "Add YouTube episodes, Facebook and the podcast feed", "Add a second revenue line early"], "gate": "Followers and watch time growing every week" }
-    ]
-  },
-  "next": {
-    "title": "My four moves for the next two weeks",
-    "items": [
-      { "name": "Keep EP07 on track", "text": "Top up Kie.ai and approve the storyboard checkpoint when it arrives" },
-      { "name": "Open Google Play", "text": "Finish the account steps, start the 14-day test, release iOS when Apple approves" },
-      { "name": "Clear the channel", "text": "Decide on LittleLeap News and Shorts so effort goes into thumbnails and openers" },
-      { "name": "Start the comedy test", "text": "Pick the language and draft hooks for the three formats" }
     ]
   }
 }
