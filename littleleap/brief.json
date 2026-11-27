@@ -1,0 +1,223 @@
+{
+  "meta": {
+    "title": "LittleLeap Studios",
+    "author": "LittleLeap Studios",
+    "updated": "23 Nov 2026",
+    "nextPremiere": { "label": "EP07", "date": "5 DEC", "detail": "The Little Night Helpers, Saturday 07:30 Zurich" }
+  },
+  "ui": {
+    "eyebrows": {
+      "portfolio": "01 · At a glance",
+      "timeline": "02 · Milestones",
+      "stats": "03 · Live numbers",
+      "process": "04 · How it works",
+      "ai": "05 · AI choices",
+      "pipeline": "06 · Pipeline",
+      "learnings": "07 · Lessons",
+      "restart": "08 · Next concept"
+    },
+    "gate": "Owner approval",
+    "lane": "channel changes",
+    "chartHint": "Pick a metric. Diamonds mark channel changes: green helped, red hurt, grey too early or no change.",
+    "statsNote": "Source: YouTube Studio, read automatically every evening.",
+    "tested": "Options tested",
+    "differently": "Changes from the LittleLeap approach"
+  },
+  "hero": {
+    "eyebrow": "LittleLeap Studios · overview",
+    "title": "An AI-run studio for children’s cartoons",
+    "lede": "Happy animal stories retold from public-domain tales for ages 3–7. AI agents write, draw, animate, voice, check and publish each episode; a human approves the story, new characters and the final cut.",
+    "stats": [
+      { "value": 6, "label": "Episodes public" },
+      { "value": 6, "label": "Audio languages each" },
+      { "value": 18, "label": "Original characters" },
+      { "value": 28, "label": "Music stores" }
+    ]
+  },
+  "portfolio": {
+    "title": "Six lines of work",
+    "items": [
+      { "name": "Episodes", "status": "Live", "text": "EP01–EP06, about 10 minutes each, with six audio tracks, subtitles and custom thumbnails. Made for Kids.", "wide": true },
+      { "name": "Shorts & compilation", "status": "Live", "text": "19 Shorts with collector cards and a 30-minute compilation for TV viewing." },
+      { "name": "Music", "status": "Live", "text": "Album “Little Leap” by MKDA: eight orchestral pieces at 432 Hz on 28 stores." },
+      { "name": "Games", "status": "In review", "text": "Meadow Memory in App Store review; Android build ready; two games on the web." },
+      { "name": "LittleLeap Live", "status": "Rebuilding", "text": "Meadow news and learning lives, moving to scripts approved a week ahead." },
+      { "name": "Shop & showcase", "status": "Planned", "text": "Colouring prints, a printed book and character cameos beside a showcase site." }
+    ]
+  },
+  "timeline": {
+    "title": "Eight weeks from pilot to studio",
+    "lede": "Key milestones since the first episode",
+    "items": [
+      { "date": "30 Sep", "title": "EP01 goes public", "text": "The Big Meadow Race", "kind": "episode" },
+      { "date": "9 Oct", "title": "Automated pipeline", "text": "Producer, animator and publisher agents plus a Mac worker", "kind": "build" },
+      { "date": "11 Oct", "title": "Drawn animation", "text": "Pose libraries for the whole cast; EP02 public", "kind": "episode" },
+      { "date": "22 Oct", "title": "Dub engine chosen", "text": "Chatterbox kept after an A/B test on licence and quality", "kind": "ai" },
+      { "date": "30 Oct", "title": "AI in-betweens", "text": "AI video fills motion between hand-checked key drawings", "kind": "ai" },
+      { "date": "11 Nov", "title": "Process reset", "text": "A heavier review process was rolled back; physics and join checks added", "kind": "lesson" },
+      { "date": "15 Nov", "title": "Album released", "text": "“Little Leap” sent to 28 stores", "kind": "build" },
+      { "date": "21 Nov", "title": "EP06 goes public", "text": "The Big Cosy Mitten", "kind": "episode" },
+      { "date": "22 Nov", "title": "First app submitted", "text": "Meadow Memory to Apple; images move to Kie.ai", "kind": "ai" },
+      { "date": "5 Dec", "title": "EP07 premiere", "text": "The Little Night Helpers (target)", "kind": "next" }
+    ]
+  },
+  "episodes": {
+    "title": "Seven tales",
+    "target": 4,
+    "rows": [
+      { "ep": "EP01", "title": "The Big Meadow Race", "tale": "Tortoise and the Hare (Aesop)", "date": "30 Sep", "spend": null },
+      { "ep": "EP02", "title": "The Giant Turnip", "tale": "Russian folk tale", "date": "11 Oct", "spend": null },
+      { "ep": "EP03", "title": "The Sky Is Falling!", "tale": "Henny Penny (folk tale)", "date": "15 Oct", "spend": null },
+      { "ep": "EP04", "title": "The Little Porridge Pot", "tale": "Sweet Porridge (Grimm)", "date": "24 Oct", "spend": 17 },
+      { "ep": "EP05", "title": "The Lion and the Mouse", "tale": "Aesop", "date": "31 Oct", "spend": 11 },
+      { "ep": "EP06", "title": "The Big Cosy Mitten", "tale": "The Mitten (Ukrainian folk tale)", "date": "21 Nov", "spend": 67 },
+      { "ep": "EP07", "title": "The Little Night Helpers", "tale": "The Elves and the Shoemaker (Grimm)", "date": "5 Dec", "spend": 33, "upcoming": true }
+    ]
+  },
+  "standing": {
+    "title": "Channel performance over time",
+    "lede": "Updated automatically from YouTube Studio, with each channel change marked on the timeline.",
+    "insightBefore": "YouTube shows the episodes about 600 times a day.",
+    "insightMark": "The click and the first 15 seconds",
+    "insightAfter": "are the bottleneck.",
+    "insightNote": "From EP07 the focus is packaging: one clear face on the thumbnail, story-first titles, and a character speaking from the first frame."
+  },
+  "process": {
+    "title": "From public-domain tale to Saturday premiere",
+    "steps": [
+      { "title": "Pick a tale", "text": "Author dead 70+ years; a fresh retelling with join-in moments and no villains" },
+      { "title": "Gate 1", "text": "Story, script and action plan approved before any paid generation", "gate": true },
+      { "title": "Design", "text": "New characters, size lineup and set plates checked at world scale", "gate": true },
+      { "title": "Animate", "text": "Pose-to-pose drawn animation with AI in-betweens for big moves" },
+      { "title": "Voice and score", "text": "One voice per character, orchestral cues, real sound effects" },
+      { "title": "Check", "text": "Automatic staging, continuity and lip-sync checks, then three reviewer agents" },
+      { "title": "Gate 2", "text": "Unlisted cut with five dubs and subtitles reviewed before release", "gate": true },
+      { "title": "Premiere", "text": "Public on Saturday 07:30 Zurich, with analytics at 48 hours and 7 days" }
+    ]
+  },
+  "ai": {
+    "title": "Every model earned its place in a test",
+    "lede": "Each tool was compared side by side on the studio’s own characters, judged by measurable checks and by eye.",
+    "tools": ["Claude", "Nano Banana Pro", "Seedance 2.0", "Wan 3.0", "Kokoro", "Chatterbox", "Whisper", "Suno", "Qwen-Image-Edit", "RunPod", "Kie.ai", "QuiverAI", "OmniVoice", "FLUX.2-klein", "Orpheus TTS"],
+    "domains": [
+      {
+        "id": "images", "title": "Drawings",
+        "story": "Local FLUX.2-klein gave way to Nano Banana Pro, which edits one master drawing into ~30 consistent poses per character.",
+        "tests": [
+          { "name": "FLUX.2-klein-4B, local", "status": "dropped", "text": "Free and private, but not consistent across poses" },
+          { "name": "Nano Banana Pro", "status": "kept", "text": "Every pose an edit of one master drawing" },
+          { "name": "Same model via Kie.ai", "status": "kept", "text": "Same quality, a third cheaper per usable drawing", "metric": { "label": "Cost per usable drawing", "a": 0.12, "b": 0.18, "aLabel": "Kie.ai", "bLabel": "OpenRouter", "unit": "$" } },
+          { "name": "Character LoRAs on Qwen-Image-Edit", "status": "backup", "text": "Insurance against model changes, trained for ~$15", "metric": { "label": "Test drawings on model", "value": 20, "of": 24 } }
+        ]
+      },
+      {
+        "id": "motion", "title": "Motion",
+        "story": "Rigs, kits and puppets all failed. AI video between hand-checked key drawings is the method that holds.",
+        "tests": [
+          { "name": "Rigs, part kits, mesh bending", "status": "dropped", "text": "Seams, floating parts, mismatched outlines" },
+          { "name": "Seedance 2.0 fast", "status": "kept", "text": "In-betweens from first and last key drawings" },
+          { "name": "Wan 3.0", "status": "testing", "text": "Cheaper at $0.32 a clip", "metric": { "label": "Test clips passed", "value": 3, "of": 3 } },
+          { "name": "Seedance mini, PixVerse", "status": "dropped", "text": "Missed keys, drifted colour, ignored the locked camera", "metric": { "label": "Test clips passed", "value": 0, "of": 6 } }
+        ]
+      },
+      {
+        "id": "voices", "title": "Voices",
+        "story": "One voice per character, cloned into five more languages so each friend sounds the same everywhere.",
+        "tests": [
+          { "name": "Kokoro + Chatterbox", "status": "kept", "text": "English voices with per-character tuning and more acting" },
+          { "name": "Chatterbox Multilingual dubs", "status": "kept", "text": "MIT licence, runs locally", "metric": { "label": "Pronunciation error", "a": 24, "b": 11, "aLabel": "Chatterbox", "bLabel": "OmniVoice", "unit": "%" } },
+          { "name": "OmniVoice", "status": "dropped", "text": "Clearer, but licensed for non-commercial use only" }
+        ]
+      },
+      {
+        "id": "music", "title": "Music",
+        "story": "Code-made beds were remixed in Suno through seven versions into a scene-fitted score and an album.",
+        "tests": [
+          { "name": "Suno v1–v5", "status": "dropped", "text": "Too Japanese, or climaxes that fought the voices" },
+          { "name": "Suno v6–v7 underscore", "status": "kept", "text": "Briefed per real scene use; best take picked by measured endings" },
+          { "name": "432 Hz album", "status": "kept", "text": "Retuned and released on 28 stores" }
+        ]
+      },
+      {
+        "id": "agents", "title": "Agents",
+        "story": "Claude agents plan, brief, check and publish, and stop only at the approval gates.",
+        "tests": [
+          { "name": "Live AI writing on air", "status": "dropped", "text": "Replaced by scripts approved a week ahead" },
+          { "name": "Three independent reviewers", "status": "kept", "text": "Assets, continuity and motion checked before human review" },
+          { "name": "Heavier review process", "status": "dropped", "text": "84 versions and $31 on EP06 without better results" }
+        ]
+      }
+    ]
+  },
+  "pipeline": {
+    "title": "In progress and next",
+    "tabs": [
+      {
+        "id": "now", "title": "Now",
+        "items": [
+          { "name": "EP07", "text": "Layout in review; target premiere 5 Dec" },
+          { "name": "Meadow Memory", "text": "iOS in App Store review; Android awaiting account setup and a 14-day test" },
+          { "name": "LittleLeap Live", "text": "Prepared-script mode ready for setup" },
+          { "name": "Growth", "text": "New titles and thumbnails; peek-a-boo opener from EP07" }
+        ]
+      },
+      {
+        "id": "decide", "title": "Decisions",
+        "items": [
+          { "name": "Kie.ai top-up", "text": "Credit nearly empty; needed for EP07", "urgent": true },
+          { "name": "Wan 3.0 for in-betweens", "text": "Passed every test at lower cost" },
+          { "name": "LittleLeap News", "text": "Own channel or stop" },
+          { "name": "Shorts", "text": "Paused; cut highlights from episodes instead?" }
+        ]
+      },
+      {
+        "id": "shop", "title": "Shop",
+        "status": "Planned, not started. Five decisions open: platform, domain, gift rules, prices and book format.",
+        "phases": [
+          { "weeks": "Week 1", "name": "Showcase site", "text": "Watch, Listen, Play, Shop and Parents pages" },
+          { "weeks": "Weeks 1–2", "name": "Colouring prints", "text": "PDF packs on Payhip" },
+          { "weeks": "Weeks 2–4", "name": "Printed book", "text": "Printed and shipped per order by Lulu" },
+          { "weeks": "Weeks 3–5", "name": "Character gift", "text": "A cameo in the next episode, first names only" },
+          { "weeks": "Week 5", "name": "Legal and launch", "text": "Impressum, terms and privacy" }
+        ]
+      }
+    ]
+  },
+  "learnings": {
+    "title": "Six lessons",
+    "films": [
+      { "name": "Every note becomes a rule", "text": "Feedback fell into nine repeat categories; repeating one is a blocker" },
+      { "name": "More process isn’t more quality", "text": "A heavier review loop added versions and cost, not quality" },
+      { "name": "Packaging beats distribution", "text": "YouTube delivered impressions; thumbnails and openings lost the clicks" },
+      { "name": "Machines check first", "text": "Automatic checks took EP02 from 173 staging issues to zero" },
+      { "name": "Whole drawings beat rigs", "text": "Pose libraries plus AI in-betweens are the method that holds" },
+      { "name": "Pay per usable result", "text": "Models are compared on price divided by pass rate" }
+    ],
+    "audience": [],
+    "operations": []
+  },
+  "restart": {
+    "title": "A comedy studio for adults, on every channel",
+    "lede": "Funny and satirical stories for grown-ups, probably Italian first (to be decided), cut for every platform from day one.",
+    "compare": [],
+    "channels": [
+      { "name": "TikTok", "cut": "30–60 s vertical", "role": "Fast test of what lands" },
+      { "name": "Instagram Reels", "cut": "Vertical + comic carousel", "role": "Shares and stories" },
+      { "name": "YouTube", "cut": "Shorts + 8–12 min episodes", "role": "Watch time and ad revenue" },
+      { "name": "Facebook", "cut": "Reels and full episodes", "role": "Older Italian audience" },
+      { "name": "Podcast feed", "cut": "Audio-only episode", "role": "Listening on the go" }
+    ],
+    "concepts": [
+      { "name": "Il Condominio", "text": "A sitcom about one building: the group chat, the meetings, the neighbour who measures everything" },
+      { "name": "Ufficio Complicazioni", "text": "Satire of bureaucracy and office life: absurd forms and the stamp that is always missing" },
+      { "name": "Notizie da Borgo Fermo", "text": "A satirical news desk from an invented village, reusing the live news-desk technology" }
+    ],
+    "rules": ["Invented characters and places only", "Labelled as satire and as AI-made", "Native Italian review of every joke", "Separate from the LittleLeap kids brand"],
+    "carries": [],
+    "plan": [
+      { "days": "Days 1–14", "name": "Discover", "items": ["Study winning Italian comedy creators per platform", "Hooks and pilot scripts for three formats"], "gate": "Two formats worth piloting" },
+      { "days": "Days 15–45", "name": "Pilot", "items": ["3–4 vertical cuts a week per format", "Track shares, saves and 3-second hold"], "gate": "One format clearly ahead" },
+      { "days": "Days 46–90", "name": "Scale", "items": ["Automate the winner in the cloud", "Add YouTube, Facebook and the podcast feed"], "gate": "Weekly growth in followers and watch time" }
+    ]
+  }
+}

@@ -12,6 +12,7 @@ Static site for GitHub Pages: plain HTML and CSS, no build step, same setup as t
 - `site.js`: optional motion (Motion for reveals and number tweens, Anime.js for diagram lines and chart bars); respects reduced-motion and the page works without it
 - `vendor/`: self-hosted Motion 14.11.1 and Anime.js 4.5.0 (MIT), so no CDN is needed
 - `.nojekyll`: serve files as they are
+- `littleleap/`: the LittleLeap Studios presentation (full story, and the brief at `littleleap/#brief`). Built files from the Claude artifact (Vite + React + Tailwind); the source code was not kept, so edit words in `content.json` (full story) and `brief.json` (brief) without a rebuild. `stats.json` is a snapshot of the channel numbers that the artifact reads live from its database; the bundle falls back to it outside Claude. Refresh it by exporting the artifact's `snapshots`, `channel` and `actions` collections.
 
 ## Publish
 

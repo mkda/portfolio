@@ -1,0 +1,318 @@
+{
+  "meta": {
+    "title": "LittleLeap Studios",
+    "author": "Mikael Dell’Anna",
+    "updated": "23 Nov 2026",
+    "nextPremiere": { "label": "EP07", "date": "5 DEC", "detail": "The Little Night Helpers, Saturday 07:30 Zurich" }
+  },
+  "hero": {
+    "eyebrow": "LittleLeap Studios · built by Mikael Dell’Anna",
+    "title": "I built a cartoon studio where AI agents do the work and I sign off the key steps",
+    "lede": "In eight weeks I went from one pilot episode to a studio that writes, draws, animates, voices, checks and publishes happy animal stories for children aged 3–7. I approve the story, new character looks and the final cut. Everything else runs on its own.",
+    "stats": [
+      { "value": 6, "label": "Episodes public" },
+      { "value": 6, "label": "Audio languages each" },
+      { "value": 18, "label": "Original characters" },
+      { "value": 28, "label": "Music stores" }
+    ]
+  },
+  "portfolio": {
+    "title": "Everything I make today",
+    "items": [
+      { "name": "Episodes", "status": "Live", "text": "EP01–EP06, about 10 minutes each. One video per episode with six audio tracks, subtitles and custom thumbnails. Made for Kids.", "wide": true },
+      { "name": "Shorts & compilation", "status": "Live", "text": "19 Shorts with collector cards, and a 30-minute compilation of three stories for TV viewing." },
+      { "name": "Music", "status": "Live", "text": "My album “Little Leap” as MKDA: eight orchestral pieces at 432 Hz on Spotify, Apple Music and YouTube Music." },
+      { "name": "Games", "status": "In review", "text": "Meadow Memory is with Apple for review, the Android build is ready, and two games play on the web." },
+      { "name": "LittleLeap Live", "status": "Rebuilding", "text": "Meadow news and learning lives on an Oracle Cloud server, moving to scripts I approve a week ahead." },
+      { "name": "Shop & showcase", "status": "Planned", "text": "Colouring prints, a printed book and character cameos, sold beside a showcase site." }
+    ]
+  },
+  "timeline": {
+    "title": "Eight weeks from pilot to a studio",
+    "lede": "Every milestone since my first episode went public",
+    "items": [
+      { "date": "30 Sep", "title": "EP01 goes public", "text": "The Big Meadow Race, cut to 9:58 after I found the first cut too slow", "kind": "episode" },
+      { "date": "1 Oct", "title": "My own dubs replace YouTube’s", "text": "Five languages, and each character keeps its voice", "kind": "build" },
+      { "date": "9 Oct", "title": "Automated pipeline", "text": "Producer, animator and publisher agents plus a worker on my Mac mini", "kind": "build" },
+      { "date": "11 Oct", "title": "Drawn animation and EP02", "text": "Pose libraries for the whole cast; The Giant Turnip goes public", "kind": "episode" },
+      { "date": "13 Oct", "title": "Shorts and LittleLeap News", "text": "Collector-card Shorts; 24 news editions a day on Oracle Cloud", "kind": "build" },
+      { "date": "15 Oct", "title": "EP03 goes public", "text": "The Sky Is Falling!", "kind": "episode" },
+      { "date": "22 Oct", "title": "Dub engine A/B test", "text": "OmniVoice spoke clearer but its licence is non-commercial, so I kept Chatterbox", "kind": "ai" },
+      { "date": "24 Oct", "title": "EP04 goes public", "text": "The Little Porridge Pot, $17 of AI spend", "kind": "episode" },
+      { "date": "30 Oct", "title": "AI in-betweens approved", "text": "AI video fills motion between my own key drawings", "kind": "ai" },
+      { "date": "31 Oct", "title": "EP05 goes public", "text": "The Lion and the Mouse, $11 of AI spend", "kind": "episode" },
+      { "date": "8 Nov", "title": "Character LoRAs trained", "text": "A backup of the cast on an open model: 20 of 24 test drawings on model", "kind": "ai" },
+      { "date": "8 Nov", "title": "Hourly production runs", "text": "Only my approvals may hold an episode up", "kind": "build" },
+      { "date": "11 Nov", "title": "Back to the October process", "text": "The heavier process didn’t help; I added a physics layer and a join checker", "kind": "lesson" },
+      { "date": "15 Nov", "title": "Album sent to stores", "text": "“Little Leap” by MKDA via DistroKid, 28 stores", "kind": "build" },
+      { "date": "16 Nov", "title": "Growth plan", "text": "Story-first titles, a new thumbnail, a 30-minute compilation", "kind": "build" },
+      { "date": "21 Nov", "title": "EP06 goes public", "text": "The Big Cosy Mitten, after 276 versions", "kind": "episode" },
+      { "date": "22 Nov", "title": "Meadow Memory to Apple; images move to Kie.ai", "text": "My first app is in review; same image model, a third cheaper", "kind": "ai" },
+      { "date": "5 Dec", "title": "EP07 premiere", "text": "The Little Night Helpers (target)", "kind": "next" }
+    ]
+  },
+  "episodes": {
+    "title": "Seven tales, each retold in my own words",
+    "lede": "The first episodes were shown rarely but clicked often. EP04 and EP05 were shown 13–16K times each, and almost nobody clicked.",
+    "target": 4,
+    "rows": [
+      { "ep": "EP01", "title": "The Big Meadow Race", "tale": "Tortoise and the Hare (Aesop)", "date": "30 Sep", "spend": null },
+      { "ep": "EP02", "title": "The Giant Turnip", "tale": "Russian folk tale", "date": "11 Oct", "spend": null },
+      { "ep": "EP03", "title": "The Sky Is Falling!", "tale": "Henny Penny (folk tale)", "date": "15 Oct", "spend": null },
+      { "ep": "EP04", "title": "The Little Porridge Pot", "tale": "Sweet Porridge (Grimm)", "date": "24 Oct", "spend": 17 },
+      { "ep": "EP05", "title": "The Lion and the Mouse", "tale": "Aesop", "date": "31 Oct", "spend": 11 },
+      { "ep": "EP06", "title": "The Big Cosy Mitten", "tale": "The Mitten (Ukrainian folk tale)", "date": "21 Nov", "spend": 67 },
+      { "ep": "EP07", "title": "The Little Night Helpers", "tale": "The Elves and the Shoemaker (Grimm)", "date": "5 Dec", "spend": 33, "upcoming": true }
+    ]
+  },
+  "process": {
+    "title": "From a 200-year-old tale to a Saturday premiere",
+    "steps": [
+      { "title": "Pick a tale", "text": "Author dead 70+ years. The agents write my own retelling with join-in moments and no villains" },
+      { "title": "Gate 1", "text": "I approve the story, script and action plan. Nothing is paid before this", "gate": true },
+      { "title": "Design", "text": "I check new character looks, the size lineup and set plates, all at world scale", "gate": true },
+      { "title": "Animate", "text": "Layouts chapter by chapter, pose-to-pose drawn animation, AI in-betweens for big moves" },
+      { "title": "Voice and score", "text": "A voice per character, my Suno cues, real sound effects, lip-sync with zero misses" },
+      { "title": "Check", "text": "Staging, continuity, canon, lip and join checkers at zero, then three independent reviewer agents" },
+      { "title": "Gate 2", "text": "Unlisted upload with five dubs, subtitles and thumbnail. I review the real cut", "gate": true },
+      { "title": "Premiere", "text": "Scheduled Public on Saturday 07:30 Zurich, with analytics checks at 48 hours and 7 days" }
+    ]
+  },
+  "machine": {
+    "title": "The machine behind it",
+    "log": [
+      "08:51  production run · EP07 · layout S09–S11",
+      "08:52  reviewer r4 · 0 blockers · 1 major",
+      "08:58  kie.ai · nano-banana-pro · sneak_hop MURIEL · $0.09",
+      "09:03  staging check · 0 issues",
+      "09:10  join check · 0 flash frames · 0 skips",
+      "09:14  preview r5 queued · waiting for reviewer"
+    ],
+    "tabs": [
+      {
+        "id": "agents", "title": "Agents",
+        "items": [
+          { "name": "Three Claude skills", "text": "A producer orchestrates; an animator and a publisher do the rest" },
+          { "name": "Worker on my Mac mini", "text": "Runs paid AI jobs, local voices and dubs, and my own renderer" },
+          { "name": "Budget guard", "text": "Every paid call logged; $100 cap per episode; anything over ~$10 comes to me first" },
+          { "name": "One list of open decisions", "text": "I answer “A1 yes” in any chat and the next run picks it up" }
+        ]
+      },
+      {
+        "id": "schedule", "title": "Schedule",
+        "items": [
+          { "name": "Production run", "text": "Every hour at :51, silent unless it needs me, breaks or hits a milestone" },
+          { "name": "Analytics review", "text": "Monday at 18:17, read-only in YouTube Studio" },
+          { "name": "Stats sync", "text": "Daily: copies the newest numbers into this page" },
+          { "name": "Live: write next week", "text": "Thursday at 10:41" },
+          { "name": "Live: send approved week", "text": "Sunday at 13:47" }
+        ]
+      },
+      {
+        "id": "artifacts", "title": "Artifacts",
+        "items": [
+          { "name": "Production bible", "text": "Characters, voices, languages and delivery rules" },
+          { "name": "Growth tracker", "text": "YouTube numbers and the actions log" },
+          { "name": "Review Room", "text": "The reviewed preview of each cut before Gate 2" },
+          { "name": "Episode plans", "text": "Scene-by-scene execution plan per episode" },
+          { "name": "Live review page", "text": "I approve next week’s scripts in one tap" },
+          { "name": "Model comparison", "text": "Playable Kie.ai and Quiver test clips with my decisions" }
+        ]
+      }
+    ]
+  },
+  "ai": {
+    "title": "Every AI choice I made, and the tests behind it",
+    "lede": "I didn’t pick models on reputation. Each one earned its place in a side-by-side test, on my own characters, judged by measurable checks and by eye.",
+    "tools": ["Claude", "Nano Banana Pro", "Seedance 2.0", "Wan 3.0", "Kokoro", "Chatterbox", "Whisper", "Suno", "Qwen-Image-Edit", "AI Toolkit", "RunPod", "Kie.ai", "OpenRouter", "QuiverAI", "OmniVoice", "FLUX.2-klein", "Orpheus TTS"],
+    "domains": [
+      {
+        "id": "images", "title": "Drawings",
+        "story": "I planned to draw locally with FLUX.2-klein on the Mac. For on-model characters I moved to Nano Banana Pro, editing one master drawing into ~30 poses per character.",
+        "tests": [
+          { "name": "FLUX.2-klein-4B, local", "status": "dropped", "text": "The pilot plan: free and private, but not consistent enough across poses" },
+          { "name": "Nano Banana Pro via OpenRouter", "status": "kept", "text": "Every pose an edit of one master drawing, so the cast stays on model. ~$0.14 an image" },
+          { "name": "Same model via Kie.ai", "status": "kept", "text": "Same quality and same failure modes, $0.09 an image. $0.12 vs $0.18 per usable drawing", "metric": { "label": "Cost per usable drawing", "a": 0.12, "b": 0.18, "aLabel": "Kie.ai", "bLabel": "OpenRouter", "unit": "$" } },
+          { "name": "Own LoRAs on Qwen-Image-Edit", "status": "backup", "text": "Trained on RunPod for ~$15 as insurance if a closed model changes. 20 of 24 new poses on model", "metric": { "label": "Test drawings on model", "value": 20, "of": 24 } },
+          { "name": "AI edit vs code for the four-eyed Snail", "status": "kept", "text": "The AI fix kept 4 of 15 drawings clean; a small script fixed all 15 for $0" }
+        ]
+      },
+      {
+        "id": "motion", "title": "Motion",
+        "story": "Smooth movement was the hardest part. I tried rigs, kits and puppets before landing on AI video between my own key drawings.",
+        "tests": [
+          { "name": "Cut-up rigs and part kits", "status": "dropped", "text": "Seams, floating parts, outlines that didn’t match" },
+          { "name": "Layered rig with mesh bending", "status": "dropped", "text": "Pilot on Leo: the arm outlines never matched the body" },
+          { "name": "AI in-betweens, Seedance 2.0 fast", "status": "kept", "text": "First and last frame are my drawings; the model fills the motion. “Exactly how it should be done”" },
+          { "name": "Wan 3.0", "status": "testing", "text": "Passed 3 of 3 clips at $0.32, against ~$0.50 for Seedance fast on Kie", "metric": { "label": "Test clips passed", "value": 3, "of": 3 } },
+          { "name": "Seedance 2.0 mini", "status": "dropped", "text": "Missed the last key and drifted grey: 0 of 3", "metric": { "label": "Test clips passed", "value": 0, "of": 3 } },
+          { "name": "PixVerse v6 transition", "status": "dropped", "text": "Ignored the locked camera and zoomed in: 0 of 3", "metric": { "label": "Test clips passed", "value": 0, "of": 3 } },
+          { "name": "QuiverAI SVG animation", "status": "dropped", "text": "Fine for props and idle loops, but puppet-style for characters" }
+        ]
+      },
+      {
+        "id": "voices", "title": "Voices",
+        "story": "Each character has one voice, cloned into five more languages so a child hears the same friend in Spanish or German.",
+        "tests": [
+          { "name": "Orpheus TTS 3B", "status": "dropped", "text": "The pilot plan; replaced by voices with more control per character" },
+          { "name": "Kokoro", "status": "kept", "text": "Clean English voices with per-character speed and pitch" },
+          { "name": "Chatterbox expressive", "status": "kept", "text": "From EP06, more acting in English lines, cloned from each Kokoro voice" },
+          { "name": "Chatterbox Multilingual for dubs", "status": "kept", "text": "MIT licence, runs locally, voice match 0.63", "metric": { "label": "Pronunciation error", "a": 24, "b": 11, "aLabel": "Chatterbox", "bLabel": "OmniVoice", "unit": "%" } },
+          { "name": "OmniVoice", "status": "dropped", "text": "Clearer, but the model weights are licensed for non-commercial use only" },
+          { "name": "Whisper and speaker checks", "status": "kept", "text": "Whisper hears only the scripted words; a speaker model scores voice match" }
+        ]
+      },
+      {
+        "id": "music", "title": "Music",
+        "story": "I started with beds synthesised in code, then remixed them in Suno through seven versions into my first album.",
+        "tests": [
+          { "name": "Own synthesised beds", "status": "kept", "text": "Code-made cues with no licence questions, still the melodic source" },
+          { "name": "Suno v1–v3: storybook and music box", "status": "dropped", "text": "Too Japanese, not classical enough" },
+          { "name": "Suno v4–v5: piano and orchestra", "status": "dropped", "text": "Beautiful, but swells and climaxes fought the voices" },
+          { "name": "Suno v6–v7: scene-fitted underscore", "status": "kept", "text": "Briefed per real scene use; best take picked by measured endings and steadiness" },
+          { "name": "432 Hz retune and album", "status": "kept", "text": "Measured each track’s tuning and resampled it; released as MKDA on 28 stores" }
+        ]
+      },
+      {
+        "id": "agents", "title": "Agents",
+        "story": "Claude runs the studio: it plans, briefs, checks and publishes, and asks me only at the gates.",
+        "tests": [
+          { "name": "Live AI writing on air", "status": "dropped", "text": "LittleLeap Live now airs only scripts I approved a week ahead" },
+          { "name": "Three independent reviewers", "status": "kept", "text": "Assets and sizes, continuity and story, motion and staging, before I see anything" },
+          { "name": "Heavier review process (8–11 Nov)", "status": "dropped", "text": "84 versions and $31 on EP06 without better results" },
+          { "name": "Best result, no exception questions", "status": "kept", "text": "The agents pick the best fix and log it instead of asking me" }
+        ]
+      }
+    ]
+  },
+  "animation": {
+    "title": "Whole drawings, never puppets",
+    "lede": "Every frame shows one complete drawing of the character, the way hand-drawn 2D is made",
+    "do": [
+      { "name": "Pose libraries", "text": "About 30 complete drawings per character plus walk, run and hop cycles, all edits of one master. About $4 per new character" },
+      { "name": "AI in-betweens", "text": "AI video fills the motion between two of my own key drawings for big moves and entries" },
+      { "name": "Physics", "text": "Gravity, springs, wind and particles from “The Nature of Code” drive hops, falls and snow" }
+    ],
+    "dropped": ["Stretching images", "Cutting drawings into parts", "Modular body kits", "SVG puppet animation"]
+  },
+  "standing": {
+    "title": "The channel over time, and what moved it",
+    "lede": "Updated automatically. Each flag is something I changed; the verdict says what the numbers did after.",
+    "insightBefore": "YouTube already shows my episodes about 600 times a day.",
+    "insightMark": "The click and the first 15 seconds",
+    "insightAfter": "hold them back.",
+    "insightNote": "So from EP07 I’m changing the packaging, not the volume: one big face with one clear feeling on the thumbnail, story-first titles, and a character talking to the child from frame 0."
+  },
+  "pipeline": {
+    "title": "What’s in my pipeline",
+    "tabs": [
+      {
+        "id": "now", "title": "Now",
+        "items": [
+          { "name": "EP07 The Little Night Helpers", "text": "Chapter 4 layout nearly through review, $33 of $100 spent", "next": "Other chapters, storyboard checkpoint, voices, Gate 2" },
+          { "name": "Meadow Memory on iOS", "text": "With Apple for review since 22 Nov", "next": "Goes live when I release it" },
+          { "name": "Meadow Memory on Android", "text": "App bundle built, my Play account not finished", "next": "Account steps, then a 14-day test with 12 testers (1 so far)" },
+          { "name": "LittleLeap Live", "text": "Prepared-script mode built, English only", "next": "I run the setup once, then approve weekly" },
+          { "name": "Music", "text": "“Little Leap” live via DistroKid; Suno album drafted", "next": "SoundCloud upload; publish the Suno album" },
+          { "name": "Growth", "text": "New titles on EP04–EP05, compilation published", "next": "Peek-a-boo opener and one-face thumbnail from EP07" }
+        ]
+      },
+      {
+        "id": "decide", "title": "Decisions",
+        "items": [
+          { "name": "Top up Kie.ai, $30–50", "text": "About $0.73 left; EP07’s paid drawings and in-betweens stop at zero", "urgent": true },
+          { "name": "Wan 3.0 for in-betweens", "text": "Passed 3 of 3 tests at $0.32 a clip, against ~$0.50 for Seedance fast" },
+          { "name": "Kie or OpenRouter for drawings", "text": "Same model and quality; Kie is cheaper per usable image, but slower" },
+          { "name": "LittleLeap News", "text": "Own channel or stop: ~160 editions, ~15 views in total" },
+          { "name": "Shorts", "text": "Paused since 9 Nov; cut 2–3 from each episode instead?" },
+          { "name": "Smaller checks", "text": "Snail face fixes, Quiver for props only, removing old Unlisted cuts" }
+        ]
+      },
+      {
+        "id": "plan", "title": "Planning",
+        "groups": [
+          { "name": "Content", "items": ["Story backlog past EP07", "Pose libraries and voices for the new cast", "More compilations for TV viewing", "Japanese, Hindi and Arabic"] },
+          { "name": "Distribution", "items": ["The Big Meadow Race as an app", "Microsoft, itch.io, Amazon and Samsung stores", "Two players on one device, later online rooms", "SoundCloud and the Suno album"] },
+          { "name": "Infrastructure and money", "items": ["Less dependence on one Mac mini", "Live code committed to GitHub", "A path to 4,000, then 8,000 watch hours", "Next album built track by track for Dolby Atmos"] }
+        ]
+      },
+      {
+        "id": "shop", "title": "Shop",
+        "status": "Planned on 21 Nov, not started. Waiting on five of my decisions (platform, domain, gift rules, prices, book format), GitHub push access and a Payhip account.",
+        "phases": [
+          { "weeks": "Week 1", "name": "Showcase site", "text": "Watch, Listen, Play, Shop and Parents pages; the episode list updates itself at every publish" },
+          { "weeks": "Weeks 1–2", "name": "Digital colouring prints", "text": "PDF packs per episode and a whole-cast pack on Payhip; a free sample collects parent emails" },
+          { "weeks": "Weeks 2–4", "name": "Printed colouring book", "text": "Vol. 1, about 40 pages, printed and shipped per order by Lulu" },
+          { "weeks": "Weeks 3–5", "name": "Character gift", "text": "A parent buys a cameo in the next episode: first names only, consent, three per episode" },
+          { "weeks": "Week 5", "name": "Legal and launch", "text": "Impressum, terms and privacy; a “For grown-ups” line in descriptions" }
+        ]
+      }
+    ]
+  },
+  "learnings": {
+    "title": "What I learned",
+    "films": [
+      { "name": "Turn every note into a rule", "text": "My notes fell into nine repeat categories. Repeating one is now a blocker" },
+      { "name": "More process isn’t more quality", "text": "EP06 hit 84 versions and $31 under a heavier process; I went back to the October gates" },
+      { "name": "Design props for the action", "text": "The mitten’s opening was too small to climb in. One late prop cost about 20 versions" },
+      { "name": "Machines check before I do", "text": "Automatic staging checks took EP02 from 173 issues to zero before I watched" },
+      { "name": "Whole drawings beat rigs", "text": "Every shortcut failed; pose libraries plus AI in-betweens hold" },
+      { "name": "Pay per usable result", "text": "AI services bill wrong outputs too. I compare models on price divided by pass rate" }
+    ],
+    "audience": [
+      "Packaging beats distribution: impressions came, clicks didn’t",
+      "Made for Kids removes A/B tests, end screens, comments and cards",
+      "Dubs bring ~5% of views; Shorts are barely shown",
+      "Kids ads pay about $0.33 per 1,000 views, so ~3M views per $1,000",
+      "Each episode must be clearly different under YouTube’s inauthentic-content policy"
+    ],
+    "operations": [
+      "One Mac mini is a single point of failure",
+      "Empty prepaid credit silently stops jobs",
+      "Browser automation needs workarounds, like 10 MB upload chunks",
+      "Rules kept in two places drift apart",
+      "I’m the bottleneck, so the agents now use defaults and a best-result rule"
+    ]
+  },
+  "restart": {
+    "title": "Next: a comedy studio for adults, on every channel",
+    "lede": "Not tales this time. Funny and satirical stories for grown-ups, probably in Italian first (to be decided), cut for every platform from day one.",
+    "compare": [
+      { "before": "Built the pipeline first", "after": "Test demand first: three formats as hooks, thumbnails and 30-second cuts" },
+      { "before": "One channel, YouTube only", "after": "One story, many cuts: YouTube, TikTok, Instagram, Facebook, a podcast feed" },
+      { "before": "Made for Kids limits", "after": "Comments, shares, duets, A/B tests and memberships all available" },
+      { "before": "Full character animation, the hardest thing for AI", "after": "Comic-strip motion, strong voices and timing, where AI is strongest" },
+      { "before": "Everything on one Mac mini", "after": "Jobs in the cloud, the Mac as a backup" },
+      { "before": "Rules spread across many docs", "after": "One canon file from day one, checkers generated from it" },
+      { "before": "Scaled on a fixed schedule", "after": "Scale only the format that hits its numbers" }
+    ],
+    "channels": [
+      { "name": "TikTok", "cut": "30–60 s vertical", "role": "Find out fast what’s funny" },
+      { "name": "Instagram Reels", "cut": "30–60 s vertical + comic carousel", "role": "Shares and stories" },
+      { "name": "YouTube", "cut": "Shorts + 8–12 min episodes", "role": "Watch time and ad revenue" },
+      { "name": "Facebook", "cut": "Reels and the full episode", "role": "Reaches older Italian viewers" },
+      { "name": "Podcast feed", "cut": "Audio-only episode", "role": "Listening on the go, Spotify and Apple" }
+    ],
+    "concepts": [
+      { "name": "Il Condominio", "text": "A sitcom about one building: the residents’ group chat, the meetings, the neighbour who measures everything" },
+      { "name": "Ufficio Complicazioni", "text": "Satire of bureaucracy and office life: absurd forms, endless queues, the stamp that is always missing" },
+      { "name": "Notizie da Borgo Fermo", "text": "A satirical news desk from an invented village, reusing my live news-desk technology" }
+    ],
+    "rules": ["Invented characters and places only, never real people", "Every post labelled as satire and as made with AI", "Native Italian review of every joke before it airs", "Kept fully separate from the LittleLeap kids brand"],
+    "carries": ["Six-language voice and dub engine", "Suno music workflow", "Publishing automation", "Independent reviewer agents", "Analytics and this live page", "Approval gates and spend logging"],
+    "plan": [
+      { "days": "Days 1–14", "name": "Discover", "items": ["Study the Italian comedy creators that win on each platform", "Write hooks and pilot scripts for the three formats", "Decide the language: Italian first or not"], "gate": "Two formats worth piloting" },
+      { "days": "Days 15–45", "name": "Pilot", "items": ["Post 3–4 vertical cuts a week per format on TikTok and Reels", "Change one thing at a time", "Track shares, saves and 3-second hold"], "gate": "One format clearly ahead" },
+      { "days": "Days 46–90", "name": "Build and scale", "items": ["Automate the winning format in the cloud", "Add YouTube episodes, Facebook and the podcast feed", "Add a second revenue line early"], "gate": "Followers and watch time growing every week" }
+    ]
+  },
+  "next": {
+    "title": "My four moves for the next two weeks",
+    "items": [
+      { "name": "Keep EP07 on track", "text": "Top up Kie.ai and approve the storyboard checkpoint when it arrives" },
+      { "name": "Open Google Play", "text": "Finish the account steps, start the 14-day test, release iOS when Apple approves" },
+      { "name": "Clear the channel", "text": "Decide on LittleLeap News and Shorts so effort goes into thumbnails and openers" },
+      { "name": "Start the comedy test", "text": "Pick the language and draft hooks for the three formats" }
+    ]
+  }
+}
