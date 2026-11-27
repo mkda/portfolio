@@ -11,6 +11,7 @@ const NS = "http://www.w3.org/2000/svg";
 const C = n => `var(--vz-${n})`;
 const INK = C("ink"), SLATE = C("slate"), BLUE = C("blue"), CORAL = C("coral"), TEAL = C("mint"), LAVENDER = C("lav");
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const hoverable = matchMedia("(hover: hover) and (pointer: fine)").matches;
 const EASE = "cubic-bezier(.65,0,.35,1)";
 const soft = c => c.replace(")", "-soft)");
 
@@ -572,8 +573,9 @@ let chain = Promise.resolve();
 const lengthOf = sk => Math.max(0, ...sk.queue.map(q => q.at + q.dur));
 document.querySelectorAll(".sketch[data-viz]").forEach(fig => {
   const svg = fig.matches("svg") ? fig : fig.querySelector("svg");
-  let sketch = null, queued = false;
+  let sketch = null, queued = false, played = false, busyUntil = 0;
   const build = () => { svg.replaceChildren(); sketch = charts[fig.dataset.viz](svg); };
+  const play = () => { build(); sketch.play(); busyUntil = performance.now() + lengthOf(sketch); };
   build(); // the finished drawing stays visible until its animation's turn
   if (reduce) return;
   const io = new IntersectionObserver(es => es.forEach(e => {
@@ -581,10 +583,16 @@ document.querySelectorAll(".sketch[data-viz]").forEach(fig => {
     if (!e.isIntersecting || queued) return;
     queued = true; io.disconnect();
     chain = chain.then(() => {
-      build(); sketch.play();
+      play(); played = true;
       // the next drawing starts just before this one finishes
       return new Promise(r => setTimeout(r, Math.max(0, lengthOf(sketch) - 350)));
     });
   }), { threshold: .3 });
   io.observe(fig);
+  // after the first play, hovering the drawing (or its card) draws it again
+  if (!hoverable) return;
+  (fig.closest(".card") || fig).addEventListener("pointerenter", e => {
+    if (e.pointerType !== "mouse" || !played || performance.now() < busyUntil) return;
+    play();
+  });
 });

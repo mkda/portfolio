@@ -909,3 +909,39 @@ summary{font-weight:700!important}
 .cta .copy-btn{block-size:32px;inline-size:36px;min-block-size:0;margin-inline-end:3px}
 .cta .copy-btn::after{content:"";position:absolute;inset:-4px}
 .cta{align-items:center}.cta .btn{margin-block:0}
+/* ---------- Micro-interactions (hover) ---------- */
+.case-sum dt{font-weight:700}
+.menu{color:var(--primary)}
+.menu:hover{background:color-mix(in srgb,var(--primary) 8%,transparent)}
+@media (hover:hover) and (pointer:fine){
+  /* Navigation: the underline grows from the centre on hover */
+  .tabs a{transition:color .2s ease}
+  .tabs a:hover{color:var(--primary)}
+  .tabs a:not([aria-current="page"]):hover::after{transform:scaleX(.6)}
+  .brand-name>span{transition:color .2s ease}
+  .brand:hover .brand-name>span{color:var(--primary)}
+  /* Text links: the underline thickens and drops slightly */
+  main p a,main li a:not(.note-link),.foot a,.linkish{text-decoration-thickness:1px;text-underline-offset:3px;transition:text-decoration-thickness .2s ease,text-underline-offset .2s ease,color .2s ease}
+  main p a:hover,main li a:not(.note-link):hover,.foot a:hover,.linkish:hover{text-decoration-thickness:2px;text-underline-offset:5px;color:var(--primary)}
+  /* Buttons: a light sweep crosses the button */
+  .btn,.btn.primary{background-image:linear-gradient(110deg,transparent 35%,color-mix(in srgb,#fff 35%,transparent) 50%,transparent 65%);background-size:250% 100%;background-repeat:no-repeat;background-position:120% 0;transition:background-position 0s}
+  .btn:not(.primary){background-image:linear-gradient(110deg,transparent 35%,color-mix(in srgb,var(--primary) 14%,transparent) 50%,transparent 65%)}
+  .btn:hover{background-position:-20% 0;transition:background-position .7s ease}
+  .email-copy{transition:border-color .2s ease,background-color .2s ease}
+  .email-copy:hover{border-color:var(--primary);background:color-mix(in srgb,var(--primary) 6%,transparent)}
+  /* Cards and links with arrows */
+  .card:has(.stretch),.next-link,.note-link{transition:background-color .25s ease,box-shadow .25s ease}
+  .card:has(.stretch):hover,.next-link:hover{box-shadow:0 6px 18px color-mix(in srgb,var(--on-surface) 12%,transparent)!important}
+  .case-card .more::after,.next-link b::after,.more-grid .card h3::after{display:inline-block;transition:transform .25s ease}
+  .crumb a::before{display:inline-block;transition:transform .25s ease}
+  .note-link::after{transition:transform .25s ease,background-color .25s ease}
+  .note-link:hover::after{transform:translateX(4px);background:var(--primary)}
+  .crumb a:hover::before{transform:translateX(-4px)}
+}
+@media (hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .case-card:hover .more::after,.next-link:hover b::after,.more-grid .card:hover h3::after{animation:arrow-nudge .6s ease-in-out infinite alternate}
+}
+@media (prefers-reduced-motion:reduce){
+  .btn,.btn:hover{transition:none!important;background-image:none!important}
+}
+@keyframes arrow-nudge{to{transform:translateX(5px)}}
