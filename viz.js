@@ -567,23 +567,23 @@ Object.assign(charts, {
 });
 
 // Drawings play one after another: when several come into view together, each
-// waits for the one before it to finish, so only one thing moves at a time.
+// starts just before the one before it finishes, so only one thing moves at a time.
 let chain = Promise.resolve();
 const lengthOf = sk => Math.max(0, ...sk.queue.map(q => q.at + q.dur));
 document.querySelectorAll(".sketch[data-viz]").forEach(fig => {
   const svg = fig.matches("svg") ? fig : fig.querySelector("svg");
   let sketch = null, queued = false;
   const build = () => { svg.replaceChildren(); sketch = charts[fig.dataset.viz](svg); };
-  build(); // the finished drawing, shown as is when motion is reduced
+  build(); // the finished drawing stays visible until its animation's turn
   if (reduce) return;
-  svg.style.opacity = "0"; // waits, blank, for its turn
   const io = new IntersectionObserver(es => es.forEach(e => {
     fig.classList.toggle("in-view", e.isIntersecting);
     if (!e.isIntersecting || queued) return;
     queued = true; io.disconnect();
     chain = chain.then(() => {
-      build(); svg.style.opacity = "1"; sketch.play();
-      return new Promise(r => setTimeout(r, lengthOf(sketch)));
+      build(); sketch.play();
+      // the next drawing starts just before this one finishes
+      return new Promise(r => setTimeout(r, Math.max(0, lengthOf(sketch) - 350)));
     });
   }), { threshold: .3 });
   io.observe(fig);

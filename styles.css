@@ -897,3 +897,5 @@ summary{font-weight:700!important}
 .how-grid>.card:nth-child(4){background:var(--tint-4)}
 /* Numbers in case study results: default text colour, bold */
 .case-card .result b,.case-sum dd b{color:inherit;font-weight:700}
+/* Numbers in text: default colour, bold (the brand dot keeps its colour) */
+.result b,.stats dt,.proof b{color:inherit!important;font-weight:700}
