@@ -4,7 +4,7 @@
    type scale, shape scale, state layers, component sizes.
    Brand typefaces: Geist (plain) and Geist Mono (numbers).
    1. Tokens   2. Base   3. Layout   4. Components   5. Pages
-   See design.html for every token and component in use.
+   Tokens and components are defined in this file.
    ========================================================= */
 
 /* ---------- 0. Fonts (self-hosted, SIL Open Font License, see fonts/LICENSE.txt) ---------- */
@@ -903,3 +903,4 @@ summary{font-weight:700!important}
 .brand{min-block-size:48px}
 .foot a,.foot .linkish{display:inline-flex;align-items:center;min-block-size:44px}
 @media (max-width:600px){.article table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}}
+.hero-results li b{font-weight:700}
