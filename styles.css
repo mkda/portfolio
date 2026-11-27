@@ -800,3 +800,90 @@ p{margin:0}
 /* v29: bold titles (K, 2026-11-26). !important so it wins over the per-component font shorthands above. */
 h1,h2,h3,h4,h5,h6{font-weight:700!important}
 summary{font-weight:700!important}
+
+/* ---------- Multi-page layout (Nov 2026) ---------- */
+/* Current page in the header menu */
+.tabs a[aria-current="page"]{color:var(--primary)}
+.tabs a[aria-current="page"]::after{transform:scaleX(1)}
+@media(max-width:52.49em){
+  .topbar:has(.menu) .tabs a[aria-current="page"]::after{transform:scaleY(1)}
+  .tabs a[aria-current="page"]{background:color-mix(in srgb,var(--primary) 8%,transparent)}
+}
+
+/* Page heading block for inner pages */
+.page-head{padding-top:var(--s-7);padding-bottom:var(--s-6)}
+@media(min-width:37.5em){.page-head{padding-top:var(--s-8)}}
+.page-head h1{font:400 var(--headline-m) var(--font-sans);letter-spacing:-.02em;max-width:46rem}
+@media(min-width:37.5em){.page-head h1{font:400 var(--display-s) var(--font-sans)}}
+.page-head .case-when{margin-top:var(--s-2)}
+.page-head .theme-lede{margin-top:var(--s-4)}
+.page-head .viz.sketch{max-inline-size:640px}
+.crumb{font:500 var(--label-l) var(--font-sans);margin-bottom:var(--s-3)}
+.crumb a{display:inline-flex;align-items:center;min-block-size:48px;text-decoration:none}
+.crumb a::before{content:"←";margin-inline-end:var(--s-2)}
+
+/* Case page sections: equal spacing, h2 then h3 */
+.case-sec{padding:var(--section-y) 0}
+.case-sec:not(.band)+.case-sec:not(.band){padding-top:0}
+.case-sec h2,.related h2{font:400 var(--headline-s) var(--font-sans);margin-bottom:var(--s-4)}
+@media(min-width:37.5em){.case-sec h2,.related h2{font:400 var(--headline-m) var(--font-sans)}}
+.case-sec h3{font:500 var(--title-m) var(--font-sans);color:var(--on-surface);margin:var(--s-5) 0 var(--s-1)}
+.case-sec h3:first-child{margin-top:0}
+.prose{max-width:46rem;display:grid;gap:var(--s-3)}
+.prose p,.case-sec .theme-cols p{color:var(--on-surface-variant)}
+.prose h3{margin:var(--s-3) 0 0}
+.decisions{margin-top:0}
+.decision{padding-top:var(--s-4);border-top:1px solid var(--rule)}
+.decision h3{margin:0 0 var(--s-2)}
+.decision p{color:var(--on-surface-variant);font:400 var(--body-m) var(--font-sans)}
+.case-sec .section-lede{margin:0 0 var(--s-5)}
+.case-sec .theme-cols{margin-top:0}
+.case-sec .table-wrap{margin-top:0;align-self:start}
+.related{padding-top:var(--section-y);padding-bottom:var(--s-6)}
+.related .notes{margin-top:0}
+
+/* Next case links */
+.next-case{display:flex;flex-wrap:wrap;gap:var(--s-4);padding-bottom:var(--section-y)}
+.next-link{display:grid;gap:var(--s-1);min-inline-size:min(100%,320px);flex:1 1 320px;max-inline-size:520px;padding:var(--s-4) var(--s-5);background:var(--tint-1);color:var(--on-surface);text-decoration:none;position:relative}
+.next-link+.next-link{background:var(--tint-3)}
+.next-link span{font:400 var(--body-m) var(--font-sans);color:var(--on-surface-variant)}
+.next-link b{font:400 var(--title-l) var(--font-sans);color:var(--primary)}
+.next-link b::after{content:" →"}
+.next-link:hover{background:color-mix(in srgb,var(--primary) 14%,var(--surface-container-low))}
+
+/* Home: case cards and link cards, the whole card is the link */
+.case-card,.more-grid .card{position:relative;border:0}
+.case-card .build-art{aspect-ratio:16/9}
+.case-card h3,.more-grid h3{font:400 var(--title-l) var(--font-sans)}
+.stretch{color:var(--on-surface);text-decoration:none}
+.stretch::after{content:"";position:absolute;inset:0;border-radius:inherit}
+.stretch:focus-visible{outline:none}
+.card:has(.stretch:focus-visible){outline:3px solid var(--primary);outline-offset:2px}
+.card:has(.stretch):hover{background:color-mix(in srgb,var(--primary) 12%,var(--surface-container-low))}
+.case-card .case-when{font:400 var(--body-m) var(--font-sans);color:var(--on-surface-variant)}
+.case-card .more,.more-grid .card h3::after{font:500 var(--label-l) var(--font-sans);color:var(--primary)}
+.case-card .more::after{content:" →"}
+.more-grid{list-style:none;padding:0}
+.more-grid .card h3::after{content:" →"}
+.tint-1{background:var(--tint-1)!important}.tint-2{background:var(--tint-2)!important}.tint-3{background:var(--tint-3)!important}
+.card:has(.stretch).tint-1:hover,.card:has(.stretch).tint-2:hover,.card:has(.stretch).tint-3:hover{background:color-mix(in srgb,var(--primary) 12%,var(--surface-container-low))!important}
+.card-link{font:500 var(--label-l) var(--font-sans);margin-top:auto;display:inline-flex;align-items:center;min-block-size:48px}
+.card-link::after{content:" →";white-space:pre}
+.res-link{display:block;color:inherit;text-decoration:none}
+.res-link:hover b{text-decoration:underline}
+
+/* About: four leadership cards in two columns */
+@media(min-width:52.5em){.lead-grid.lead-four{grid-template-columns:1fr 1fr}.lead-grid.lead-four>.card{grid-column:auto!important}}
+.lead-grid p a{color:var(--primary)}
+
+/* Builds: card titles are h2 on their own page */
+.builds-sec{padding-top:0}
+.build h2{font:400 var(--title-l) var(--font-sans)}
+.writing-sec{padding-top:0}
+.writing-sec .notes{margin-top:0}
+.note-link h2{font:400 var(--body-l) var(--font-sans);color:var(--on-surface)}
+.tabs{scroll-target-group:none}
+.case-page .page-head{padding-bottom:0}
+.case-sec+.related{padding-top:0}
+.decision p{font:400 var(--body-l) var(--font-sans)}
+.page-head+.section{padding-top:0}

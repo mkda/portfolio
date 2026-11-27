@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<script>try{var c=localStorage.getItem("color-scheme");if(c)document.querySelector('meta[name="color-scheme"]').content=c}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="text-scale" content="scale">
+<meta name="robots" content="noindex, nofollow">
+<title>Independent builds · Mikael Dell'Anna</title>
+<meta name="description" content="An AI animation studio, an AI decision-support prototype and mobile games, built and run end to end.">
+<meta property="og:title" content="Independent builds · Mikael Dell'Anna">
+<meta property="og:description" content="An AI animation studio, an AI decision-support prototype and mobile games, built and run end to end.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.dellanna.pm/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/architects-daughter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="index.html" aria-label="Mikael Dell&#39;Anna, dellanna.pm home"><span class="brand-name" aria-hidden="true">dellanna<span><b>.</b>pm</span></span></a>
+    <nav class="tabs" id="sections" aria-label="Pages">
+      <a href="index.html#work">Work</a>
+      <a href="builds.html" aria-current="page">Builds</a>
+      <a href="writing.html">Writing</a>
+      <a href="about.html">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme" type="button">
+      <span class="to-dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg><span class="visually-hidden">Switch to dark theme</span></span>
+      <span class="to-light"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><span class="visually-hidden">Switch to light theme</span></span>
+    </button>
+    <button class="theme menu" id="menu" type="button" aria-expanded="false" aria-controls="sections"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="bar b1" d="M4 7h16"/><path class="bar b2" d="M4 12h16"/><path class="bar b3" d="M4 17h16"/></svg><span class="visually-hidden">Menu</span></button>
+  </div>
+</header>
+
+<main id="content" tabindex="-1">
+  <div class="wrap page-head">
+    <h1>Independent products, built and run end to end</h1>
+    <p class="theme-lede">Solo, self-funded products, built outside client work. The AI case shows how the same approach works inside a company: <a href="work/ai.html">Putting AI to work</a>.</p>
+  </div>
+  <section class="wrap section builds-sec" aria-label="Products">
+    <div class="grid three">
+      <article class="card build build-blue">
+        <svg class="build-art sketch" data-viz="b-studio" viewBox="0 0 320 140" width="320" height="140" aria-hidden="true"></svg>
+        <span class="pill live">Live</span>
+        <h2>LittleLeap Studios</h2>
+        <p>An AI-run animation studio for children's stories retold from public-domain tales. Agents built with Claude, Gemini and Seedance write, draw, animate, voice and publish each episode. A person approves the story, new characters and the final cut.</p>
+        <p>Every script, video and livestream is checked against content rules for ages 3 to 7. An automated reviewer flags anything frightening, violent or off-brand before the approval gate, and a person signs off each episode before release.</p>
+        <p class="result"><b>6</b> episodes in <b>6</b> languages · <b>3</b> scheduled livestreams a day · <b>$11–67</b> of AI spend per finished episode (inference only, before human review time)</p>
+      </article>
+      <article class="card build build-lav">
+        <svg class="build-art sketch" data-viz="b-market" viewBox="0 0 320 140" width="320" height="140" aria-hidden="true"></svg>
+        <span class="pill">Prototype</span>
+        <h2>JEV: AI decision support with guardrails</h2>
+        <p>A research platform for market data, tested on digital-asset markets, that combines signals, cited research and forecasts from TimesFM, a time-series model from Google, in one traceable workflow. AI interprets the evidence. Code owns permissions, sizing, accounting and orders.</p>
+        <p class="result">Holds back whenever evidence is missing, stale or contradictory · private build, walkthrough on request</p>
+      </article>
+      <article class="card build build-mint">
+        <svg class="build-art sketch" data-viz="b-games" viewBox="0 0 320 140" width="320" height="140" aria-hidden="true"></svg>
+        <span class="pill">In development</span>
+        <h2>Mobile games</h2>
+        <p>Swipe Contest, a one-gesture skill game for iPhone and iPad with nine modes, replay ghosts and a deterministic scoring engine in C. Before it, a 48-level physics puzzle game built with a custom level editor.</p>
+        <p class="result"><b>9</b> game modes · <b>48</b> puzzle levels · a custom level editor</p>
+      </article>
+    </div>
+  </section>
+  <section class="band" aria-labelledby="related-h">
+    <div class="wrap">
+      <h2 class="sec-title" id="related-h">Lessons from these builds</h2>
+      <ul class="notes" role="list">
+        <li><a class="note-link" href="notes/reusing-an-ai-studio-playbook.html">
+          <svg class="note-art sketch" data-viz="playbook" viewBox="0 0 640 360" width="640" height="360" aria-hidden="true"></svg>
+          <h3>Reusing an AI studio's playbook in enterprise automation</h3>
+          <span class="meta">August 2026 · 6 min read</span>
+          <p>Seven lessons from an AI animation studio, with examples from retail, telecom and back-office work.</p>
+        </a></li>
+        <li><a class="note-link" href="notes/a-model-answer-is-not-a-decision.html">
+          <svg class="note-art sketch" data-viz="model-answer" viewBox="0 0 640 360" width="640" height="360" aria-hidden="true"></svg>
+          <h3>The model advises, the rules decide</h3>
+          <span class="meta">July 2026 · 5 min read</span>
+          <p>Evidence, abstention and authority boundaries, from building an experimental AI decision platform.</p>
+        </a></li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section id="contact" tabindex="-1" class="contact">
+    <div class="wrap">
+      <h2 class="sec-title">Let's talk about your product</h2>
+      <p class="section-lede">Based in Zurich. Building something where hardware, data or AI meet the customer? Write and say what you are working on.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:mikael@dellanna.pm?subject=Hello%20Mikael">mikael@dellanna.pm</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot"><span>© 2026 Mikael Dell'Anna · Updated November 2026</span><a href="privacy.html">Privacy and cookies</a><button type="button" class="linkish" data-cookie-settings>Cookie settings</button></footer>
+
+<script type="module" src="shell.js"></script>
+<script src="vendor/motion-14.11.1.min.js" defer></script>
+<script type="module" src="site.js"></script>
+<script type="module" src="viz.js"></script>
+<script type="module" src="consent.js"></script>
+</body>
+</html>

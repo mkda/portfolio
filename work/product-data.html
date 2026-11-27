@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<script>try{var c=localStorage.getItem("color-scheme");if(c)document.querySelector('meta[name="color-scheme"]').content=c}catch(e){}</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="text-scale" content="scale">
+<meta name="robots" content="noindex, nofollow">
+<title>Connecting physical products to data · Mikael Dell'Anna</title>
+<meta name="description" content="How the RFID workstream and Digital Twin platform at On reached more than 99.9% item traceability across 100+ stores.">
+<meta property="og:title" content="Connecting physical products to data · Mikael Dell'Anna">
+<meta property="og:description" content="How the RFID workstream and Digital Twin platform at On reached more than 99.9% item traceability across 100+ stores.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.dellanna.pm/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../fonts/geist-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/architects-daughter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html" aria-label="Mikael Dell&#39;Anna, dellanna.pm home"><span class="brand-name" aria-hidden="true">dellanna<span><b>.</b>pm</span></span></a>
+    <nav class="tabs" id="sections" aria-label="Pages">
+      <a href="../index.html#work" aria-current="page">Work</a>
+      <a href="../builds.html">Builds</a>
+      <a href="../writing.html">Writing</a>
+      <a href="../about.html">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme" type="button">
+      <span class="to-dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg><span class="visually-hidden">Switch to dark theme</span></span>
+      <span class="to-light"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><span class="visually-hidden">Switch to light theme</span></span>
+    </button>
+    <button class="theme menu" id="menu" type="button" aria-expanded="false" aria-controls="sections"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="bar b1" d="M4 7h16"/><path class="bar b2" d="M4 12h16"/><path class="bar b3" d="M4 17h16"/></svg><span class="visually-hidden">Menu</span></button>
+  </div>
+</header>
+
+<main id="content" tabindex="-1" class="case-page">
+  <article>
+    <div class="wrap page-head">
+      <p class="crumb"><a href="../index.html#work">All work</a></p>
+      <h1>Connecting physical products to data</h1>
+      <p class="case-when">2024 to 2026 · On</p>
+      <p class="theme-lede">Hardware, partners and legacy systems all have to agree on what a single item is and where it is. The platform that makes them agree is a product too: its APIs and its events are services other teams rely on.</p>
+      <dl class="case-sum">
+        <div><dt>Problem</dt><dd>Stores, warehouses, vendors and the ERP (the company's finance and inventory system) each held their own view of an item.</dd></div>
+        <div><dt>Role</dt><dd>At On, the Zurich-based global sportswear brand, led the RFID technology workstream from factory shipment to 100+ stores, with 5 developers, 3 vendors and a CHF 250K+ yearly budget. Also led the Digital Twin platform.</dd></div>
+        <div><dt>Result</dt><dd>&gt;99.9% item traceability, up from manual barcode reads. 40M+ yearly scans turned into events, with 70% fewer manual interventions across 100+ locations. An in-house serial-number service with projected savings of $200K+ a year.</dd></div>
+      </dl>
+      <figure class="viz sketch" data-viz="data">
+        <figcaption><b>Every read lands in one record.</b> Each item is read many times between factory and customer.</figcaption>
+        <svg class="viz-svg" viewBox="0 0 360 452" role="img" aria-label="A diagram. RFID and QR codes read each item in the supply chain, at the warehouse, in the store and by the customer. Every read goes into one Digital Twin record per item instance, tracked globally and synchronised with ERP (enterprise resource planning) financial records. Manual interventions fell by 70%, more than 99.9% of items are traceable across 100+ stores, and the first in-house serialisation projects $200K+ a year in savings."></svg>
+      </figure>
+    </div>
+    <section class="case-sec">
+      <div class="wrap">
+        <h2>How it works</h2>
+        <div class="prose">
+          <p>Each item gets a unique serial, encoded in its RFID (radio-frequency identification) tag. Every enabled read point, from factory to store, can trace it one by one or in bulk, and the Digital Twin, a live digital record of every item, keeps the ERP in sync. A QR code paired with the same serial carries the item past the sale, into digital workflows such as its status changing from in stock to sold.</p>
+          <p>Before, items were tracked by manual barcode reads. Scan events now take over the manual steps in stock counts, in stock moves to virtual locations that track financial value (damaged, sellable and non-sellable goods, visual merchandising), in inbound and outbound shipments, and in the sync with the ERP.</p>
+          <p>Underneath sits an event-driven architecture built on the Electronic Product Code standard, with warehouse scan-point APIs (the interfaces other software calls), supply-chain location standards, an in-house serialisation service, and vendor capabilities brought in-house.</p>
+        </div>
+      </div>
+    </section>
+    <section class="band case-sec">
+      <div class="wrap">
+        <h2>Decisions that mattered</h2>
+        <div class="grid three decisions">
+          <div class="decision"><h3>Standards are product decisions</h3><p>Modelling the Digital Twin on Electronic Product Code events and adopting Global Location Numbers (GLN, the standard IDs for sites and docks) looked like technical details. In practice they set how fast new partners and use cases could join.</p></div>
+          <div class="decision"><h3>Observe before you model</h3><p>Interviews described how stores managed inventory. Watching them showed how they really did it, including their use of virtual locations. The retail data model was rebuilt before rollout, while the change was still cheap.</p></div>
+          <div class="decision"><h3>Exceptions are the product</h3><p>Above 99.9% traceability, the remaining fraction still made most of the work across 100+ locations. A Pareto analysis of support tickets picked the few features that mattered, and that cut manual interventions by 70%.</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="case-sec">
+      <div class="wrap">
+        <h2>Where it fits in your company</h2>
+        <div class="prose"><p>Recalls narrowed to the exact batch, checks against counterfeits, stock accurate enough for buy online and pick up in store, and the Digital Product Passport the EU is introducing for textiles and other goods.</p></div>
+      </div>
+    </section>
+
+    <section class="wrap section related" aria-labelledby="related-h">
+      <h2 id="related-h">Related writing</h2>
+      <ul class="notes" role="list">
+        <li><a class="note-link" href="../notes/platform-pm-lessons-from-rfid.html">
+          <svg class="note-art sketch" data-viz="rfid" viewBox="0 0 640 360" width="640" height="360" aria-hidden="true"></svg>
+          <h3>Platform PM lessons from RFID</h3>
+          <span class="meta">April 2026 · 6 min read</span>
+          <p>What tagging every item from factory to store teaches about platforms with many internal customers.</p>
+        </a></li>
+      </ul>
+    </section>
+    <nav class="wrap next-case" aria-label="Next">
+      <a class="next-link" href="growth.html"><span>Next case</span><b>Growth that finance can check</b></a>
+    </nav>
+  </article>
+
+  <section id="contact" tabindex="-1" class="contact">
+    <div class="wrap">
+      <h2 class="sec-title">Let's talk about your product</h2>
+      <p class="section-lede">Based in Zurich. Building something where hardware, data or AI meet the customer? Write and say what you are working on.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:mikael@dellanna.pm?subject=Hello%20Mikael">mikael@dellanna.pm</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot"><span>© 2026 Mikael Dell'Anna · Updated November 2026</span><a href="../privacy.html">Privacy and cookies</a><button type="button" class="linkish" data-cookie-settings>Cookie settings</button></footer>
+
+<script type="module" src="../shell.js"></script>
+<script src="../vendor/motion-14.11.1.min.js" defer></script>
+<script type="module" src="../site.js"></script>
+<script type="module" src="../viz.js"></script>
+<script type="module" src="../consent.js"></script>
+</body>
+</html>

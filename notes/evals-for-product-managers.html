@@ -20,7 +20,23 @@
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
-<header class="topbar"><div class="wrap topbar-inner"><a class="brand" href="../" aria-label="Mikael Dell&#39;Anna, dellanna.pm home"><span class="brand-name" aria-hidden="true">dellanna<span><b>.</b>pm</span></span></a></div></header>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="../index.html" aria-label="Mikael Dell&#39;Anna, dellanna.pm home"><span class="brand-name" aria-hidden="true">dellanna<span><b>.</b>pm</span></span></a>
+    <nav class="tabs" id="sections" aria-label="Pages">
+      <a href="../index.html#work">Work</a>
+      <a href="../builds.html">Builds</a>
+      <a href="../writing.html" aria-current="page">Writing</a>
+      <a href="../about.html">About</a>
+      <a href="mailto:mikael@dellanna.pm">Contact</a>
+    </nav>
+    <button class="theme" id="theme" type="button">
+      <span class="to-dark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9z"/></svg><span class="visually-hidden">Switch to dark theme</span></span>
+      <span class="to-light"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></svg><span class="visually-hidden">Switch to light theme</span></span>
+    </button>
+    <button class="theme menu" id="menu" type="button" aria-expanded="false" aria-controls="sections"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="bar b1" d="M4 7h16"/><path class="bar b2" d="M4 12h16"/><path class="bar b3" d="M4 17h16"/></svg><span class="visually-hidden">Menu</span></button>
+  </div>
+</header>
 <main class="wrap article" id="content">
   <h1>Evals for product managers</h1>
   <p class="meta">Mikael Dell'Anna · <time datetime="2026-08-04">4 August 2026</time> · 6 min read</p>
@@ -58,10 +74,11 @@
   <p>Offline evals tell you whether something can work. Production tells you whether it does. I move from offline evals to shadow mode, then a canary, then a full rollout, with ship, hold and rollback thresholds agreed in advance. After every model or vendor update, I rerun the set before calling the update done.</p>
 
 
-  <a class="btn back" href="../#notes">← Back to the portfolio</a>
+  <a class="btn back" href="../writing.html">← All writing</a>
 </main>
 <footer class="wrap foot"><span>© 2026 Mikael Dell'Anna</span><a href="../privacy.html">Privacy and cookies</a><button type="button" class="linkish" data-cookie-settings>Cookie settings</button></footer>
 <script type="module" src="../viz.js"></script>
+<script type="module" src="../shell.js"></script>
 <script type="module" src="../consent.js"></script>
 </body>
 </html>
