@@ -849,7 +849,7 @@ summary{font-weight:700!important}
 .next-link span{font:400 var(--body-m) var(--font-sans);color:var(--on-surface-variant)}
 .next-link b{font:400 var(--title-l) var(--font-sans);color:var(--primary)}
 .next-link b::after{content:" →"}
-.next-link:hover{background:color-mix(in srgb,var(--primary) 14%,var(--surface-container-low))}
+.next-link:hover{background-image:linear-gradient(color-mix(in srgb,var(--on-surface) 7%,transparent),color-mix(in srgb,var(--on-surface) 7%,transparent))}
 
 /* Home: case cards and link cards, the whole card is the link */
 .case-card,.more-grid .card{position:relative;border:0}
@@ -859,14 +859,14 @@ summary{font-weight:700!important}
 .stretch::after{content:"";position:absolute;inset:0;border-radius:inherit}
 .stretch:focus-visible{outline:none}
 .card:has(.stretch:focus-visible){outline:3px solid var(--primary);outline-offset:2px}
-.card:has(.stretch):hover{background:color-mix(in srgb,var(--primary) 12%,var(--surface-container-low))}
+.card:has(.stretch):hover{background-image:linear-gradient(color-mix(in srgb,var(--on-surface) 7%,transparent),color-mix(in srgb,var(--on-surface) 7%,transparent))}
 .case-card .case-when{font:400 var(--body-m) var(--font-sans);color:var(--on-surface-variant)}
 .case-card .more,.more-grid .card h3::after{font:500 var(--label-l) var(--font-sans);color:var(--primary)}
 .case-card .more::after{content:" →"}
 .more-grid{list-style:none;padding:0}
 .more-grid .card h3::after{content:" →"}
 .tint-1{background:var(--tint-1)!important}.tint-2{background:var(--tint-2)!important}.tint-3{background:var(--tint-3)!important}
-.card:has(.stretch).tint-1:hover,.card:has(.stretch).tint-2:hover,.card:has(.stretch).tint-3:hover{background:color-mix(in srgb,var(--primary) 12%,var(--surface-container-low))!important}
+.card:has(.stretch).tint-1:hover{background:color-mix(in srgb,var(--tint-1) 93%,var(--on-surface))!important}.card:has(.stretch).tint-2:hover{background:color-mix(in srgb,var(--tint-2) 93%,var(--on-surface))!important}.card:has(.stretch).tint-3:hover{background:color-mix(in srgb,var(--tint-3) 93%,var(--on-surface))!important}
 .card-link{font:500 var(--label-l) var(--font-sans);margin-top:auto;display:inline-flex;align-items:center;min-block-size:48px}
 .card-link::after{content:" →";white-space:pre}
 .res-link{display:block;color:inherit;text-decoration:none}
@@ -945,3 +945,4 @@ summary{font-weight:700!important}
   .btn,.btn:hover{transition:none!important;background-image:none!important}
 }
 @keyframes arrow-nudge{to{transform:translateX(5px)}}
+.case-card .more::after,.next-link b::after,.more-grid .card h3::after{content:"→";margin-inline-start:.3em}
