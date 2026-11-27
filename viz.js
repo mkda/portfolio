@@ -566,17 +566,25 @@ Object.assign(charts, {
   },
 });
 
+// Drawings play one after another: when several come into view together, each
+// waits for the one before it to finish, so only one thing moves at a time.
+let chain = Promise.resolve();
+const lengthOf = sk => Math.max(0, ...sk.queue.map(q => q.at + q.dur));
 document.querySelectorAll(".sketch[data-viz]").forEach(fig => {
   const svg = fig.matches("svg") ? fig : fig.querySelector("svg");
-  let sketch = null, played = false;
+  let sketch = null, queued = false;
   const build = () => { svg.replaceChildren(); sketch = charts[fig.dataset.viz](svg); };
-  const play = () => { build(); if (!reduce) sketch.play(); played = true; };
-  build(); // drawn and static until it comes into view
+  build(); // the finished drawing, shown as is when motion is reduced
+  if (reduce) return;
+  svg.style.opacity = "0"; // waits, blank, for its turn
   const io = new IntersectionObserver(es => es.forEach(e => {
     fig.classList.toggle("in-view", e.isIntersecting);
-    if (e.isIntersecting && !played) play();
+    if (!e.isIntersecting || queued) return;
+    queued = true; io.disconnect();
+    chain = chain.then(() => {
+      build(); svg.style.opacity = "1"; sketch.play();
+      return new Promise(r => setTimeout(r, lengthOf(sketch)));
+    });
   }), { threshold: .3 });
   io.observe(fig);
-  const panel = fig.closest("[role=tabpanel]");
-  if (panel) new MutationObserver(() => { if (!panel.hidden && played) play(); }).observe(panel, { attributes: true, attributeFilter: ["hidden"] });
 });
