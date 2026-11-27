@@ -894,3 +894,4 @@ summary{font-weight:700!important}
 .case-sec .table-wrap{max-width:none!important}
 .viz.timeline .viz-svg{max-inline-size:600px}
 .section.path+.section{padding-top:0}
+.how-grid>.card:nth-child(4){background:var(--tint-4)}
